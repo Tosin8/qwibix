@@ -21,7 +21,8 @@ class BColors{
   // background container Colors
 
   static const Color lightContainer = Color(0xFFf6f6f6);
-  static Color darkContainer = BColors.white.withOpacity(0.1); 
+  static const Color darkContainer = Color.fromRGBO(255, 255, 255, 0.1);
+  //static const Color darkContainer = BColors.white.withOpacity(0.1); 
 
   // button Colors
   static const Color buttonPrimary = Color(0xff4b68ff); 
