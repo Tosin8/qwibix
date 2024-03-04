@@ -19,8 +19,8 @@ class BColors{
   static const Color primaryBackground = Color(0xfff3f5ff);  
 
   // background container Colors
-  
-  
+
+  static const Color containerPrimary = Color(0xFFb0c7ff);
   
 
 }
