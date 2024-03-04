@@ -95,4 +95,8 @@ static Future<bool> hasInternetConnection() async {
     return false;
   }
 }
+
+static bool isIOS() {
+  return Platform.isIOS; 
+}
 }
