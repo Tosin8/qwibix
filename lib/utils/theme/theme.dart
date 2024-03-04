@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'custom_themes/elevated_button_theme.dart';
 import 'custom_themes/text_theme.dart';
 
 class BAppTheme{
@@ -12,6 +13,7 @@ class BAppTheme{
     primaryColor: Colors.blue, 
     scaffoldBackgroundColor: Colors.white,
     textTheme: BTextTheme.lightTextTheme, 
+    elevatedButtonTheme: BElevatedButtonTheme.lightElevatedButtonTheme, 
   
   ); 
 
@@ -22,6 +24,7 @@ class BAppTheme{
     primaryColor: Colors.blue, 
     scaffoldBackgroundColor: Colors.black,
     textTheme: BTextTheme.darkTextTheme, 
+    elevatedButtonTheme: BElevatedButtonTheme.darkElevatedButtonTheme,
     
   ); 
 }
