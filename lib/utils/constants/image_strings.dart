@@ -5,4 +5,5 @@ class BImages {
   // social media
   static const String facebook = '';
   static const String google = '';
+  static const String apple = '';
 }
