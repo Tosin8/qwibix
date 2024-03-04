@@ -4,7 +4,7 @@ class BAppBarTheme{
   BAppBarTheme._();
 
 
- static const lightAppTheme = AppBarTheme(
+ static const  lightAppBarTheme = AppBarTheme(
   elevation: 0,
   centerTitle: false, 
   scrolledUnderElevation: 0, 
@@ -15,7 +15,7 @@ class BAppBarTheme{
   titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.black),
  ); 
 
-  static const darkAppTheme = AppBarTheme(
+  static const darkAppBarTheme =  AppBarTheme(
   elevation: 0,
   centerTitle: false, 
   scrolledUnderElevation: 0, 
