@@ -46,8 +46,18 @@ class BColors{
   static const Color grey = Color(0xffe0e0e0);
   static const Color softGrey = Color(0xfff4f4f4);
   static const Color lightGrey = Color(0xfff9f9f9);
-  static const Color white = Color(0xfffffff); 
+  static const Color white = Color(0xffffffff); 
 
+// gradient colors
+static Gradient linearGradient= const LinearGradient(
+  
+  begin: Alignment(0.0, 0.0),
+end: Alignment(0.707, -0.707) ,
+   colors: [
+  Color(0xffff9a9e), 
+  Color(0xfffad0c4), 
+  Color(0xfffad0c4), 
+]);
 
 
 }
