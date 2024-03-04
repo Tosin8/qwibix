@@ -1,0 +1,3 @@
+class BAppBarTheme{
+  BAppBarTheme._();
+}
