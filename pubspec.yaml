@@ -70,11 +70,8 @@ flutter:
         - asset: assets/fonts/poppins/Poppins-Regular.otf
           weight: 400
         - asset: assets/fonts/poppins/Poppins-Regular.otf
-          style: Regular
-        - asset: assets/fonts/poppins/Poppins-Regular.otf
-          style: Regular
-        - asset: assets/fonts/poppins/Poppins-Regular.otf
-          style: Regular
+          weight: 500
+        
         - asset: assets/fonts/poppins/Poppins-SemiBold.otf
           weight: 600
         - asset: assets/fonts/poppins/Poppins-SemiBold.otf
