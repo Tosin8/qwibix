@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class BElevatedButtonTheme{
   BElevatedButtonTheme._();
-} // to avoid creating instances. 
+// to avoid creating instances. 
 
 // light theme
- final lightElevatedButtonTheme = ElevatedButtonThemeData(
+ static final lightElevatedButtonTheme = ElevatedButtonThemeData(
   style: ElevatedButton.styleFrom(
     elevation: 0, 
     foregroundColor: Colors.white, 
@@ -21,7 +21,7 @@ class BElevatedButtonTheme{
 ); 
 
 //dark theme
-final darkElevatedButtonTheme = ElevatedButtonThemeData(
+static final darkElevatedButtonTheme = ElevatedButtonThemeData(
   style: ElevatedButton.styleFrom(
     elevation: 0, 
     foregroundColor: Colors.white, 
@@ -35,3 +35,4 @@ final darkElevatedButtonTheme = ElevatedButtonThemeData(
   )
   
 );
+}
