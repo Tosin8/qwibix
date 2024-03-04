@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class AppTheme{
-  AppTheme._(); 
+class BAppTheme{
+  BAppTheme._(); 
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true, 
     fontFamily: 'Poppins' , 
     brightness: Brightness.light, 
     primaryColor: Colors.blue, 
-    textTheme: TextTheme.lightTextTheme, 
+    scaffoldBackgroundColor: Colors.white,
+    textTheme: TextTheme(), 
   
   ); 
 

@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
       //   useMaterial3: true,
       // ),
 
-      theme: AppTheme.lightTheme, 
-      darkTheme: AppTheme.darkTheme,
+      theme: BAppTheme.lightTheme, 
+      darkTheme: BAppTheme.darkTheme,
       home: SplashScreen()
     ); 
     
