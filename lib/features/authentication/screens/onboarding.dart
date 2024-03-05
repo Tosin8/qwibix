@@ -6,6 +6,16 @@ class OnBoardingScreen extends StatelessWidget {
   @override 
   Widget build(BuildContext context) {
     
-    return const Scaffold(); 
+    return Scaffold(
+      body: Stack (
+        children: [
+/// Horizontal Scrollable Pages 
+ PageView(
+  children: [
+    
+  ],
+ )
+      ],)
+    ); 
   }
 }
