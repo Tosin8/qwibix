@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import 'screen/splash/splash_screen.dart';
+import 'features/authentication/screens/onboarding.dart';
+
 import 'utils/theme/theme.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,7 +11,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Belly Max',
       themeMode: ThemeMode.system,
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
 
       theme: BAppTheme.lightTheme, 
       darkTheme: BAppTheme.darkTheme,
-      home: SplashScreen()
+      home: OnBoardingScreen()
     ); 
     
   }
