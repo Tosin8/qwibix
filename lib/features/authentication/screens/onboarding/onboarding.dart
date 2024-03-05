@@ -1,10 +1,17 @@
+import 'package:bellymax/features/authentication/screens/onboarding/widgets/onboarding_dot_nav.dart';
+import 'package:bellymax/utils/constants/sizes.dart';
+import 'package:bellymax/utils/device/device_utlity.dart';
 import 'package:flutter/material.dart';
+
 
 
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/text_strings.dart';
 import 'widgets/onboarding_page.dart';
 import 'widgets/onboarding_skip.dart';
+
+
+import 'package:iconsax/iconsax.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -35,10 +42,18 @@ class OnBoardingScreen extends StatelessWidget {
     ),
   ],
  ),
- OnBoardingSkip()
+ const OnBoardingSkip(), 
+ const OnBoardingDotNavigation(), 
+ Positioned(
+  right: BSizes.defaultSpace,
+  bottom: BDeviceUtils.getBottomNavigationBarHeight() , 
+  child: ElevatedButton(
+    onPressed: (){},
+     child: Icon(Iconsax.arrow_right_3)))
       ],)
     ); 
   }
 }
+
 
 
