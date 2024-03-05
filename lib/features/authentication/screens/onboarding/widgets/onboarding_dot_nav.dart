@@ -1,3 +1,4 @@
+import 'package:bellymax/features/authentication/controllers/onboarding_controller.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/device/device_utlity.dart';
@@ -12,7 +13,7 @@ class OnBoardingDotNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+final controller = OnBoardingController.instance; 
     final dark = BHelperFunctions.isDarkMode(context);
     return Positioned(
      bottom: BDeviceUtils.getBottomNavigationBarHeight() + 25,
@@ -22,6 +23,9 @@ class OnBoardingDotNavigation extends StatelessWidget {
          activeDotColor: dark? BColors.light : BColors.dark, 
          dotHeight: 6
        ),
-       controller: PageController(), count: 3));
+       controller: controller.pageController, 
+       onDotClicked: controller.dotNavigationClick, 
+       
+        count: 3));
   }
 }

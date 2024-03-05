@@ -1,3 +1,4 @@
+import 'package:bellymax/features/authentication/controllers/onboarding_controller.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/device/device_utlity.dart';
@@ -21,7 +22,9 @@ class OnBoardingNextBtn extends StatelessWidget {
        style: ElevatedButton.styleFrom(
          shape: const CircleBorder(), 
          backgroundColor: dark? BColors.primary : Colors.black),
-       onPressed: (){},
+       onPressed: (){
+        OnBoardingController.instance.nextPage(); 
+       },
         child: const Icon(Iconsax.arrow_right_3)));
   }
 }
