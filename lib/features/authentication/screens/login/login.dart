@@ -42,8 +42,10 @@ class LoginScreen extends StatelessWidget{
                       decoration: const InputDecoration(
                         prefixIcon: Icon(
                           Iconsax.direct_right), 
+                          labelText: BTexts.email
                       ),
-                    )
+                    ), 
+                    const SizedBox(height: BSizes.spaceBtwInputFields,)
                   ],
                 ))
             ],
