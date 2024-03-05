@@ -5,6 +5,7 @@ import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class LoginScreen extends StatelessWidget{
   const LoginScreen({super.key}); 
@@ -33,7 +34,18 @@ class LoginScreen extends StatelessWidget{
               ), 
 
               /// Form
-              Form(child: Column())
+              Form(
+                child: Column(
+                  children: [
+                    /// Email
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        prefixIcon: Icon(
+                          Iconsax.direct_right), 
+                      ),
+                    )
+                  ],
+                ))
             ],
           
           )
