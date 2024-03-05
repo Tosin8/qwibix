@@ -1,9 +1,9 @@
 class BImages {
-  static const String darkApplogo = '';
-  static const String lightApplogo = '';
+  static const String darkApplogo = 'assets/splash_icon_black.png';
+  static const String lightApplogo = 'assets/splash_icon_white.png';
 
   // social media
-  static const String facebook = '';
+  static const String facebook = 'assets/icons/social_media/facebook.png';
   static const String google = '';
   static const String apple = '';
 

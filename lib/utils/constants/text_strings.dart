@@ -15,4 +15,8 @@ class BTexts {
   static const String homeAppbarTitle = 'Good day for shopping'; 
   static const String homeSearchHintText = 'Search for products';
 
+  // loginTitle 
+  static const String loginTitle = 'Welcome Back'; 
+  static const String loginSubTitle = 'Discover Limitless Choices and Unmatched Convenience'; 
+
 }
