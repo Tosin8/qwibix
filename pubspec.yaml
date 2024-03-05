@@ -4,12 +4,10 @@ description: "A Restuarant App for online home delivery"
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
-
 version: 1.0.0+1
 
 environment:
   sdk: ">=3.2.6 <4.0.0"
-
 
 dependencies:
   cupertino_icons: ^1.0.2
@@ -23,13 +21,13 @@ dependencies:
   iconsax: ^0.0.8
   intl: ^0.19.0
   logger: ^2.1.0
+  smooth_page_indicator: ^1.1.0
   url_launcher: ^6.2.5
 
 dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-
 
 flutter_launcher_icons:
   android: true
@@ -41,9 +39,7 @@ flutter_launcher_icons:
     image_path: "assets/app_icon.png"
     hash: true
 
-
 flutter:
-  
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
@@ -51,7 +47,6 @@ flutter:
   #splash
   #- images/a_dot_burr.jpeg
   #- images/a_dot_ham.jpeg
- 
   fonts:
     - family: Poppins
       fonts:
