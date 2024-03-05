@@ -1,5 +1,5 @@
 import 'package:bellymax/common/styles/spacing_styles.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
+
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget{
@@ -10,7 +10,12 @@ class LoginScreen extends StatelessWidget{
     return const Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: BSpacingStyle.paddingWithAppHeight
+          padding: BSpacingStyle.paddingWithAppHeight, 
+          child: Column(
+            children: [
+              
+            ],
+          )
         ),
       )
     ); 
