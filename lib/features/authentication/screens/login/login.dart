@@ -1,6 +1,6 @@
 import 'package:bellymax/common/styles/spacing_styles.dart';
-import 'package:bellymax/common/widgets/BForm/BFormDivider.dart';
-import 'package:bellymax/common/widgets/BForm/BFormSocialMedia.dart';
+import 'package:bellymax/common/widgets/BForm/form_divider.dart';
+import 'package:bellymax/common/widgets/BForm/social_btns.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 

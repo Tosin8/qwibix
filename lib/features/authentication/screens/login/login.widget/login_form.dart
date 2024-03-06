@@ -1,7 +1,9 @@
 
+import 'package:bellymax/features/authentication/screens/signup/signup.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class BLoginForm extends StatelessWidget {
@@ -74,7 +76,11 @@ class BLoginForm extends StatelessWidget {
             /// Create Account Button
             SizedBox(
               width: double.infinity,
-              child: OutlinedButton(onPressed: (){}, 
+              child: OutlinedButton(onPressed: (){
+                Get.to(
+                  () =>
+                  SignUpScreen()); 
+              }, 
               child: const Text(BTexts.createAccount)),), 
              
           ],
