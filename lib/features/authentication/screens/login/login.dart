@@ -129,7 +129,13 @@ class LoginScreen extends StatelessWidget{
                         borderRadius: BorderRadius.circular(100), 
                       ),
                       child: IconButton(
-                        onPressed: (){}, icon: Image(image: AssetImage(assetName))),
+                        onPressed: (){}, 
+                        icon: Image
+                        
+                        (
+                          width: BSizes.iconMd, 
+                          height: BSizes.iconMd,
+                          image: AssetImage(BImages.google))),
                     )
                   ],
                 )
