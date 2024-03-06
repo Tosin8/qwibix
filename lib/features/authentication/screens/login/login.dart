@@ -32,7 +32,7 @@ class LoginScreen extends StatelessWidget{
                     Text(BTexts.loginSubTitle, style: Theme.of(context).textTheme.titleLarge,),
                 ],
               ), 
-
+ const SizedBox(height: BSizes.spaceBtwInputFields,),
               /// Form
               Form(
                 child: Column(
@@ -52,9 +52,30 @@ class LoginScreen extends StatelessWidget{
                       decoration: const InputDecoration(
                         prefixIcon: Icon(
                           Iconsax.password_check), 
-                          labelText: BTexts.password
+                          labelText: BTexts.password, suffixIcon: Icon(Iconsax.eye_slash)
                       ),
+                      
                     ),
+                    const SizedBox(height: BSizes.spaceBtwInputFields / 2,),
+
+                    /// Remember Me & Forget Password. 
+                    Row(
+                      children: [
+
+                        // Remember Me 
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: true, onChanged: (value) {
+                                
+                              },
+
+                            ), 
+                            Text(BTexts.rememberMe)
+                          ],
+                        )
+                      ],
+                    ) 
                   ],
                 ))
             ],
