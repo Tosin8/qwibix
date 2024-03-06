@@ -45,7 +45,16 @@ class LoginScreen extends StatelessWidget{
                           labelText: BTexts.email
                       ),
                     ), 
-                    const SizedBox(height: BSizes.spaceBtwInputFields,)
+                    const SizedBox(height: BSizes.spaceBtwInputFields,),
+
+                    /// Passwords
+                     TextFormField(
+                      decoration: const InputDecoration(
+                        prefixIcon: Icon(
+                          Iconsax.password_check), 
+                          labelText: BTexts.password
+                      ),
+                    ),
                   ],
                 ))
             ],
