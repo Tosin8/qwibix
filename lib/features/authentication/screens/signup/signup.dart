@@ -1,6 +1,8 @@
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:iconsax/iconsax.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -26,7 +28,26 @@ class SignUpScreen extends StatelessWidget {
                 child: Column(
                 children: [
 Row(
-  children: [],
+  
+  children: [
+    Expanded(
+      child: TextFormField(
+        expands: false,
+        decoration: InputDecoration(
+          labelText: BTexts.firstName, prefixIcon: Icon(Iconsax.user), 
+        ),
+      ),
+    ), 
+    SizedBox(width: BSizes.spaceBtwInputFields,), 
+      Expanded(
+      child: TextFormField(
+        expands: false,
+        decoration: InputDecoration(
+          labelText: BTexts.lastName, prefixIcon: Icon(Iconsax.user), 
+        ),
+      ),
+    )
+  ],
 )
 
                 ],
