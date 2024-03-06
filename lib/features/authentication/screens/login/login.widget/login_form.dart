@@ -18,6 +18,8 @@ class BLoginForm extends StatelessWidget {
           children: [
             /// Email
             TextFormField(
+              textInputAction: TextInputAction.next,
+              keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
                 prefixIcon: Icon(
                   Iconsax.direct_right), 
@@ -28,7 +30,11 @@ class BLoginForm extends StatelessWidget {
         
             /// Passwords
              TextFormField(
+                textInputAction: TextInputAction.done,
+              keyboardType: TextInputType.visiblePassword,
+              obscureText: true,
               decoration: const InputDecoration(
+                
                 prefixIcon: Icon(
                   Iconsax.password_check), 
                   labelText: BTexts.password, suffixIcon: Icon(Iconsax.eye_slash)
