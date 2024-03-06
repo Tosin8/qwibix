@@ -2,10 +2,12 @@ import 'package:bellymax/common/styles/spacing_styles.dart';
 import 'package:bellymax/common/widgets/BForm/form_divider.dart';
 import 'package:bellymax/common/widgets/BForm/social_btns.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
+import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 import 'login.widget/login_form.dart';
 import 'login.widget/login_header.dart';
@@ -30,7 +32,8 @@ class LoginScreen extends StatelessWidget{
             BLoginForm(), 
 
                 /// Divider 
-                BFormDivider(dark: dark), 
+                BFormDivider(dark: dark, 
+                DividerText: BTexts.orSignInWith.capitalize!, style: Theme.of(context).textTheme.labelMedium,),
 const SizedBox(height: BSizes.spaceBtwSections,), 
                 /// Footer 
                 BFormSocialMedia()

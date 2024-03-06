@@ -1,16 +1,17 @@
-import 'package:bellymax/utils/constants/colors.dart';
-import 'package:bellymax/utils/constants/text_strings.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
+import 'package:bellymax/utils/constants/colors.dart';
+import 'package:bellymax/utils/helpers/helper_functions.dart';
 
 class BFormDivider extends StatelessWidget {
-  const BFormDivider({
-    super.key,
-    required this.dark,
-  });
+   BFormDivider({
+    Key? key,
+    required this.dark, required this.DividerText, TextStyle? style, 
+  }) : super(key: key);
 
   final bool dark;
+  final String DividerText; 
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class BFormDivider extends StatelessWidget {
           child: Divider(color: dark ? BColors.darkGrey: BColors.grey,
           thickness: 1.5, indent: 60, endIndent: 5,),
         ),
-        Text(BTexts.orSignInWith.capitalize!, style: Theme.of(context).textTheme.labelMedium,),
+        Text(DividerText), 
          Flexible(
           child: Divider(color: dark ? BColors.darkGrey: BColors.grey,
           thickness: 1.5, indent: 5, endIndent: 60,),
