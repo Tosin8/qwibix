@@ -6,6 +6,8 @@ import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class LoginScreen extends StatelessWidget{
@@ -94,7 +96,7 @@ class LoginScreen extends StatelessWidget{
                         width: double.infinity,
                         child: OutlinedButton(onPressed: (){}, 
                         child: const Text(BTexts.createAccount)),), 
-                        const SizedBox(height: BSizes.spaceBtwSections,),
+                       
                     ],
                   ),
                 ), 
@@ -104,9 +106,32 @@ class LoginScreen extends StatelessWidget{
                 Row(
                   children: [
                     
-                    Divider(color: dark ? BColors.darkGrey: BColors.grey,
-                    thickness: 0.5, indent: 60, endIndent: 5,)
+                    Flexible(
+                      child: Divider(color: dark ? BColors.darkGrey: BColors.grey,
+                      thickness: 1.5, indent: 60, endIndent: 5,),
+                    ),
+                    Text(BTexts.orSignInWith.capitalize!, style: Theme.of(context).textTheme.labelMedium,),
+                     Flexible(
+                      child: Divider(color: dark ? BColors.darkGrey: BColors.grey,
+                      thickness: 1.5, indent: 5, endIndent: 60,),
+                    )
                   ]
+                ), 
+
+                /// Footer 
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: BColors.grey), 
+                        borderRadius: BorderRadius.circular(100), 
+                      ),
+                      child: IconButton(
+                        onPressed: (){}, icon: Image(image: AssetImage(assetName))),
+                    )
+                  ],
                 )
             ],
           
