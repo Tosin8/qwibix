@@ -1,5 +1,6 @@
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
+import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +14,9 @@ class BFormDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = BHelperFunctions.isDarkMode(context); 
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         
         Flexible(
