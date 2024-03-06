@@ -1,4 +1,5 @@
 import 'package:bellymax/utils/constants/sizes.dart';
+import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -8,7 +9,7 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const SingleChildScrollView(
+      body:  SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(
             BSizes.defaultSpace), 
@@ -17,7 +18,19 @@ class SignUpScreen extends StatelessWidget {
 
               /// title 
               Text(BTexts.signupTitle, 
-              style: Theme.of(context).textTheme.headlineMedium,)
+              style: Theme.of(context).textTheme.headlineMedium,), 
+              SizedBox(height: BSizes.spaceBtwSections,), 
+
+              /// Form
+              Form(
+                child: Column(
+                children: [
+Row(
+  children: [],
+)
+
+                ],
+              ))
             ],
           )),
       ),
