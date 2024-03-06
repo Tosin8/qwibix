@@ -48,6 +48,10 @@ flutter:
   #app_icon logo
     - assets/splash_icon_black.png
     - assets/splash_icon_white.png
+
+  #social media icon
+    - assets/icons/social_media/
+    
   #splash
   #- images/a_dot_burr.jpeg
   #- images/a_dot_ham.jpeg

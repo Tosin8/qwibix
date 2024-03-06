@@ -24,17 +24,7 @@ class LoginScreen extends StatelessWidget{
           child: Column(
             children: [
               /// Logo , Title and SubTitle
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image(
-                    height: 100,
-                    image: AssetImage(dark ? BImages.darkApplogo : BImages.lightApplogo)), 
-                    Text(BTexts.loginTitle, style: Theme.of(context).textTheme.headlineMedium,), 
-                    const SizedBox(height: BSizes.sm), 
-                    Text(BTexts.loginSubTitle, style: Theme.of(context).textTheme.titleLarge,),
-                ],
-              ), 
+              BLoginHeader(dark: dark), 
  const SizedBox(height: BSizes.spaceBtwInputFields,),
               /// Form
               Form(
@@ -117,7 +107,7 @@ class LoginScreen extends StatelessWidget{
                     )
                   ]
                 ), 
-
+const SizedBox(height: BSizes.spaceBtwSections,), 
                 /// Footer 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -136,7 +126,23 @@ class LoginScreen extends StatelessWidget{
                           width: BSizes.iconMd, 
                           height: BSizes.iconMd,
                           image: AssetImage(BImages.google))),
-                    )
+                    ), 
+                    SizedBox(width: BSizes.spaceBtwItems,), 
+                      Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: BColors.grey), 
+                        borderRadius: BorderRadius.circular(100), 
+                      ),
+                      child: IconButton(
+                        onPressed: (){}, 
+                        icon: Image
+                        
+                        (
+                          width: BSizes.iconMd, 
+                          height: BSizes.iconMd,
+                          image: AssetImage(BImages.facebook))),
+                    ), 
                   ],
                 )
             ],
@@ -145,5 +151,29 @@ class LoginScreen extends StatelessWidget{
         ),
       )
     ); 
+  }
+}
+
+class BLoginHeader extends StatelessWidget {
+  const BLoginHeader({
+    super.key,
+    required this.dark,
+  });
+
+  final bool dark;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Image(
+          height: 100,
+          image: AssetImage(dark ? BImages.darkApplogo : BImages.lightApplogo)), 
+          Text(BTexts.loginTitle, style: Theme.of(context).textTheme.headlineMedium,), 
+          const SizedBox(height: BSizes.sm), 
+          Text(BTexts.loginSubTitle, style: Theme.of(context).textTheme.titleLarge,),
+      ],
+    );
   }
 }

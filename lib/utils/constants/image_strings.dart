@@ -4,7 +4,7 @@ class BImages {
 
   // social media
   static const String facebook = 'assets/icons/social_media/facebook.png';
-  static const String google = 'assets/social_media/google.png';
+  static const String google = 'assets/icons/social_media/google.png';
   
 
 
