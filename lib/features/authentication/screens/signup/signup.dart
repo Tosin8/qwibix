@@ -1,14 +1,19 @@
+import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
+import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SignUpScreen extends StatelessWidget {
+  
   const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final dark = BHelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: AppBar(),
       body:  SingleChildScrollView(
@@ -16,6 +21,7 @@ class SignUpScreen extends StatelessWidget {
           padding: const EdgeInsets.all(
             BSizes.defaultSpace), 
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
               /// title 
@@ -110,16 +116,33 @@ TextFormField(
             onChanged: (value){}),
           ), 
           const SizedBox(width: BSizes.spaceBtwItems,), 
-          const Text.rich(
+        Text.rich(
 TextSpan(
   children: 
   [
-    TextSpan(text: '${BTexts.iAgreeTo}')
+    TextSpan(text: '${BTexts.iAgreeTo} ', 
+    style: Theme.of(context).textTheme.bodySmall),
+    TextSpan(text: BTexts.privacyPolicy, 
+    style: Theme.of(context).textTheme.bodyMedium!.apply(color: dark ? BColors.white : BColors.primary, 
+    decoration: TextDecoration.underline)),  
+    TextSpan(text: ' ${BTexts.and} ', 
+    style: Theme.of(context).textTheme.bodySmall)
+    , 
+     TextSpan(text: BTexts.termsOfUse, 
+     style: Theme.of(context).textTheme.bodyMedium!.apply(color: dark ? BColors.white : BColors.primary, 
+    decoration: TextDecoration.underline
+    )), 
+    
   ]
 )
           ), 
         ],
-      )
+      ), 
+SizedBox(height: BSizes.spaceBtwSections,), 
+      /// Sign Up Button 
+      SizedBox(width: double.infinity, 
+      child: ElevatedButton(onPressed: (){},
+       child: Text(BTexts.createAccount)),)
                 ],
               ))
             ],
