@@ -3,6 +3,7 @@ import 'package:bellymax/features/authentication/screens/signup/signup.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -59,7 +60,11 @@ class BLoginForm extends StatelessWidget {
                       },
         
                     ), 
-                    const Text(BTexts.rememberMe)
+                    const Text(BTexts.rememberMe), 
+                   const SizedBox(width: BSizes.spaceBtwItems,), 
+                    GestureDetector(
+                      onTap: (){},
+                      child: Text(BTexts.forgetPassword,)), 
                   ],
                 ), 
                 const SizedBox(height: BSizes.spaceBtwSections,),  
