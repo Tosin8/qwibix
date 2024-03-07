@@ -1,5 +1,7 @@
 import 'package:bellymax/utils/constants/sizes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
   const VerifyEmailScreen({super.key});
@@ -7,10 +9,20 @@ class VerifyEmailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: SingleChildScrollView(
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+            Get.back(); 
+          }, icon: const Icon(CupertinoIcons.clear))
+        ],
+      ),
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(BSizes.defaultSpace)),
+          padding:  EdgeInsets.all(BSizes.defaultSpace), 
+          child: Column(
+            children: [],
+          ),),
       ),
     );
   }
