@@ -44,6 +44,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/on_boarding/
+    - assets/images/animations/
 
   #app_icon logo
     - assets/splash_icon_black.png
@@ -51,8 +52,8 @@ flutter:
 
   #social media icon
     - assets/icons/social_media/
-  #animations 
-    - assets/images/animations
+
+    
     
   #splash
   #- images/a_dot_burr.jpeg
