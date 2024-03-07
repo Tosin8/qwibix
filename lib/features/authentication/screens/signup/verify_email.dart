@@ -50,7 +50,8 @@ class VerifyEmailScreen extends StatelessWidget {
 
                ///Button
                SizedBox(width: double.infinity, 
-               child: ElevatedButton(onPressed: (){
+               child: ElevatedButton(
+                onPressed: (){
                  Get.to(()=> const SuccessScreen());
                },
                 child: Text(BTexts.tContinue), 

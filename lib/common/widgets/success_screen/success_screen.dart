@@ -40,7 +40,7 @@ class SuccessScreen extends StatelessWidget {
                 width: double.infinity, 
                 child: ElevatedButton(
                   onPressed: (){
-                    Get.to(() => Get.to(const LoginScreen()));
+                    Get.to(() =>const LoginScreen());
                   }, child: const Text(BTexts.tContinue)),
                )
 

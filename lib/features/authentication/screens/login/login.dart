@@ -22,7 +22,7 @@ class LoginScreen extends StatelessWidget{
     return  Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: BSpacingStyle.paddingWithAppHeight, 
+          padding: BSpacingStyle.paddingWithAppBarHeight, 
           child: Column(
             children: [
               /// Logo , Title and SubTitle
