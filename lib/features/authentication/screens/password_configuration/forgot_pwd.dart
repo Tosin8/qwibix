@@ -1,3 +1,4 @@
+import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPassword extends StatelessWidget {
@@ -6,6 +7,15 @@ class ForgotPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return 
-    Scaffold(); 
+    Scaffold(
+      appBar: AppBar(), 
+      body: const Padding(padding: EdgeInsets.all(BSizes.defaultSpace), 
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          
+        ],
+      ),)
+    ); 
   }
 }
