@@ -1,4 +1,6 @@
+import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
+import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,6 +14,7 @@ class VerifyEmailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             onPressed: () {
@@ -19,11 +22,15 @@ class VerifyEmailScreen extends StatelessWidget {
           }, icon: const Icon(CupertinoIcons.clear))
         ],
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
           padding:  EdgeInsets.all(BSizes.defaultSpace), 
           child: Column(
-            children: [],
+            children: [
+              // Image
+              Image(image: AssetImage(BImages.deliveredEmailllustration), 
+              width: BHelperFunctions.screenWidth(),)
+            ],
           ),),
       ),
     );
