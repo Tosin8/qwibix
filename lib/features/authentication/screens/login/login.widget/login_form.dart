@@ -1,4 +1,5 @@
 
+import 'package:bellymax/features/authentication/screens/password_configuration/forgot_pwd.dart';
 import 'package:bellymax/features/authentication/screens/signup/signup.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
@@ -55,19 +56,20 @@ class BLoginForm extends StatelessWidget {
                 Row(
                   children: [
                     Checkbox(
-                      value: true, onChanged: (value) {
-                        
-                      },
+                      value: true, onChanged: (value) {}, 
         
                     ), 
                     const Text(BTexts.rememberMe), 
-                   const SizedBox(width: BSizes.spaceBtwItems,), 
-                    GestureDetector(
-                      onTap: (){},
-                      child: Text(BTexts.forgetPassword,)), 
+                  
                   ],
                 ), 
-                const SizedBox(height: BSizes.spaceBtwSections,),  
+
+                // Forgot Password  
+                TextButton(onPressed: (){
+                  Get.to(() => ForgotPassword());
+                }, 
+                child: const Text(BTexts.forgetPassword)),
+                
               ],
             ) , 
         

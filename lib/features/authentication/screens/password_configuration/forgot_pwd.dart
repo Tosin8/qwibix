@@ -1,6 +1,7 @@
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class ForgotPassword extends StatelessWidget {
   const ForgotPassword({super.key});
@@ -10,7 +11,7 @@ class ForgotPassword extends StatelessWidget {
     return 
     Scaffold(
       appBar: AppBar(), 
-      body: Padding(padding: EdgeInsets.all(BSizes.defaultSpace), 
+      body: Padding(padding: const EdgeInsets.all(BSizes.defaultSpace), 
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -24,6 +25,12 @@ class ForgotPassword extends StatelessWidget {
           
 
           /// Text Field 
+          TextFormField(
+            decoration: const InputDecoration(
+              labelText: BTexts.email, 
+              prefixIcon: Icon(Iconsax.direct_right),
+            ),
+          )
           
           /// Submit Button
         ],
