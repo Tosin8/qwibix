@@ -1,3 +1,4 @@
+import 'package:bellymax/common/widgets/success_screen/success_screen.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
@@ -49,7 +50,9 @@ class VerifyEmailScreen extends StatelessWidget {
 
                ///Button
                SizedBox(width: double.infinity, 
-               child: ElevatedButton(onPressed: (){},
+               child: ElevatedButton(onPressed: (){
+                 Get.to(()=> const SuccessScreen());
+               },
                 child: Text(BTexts.tContinue), 
                 ),), 
                const SizedBox(height: BSizes.spaceBtwItems,), 
