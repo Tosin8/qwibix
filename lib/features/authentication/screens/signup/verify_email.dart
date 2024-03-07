@@ -18,18 +18,20 @@ class VerifyEmailScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-            Get.offAll(()=> LoginScreen());
+            Get.offAll(()=> const LoginScreen());
           }, icon: const Icon(CupertinoIcons.clear))
         ],
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding:  EdgeInsets.all(BSizes.defaultSpace), 
+          padding:  const EdgeInsets.all(BSizes.defaultSpace), 
           child: Column(
             children: [
               // Image
-              Image(image: AssetImage(BImages.deliveredEmailllustration), 
-              width: BHelperFunctions.screenWidth(),)
+              Image(image: const AssetImage(BImages.deliveredEmailllustration), 
+              width: BHelperFunctions.screenWidth() * 0.6,
+              ), 
+              const SizedBox(height: BSizes.spaceBtwSections,),
             ],
           ),),
       ),
