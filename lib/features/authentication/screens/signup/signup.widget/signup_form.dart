@@ -7,7 +7,10 @@ import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../verify_email.dart';
 
 class signUpForm extends StatelessWidget {
   const signUpForm({
@@ -130,7 +133,9 @@ class signUpForm extends StatelessWidget {
     const SizedBox(height: BSizes.spaceBtwSections,), 
           /// Sign Up Button 
           SizedBox(width: double.infinity, 
-          child: ElevatedButton(onPressed: (){},
+          child: ElevatedButton(onPressed: (){
+            Get.to(()=> const VerifyEmailScreen());
+          },
            child: const Text(BTexts.createAccount)),)
       ],
     ));
