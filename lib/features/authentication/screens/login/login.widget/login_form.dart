@@ -1,6 +1,7 @@
 
 import 'package:bellymax/features/authentication/screens/password_configuration/forgot_pwd.dart';
 import 'package:bellymax/features/authentication/screens/signup/signup.dart';
+import 'package:bellymax/navigation_menu.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +67,7 @@ class BLoginForm extends StatelessWidget {
 
                 // Forgot Password  
                 TextButton(onPressed: (){
-                  Get.to(() => ForgotPassword());
+                  Get.to(() => const ForgotPassword());
                 }, 
                 child: const Text(BTexts.forgetPassword)),
                 
@@ -76,7 +77,7 @@ class BLoginForm extends StatelessWidget {
             /// Sign In Button 
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(onPressed: (){}, 
+              child: ElevatedButton(onPressed: () => Get.to(() => const NavigationMenu()), 
               child: const Text(BTexts.signIn)),
             ), 
         const SizedBox(height: BSizes.spaceBtwItems,),
@@ -86,7 +87,7 @@ class BLoginForm extends StatelessWidget {
               child: OutlinedButton(onPressed: (){
                 Get.to(
                   () =>
-                  SignUpScreen()); 
+                  const SignUpScreen()); 
               }, 
               child: const Text(BTexts.createAccount)),), 
              
