@@ -1,16 +1,13 @@
-import 'package:bellymax/common/widgets/images/b_carousel_images.dart';
-import 'package:bellymax/utils/constants/circular_container.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
-import 'package:carousel_slider/carousel_options.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:iconsax/iconsax.dart';
 
 import 'widgets/menCategory.dart';
+import 'widgets/promoSlider.dart';
 import 'widgets/searchController.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -55,40 +52,18 @@ class HomeScreen extends StatelessWidget {
            const SizedBox(width: 10,),       
         ],
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(10.0),
           child: Column(
             children: [   
-            const menuCategory(),
-            const SizedBox(height: BSizes.spaceBtwItems,),
+            menuCategory(),
+            SizedBox(height: BSizes.spaceBtwItems,),
            Padding(
-             padding: const EdgeInsets.all(8.0),
-             child: Column(
-               children: [
-                 CarouselSlider(
-                  options: CarouselOptions(
-                    viewportFraction: 1
-                  ), 
-                  items: const [
-                    BCarouselImages(imageUrl: BImages.banner1,),
-                     BCarouselImages(imageUrl: BImages.banner2,),
-                      BCarouselImages(imageUrl: BImages.banner3,),
-                  ]),
-                  const SizedBox(height: BSizes.spaceBtwItems,), 
-                  Row(
-                    children: [
-                      for(int i = 0; i < 3; i++)
-                      const BCircularContainer(
-                        
-                        width: 20,
-                         height: 4,
-                         margin: EdgeInsets.only(right: 10),
-                        backgroundColor: Colors.green,),
-                    ],
-                  )
-               ],
-             ), 
+             padding: EdgeInsets.all(8.0),
+             child: BPromoSlider(banners: [
+               BImages.banner1, BImages.banner2, BImages.banner3, BImages.banner4
+             ],), 
     
            ), 
           
