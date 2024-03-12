@@ -1,4 +1,3 @@
-import 'package:bellymax/model/menu_list.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
@@ -7,9 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 import 'widgets/menCategory.dart';
-import 'widgets/menuList.dart';
 import 'widgets/searchController.dart';
-import '../../../../common/widgets/texts/sectionHeading.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -53,21 +50,16 @@ class HomeScreen extends StatelessWidget {
            const SizedBox(width: 10,),       
         ],
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(10.0),
           child: Column(
             children: [   
-           const menuCategory(),
-           const SizedBox(height: BSizes.spaceBtwItems,),
+            menuCategory(),
+            SizedBox(height: BSizes.spaceBtwItems,),
            Padding(
-             padding: const EdgeInsets.all(8.0),
-             child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(BSizes.md)
-              ),
-              child: const Image(image: AssetImage(BImages.banner1)),
-             ),
+             padding: EdgeInsets.all(8.0),
+             child: BCarouselImages(),
            ), 
           
           
@@ -77,6 +69,37 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     ); 
+  }
+}
+
+class BCarouselImages extends StatelessWidget {
+  const BCarouselImages({
+    super.key,
+  });
+
+final double ? width, height; 
+final String imageUrl; 
+final bool applyImageRadius; 
+final BoxBorder? border; 
+final Color backgroundColor; 
+final BoxFit? fit; 
+final EdgeInsetsGeometry? padding; 
+final bool inNetworkImage; 
+final VoidCallback? onPressed; 
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector( 
+      onTap: (){}, 
+      child: Container(
+       decoration: BoxDecoration(
+         borderRadius: BorderRadius.circular(BSizes.md)
+       ),
+       child: ClipRRect(
+         borderRadius: BorderRadius.circular(BSizes.md),
+         child: const Image(image: AssetImage(BImages.banner1), 
+         fit: BoxFit.contain)),
+      ),
+    );
   }
 }
 
