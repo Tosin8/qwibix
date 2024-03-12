@@ -15,39 +15,72 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         leading: const Icon(Iconsax.menu),
         title: const Text('Belly Max'), centerTitle: true, 
-        actions: [
-          const Icon(Iconsax.shopping_bag), 
-          const SizedBox(width: 10,), 
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(60), child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Container(
+            child: Form(child: 
+              TextFormField(
+                    
+                decoration: const InputDecoration(
+            
+                  prefixIcon: Icon(Iconsax.search_normal_1),
+                  hintText: 'Search for dish or cuisine', 
+                 hintStyle: TextStyle(fontSize: 14, color: Colors.black45), 
+                ),
+              )),
+                    ),
+          )),
+        actions: const[
+          Icon(Iconsax.shopping_bag), 
+           SizedBox(width: 10,), 
+        
           
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            const SizedBox(height: 10,), 
-            Form(child: 
-            TextFormField(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+            
+              
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Our menu', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
+              Text('View All'), 
         
-              decoration: const InputDecoration(
-          
-                prefixIcon: Icon(Iconsax.search_normal_1),
-                hintText: 'Search for dish or cuisine', 
-               hintStyle: TextStyle(fontSize: 14, color: Colors.black45), 
-              ),
-            )),
-            const SizedBox(height: 10,),  
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('Our menu', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
-            Text('View All'), 
-
-          ],
-          
-        ),
-        menuListCard() 
-          ],
+            ],
+            
+          ),
+          SizedBox(height: 10,), 
+          Wrap(
+            alignment: WrapAlignment.start,
+            spacing: 20,
+            runSpacing: 30,
+            children: [
+          ...List.generate(
+            FoodMenus.length,
+             (index) =>  menuListCard(
+                FoodMenus: FoodMenus[index]
+               ),
+            ),
+            ]), 
+        // Expanded(
+        //   child: ListView.builder(
+        //     scrollDirection: Axis.horizontal,
+        //     itemCount: FoodMenus.length,
+        //     itemBuilder: (_, index){
+        //       return Padding(
+        //         padding: const EdgeInsets.all(10.0),
+        //         child: menuListCard(FoodMenus: FoodMenus[index]),
+        //       );
+        //     }),
+        // )
+        //  menuListCard() 
+            ],
+          ),
         ),
       ),
     ); 
