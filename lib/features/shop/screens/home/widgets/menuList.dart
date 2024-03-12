@@ -15,6 +15,7 @@ class menuListCard extends StatelessWidget {
 final FoodMenu FoodMenus;
   @override
   Widget build(BuildContext context) {
+    final darkMode = BHelperFunctions.isDarkMode(context);
     return GestureDetector( 
       onTap: () {
         
