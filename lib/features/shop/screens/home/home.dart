@@ -1,12 +1,13 @@
 import 'package:bellymax/model/menu_list.dart';
 import 'package:bellymax/utils/constants/colors.dart';
+import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 import 'widgets/menuList.dart';
 import 'widgets/searchController.dart';
-import 'widgets/sectionHeading.dart';
+import '../../../../common/widgets/texts/sectionHeading.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -57,20 +58,26 @@ class HomeScreen extends StatelessWidget {
             children: [   
            Column(
             children:[
-                BSectionHeading(),
-              SizedBox(height: 10,), 
-               Wrap(
-            alignment: WrapAlignment.start,
-            spacing: 20,
-            runSpacing: 30,
-            children: [
-          ...List.generate(
-            FoodMenus.length,
-             (index) =>  menuListCard(
-                FoodMenus: FoodMenus[index]
+                const Padding(
+                  padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
+                  child: BSectionHeading(title: 'Our Menu', buttonTitle: 'View All', ),
+                ),
+              const SizedBox(height: BSizes.spaceBtwItems,), 
+               Padding(
+                 padding: const EdgeInsets.only(right: BSizes.spaceBtwItems), 
+                 child: Wrap(
+                             alignment: WrapAlignment.start,
+                             spacing: 20,
+                             runSpacing: 20,
+                             children: [
+                           ...List.generate(
+                             FoodMenus.length,
+                              (index) =>  menuListCard(
+                  FoodMenus: FoodMenus[index]
+                 ),
+                             ),
+                             ]),
                ),
-            ),
-            ]),
 
             ],
           ),

@@ -30,10 +30,13 @@ final FoodMenu FoodMenus;
           ),
           const SizedBox(height: 10,), 
           Text(FoodMenus.title, 
-          style: TextStyle(
-            color: darkMode ? Colors.white : Colors.black,
-            fontWeight: FontWeight.w600, 
-            fontSize: 15),),
+          style: Theme.of(context).textTheme.labelMedium!.apply(color: darkMode ? Colors.white : Colors.black),
+          maxLines: 1, overflow: TextOverflow.ellipsis,
+          // style: TextStyle(
+          //   color: darkMode ? Colors.white : Colors.black,
+          //   fontWeight: FontWeight.w600, 
+          //   fontSize: 15),
+            ),
         ],
       ),
     );
