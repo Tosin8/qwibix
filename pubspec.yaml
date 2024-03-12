@@ -56,6 +56,9 @@ flutter:
   #menu_list 
     - assets/images/menu/
 
+  #banner_list
+    - assets/images/banner/
+
     
     
   #splash
