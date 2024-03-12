@@ -52,6 +52,9 @@ flutter:
 
   #social media icon
     - assets/icons/social_media/
+  
+  #menu_list 
+    - assets/images/menu/
 
     
     
