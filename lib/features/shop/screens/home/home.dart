@@ -1,3 +1,4 @@
+import 'package:bellymax/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
@@ -64,9 +65,11 @@ class HomeScreen extends StatelessWidget {
              child: BPromoSlider(banners: [
                BImages.banner1, BImages.banner2, BImages.banner3, BImages.banner4
              ],), 
+           
     
            ), 
-          
+           SizedBox(height: BSizes.spaceBtwItems,), 
+            BProductCardVertical()
           
         
             ],
