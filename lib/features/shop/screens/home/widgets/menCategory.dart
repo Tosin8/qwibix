@@ -22,18 +22,27 @@ class menuCategory extends StatelessWidget {
        const SizedBox(height: BSizes.spaceBtwItems,), 
         Padding(
           padding: const EdgeInsets.only(right: BSizes.spaceBtwItems), 
-          child: Wrap(
-                      alignment: WrapAlignment.start,
-                      spacing: 20,
-                      runSpacing: 20,
-                      children: [
-                    ...List.generate(
-                      FoodMenus.length,
-                       (index) =>  menuListCard(
-           FoodMenus: FoodMenus[index]
-          ),
-                      ),
-                      ]),
+          // child: Wrap(
+          //             alignment: WrapAlignment.start,
+          //             spacing: 20,
+          //             runSpacing: 20,
+          //             children: [
+          //           ...List.generate(
+          //             FoodMenus.length,
+          //              (index) =>  menuListCard(
+          //  FoodMenus: FoodMenus[index]
+          // ),
+          //             ),
+          //             ]),
+          child: Expanded(
+            child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            
+              itemBuilder: (_, index){
+              return menuListCard(FoodMenus: FoodMenus[index]);
+            }, 
+            itemCount: FoodMenus.length, shrinkWrap: true, physics: const NeverScrollableScrollPhysics(),),
+          )
         ),
     
      ],
