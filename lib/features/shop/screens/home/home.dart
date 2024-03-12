@@ -1,4 +1,8 @@
 import 'package:bellymax/model/menu_list.dart';
+import 'package:bellymax/utils/constants/colors.dart';
+import 'package:bellymax/utils/constants/sizes.dart';
+import 'package:bellymax/utils/device/device_utlity.dart';
+import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -11,26 +15,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final darkMode = BHelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(Iconsax.menu),
         title: const Text('Belly Max'), centerTitle: true, 
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(60), child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Container(
-            child: Form(child: 
-              TextFormField(
-                    
-                decoration: const InputDecoration(
-            
-                  prefixIcon: Icon(Iconsax.search_normal_1),
-                  hintText: 'Search for dish or cuisine', 
-                 hintStyle: TextStyle(fontSize: 14, color: Colors.black45), 
-                ),
-              )),
-                    ),
-          )),
+          preferredSize: const Size.fromHeight(60), child: BSearchController(darkMode: darkMode),
+          ), 
         actions: const[
           Icon(Iconsax.shopping_bag), 
            SizedBox(width: 10,), 
@@ -67,23 +59,46 @@ class HomeScreen extends StatelessWidget {
                ),
             ),
             ]), 
-        // Expanded(
-        //   child: ListView.builder(
-        //     scrollDirection: Axis.horizontal,
-        //     itemCount: FoodMenus.length,
-        //     itemBuilder: (_, index){
-        //       return Padding(
-        //         padding: const EdgeInsets.all(10.0),
-        //         child: menuListCard(FoodMenus: FoodMenus[index]),
-        //       );
-        //     }),
-        // )
-        //  menuListCard() 
+        
             ],
           ),
         ),
       ),
     ); 
+  }
+}
+
+class BSearchController extends StatelessWidget {
+  const BSearchController({
+    super.key,
+    required this.darkMode, required this.text, required this.icon,
+  });
+
+  final bool darkMode;
+  final String text; 
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: BSizes.defaultSpace * 0.5),
+      child: Container(
+        width: BDeviceUtils.getScreenWidth(context),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(BSizes.cardRadiusLg), 
+      // border: Border.all(color: BColors.grey),
+    ),
+      child:  
+        TextFormField(
+              
+          decoration: InputDecoration(
+      
+            prefixIcon: const Icon(Iconsax.search_normal_1,),
+            hintText: 'Search for dish or cuisine', 
+           hintStyle: TextStyle(fontSize: 14, color: darkMode ? Colors.white: Colors.black45), 
+          ),
+        )),
+              );
   }
 }
 

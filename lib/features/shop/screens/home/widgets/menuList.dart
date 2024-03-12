@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bellymax/model/menu_list.dart';
@@ -29,8 +30,8 @@ final FoodMenu FoodMenus;
           ),
           const SizedBox(height: 10,), 
           Text(FoodMenus.title, 
-          style: const TextStyle(
-            color: Colors.black,
+          style: TextStyle(
+            color: darkMode ? Colors.white : Colors.black,
             fontWeight: FontWeight.w600, 
             fontSize: 15),),
         ],
