@@ -3,6 +3,8 @@ import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
+import 'package:carousel_slider/carousel_options.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
@@ -52,7 +54,7 @@ class HomeScreen extends StatelessWidget {
            const SizedBox(width: 10,),       
         ],
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(10.0),
           child: Column(
@@ -61,7 +63,16 @@ class HomeScreen extends StatelessWidget {
             SizedBox(height: BSizes.spaceBtwItems,),
            Padding(
              padding: EdgeInsets.all(8.0),
-             child: BCarouselImages(imageUrl: BImages.banner1,),
+             child: CarouselSlider(
+              options: CarouselOptions(
+                viewportFraction: 1
+              ), 
+              items: const [
+                BCarouselImages(imageUrl: BImages.banner1,),
+                 BCarouselImages(imageUrl: BImages.banner2,),
+                  BCarouselImages(imageUrl: BImages.banner3,),
+              ]), 
+        
            ), 
           
           
