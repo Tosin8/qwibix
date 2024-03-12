@@ -21,7 +21,13 @@ class BProductCardVertical extends StatelessWidget {
       child: Column(
         children: [
           BRoundedContainer(
-            
+            height: 180, 
+            padding: const EdgeInsets.all(BSizes.sm), 
+            backgroundColor: dark ? BColors.dark: BColors.light,
+            child: Stack(
+              children: [],
+            ),
+
           ), 
         ],
       ),
