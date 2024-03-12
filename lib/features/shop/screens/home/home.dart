@@ -57,11 +57,11 @@ class HomeScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [   
-            menuCategory(),
-            SizedBox(height: BSizes.spaceBtwItems,),
+            const menuCategory(),
+            const SizedBox(height: BSizes.spaceBtwItems,),
            Padding(
              padding: const EdgeInsets.all(8.0),
              child: Column(
@@ -76,12 +76,20 @@ class HomeScreen extends StatelessWidget {
                       BCarouselImages(imageUrl: BImages.banner3,),
                   ]),
                   const SizedBox(height: BSizes.spaceBtwItems,), 
-                  BCircularContainer(
-                    radius:40, 
-                    backgroundColor: Colors.green,)
+                  Row(
+                    children: [
+                      for(int i = 0; i < 3; i++)
+                      const BCircularContainer(
+                        
+                        width: 20,
+                         height: 4,
+                         margin: EdgeInsets.only(right: 10),
+                        backgroundColor: Colors.green,),
+                    ],
+                  )
                ],
              ), 
-        
+    
            ), 
           
           

@@ -6,14 +6,17 @@ class BCircularContainer extends StatelessWidget {
   const BCircularContainer({super.key, 
   this.width = 400,
    this.height = 400,
-    required this.radius, 
+     this.radius = 400, 
      this.padding = 0,
+     this.margin, 
      this.child, 
      this.backgroundColor = BColors.white});
 
 
 final double? width, height; 
-final double radius, padding; 
+final double radius; 
+final double padding;
+final EdgeInsets? margin; 
 final Widget? child;
 final Color backgroundColor; 
 
@@ -21,7 +24,8 @@ final Color backgroundColor;
   Widget build(BuildContext context) {
     return Container( 
 width: width,
- height: height, 
+ height: height,
+ margin: margin,  
  padding: EdgeInsets.all(padding), 
   decoration: BoxDecoration(
     borderRadius: BorderRadius.circular( radius),
