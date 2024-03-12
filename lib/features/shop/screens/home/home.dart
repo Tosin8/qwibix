@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'package:iconsax/iconsax.dart';
 
-import 'widgets/menCategory.dart';
+import 'widgets/menuCategory.dart';
 import 'widgets/promoSlider.dart';
 import 'widgets/searchController.dart';
 
