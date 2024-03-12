@@ -1,4 +1,5 @@
 import 'package:bellymax/common/widgets/images/b_carousel_images.dart';
+import 'package:bellymax/utils/constants/circular_container.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
@@ -62,16 +63,24 @@ class HomeScreen extends StatelessWidget {
             menuCategory(),
             SizedBox(height: BSizes.spaceBtwItems,),
            Padding(
-             padding: EdgeInsets.all(8.0),
-             child: CarouselSlider(
-              options: CarouselOptions(
-                viewportFraction: 1
-              ), 
-              items: const [
-                BCarouselImages(imageUrl: BImages.banner1,),
-                 BCarouselImages(imageUrl: BImages.banner2,),
-                  BCarouselImages(imageUrl: BImages.banner3,),
-              ]), 
+             padding: const EdgeInsets.all(8.0),
+             child: Column(
+               children: [
+                 CarouselSlider(
+                  options: CarouselOptions(
+                    viewportFraction: 1
+                  ), 
+                  items: const [
+                    BCarouselImages(imageUrl: BImages.banner1,),
+                     BCarouselImages(imageUrl: BImages.banner2,),
+                      BCarouselImages(imageUrl: BImages.banner3,),
+                  ]),
+                  const SizedBox(height: BSizes.spaceBtwItems,), 
+                  BCircularContainer(
+                    radius:40, 
+                    backgroundColor: Colors.green,)
+               ],
+             ), 
         
            ), 
           
