@@ -3,6 +3,7 @@ import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
 import 'widgets/menCategory.dart';
@@ -74,7 +75,18 @@ class HomeScreen extends StatelessWidget {
 
 class BCarouselImages extends StatelessWidget {
   const BCarouselImages({
-    super.key,
+    super.key, 
+    this.width = 150.0,
+     this.height = 150.0,
+      required this.imageUrl,
+      this.applyImageRadius = false, 
+      this.border, 
+      this.backgroundColor = BColors.light,
+       this.fit = BoxFit.contain,
+        this.padding,
+          this.isNetworkImage = false, 
+           this.onPressed, 
+        this.borderRadius = BSizes.md,
   });
 
 final double ? width, height; 
@@ -84,20 +96,27 @@ final BoxBorder? border;
 final Color backgroundColor; 
 final BoxFit? fit; 
 final EdgeInsetsGeometry? padding; 
-final bool inNetworkImage; 
+final bool isNetworkImage; 
 final VoidCallback? onPressed; 
+final double borderRadius; 
   @override
   Widget build(BuildContext context) {
     return GestureDetector( 
-      onTap: (){}, 
+      onTap: onPressed, 
       child: Container(
+        width: width, 
+        height: height,
+        padding: padding,
        decoration: BoxDecoration(
-         borderRadius: BorderRadius.circular(BSizes.md)
+        border: border, color: backgroundColor, borderRadius:BorderRadius.circular(borderRadius), 
+        
        ),
        child: ClipRRect(
-         borderRadius: BorderRadius.circular(BSizes.md),
-         child: const Image(image: AssetImage(BImages.banner1), 
-         fit: BoxFit.contain)),
+         borderRadius: applyImageRadius ? BorderRadius.circular(borderRadius) : BorderRadius.zero, 
+         child: Image(
+          fit: fit, 
+          image: isNetworkImage ? NetworkImage(imageUrl) : AssetImage(imageUrl) as ImageProvider 
+         )),
       ),
     );
   }
