@@ -1,10 +1,12 @@
 import 'package:bellymax/model/menu_list.dart';
 import 'package:bellymax/utils/constants/colors.dart';
+import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'widgets/menCategory.dart';
 import 'widgets/menuList.dart';
 import 'widgets/searchController.dart';
 import '../../../../common/widgets/texts/sectionHeading.dart';
@@ -56,31 +58,17 @@ class HomeScreen extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [   
-           Column(
-            children:[
-                const Padding(
-                  padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
-                  child: BSectionHeading(title: 'Our Menu', buttonTitle: 'View All', ),
-                ),
-              const SizedBox(height: BSizes.spaceBtwItems,), 
-               Padding(
-                 padding: const EdgeInsets.only(right: BSizes.spaceBtwItems), 
-                 child: Wrap(
-                             alignment: WrapAlignment.start,
-                             spacing: 20,
-                             runSpacing: 20,
-                             children: [
-                           ...List.generate(
-                             FoodMenus.length,
-                              (index) =>  menuListCard(
-                  FoodMenus: FoodMenus[index]
-                 ),
-                             ),
-                             ]),
-               ),
-
-            ],
-          ),
+           const menuCategory(),
+           const SizedBox(height: BSizes.spaceBtwItems,),
+           Padding(
+             padding: const EdgeInsets.all(8.0),
+             child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(BSizes.md)
+              ),
+              child: const Image(image: AssetImage(BImages.banner1)),
+             ),
+           ), 
           
           
         
