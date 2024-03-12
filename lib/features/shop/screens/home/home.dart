@@ -1,4 +1,6 @@
+import 'package:bellymax/model/menu_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -35,10 +37,23 @@ class HomeScreen extends StatelessWidget {
         const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Our menu', style: TextStyle(fontSize: 18),),
+            Text('Our menu', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
             Text('View All'), 
+
           ],
-        ), 
+          
+        ),
+        Column(
+          children: [
+            Container(
+              height: 50, width: 50,
+    decoration: BoxDecoration(image: DecorationImage(image: AssetImage(FoodMenus[0].image), fit: BoxFit.cover)),
+            ),
+            Text(FoodMenus[0].title, 
+            style: TextStyle(
+              color: Colors.black,fontWeight: FontWeight.w600, fontSize: 15),),
+          ],
+        ) 
           ],
         ),
       ),
