@@ -11,34 +11,34 @@ class FoodMenu {
 final List FoodMenus = [
   FoodMenu(
     title: 'Salad',
-    image: 'assets/images/salad.jpg',
+    image: 'assets/images/menu/salad.jpg',
   ), 
   FoodMenu(
     title: 'Burger',
-    image: 'assets/images/burger.jpg',
+    image: 'assets/images/menu/burger.jpg',
   ), 
   FoodMenu(
     title: 'Soup',
-    image: 'assets/images/soup.jpg',
+    image: 'assets/images/menu/soup.jpg',
   ), 
   FoodMenu(
     title: 'Chicken',
-    image: 'assets/images/chicken.jpg',
+    image: 'assets/images/menu/chicken.jpg',
   ), 
   FoodMenu(
     title: 'Sea Food',
-    image: 'assets/images/sea_food.jpg',
+    image: 'assets/images/menu/sea_food.jpg',
   ), 
   FoodMenu(
     title: 'Drinks',
-    image: 'assets/images/drinks.jpg',
+    image: 'assets/images/menu/drinks.jpg',
   ), 
   FoodMenu(
     title: 'Desserts',
-    image: 'assets/images/desserts.jpg',
+    image: 'assets/images/menu/desserts.jpg',
   ), 
   FoodMenu(
     title: 'SandWish',
-    image: 'assets/images/sandwish.jpg',
+    image: 'assets/images/menu/sandwish.jpg',
   ), 
 ]; 

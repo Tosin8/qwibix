@@ -1,7 +1,10 @@
 import 'package:bellymax/model/menu_list.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
+
+import 'widgets/menuList.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -43,20 +46,11 @@ class HomeScreen extends StatelessWidget {
           ],
           
         ),
-        Column(
-          children: [
-            Container(
-              height: 50, width: 50,
-    decoration: BoxDecoration(image: DecorationImage(image: AssetImage(FoodMenus[0].image), fit: BoxFit.cover)),
-            ),
-            Text(FoodMenus[0].title, 
-            style: TextStyle(
-              color: Colors.black,fontWeight: FontWeight.w600, fontSize: 15),),
-          ],
-        ) 
+        menuListCard() 
           ],
         ),
       ),
     ); 
   }
 }
+
