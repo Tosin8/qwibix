@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BSectionHeading extends StatelessWidget {
@@ -13,7 +14,11 @@ class BSectionHeading extends StatelessWidget {
       Text('Our Menu', 
       style: Theme.of(context).textTheme.headlineSmall,
       maxLines: 1, overflow: TextOverflow.ellipsis,) ,
-      Text('View All'), 
+      GestureDetector(
+        onTap: () {
+          
+        },
+        child: const Text('View All')),
           
     ],
     
