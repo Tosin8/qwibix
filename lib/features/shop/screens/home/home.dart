@@ -6,6 +6,7 @@ import 'package:iconsax/iconsax.dart';
 
 import 'widgets/menuList.dart';
 import 'widgets/searchController.dart';
+import 'widgets/sectionHeading.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -51,22 +52,14 @@ class HomeScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(10.0),
           child: Column(
-            children: [
-            
-              
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text('Our menu', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
-              Text('View All'), 
-        
-            ],
-            
-          ),
-          const SizedBox(height: 10,), 
-          Wrap(
+            children: [   
+           Column(
+            children:[
+                BSectionHeading(),
+              SizedBox(height: 10,), 
+               Wrap(
             alignment: WrapAlignment.start,
             spacing: 20,
             runSpacing: 30,
@@ -77,7 +70,12 @@ class HomeScreen extends StatelessWidget {
                 FoodMenus: FoodMenus[index]
                ),
             ),
-            ]), 
+            ]),
+
+            ],
+          ),
+          
+          
         
             ],
           ),
