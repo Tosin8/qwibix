@@ -4,6 +4,7 @@ import 'package:bellymax/utils/constants/rounded_container.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class BProductCardVertical extends StatelessWidget {
   const BProductCardVertical({super.key});
@@ -36,7 +37,16 @@ Positioned(
     backgroundColor: BColors.secondary.withOpacity(0.8), 
     padding: const EdgeInsets.symmetric(horizontal: BSizes.sm, vertical: BSizes.xs), 
     child: Text(TodaySpecialList[0].discount, style: Theme.of(context).textTheme.labelLarge!.apply(color: BColors.black),),
-  ))
+  )), 
+  Container(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(100), 
+      color: dark ? BColors.black.withOpacity(0.9) : BColors.white.withOpacity(0.9), 
+    ), 
+    child: IconButton(
+      onPressed: (){},
+     icon: Icon(Iconsax.heart5),
+  )), 
               ],
                
               ), 
