@@ -1,9 +1,11 @@
 import 'package:bellymax/common/widgets/products/product_cards/product_card_vertical.dart';
+import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
 import 'package:bellymax/model/product_list.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -28,7 +30,8 @@ class HomeScreen extends StatelessWidget {
           color: darkMode ? Colors.white: Colors.black
         ) ,), centerTitle: true, 
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(60), child: BSearchController(darkMode: darkMode, 
+          preferredSize: const Size.fromHeight(60), 
+          child: BSearchController(darkMode: darkMode, 
           text: 'Search for dish or cuisine',),
           ), 
         actions: [
@@ -57,12 +60,12 @@ class HomeScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [   
-            menuCategory(),
-            SizedBox(height: BSizes.spaceBtwItems,),
-           Padding(
+            const menuCategory(),
+            const SizedBox(height: BSizes.spaceBtwItems,),
+           const Padding(
              padding: EdgeInsets.all(8.0),
              child: BPromoSlider(banners: [
                BImages.banner1, BImages.banner2, BImages.banner3, BImages.banner4
@@ -70,20 +73,52 @@ class HomeScreen extends StatelessWidget {
            
     
            ), 
-           SizedBox(height: BSizes.spaceBtwItems,), 
-           Expanded(
-             child: GridView.builder(
-              itemCount: TodaySpecialList.length,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, 
-              mainAxisSpacing: BSizes.gridViewSpacing,
-              crossAxisSpacing: BSizes.gridViewSpacing, 
-              mainAxisExtent: 288), 
+           const SizedBox(height: BSizes.spaceBtwItems,), 
+             const Padding(
+           padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
+           child: BSectionHeading(title: 'Popular Dishes', buttonTitle: 'View All', ),
+         ),
+         
+           Container(
+            height: 600, width: 800,
+             child: Expanded(
               
-              
-               itemBuilder: (_, index) => BProductCardVertical(
-                TodaySpecialList: TodaySpecialList[index],)),
+               child: GridView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                padding:  EdgeInsets.zero, 
+                itemCount: TodaySpecialList.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, 
+                
+
+                mainAxisSpacing: BSizes.gridViewSpacing,
+                crossAxisSpacing: BSizes.gridViewSpacing, 
+                mainAxisExtent: 288
+                ), 
+                
+                
+                 itemBuilder: (_, index) => BProductCardVertical(
+                  TodaySpecialList: TodaySpecialList[index],)),
+             ),
            ), 
-            
+            const SizedBox(height: BSizes.spaceBtwItems,), 
+
+            const Padding(
+           padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
+           child: BSectionHeading(title: 'Recommended', buttonTitle: 'View All', ),
+         ),
+           const SizedBox(height: BSizes.spaceBtwItems,), 
+
+            const Padding(
+           padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
+           child: BSectionHeading(title: 'Breakfast', buttonTitle: 'View All', ),
+         ),  const SizedBox(height: BSizes.spaceBtwItems,), 
+
+            const Padding(
+           padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
+           child: BSectionHeading(title: 'Free Delivery', buttonTitle: 'View All', ),
+         ),
           
         
             ],

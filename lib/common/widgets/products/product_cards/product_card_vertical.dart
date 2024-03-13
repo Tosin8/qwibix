@@ -5,6 +5,7 @@ import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/rounded_container.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
@@ -36,17 +37,27 @@ final TodaySpecial TodaySpecialList;
         child: Column(
           children: [
             BRoundedContainer(
-              height: 180, 
+              height: 200, 
               padding: const EdgeInsets.all(BSizes.sm), 
               backgroundColor: dark ? BColors.dark: BColors.light,
             
               child: Stack(
                 children: [
-                  Image.asset(TodaySpecialList.image, fit: BoxFit.cover,), 
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(image: AssetImage(TodaySpecialList.image, ), 
+                        fit: BoxFit.cover)
+                      ),
+                      // child: Image.asset(TodaySpecialList.image, fit: BoxFit.contain,), 
+                      ),
+                  ), 
       
                   /// - Sales Tag
       Positioned(
         top: 12, 
+        left: 5, 
         child: BRoundedContainer(
       radius: BSizes.sm, 
       backgroundColor: BColors.secondary.withOpacity(0.8), 
@@ -56,7 +67,7 @@ final TodaySpecial TodaySpecialList;
       
         /// - Favorite Icon Button
         Positioned( 
-      top: 0, right: 0, 
+      top: 4, right: 3, 
       child: BCircularIcon(dark: dark, icon: Iconsax.heart5, color: Colors.red,)), 
                 ],
                  
@@ -71,7 +82,8 @@ final TodaySpecial TodaySpecialList;
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 BProductTitleText(title: TodaySpecialList.title,
-                smallSize: true,), 
+                smallSize: true,
+                ), 
                 const SizedBox(height: BSizes.spaceBtwItems / 2,), 
                 Row(
                   children: [

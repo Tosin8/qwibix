@@ -55,9 +55,9 @@ final List TodaySpecialList = [
   TodaySpecial(
    title: 'Double Cups Cup Cake',
   description: '',
-  brandTitle: '',
-   image: 'assets/products/all/15.jpg', 
-   price: '\$30.00',
+  brandTitle: 'McDonald',
+   image: 'assets/products/all/12.jpg', 
+   price: '\$23.00',
    discount: '12%',
    category: 'Dessert'
   ),
