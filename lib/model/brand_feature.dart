@@ -1,10 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class BrandFeature {
-  String title; 
+  String titleBrand; 
   String image; 
   String productTitle; 
   BrandFeature({
-    required this.title,
+    required this.titleBrand,
     required this.image,
     required this.productTitle,
   });
@@ -13,22 +13,22 @@ class BrandFeature {
 
 final List BrandList = [
   BrandFeature(
-    title: 'KFC', 
+    titleBrand: 'KFC', 
     image: '', 
     productTitle: '88 Products'
   ), 
    BrandFeature(
-    title: 'McDonald', 
+    titleBrand: 'McDonald', 
     image: '', 
     productTitle: '114 Products'
   ), 
    BrandFeature(
-    title: 'Burger King', 
+    titleBrand: 'Burger King', 
     image: '', 
     productTitle: '56 Products'
   ), 
    BrandFeature(
-    title: 'Dominion Pizza', 
+    titleBrand: 'Dominion Pizza', 
     image: '', 
     productTitle: '106 Products'
   ), 
