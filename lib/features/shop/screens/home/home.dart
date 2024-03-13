@@ -1,9 +1,11 @@
 import 'package:bellymax/common/widgets/products/product_cards/product_card_vertical.dart';
+import 'package:bellymax/model/product_list.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:iconsax/iconsax.dart';
 
@@ -53,7 +55,7 @@ class HomeScreen extends StatelessWidget {
            const SizedBox(width: 10,),       
         ],
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(10.0),
           child: Column(
@@ -69,7 +71,19 @@ class HomeScreen extends StatelessWidget {
     
            ), 
            SizedBox(height: BSizes.spaceBtwItems,), 
-            BProductCardVertical()
+           Expanded(
+             child: GridView.builder(
+              itemCount: TodaySpecialList.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, 
+              mainAxisSpacing: BSizes.gridViewSpacing,
+              crossAxisSpacing: BSizes.gridViewSpacing, 
+              mainAxisExtent: 288), 
+              
+              
+               itemBuilder: (_, index) => BProductCardVertical(
+                TodaySpecialList: TodaySpecialList[index],)),
+           ), 
+            
           
         
             ],
