@@ -51,7 +51,12 @@ children: [
     children: [
 
       /// Icon 
-      BrandImageCard(), 
+      BrandImageCard(
+        image: '',
+        isNetWorkImage: false, 
+        backgroundColor: Colors.transparent, 
+        overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,), 
+        
     ],
   ),
  )
