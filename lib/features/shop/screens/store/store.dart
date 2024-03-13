@@ -96,6 +96,7 @@ final BrandFeature BrandList;
              /// Text
              Expanded(
                child: Column(
+                mainAxisSize: MainAxisSize.min,
                  crossAxisAlignment: CrossAxisAlignment.start,
                  children: [
                    BrandTitleVerifyIcon(
