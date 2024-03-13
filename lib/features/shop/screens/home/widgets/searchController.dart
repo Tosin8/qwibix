@@ -16,7 +16,8 @@ class BSearchController extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: BSizes.defaultSpace * 0.5),
+      padding: const EdgeInsets.symmetric(horizontal: BSizes.defaultSpace * 0.4),
+      //padding:  EdgeInsets.zero,
       child: Container(
         width: BDeviceUtils.getScreenWidth(context),
     decoration: BoxDecoration(
