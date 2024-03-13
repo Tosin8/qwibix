@@ -10,3 +10,26 @@ class BrandFeature {
   });
   
 }
+
+final List BrandList = [
+  BrandFeature(
+    title: 'KFC', 
+    image: '', 
+    productTitle: '88 Products'
+  ), 
+   BrandFeature(
+    title: 'McDonald', 
+    image: '', 
+    productTitle: '114 Products'
+  ), 
+   BrandFeature(
+    title: 'Burger King', 
+    image: '', 
+    productTitle: '56 Products'
+  ), 
+   BrandFeature(
+    title: 'Dominion Pizza', 
+    image: '', 
+    productTitle: '106 Products'
+  ), 
+]; 
