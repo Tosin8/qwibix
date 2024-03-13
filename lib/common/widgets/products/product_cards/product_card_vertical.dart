@@ -1,3 +1,4 @@
+import 'package:bellymax/model/product_list.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/rounded_container.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
@@ -22,11 +23,24 @@ class BProductCardVertical extends StatelessWidget {
         children: [
           BRoundedContainer(
             height: 180, 
-            padding: const EdgeInsets.all(BSizes.sm), 
+            padding: EdgeInsets.all(BSizes.sm), 
             backgroundColor: dark ? BColors.dark: BColors.light,
+          
             child: Stack(
-              children: [],
-            ),
+              children: [
+                Image.asset(TodaySpecialList[0].image, fit: BoxFit.cover,), 
+Positioned(
+  top: 12, 
+  child: BRoundedContainer(
+    radius: BSizes.sm, 
+    backgroundColor: BColors.secondary.withOpacity(0.8), 
+    padding: const EdgeInsets.symmetric(horizontal: BSizes.sm, vertical: BSizes.xs), 
+    child: Text(TodaySpecialList[0].discount, style: Theme.of(context).textTheme.labelLarge!.apply(color: BColors.black),),
+  ))
+              ],
+               
+              ), 
+           
 
           ), 
         ],

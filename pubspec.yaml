@@ -60,7 +60,7 @@ flutter:
     #banner_list
     - assets/images/banner/
     #products 
-    - assets/products/
+    - assets/products/all/
 
   #splash
   #- images/a_dot_burr.jpeg
