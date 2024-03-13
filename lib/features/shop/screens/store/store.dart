@@ -51,7 +51,7 @@ children: [
 
  GridLayout(itemCount: BrandList.length, 
  itemBuilder: (_, index) {
-  return BrandPartnersCard()
+  return BrandPartnersCard(BrandList: BrandList[index],);
  })
  
 ],
