@@ -1,3 +1,4 @@
+import 'package:bellymax/common/widgets/icons/favorite_icon.dart';
 import 'package:bellymax/model/product_list.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/rounded_container.dart';
@@ -30,6 +31,8 @@ class BProductCardVertical extends StatelessWidget {
             child: Stack(
               children: [
                 Image.asset(TodaySpecialList[0].image, fit: BoxFit.cover,), 
+
+                /// - Sales Tag
 Positioned(
   top: 12, 
   child: BRoundedContainer(
@@ -38,15 +41,9 @@ Positioned(
     padding: const EdgeInsets.symmetric(horizontal: BSizes.sm, vertical: BSizes.xs), 
     child: Text(TodaySpecialList[0].discount, style: Theme.of(context).textTheme.labelLarge!.apply(color: BColors.black),),
   )), 
-  Container(
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(100), 
-      color: dark ? BColors.black.withOpacity(0.9) : BColors.white.withOpacity(0.9), 
-    ), 
-    child: IconButton(
-      onPressed: (){},
-     icon: Icon(Iconsax.heart5),
-  )), 
+
+  /// - Favorite Icon Button
+  BCircularIconFav(dark: dark), 
               ],
                
               ), 
@@ -58,3 +55,4 @@ Positioned(
     );
   }
 }
+
