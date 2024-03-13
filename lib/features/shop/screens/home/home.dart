@@ -108,17 +108,87 @@ class HomeScreen extends StatelessWidget {
            padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
            child: BSectionHeading(title: 'Recommended', buttonTitle: 'View All', ),
          ),
+          Container(
+            height: 600, width: 800,
+             child: Expanded(
+              
+               child: GridView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                padding:  EdgeInsets.zero, 
+                itemCount: TodaySpecialList.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, 
+                
+
+                mainAxisSpacing: BSizes.gridViewSpacing,
+                crossAxisSpacing: BSizes.gridViewSpacing, 
+                mainAxisExtent: 288
+                ), 
+                
+                
+                 itemBuilder: (_, index) => BProductCardVertical(
+                  TodaySpecialList: TodaySpecialList[index],)),
+             ),
+           ), 
            const SizedBox(height: BSizes.spaceBtwItems,), 
 
             const Padding(
            padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
            child: BSectionHeading(title: 'Breakfast', buttonTitle: 'View All', ),
-         ),  const SizedBox(height: BSizes.spaceBtwItems,), 
+         ),  
+          Container(
+            height: 600, width: 800,
+             child: Expanded(
+              
+               child: GridView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                padding:  EdgeInsets.zero, 
+                itemCount: TodaySpecialList.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, 
+                
+
+                mainAxisSpacing: BSizes.gridViewSpacing,
+                crossAxisSpacing: BSizes.gridViewSpacing, 
+                mainAxisExtent: 288
+                ), 
+                
+                
+                 itemBuilder: (_, index) => BProductCardVertical(
+                  TodaySpecialList: TodaySpecialList[index],)),
+             ),
+           ), 
+         const SizedBox(height: BSizes.spaceBtwItems,), 
 
             const Padding(
            padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
            child: BSectionHeading(title: 'Free Delivery', buttonTitle: 'View All', ),
          ),
+          Container(
+            height: 600, width: 800,
+             child: Expanded(
+              
+               child: GridView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                padding:  EdgeInsets.zero, 
+                itemCount: TodaySpecialList.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, 
+                
+
+                mainAxisSpacing: BSizes.gridViewSpacing,
+                crossAxisSpacing: BSizes.gridViewSpacing, 
+                mainAxisExtent: 288
+                ), 
+                
+                
+                 itemBuilder: (_, index) => BProductCardVertical(
+                  TodaySpecialList: TodaySpecialList[index],)),
+             ),
+           ), 
           
         
             ],
