@@ -1,3 +1,4 @@
+import 'package:bellymax/common/widgets/carticon.dart';
 import 'package:bellymax/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
 import 'package:bellymax/model/product_list.dart';
@@ -35,26 +36,7 @@ class HomeScreen extends StatelessWidget {
           text: 'Search for dish or cuisine',),
           ), 
         actions: [
-          Stack(
-            children: [
-              Icon(Iconsax.shopping_bag, 
-            color: darkMode ? Colors.white : Colors.black,),
-            Positioned(
-              right: 0,
-          child: Container(
-                width: 18, height: 18, 
-                decoration: BoxDecoration(
-                  color: BColors.black, 
-                  borderRadius: BorderRadius.circular(100), 
-                ),
-                child: Center(
-                  child: Text('2',
-                  style: Theme.of(context).textTheme.labelLarge!.apply(color: BColors.white, fontSizeFactor: 0.8), 
-                  ), 
-                )
-              ),
-            ), 
-        ]), 
+          BCartCounterIcon(darkMode: darkMode), 
            const SizedBox(width: 10,),       
         ],
       ),
