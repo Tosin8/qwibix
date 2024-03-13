@@ -1,8 +1,15 @@
+import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 
 class BAppBar extends StatelessWidget {
   const BAppBar({super.key,
-   this.title, required this.showBackArrow, this.leadingIcon, this.actions, this.leadingOnPressed});
+   this.title, 
+    this.showBackArrow = false, 
+    this.leadingIcon, 
+    this.actions, 
+    this.leadingOnPressed});
 
   final Widget? title; 
   final bool showBackArrow; 
@@ -12,6 +19,16 @@ class BAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Padding( 
+      padding:  const EdgeInsets.symmetric(horizontal: BSizes.md),
+      child: AppBar(
+        automaticallyImplyLeading: false, 
+        leading: showBackArrow ? 
+        IconButton(onPressed: () => Get.back(), icon: const Icon(Iconsax.arrow_left)): leadingIcon != null 
+        ? IconButton(onPressed: leadingOnPressed, icon: Icon(leadingIcon)) : null, 
+        title: title, 
+        actions: actions,
+      ),
+    );
   }
 }
