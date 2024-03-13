@@ -62,7 +62,7 @@ final TodaySpecial TodaySpecialList;
       radius: BSizes.sm, 
       backgroundColor: BColors.secondary.withOpacity(0.8), 
       padding: const EdgeInsets.symmetric(horizontal: BSizes.sm, vertical: BSizes.xs), 
-      child: Text(TodaySpecialList.discount, style: Theme.of(context).textTheme.labelLarge!.apply(color: BColors.black),),
+      child: Text(TodaySpecialList.discount, style: Theme.of(context).textTheme.labelLarge!.apply(color: dark? Colors.white: BColors.black),),
         )), 
       
         /// - Favorite Icon Button
@@ -82,44 +82,49 @@ final TodaySpecial TodaySpecialList;
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 BProductTitleText(title: TodaySpecialList.title,
-                smallSize: true,
+                smallSize: true, 
                 ), 
                 const SizedBox(height: BSizes.spaceBtwItems / 2,), 
                 Row(
                   children: [
                     Text(TodaySpecialList.brandTitle, overflow: TextOverflow.ellipsis, maxLines: 1, 
-                    style: Theme.of(context).textTheme.labelMedium,), 
+                    style: Theme.of(context).textTheme.labelMedium!.apply(color: dark? Colors.white: Colors.black),), 
                     const SizedBox(width: BSizes.xs,), 
                     const Icon(Iconsax.verify5, color: BColors.primary, size: BSizes.iconXs,), 
                   ],
                 ), 
+
+      
+              ],
+            ),
+            ), 
+            Spacer(), 
+                // Price Row
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(TodaySpecialList.price, 
-                    maxLines: 1, 
-                    overflow: TextOverflow.ellipsis, 
-                    style: Theme.of(context).textTheme.headlineSmall, ), 
+                    Padding(
+                      padding: const EdgeInsets.only(left: BSizes.sm),
+                      child: Text(TodaySpecialList.price, 
+                      maxLines: 1, 
+                      overflow: TextOverflow.ellipsis, 
+                      style: Theme.of(context).textTheme.headlineSmall!.apply(color: dark? Colors.white: Colors.black), ),
+                    ), 
                     Container(
-                      decoration: const BoxDecoration(
-                        color: BColors.dark, 
+                      decoration:  BoxDecoration(
+                        color: dark? Colors.white:  BColors.dark, 
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(BSizes.cardRadiusMd), 
                           bottomRight: Radius.circular(BSizes.productImageRadius), 
                         )
                       ),
-                      child: const SizedBox(
+                      child:  SizedBox(
                         width: BSizes.iconMd * 1.2, 
                         height: BSizes.iconMd  * 1.2,
-                        child: Center(child: Icon(Iconsax.add, color: BColors.white,))),
+                        child: Center(child: Icon(Iconsax.add, color: dark?  BColors.white: Colors.black,))),
                     )
                   ],
                 )
-      
-              ],
-            ),
-            ), 
-            
           ],
         ),
       ),
