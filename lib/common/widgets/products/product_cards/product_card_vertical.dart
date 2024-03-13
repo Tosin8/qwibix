@@ -121,10 +121,10 @@ final TodaySpecial TodaySpecialList;
                       child:  SizedBox(
                         width: BSizes.iconMd * 1.2, 
                         height: BSizes.iconMd  * 1.2,
-                        child: Center(child: Icon(Iconsax.add, color: dark?  BColors.white: Colors.black,))),
+                        child: Center(child: Icon(Iconsax.add, color: dark? Colors.black : Colors.white,))),
                     )
                   ],
-                )
+                ),
           ],
         ),
       ),
