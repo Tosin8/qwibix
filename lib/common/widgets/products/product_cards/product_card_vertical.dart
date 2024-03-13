@@ -1,10 +1,12 @@
 import 'package:bellymax/common/widgets/icons/favorite_icon.dart';
+import 'package:bellymax/common/widgets/texts/product_title_text.dart';
 import 'package:bellymax/model/product_list.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/rounded_container.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
 class BProductCardVertical extends StatelessWidget {
@@ -25,7 +27,7 @@ class BProductCardVertical extends StatelessWidget {
         children: [
           BRoundedContainer(
             height: 180, 
-            padding: EdgeInsets.all(BSizes.sm), 
+            padding: const EdgeInsets.all(BSizes.sm), 
             backgroundColor: dark ? BColors.dark: BColors.light,
           
             child: Stack(
@@ -43,16 +45,29 @@ Positioned(
   )), 
 
   /// - Favorite Icon Button
-  BCircularIconFav(dark: dark), 
+  Positioned( 
+    top: 0, right: 0, 
+    child: BCircularIcon(dark: dark, icon: Iconsax.heart5, color: Colors.red,)), 
               ],
                
               ), 
            
 
           ), 
+          /// Product Details
+           const Padding(padding: EdgeInsets.only(left: BSizes.sm), 
+          child: Column(
+            children: [
+              BProductTitleText(), 
+              
+            ],
+          ),
+          ), 
+          
         ],
       ),
     );
   }
 }
+
 
