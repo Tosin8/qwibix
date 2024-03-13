@@ -78,7 +78,7 @@ class HomeScreen extends StatelessWidget {
            padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
            child: BSectionHeading(title: 'Popular Dishes', buttonTitle: 'View All', ),
          ),
-         
+         const SizedBox(height: BSizes.spaceBtwItems,), 
            Container(
             height: 600, width: 800,
              child: Expanded(
@@ -108,6 +108,7 @@ class HomeScreen extends StatelessWidget {
            padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
            child: BSectionHeading(title: 'Recommended', buttonTitle: 'View All', ),
          ),
+         const SizedBox(height: BSizes.spaceBtwItems,), 
           Container(
             height: 600, width: 800,
              child: Expanded(
@@ -136,7 +137,8 @@ class HomeScreen extends StatelessWidget {
             const Padding(
            padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
            child: BSectionHeading(title: 'Breakfast', buttonTitle: 'View All', ),
-         ),  
+         ), 
+         const SizedBox(height: BSizes.spaceBtwItems,),  
           Container(
             height: 600, width: 800,
              child: Expanded(
@@ -166,6 +168,7 @@ class HomeScreen extends StatelessWidget {
            padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
            child: BSectionHeading(title: 'Free Delivery', buttonTitle: 'View All', ),
          ),
+         const SizedBox(height: BSizes.spaceBtwItems,), 
           Container(
             height: 600, width: 800,
              child: Expanded(
