@@ -5,21 +5,41 @@ import 'package:flutter/material.dart';
 
 class BrandImageCard extends StatelessWidget {
   const BrandImageCard({
-    super.key,
+    super.key, 
+    this.fit = BoxFit.cover, 
+    required this.image,
+      this.isNetWorkImage = false, 
+     this.overlayColor,
+      this.backgroundColor, 
+      this.width = 56, 
+      this.height = 56, 
+      this.padding = BSizes.sm,
   });
+
+final BoxFit? fit; 
+final String image; 
+final bool isNetWorkImage; 
+final Color? overlayColor; 
+final Color? backgroundColor; 
+final double width, height, padding; 
+
 
   @override
   Widget build(BuildContext context) {
     return Container(
-    width: 56, 
-    height: 56,
-     padding: const EdgeInsets.all(BSizes.sm),
+    width: width, 
+    height: height,
+     padding:  EdgeInsets.all(padding),
       decoration: BoxDecoration(
-        color: BHelperFunctions.isDarkMode(context) ? BColors.black: BColors.white, 
+        color: backgroundColor ?? (BHelperFunctions.isDarkMode(context) ? BColors.black: BColors.white), 
         borderRadius: BorderRadius.circular(100), 
       ),
-      child: Image(image: AssetImage(''), 
-      color: BHelperFunctions.isDarkMode(context) ? BColors.white : BColors.dark,),
+      child: Center(
+        child: Image(
+          fit: fit, 
+          image: isNetWorkImage ?  NetworkImage(image) : AssetImage(image) as ImageProvider, 
+        color: overlayColor),
+      ),
     );
   }
 }
