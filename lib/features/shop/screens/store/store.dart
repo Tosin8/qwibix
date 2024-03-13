@@ -18,6 +18,9 @@ class Store extends StatelessWidget {
           SizedBox(width: 10,)
         ],
       ),
+      body: NestedScrollView(
+        headerSliverBuilder: SliverAppBar(), 
+        body: Container())
     );
   }
 }
