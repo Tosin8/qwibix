@@ -9,6 +9,7 @@ import 'package:bellymax/utils/constants/enums.dart';
 import 'package:bellymax/utils/constants/rounded_container.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -49,7 +50,7 @@ children: [
  const BSectionHeading(title: 'Featured Partners', buttonTitle: ''), 
  const SizedBox(height: BSizes.spaceBtwItems / 1.5), 
 
- GridLayout(itemCount: BrandList.length, 
+ GridLayout(itemCount: BrandList.length, mainAxisExtent: 80,
  itemBuilder: (_, index) {
   return BrandPartnersCard(BrandList: BrandList[index],);
  })
@@ -83,25 +84,29 @@ final BrandFeature BrandList;
          children: [
       
            /// Icon 
-           BrandImageCard(
-             image: BrandList.image,
-             isNetWorkImage: false, 
-             backgroundColor: Colors.transparent, 
-             overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,), 
+           Flexible(
+             child: BrandImageCard(
+               image: BrandList.image,
+               isNetWorkImage: false, 
+               backgroundColor: Colors.transparent, 
+               overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,),
+           ), 
              SizedBox(width: BSizes.spaceBtwItems / 2,), 
       
              /// Text
-             Column(
-               crossAxisAlignment: CrossAxisAlignment.start,
-               children: [
-                 BrandTitleVerifyIcon(
-                  
-                  title: BrandList.titleBrand, 
-                 brandTextSize: TextSizes.large,), 
-                 Text(BrandList.productTitle, 
-                 overflow: TextOverflow.ellipsis, 
-                 style: Theme.of(context).textTheme.labelMedium,), 
-               ],
+             Expanded(
+               child: Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                 children: [
+                   BrandTitleVerifyIcon(
+                    
+                    title: BrandList.titleBrand, 
+                   brandTextSize: TextSizes.large,), 
+                   Text(BrandList.productTitle, 
+                   overflow: TextOverflow.ellipsis, 
+                   style: Theme.of(context).textTheme.labelMedium,), 
+                 ],
+               ),
              )
       
          ],
