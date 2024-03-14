@@ -1,11 +1,11 @@
 import 'package:bellymax/common/widgets/carticon.dart';
 import 'package:bellymax/common/widgets/grid_layout/grid_layout.dart';
 import 'package:bellymax/common/widgets/products/product_cards/brandpartners.dart';
+import 'package:bellymax/common/widgets/tabbar.dart';
 import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
 import 'package:bellymax/model/brand_feature.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/device/device_utlity.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
@@ -59,7 +59,19 @@ class Store extends StatelessWidget {
                     ),
       
                     // Tabs  for categories and brands
-                  bottom: BTabBar(), 
+                  bottom: const BTabBar(
+                    tabs: [
+          Tab(child: Text('Salad'),), 
+           Tab(child: Text('Burger'),), 
+            Tab(child: Text('Soup'),), 
+             Tab(child: Text('Chicken'),),  
+             Tab(child: Text('Sea Food'),),
+               Tab(child: Text('Drinks'),),  
+               Tab(child: Text('Desserts'),), 
+                Tab(child: Text('SandWish'),), 
+            
+        ]
+                  ), 
               ),
             ]; 
           }, 
@@ -68,32 +80,5 @@ class Store extends StatelessWidget {
       ),
     );
   }
-}
-
-class BTabBar extends StatelessWidget implements PreferredSizeWidget{
-  const BTabBar({
-    super.key, required this.tabs,
-  });
-
-final List<Widget> tabs; 
-  @override
-  Widget build(BuildContext context) {
-    final dark = BHelperFunctions.isDarkMode(context); 
-    return Material(
-      color: dark ? BColors.black : BColors.white,
-      child: TabBar(
-        padding:  EdgeInsets.zero,
-        tabAlignment: TabAlignment.start, 
-        isScrollable: true, 
-        indicatorColor: BColors.primary, 
-        unselectedLabelColor: BColors.darkGrey, 
-        labelColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.primary,
-        tabs: tabs),
-    );
-  }
-  
-  @override
-  // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(BDeviceUtils.getAppBarHeight()); 
 }
 
