@@ -62,6 +62,9 @@ flutter:
     #products 
     - assets/products/all/
 
+    #brand_image
+    - assets/images/brands/
+
   #splash
   #- images/a_dot_burr.jpeg
   #- images/a_dot_ham.jpeg
