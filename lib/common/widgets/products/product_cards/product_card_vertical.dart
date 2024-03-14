@@ -1,6 +1,6 @@
 import 'package:bellymax/common/widgets/icons/favorite_icon.dart';
 import 'package:bellymax/common/widgets/texts/product_title_text.dart';
-import 'package:bellymax/model/product_list.dart';
+import 'package:bellymax/features/shop/models/product_list.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/rounded_container.dart';
 import 'package:bellymax/utils/constants/sizes.dart';

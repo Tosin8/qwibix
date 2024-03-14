@@ -3,7 +3,7 @@ import 'package:bellymax/common/widgets/grid_layout/grid_layout.dart';
 import 'package:bellymax/common/widgets/products/product_cards/brandpartners.dart';
 import 'package:bellymax/common/widgets/tabbar.dart';
 import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
-import 'package:bellymax/model/brand_feature.dart';
+import 'package:bellymax/features/shop/models/brand_feature.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
@@ -76,7 +76,8 @@ class Store extends StatelessWidget {
             ]; 
           }, 
            
-          body: Container())
+          body: const TabBarView(
+            children: [],))
       ),
     );
   }

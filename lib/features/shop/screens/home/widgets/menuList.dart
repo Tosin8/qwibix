@@ -2,7 +2,7 @@
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
-import 'package:bellymax/model/menu_list.dart';
+import 'package:bellymax/features/shop/models/menu_list.dart';
 
 // ignore: camel_case_types
 class menuListCard extends StatelessWidget {

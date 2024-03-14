@@ -1,6 +1,6 @@
 import 'package:bellymax/common/widgets/images/b_brand_image.dart';
 import 'package:bellymax/common/widgets/texts/brandTitleText_withIcon.dart';
-import 'package:bellymax/model/brand_feature.dart';
+import 'package:bellymax/features/shop/models/brand_feature.dart';
 import 'package:bellymax/utils/constants/enums.dart';
 import 'package:bellymax/utils/constants/rounded_container.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
