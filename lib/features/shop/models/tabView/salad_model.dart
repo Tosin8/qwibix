@@ -15,3 +15,15 @@ class Salad {
     required this.description, 
   });
 }
+
+final List Salads = [
+Salad(
+  rate: '6', 
+  image: image, 
+  title: title, 
+  price: '\$20.0',
+   category: '', 
+   description: '', 
+   ), 
+
+]; 
