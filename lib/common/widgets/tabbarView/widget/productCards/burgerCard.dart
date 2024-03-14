@@ -1,3 +1,4 @@
+import 'package:bellymax/features/shop/models/tabView/burger_model.dart';
 import 'package:bellymax/features/shop/models/tabView/salad_model.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -5,12 +6,12 @@ import 'package:iconsax/iconsax.dart';
 
 import '../addtocardbtn.dart';
 
-class SaladproductCard extends StatelessWidget {
-  const SaladproductCard({
-    super.key, required this.Salads,
+class BurgerproductCard extends StatelessWidget {
+  const BurgerproductCard({
+    super.key,  required this.Burgers,
   });
 
-  final Salad Salads; 
+  final Burger Burgers; 
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class SaladproductCard extends StatelessWidget {
                width: 80, height: 80,
                decoration: BoxDecoration(
                  borderRadius: BorderRadius.circular(10),
-                 image: DecorationImage(image: AssetImage(Salads.image), fit: BoxFit.cover), 
+                 image: DecorationImage(image: AssetImage(Burgers.image), fit: BoxFit.cover), 
                ),
              ),
            ), 
@@ -39,14 +40,14 @@ class SaladproductCard extends StatelessWidget {
                  mainAxisSize: MainAxisSize.min,
                  crossAxisAlignment: CrossAxisAlignment.start,
                  children: [
-                   Text(Salads.title, overflow: TextOverflow.ellipsis, 
+                   Text(Burgers.title, overflow: TextOverflow.ellipsis, 
                    style: Theme.of(context).textTheme.titleMedium,), 
                     SizedBox(height: 5), 
-                   Text(Salads.description, 
+                   Text(Burgers.description, 
                    maxLines: 2,overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.labelMedium,
                    ),
                    SizedBox(height: 5,),  
-                   Text(Salads.price,
+                   Text(Burgers.price,
                     style: Theme.of(context).textTheme.titleLarge,), 
                  ],
                ),
@@ -60,7 +61,7 @@ class SaladproductCard extends StatelessWidget {
                  children: [
                    Icon(Iconsax.star1), 
                    SizedBox(width: 3,), 
-                   Text(Salads.rate),
+                   Text(Burgers.rate),
                  ],
                ), 
                SizedBox(height: BSizes.spaceBtwItems * 2,), 

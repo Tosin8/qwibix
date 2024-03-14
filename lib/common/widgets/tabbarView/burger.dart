@@ -1,0 +1,25 @@
+import 'package:bellymax/features/shop/models/tabView/salad_model.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
+import 'widget/productCards/saladCard.dart';
+
+class BurgerPage extends StatelessWidget {
+  const BurgerPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return 
+ListView.builder(
+  itemCount: Salads.length,
+  itemBuilder: (_, index){
+    return SaladproductCard(
+      Salads: Salads[index],
+    );
+  }); 
+
+       
+  }
+}
+
