@@ -32,7 +32,7 @@ Salad(
   title: 'Quinoa Salad', 
   price: '\$32.0',
    category: 'McDonald', 
-   description: '', 
+   description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ),
     Salad(
   rate: '6', 
@@ -40,7 +40,7 @@ Salad(
   title: 'Kale Salad', 
   price: '\$20.0',
    category: 'McDonald', 
-   description: '', 
+   description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ),
     Salad(
   rate: '6', 
@@ -48,7 +48,7 @@ Salad(
   title: 'Vegan Salad', 
   price: '\$20.0',
    category: 'McDonald', 
-   description: '', 
+   description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ), 
    Salad(
   rate: '6', 
@@ -56,7 +56,7 @@ Salad(
   title: 'Kale Salad', 
   price: '\$20.0',
    category: 'BellyMax', 
-   description: '', 
+   description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ), 
    Salad(
   rate: '6', 
@@ -64,7 +64,7 @@ Salad(
   title: 'Kale Salad', 
   price: '\$20.0',
    category: 'BellyMax', 
-   description: '', 
+   description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ),
     Salad(
   rate: '6', 
@@ -72,7 +72,7 @@ Salad(
   title: 'Kale Salad', 
   price: '\$20.0',
    category: 'McDonald', 
-   description: '', 
+   description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ), 
    Salad(
   rate: '6', 
@@ -80,7 +80,7 @@ Salad(
   title: 'Boerewors Salad', 
   price: '\$20.0',
    category: 'McDonald', 
-   description: '', 
+   description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ), 
 
 ]; 
