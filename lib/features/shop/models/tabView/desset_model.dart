@@ -1,4 +1,4 @@
-class Chicken {
+class Dessert {
   String image; 
   String title; 
   String price; 
@@ -6,7 +6,7 @@ class Chicken {
   String rate; 
   String description; 
   
- Chicken({
+ Dessert({
     required this.rate,
     required this.image,
     required this.title,
@@ -16,50 +16,39 @@ class Chicken {
   });
 }
 
-final List Chickens = [
-Chicken(
+final List Desserts = [
+Dessert(
   rate: '6', 
-  image: 'assets/products/chicken/1.jpg', 
-  title: 'Kale Salad', 
+  image: 'assets/products/desserts/1.jpg', 
+  title: 'Coke', 
   price: '\$20.0',
    category: 'McDonald', 
    description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
 
    ), 
-   Chicken(
+   Dessert(
   rate: '6', 
-  image: 'assets/products/chicken/2.jpg', 
-  title: 'Quinoa Salad', 
+  image: 'assets/products/desserts/2.jpg', 
+  title: 'Fanta', 
   price: '\$32.0',
    category: 'McDonald', 
    description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ),
-    Chicken(
+    
+Dessert(
   rate: '6', 
-  image: 'assets/products/chicken/3.jpg', 
-  title: 'Kale Salad', 
-  price: '\$20.0',
+  image: 'assets/products/desserts/3.jpg', 
+  title: 'Hype Energy', 
+  price: '\$32.0',
    category: 'McDonald', 
    description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ),
-    Chicken(
+   Dessert(
   rate: '6', 
-  image: 'assets/products/chicken/4.jpg', 
-  title: 'Roasted Chicken Thigh', 
-  price: '\$20.0',
+  image: 'assets/products/desserts/4.jpg', 
+  title: 'Oreo Cupcakes', 
+  price: '\$32.0',
    category: 'McDonald', 
-   description: 'Roasted Chicken Thigh seasoned with drided herbs and dripping juice ', 
-   ), 
-   Chicken(
-  rate: '6', 
-  image: 'assets/products/chicken/5.jpg', 
-  title: 'Turkey Dinner', 
-  price: '\$20.0',
-   category: 'BellyMax', 
-   description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
-   ), 
-   
-   
-
-
+   description: 'Oreo Cupcakes with Cookies', 
+   ),
 ]; 
