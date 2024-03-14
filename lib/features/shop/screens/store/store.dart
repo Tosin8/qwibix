@@ -57,6 +57,20 @@ children: [
  
 ],
                   ),),
+
+                  // Tabs  for categories and brands
+                bottom: const TabBar(
+                  tabs: [
+                    Tab(child: Text('Salad'),), 
+                     Tab(child: Text('Burger'),), 
+                      Tab(child: Text('Soup'),), 
+                       Tab(child: Text('Chicken'),),  
+                       Tab(child: Text('Sea Food'),),
+                         Tab(child: Text('Drinks'),),  
+                         Tab(child: Text('Desserts'),), 
+                          Tab(child: Text('SandWish'),), 
+
+                  ]), 
             ),
           ]; 
         }, 
@@ -91,7 +105,7 @@ final BrandFeature BrandList;
                backgroundColor: Colors.transparent, 
                overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,),
            ), 
-             SizedBox(width: BSizes.spaceBtwItems / 2,), 
+             const SizedBox(width: BSizes.spaceBtwItems / 2,), 
       
              /// Text
              Expanded(
