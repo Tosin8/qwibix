@@ -4,6 +4,7 @@ import 'package:bellymax/common/widgets/products/product_cards/brandpartners.dar
 import 'package:bellymax/common/widgets/tabbar.dart';
 import 'package:bellymax/common/widgets/tabbarView/burger.dart';
 import 'package:bellymax/common/widgets/tabbarView/salad.dart';
+import 'package:bellymax/common/widgets/tabbarView/soup.dart';
 import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
 import 'package:bellymax/features/shop/models/brand_feature.dart';
 import 'package:bellymax/utils/constants/colors.dart';
@@ -82,6 +83,7 @@ class Store extends StatelessWidget {
             children: [
               SaladPage(), 
               BurgerPage(), 
+              SoupPage(), 
               
             ],))
       ),

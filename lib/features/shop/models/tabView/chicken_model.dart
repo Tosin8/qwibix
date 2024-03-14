@@ -1,4 +1,4 @@
-class Soup {
+class Salad {
   String image; 
   String title; 
   String price; 
@@ -6,7 +6,7 @@ class Soup {
   String rate; 
   String description; 
   
- Soup({
+ Salad({
     required this.rate,
     required this.image,
     required this.title,
@@ -16,54 +16,71 @@ class Soup {
   });
 }
 
-final List Soups = [
-Soup(
+final List Salads = [
+Salad(
   rate: '6', 
-  image: 'assets/products/soup/1.jpg', 
+  image: 'assets/products/salad/1.jpg', 
   title: 'Kale Salad', 
   price: '\$20.0',
    category: 'McDonald', 
    description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
 
    ), 
-   Soup(
+   Salad(
   rate: '6', 
-  image: 'assets/products/soup/2.jpg', 
+  image: 'assets/products/salad/2.jpg', 
   title: 'Quinoa Salad', 
   price: '\$32.0',
    category: 'McDonald', 
    description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ),
-    Soup(
+    Salad(
   rate: '6', 
-  image: 'assets/products/soup/3.jpg', 
-  title: 'African Sweet Potato Soup', 
+  image: 'assets/products/salad/3.jpg', 
+  title: 'Kale Salad', 
   price: '\$20.0',
    category: 'McDonald', 
    description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ),
-    Soup(
+    Salad(
   rate: '6', 
-  image: 'assets/products/soup/4.jpg', 
-  title: 'Pumpkin Cream Soup with Pink Peppercorn', 
+  image: 'assets/products/salad/4.jpg', 
+  title: 'Vegan Salad', 
   price: '\$20.0',
    category: 'McDonald', 
    description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ), 
-  Soup(
+   Salad(
   rate: '6', 
-  image: 'assets/products/burger/5.jpg', 
+  image: 'assets/products/salad/5.jpg', 
   title: 'Kale Salad', 
   price: '\$20.0',
    category: 'BellyMax', 
    description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ), 
-    Soup(
+   Salad(
   rate: '6', 
-  image: 'assets/products/burger/6.jpg', 
-  title: 'Tomato Soup and Cheese Scone Lunch', 
+  image: 'assets/products/salad/6.jpg', 
+  title: 'Kale Salad', 
   price: '\$20.0',
    category: 'BellyMax', 
    description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
+   ),
+    Salad(
+  rate: '6', 
+  image: 'assets/products/salad/7.jpg', 
+  title: 'Kale Salad', 
+  price: '\$20.0',
+   category: 'McDonald', 
+   description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ), 
-];
+   Salad(
+  rate: '6', 
+  image: 'assets/products/salad/8.jpg', 
+  title: 'Boerewors Salad', 
+  price: '\$20.0',
+   category: 'McDonald', 
+   description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
+   ), 
+
+]; 

@@ -1,4 +1,3 @@
-import 'package:bellymax/features/shop/models/tabView/burger_model.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
