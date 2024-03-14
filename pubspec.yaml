@@ -66,14 +66,14 @@ flutter:
     - assets/images/brands/
 
     #products list
-    - assets/products/burger
-    - assets/products/chicken
-    - assets/products/desserts
-    - assets/products/drink
-    - assets/products/salad
-    - assets/products/sandwish
-    - assets/products/seafood
-    - assets/products/soup
+    - assets/products/burger/
+    - assets/products/chicken/
+    - assets/products/desserts/
+    - assets/products/drink/
+    - assets/products/salad/
+    - assets/products/sandwish/
+    - assets/products/seafood/
+    - assets/products/soup/
 
   #splash
   #- images/a_dot_burr.jpeg
