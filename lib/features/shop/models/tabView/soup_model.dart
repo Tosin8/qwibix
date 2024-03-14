@@ -1,4 +1,4 @@
-class Burger {
+class Soup {
   String image; 
   String title; 
   String price; 
@@ -6,7 +6,7 @@ class Burger {
   String rate; 
   String description; 
   
- Burger({
+ Soup({
     required this.rate,
     required this.image,
     required this.title,
@@ -16,8 +16,8 @@ class Burger {
   });
 }
 
-final List Burgers = [
-Burger(
+final List Soups = [
+Soup(
   rate: '6', 
   image: 'assets/products/burger/1.jpg', 
   title: 'Kale Salad', 
@@ -26,7 +26,7 @@ Burger(
    description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
 
    ), 
-   Burger(
+   Soup(
   rate: '6', 
   image: 'assets/products/burger/2.jpg', 
   title: 'Quinoa Salad', 
@@ -34,7 +34,7 @@ Burger(
    category: 'McDonald', 
    description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ),
-    Burger(
+    Soup(
   rate: '6', 
   image: 'assets/products/burger/3.jpg', 
   title: 'Kale Salad', 
@@ -42,7 +42,7 @@ Burger(
    category: 'McDonald', 
    description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ),
-    Burger(
+    Soup(
   rate: '6', 
   image: 'assets/products/burger/4.jpg', 
   title: 'Vegan Salad', 
@@ -50,7 +50,7 @@ Burger(
    category: 'McDonald', 
    description: 'A spicy South African beef sausage.There is balsamic vinegar on this salad and cashew nuts, cherry tomatoes, fried mushrooms, sesame seeds and dhanya (cilantro/coriander)', 
    ), 
-   Burger(
+  Soup(
   rate: '6', 
   image: 'assets/products/burger/5.jpg', 
   title: 'Kale Salad', 

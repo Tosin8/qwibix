@@ -2,6 +2,7 @@ import 'package:bellymax/common/widgets/carticon.dart';
 import 'package:bellymax/common/widgets/grid_layout/grid_layout.dart';
 import 'package:bellymax/common/widgets/products/product_cards/brandpartners.dart';
 import 'package:bellymax/common/widgets/tabbar.dart';
+import 'package:bellymax/common/widgets/tabbarView/burger.dart';
 import 'package:bellymax/common/widgets/tabbarView/salad.dart';
 import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
 import 'package:bellymax/features/shop/models/brand_feature.dart';
@@ -80,6 +81,7 @@ class Store extends StatelessWidget {
           body: const TabBarView(
             children: [
               SaladPage(), 
+              BurgerPage(), 
               
             ],))
       ),
