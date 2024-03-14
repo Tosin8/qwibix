@@ -13,7 +13,7 @@ class SeaFoodPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return 
 ListView.builder(
-  itemCount: Burgers.length,
+  itemCount: SeaFoods.length,
   itemBuilder: (_, index){
     return SeaFoodproductCard(
       SeaFoods: SeaFoods[index],

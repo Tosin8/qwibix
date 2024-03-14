@@ -14,7 +14,7 @@ class DrinksPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return 
 ListView.builder(
-  itemCount: Burgers.length,
+  itemCount: Drinks.length,
   itemBuilder: (_, index){
     return DrinksproductCard(
       Drinks: Drinks[index],

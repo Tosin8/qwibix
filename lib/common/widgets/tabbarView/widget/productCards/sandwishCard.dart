@@ -1,16 +1,16 @@
-import 'package:bellymax/features/shop/models/tabView/desset_model.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../../../features/shop/models/tabView/sandwish_model.dart';
 import '../addtocardbtn.dart';
 
-class DessertsproductCard extends StatelessWidget {
-  const DessertsproductCard({
-    super.key,  required this.Desserts,
+class SandWishproductCard extends StatelessWidget {
+  const SandWishproductCard({
+    super.key, required this.SandWishs,
   });
 
-  final Dessert Desserts; 
+  final SandWish SandWishs; 
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class DessertsproductCard extends StatelessWidget {
                width: 80, height: 80,
                decoration: BoxDecoration(
                  borderRadius: BorderRadius.circular(10),
-                 image: DecorationImage(image: AssetImage(Desserts.image), fit: BoxFit.cover), 
+                 image: DecorationImage(image: AssetImage(SandWishs.image), fit: BoxFit.cover), 
                ),
              ),
            ), 
@@ -39,14 +39,14 @@ class DessertsproductCard extends StatelessWidget {
                  mainAxisSize: MainAxisSize.min,
                  crossAxisAlignment: CrossAxisAlignment.start,
                  children: [
-                   Text(Desserts.title, overflow: TextOverflow.ellipsis, 
+                   Text(SandWishs.title, overflow: TextOverflow.ellipsis, 
                    style: Theme.of(context).textTheme.titleMedium,), 
                     SizedBox(height: 5), 
-                   Text(Desserts.description, 
+                   Text(SandWishs.description, 
                    maxLines: 2,overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.labelMedium,
                    ),
                    SizedBox(height: 5,),  
-                   Text(Desserts.price,
+                   Text(SandWishs.price,
                     style: Theme.of(context).textTheme.titleLarge,), 
                  ],
                ),
@@ -60,7 +60,7 @@ class DessertsproductCard extends StatelessWidget {
                  children: [
                    Icon(Iconsax.star1), 
                    SizedBox(width: 3,), 
-                   Text(Desserts.rate),
+                   Text(SandWishs.rate),
                  ],
                ), 
                SizedBox(height: BSizes.spaceBtwItems * 2,), 

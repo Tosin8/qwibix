@@ -6,6 +6,7 @@ import 'package:bellymax/common/widgets/tabbarView/burger.dart';
 import 'package:bellymax/common/widgets/tabbarView/chicken.dart';
 import 'package:bellymax/common/widgets/tabbarView/drinks.dart';
 import 'package:bellymax/common/widgets/tabbarView/salad.dart';
+import 'package:bellymax/common/widgets/tabbarView/sand_wish.dart';
 import 'package:bellymax/common/widgets/tabbarView/sea_food.dart';
 import 'package:bellymax/common/widgets/tabbarView/soup.dart';
 import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
@@ -93,7 +94,7 @@ class Store extends StatelessWidget {
               SeaFoodPage(), 
                DrinksPage(), 
              DessertsPage(), 
-              // SandWish(), 
+              SandWishPage(), 
 
               
             ],))
