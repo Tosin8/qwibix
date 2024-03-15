@@ -60,7 +60,22 @@ class ProfileScreen extends StatelessWidget {
             title: 'Account Privacy', subText: 'Manage data usage and connected \naccounts', onTap: () {  },
             icon: Iconsax.security_card
 
-          ), 
+          ),  SettingsMenuTitle(
+          title: 'Voucher', 
+          subText: 'Check it out for discount prices', onTap: (){},
+          icon: Iconsax.discount_shape, )
+          , 
+          SettingsMenuTitle(
+          title: 'Consumer Care', 
+          subText: 'Reach us to us through our live chat', onTap: (){},
+          icon: Iconsax.call_calling, )
+          , 
+          SettingsMenuTitle(
+          title: 'History', 
+          subText: 'Browse through your recently \nviewed products', onTap: (){},
+          icon: Iconsax.document_previous, )
+          , 
+
           
           const SizedBox(height: BSizes.spaceBtwSections,), 
           // app settings
@@ -81,15 +96,30 @@ class ProfileScreen extends StatelessWidget {
 trailing: Switch(value: false, onChanged: (value){}),
           ), 
 
+//SizedBox(height: BSizes.spaceBtwItems,), 
+          // consumer care
+         
+       
 // logout button 
 const SizedBox(height: BSizes.spaceBtwSections,), 
 Padding(
   padding: const EdgeInsets.all(18.0),
   child: SizedBox(
     width: double.infinity, 
-    child: OutlinedButton(onPressed: (){}, child: const Text('Logout')),
+    child: OutlinedButton(
+      onPressed: (){}, 
+    
+      child: const Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Iconsax.logout),
+          SizedBox(width: BSizes.spaceBtwItems,) , 
+          Text('Logout'),
+        ],
+      ),
+    )),
   ),
-), 
+
 const SizedBox(height: BSizes.spaceBtwSections * 2.5,), 
           ],
         ),
