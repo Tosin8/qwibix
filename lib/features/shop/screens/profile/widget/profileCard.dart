@@ -1,5 +1,7 @@
+import 'package:bellymax/features/shop/screens/profile/userscreen.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class profileCard extends StatelessWidget {
@@ -27,7 +29,7 @@ class profileCard extends StatelessWidget {
       style: Theme.of(context).textTheme.bodySmall!.apply(color: dark ? Colors.white : Colors.black),),
       trailing: GestureDetector(
     onTap: () {
-      
+      Get.to(() => ProfileUserScreen()); 
     },
     
         child: Icon(Iconsax.edit, color: dark? Colors.white: Colors.black,)),
