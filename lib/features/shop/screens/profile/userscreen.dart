@@ -34,7 +34,42 @@ class ProfileUserScreen extends StatelessWidget {
             const SizedBox(height: BSizes.spaceBtwItems/2,), 
             const BSectionHeading(title: 'Profile Information', buttonTitle: ''), 
               const SizedBox(height: BSizes.spaceBtwItems,), 
-              userprofilemenu()
+              userprofilemenu(
+                name: 'Name', middleName: 'Tosin Ezekiel', press: () {  },
+                
+              ), 
+              const SizedBox(height: BSizes.spaceBtwItems), 
+               userprofilemenu(
+                name: 'Username', middleName: 'Tosin8', press: () {  },
+                
+              ),
+
+              // Personal Information
+               const SizedBox(height: BSizes.spaceBtwSections), 
+           const Divider(), 
+            const SizedBox(height: BSizes.spaceBtwItems/2,), 
+           const BSectionHeading(title: 'Personal Information', buttonTitle: ''), 
+              const SizedBox(height: BSizes.spaceBtwItems,), 
+              userprofilemenu(
+                name: 'Email', middleName: 'Tosinezekiel8@gmail.com', press: () {  },
+              ),  
+              const SizedBox(height: BSizes.spaceBtwItems,), 
+              userprofilemenu(
+                name: 'Phone No', middleName: '+234 812 345 678', press: () {  },
+              ), const SizedBox(height: BSizes.spaceBtwItems,), 
+              userprofilemenu(
+                name: 'Gender', middleName: 'Male', press: () {  },
+              ),  
+
+              // close account
+               const SizedBox(height: BSizes.spaceBtwSections),
+           const Divider(),
+            const SizedBox(height: BSizes.spaceBtwItems/2,),
+           const BSectionHeading(title: 'Close Account', buttonTitle: ''),
+              const SizedBox(height: BSizes.spaceBtwItems,),
+              userprofilemenu(
+                name: 'Close Account', middleName: 'Close your account', press: () {  },
+              )
           ],
           ),
         )
