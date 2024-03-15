@@ -43,7 +43,7 @@ class ForgotPassword extends StatelessWidget {
               onPressed: (){
                 Get.to(() => const ResetPassword());
               }, 
-              child: Text(BTexts.submit)),
+              child: const Text(BTexts.submit)),
           )
         ],
       ),)

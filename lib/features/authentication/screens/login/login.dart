@@ -6,7 +6,6 @@ import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 import 'login.widget/login_form.dart';
@@ -29,14 +28,14 @@ class LoginScreen extends StatelessWidget{
               BLoginHeader(dark: dark), 
  const SizedBox(height: BSizes.spaceBtwInputFields,),
               /// Form
-            BLoginForm(), 
+            const BLoginForm(), 
 
                 /// Divider 
                 BFormDivider(dark: dark, 
                 DividerText: BTexts.orSignInWith.capitalize!, style: Theme.of(context).textTheme.labelMedium,),
 const SizedBox(height: BSizes.spaceBtwSections,), 
                 /// Footer 
-                BFormSocialMedia()
+                const BFormSocialMedia()
             ],
           
           )

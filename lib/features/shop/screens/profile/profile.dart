@@ -1,6 +1,12 @@
+import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
+
+import 'widget/appmenuTitles.dart';
+import 'widget/menuTitles.dart';
+import 'widget/profileCard.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -20,15 +26,71 @@ class ProfileScreen extends StatelessWidget {
             
             // User profile card
 
-            ListTile(
-              leading: CircleAvatar(
-                radius: 40,
-                child: Container(
-                  
-                  decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/user.png'))),
-                ),
-              )
-            )
+            profileCard(dark: dark), 
+            const SizedBox(height:BSizes.spaceBtwSections), 
+            const Padding(
+              padding: EdgeInsets.only(left: 18.0),
+              child: BSectionHeading(
+                title: 'Account Settings', 
+              buttonTitle: ''),
+            ), 
+          const SizedBox(height: BSizes.spaceBtwItems,), 
+          SettingsMenuTitle(
+            title: 'My Address', subText: 'Set shopping delievery address', onTap: () {  },
+            icon: Iconsax.safe_home
+
+          ), 
+           SettingsMenuTitle(
+            title: 'My Cart', subText: 'Add, remove products and move \nto checkout', onTap: () {  },
+            icon: Iconsax.shopping_cart
+
+          ), SettingsMenuTitle(
+            title: 'My Orders', subText: 'In progress and completed orders', onTap: () {  },
+            icon: Iconsax.bag_tick
+
+          ), SettingsMenuTitle(
+            title: 'Notification', subText: 'Set any kind of notification message', onTap: () {  },
+            icon: Iconsax.notification
+
+          ), SettingsMenuTitle(
+            title: 'Pending Reviews', subText: 'Submit your reviews on purchased\nproducts', onTap: () {  },
+            icon: Iconsax.activity, 
+
+          ), SettingsMenuTitle(
+            title: 'Account Privacy', subText: 'Manage data usage and connected \naccounts', onTap: () {  },
+            icon: Iconsax.security_card
+
+          ), 
+          
+          const SizedBox(height: BSizes.spaceBtwSections,), 
+          // app settings
+          const Padding(
+            padding: EdgeInsets.only(left: 18.0),
+            child: BSectionHeading(title: 'App Settings', 
+              buttonTitle: ''),
+          ), 
+          const SizedBox(height: BSizes.spaceBtwItems,), 
+          ASettingsMenuTitle(
+            title: 'Geo location', subText: ' Set recommendation based on location', onTap: () {  },
+            icon: Iconsax.location
+
+          ), 
+          ASettingsMenuTitle(
+            title: 'Offline Use', subText: 'Still want to use the app with no network available', onTap: () {  },
+            icon: Iconsax.location, 
+trailing: Switch(value: false, onChanged: (value){}),
+          ), 
+
+// logout button 
+const SizedBox(height: BSizes.spaceBtwSections,), 
+Padding(
+  padding: const EdgeInsets.all(18.0),
+  child: SizedBox(
+    width: double.infinity, 
+    child: OutlinedButton(onPressed: (){}, child: const Text('Logout')),
+  ),
+), 
+const SizedBox(height: BSizes.spaceBtwSections * 2.5,), 
           ],
         ),
       )
@@ -36,3 +98,4 @@ class ProfileScreen extends StatelessWidget {
     
   }
 }
+

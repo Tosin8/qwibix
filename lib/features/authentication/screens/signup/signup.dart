@@ -38,7 +38,7 @@ const SizedBox(height: BSizes.spaceBtwSections,),
               const SizedBox(height: BSizes.spaceBtwSections,),
 
               //Social Media Btn  
-              BFormSocialMedia(), 
+              const BFormSocialMedia(), 
               const SizedBox(height: BSizes.spaceBtwSections,),
         
             ],

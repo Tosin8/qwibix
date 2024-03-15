@@ -1,4 +1,3 @@
-import 'package:bellymax/features/shop/models/product_list.dart';
 import 'package:flutter/material.dart';
 
 class BProductTitleText extends StatelessWidget {

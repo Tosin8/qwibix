@@ -2,7 +2,6 @@ import 'package:bellymax/common/widgets/carticon.dart';
 import 'package:bellymax/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
 import 'package:bellymax/features/shop/models/product_list.dart';
-import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
@@ -59,7 +58,7 @@ class HomeScreen extends StatelessWidget {
            child: BSectionHeading(title: 'Popular Dishes', buttonTitle: 'View All', ),
          ),
          const SizedBox(height: BSizes.spaceBtwItems,), 
-           Container(
+           SizedBox(
             height: 600, width: 800,
              child: Expanded(
               
@@ -89,7 +88,7 @@ class HomeScreen extends StatelessWidget {
            child: BSectionHeading(title: 'Recommended', buttonTitle: 'View All', ),
          ),
          const SizedBox(height: BSizes.spaceBtwItems,), 
-          Container(
+          SizedBox(
             height: 600, width: 800,
              child: Expanded(
               
@@ -119,7 +118,7 @@ class HomeScreen extends StatelessWidget {
            child: BSectionHeading(title: 'Breakfast', buttonTitle: 'View All', ),
          ), 
          const SizedBox(height: BSizes.spaceBtwItems,),  
-          Container(
+          SizedBox(
             height: 600, width: 800,
              child: Expanded(
               
@@ -149,7 +148,7 @@ class HomeScreen extends StatelessWidget {
            child: BSectionHeading(title: 'Free Delivery', buttonTitle: 'View All', ),
          ),
          const SizedBox(height: BSizes.spaceBtwItems,), 
-          Container(
+          SizedBox(
             height: 600, width: 800,
              child: Expanded(
               

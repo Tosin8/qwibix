@@ -1,4 +1,3 @@
-import 'package:bellymax/features/shop/models/tabView/burger_model.dart';
 import 'package:bellymax/features/shop/models/tabView/desset_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

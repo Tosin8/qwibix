@@ -19,19 +19,19 @@ class ResetPassword extends StatelessWidget {
             onPressed: () {
               Get.back(); 
             }, 
-              icon: Icon(CupertinoIcons.clear)), 
+              icon: const Icon(CupertinoIcons.clear)), 
             
           
         ],
       ),
       body:  SingleChildScrollView(
         child: Padding(
-          padding:  EdgeInsets.all(BSizes.defaultSpace),
+          padding:  const EdgeInsets.all(BSizes.defaultSpace),
           child: Column(
             children: [
 
               /// Image with 60% of screen width
-              Image(image: AssetImage(BImages.deliveredEmailllustration), 
+              Image(image: const AssetImage(BImages.deliveredEmailllustration), 
               width: BHelperFunctions.screenWidth() * 0.6
               ), 
               const SizedBox(height: BSizes.spaceBtwSections,), 
@@ -46,7 +46,7 @@ class ResetPassword extends StatelessWidget {
                 width: double.infinity, 
                 child: ElevatedButton(onPressed: (){}, child: const Text(BTexts.done)),
               ), 
-              SizedBox(height: BSizes.spaceBtwItems,), 
+              const SizedBox(height: BSizes.spaceBtwItems,), 
               SizedBox(
                 width: double.infinity, 
                 child: TextButton(onPressed: (){

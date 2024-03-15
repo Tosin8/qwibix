@@ -5,7 +5,7 @@ import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 
 class BFormDivider extends StatelessWidget {
-   BFormDivider({
+   const BFormDivider({
     Key? key,
     required this.dark, required this.DividerText, TextStyle? style, 
   }) : super(key: key);

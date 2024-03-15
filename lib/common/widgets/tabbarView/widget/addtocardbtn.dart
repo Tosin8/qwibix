@@ -14,12 +14,12 @@ class addToCartBtn extends StatelessWidget {
       },
       child: Container(
         width: 35, height: 35, 
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(topLeft: Radius.circular(15), 
           bottomRight: Radius.circular(15)),
           color: Colors.black
         ),
-        child: Icon(Iconsax.add, color: Colors.white,),
+        child: const Icon(Iconsax.add, color: Colors.white,),
       ),
     );
   }

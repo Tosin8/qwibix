@@ -1,5 +1,4 @@
 import 'package:bellymax/features/shop/models/tabView/drinks_model.dart';
-import 'package:bellymax/features/shop/models/tabView/seafood_model.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -32,9 +31,9 @@ class DrinksproductCard extends StatelessWidget {
                ),
              ),
            ), 
-           SizedBox(width: BSizes.spaceBtwItems), 
+           const SizedBox(width: BSizes.spaceBtwItems), 
            Expanded(
-             child: Container(
+             child: SizedBox(
                width: 60, 
                child: Column(
                  mainAxisSize: MainAxisSize.min,
@@ -42,30 +41,30 @@ class DrinksproductCard extends StatelessWidget {
                  children: [
                    Text(Drinks.title, overflow: TextOverflow.ellipsis, 
                    style: Theme.of(context).textTheme.titleMedium,), 
-                    SizedBox(height: 5), 
+                    const SizedBox(height: 5), 
                    Text(Drinks.description, 
                    maxLines: 2,overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.labelMedium,
                    ),
-                   SizedBox(height: 5,),  
+                   const SizedBox(height: 5,),  
                    Text(Drinks.price,
                     style: Theme.of(context).textTheme.titleLarge,), 
                  ],
                ),
              ),
            ), 
-           SizedBox(width: BSizes.spaceBtwItems * 8,), 
+           const SizedBox(width: BSizes.spaceBtwItems * 8,), 
            Column(
              mainAxisSize: MainAxisSize.min,
              children: [
                Row(
                  children: [
-                   Icon(Iconsax.star1), 
-                   SizedBox(width: 3,), 
+                   const Icon(Iconsax.star1), 
+                   const SizedBox(width: 3,), 
                    Text(Drinks.rate),
                  ],
                ), 
-               SizedBox(height: BSizes.spaceBtwItems * 2,), 
-               addToCartBtn()
+               const SizedBox(height: BSizes.spaceBtwItems * 2,), 
+               const addToCartBtn()
              ],
            )
          ],

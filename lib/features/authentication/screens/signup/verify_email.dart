@@ -54,12 +54,12 @@ class VerifyEmailScreen extends StatelessWidget {
                 onPressed: (){
                  Get.to(()=> const SuccessScreen());
                },
-                child: Text(BTexts.tContinue), 
+                child: const Text(BTexts.tContinue), 
                 ),), 
                const SizedBox(height: BSizes.spaceBtwItems,), 
                 SizedBox(width: double.infinity, 
                child: TextButton(onPressed: (){},
-                child: Text(BTexts.resendEmail), 
+                child: const Text(BTexts.resendEmail), 
                 ),), 
 
 
