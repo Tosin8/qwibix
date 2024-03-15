@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
-class ProductDetails extends StatelessWidget {
-  const ProductDetails({super.key});
+// PD - Product Details
+class PDPopularDishes extends StatelessWidget {
+  const PDPopularDishes({super.key});
 
   @override
   Widget build(BuildContext context) {
