@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'widget.profileuser/userprofilemenu.dart';
+import 'widget.profileuser/userprofilephoto.dart';
+
 class ProfileUserScreen extends StatelessWidget {
   const ProfileUserScreen({super.key});
 
@@ -31,18 +34,7 @@ class ProfileUserScreen extends StatelessWidget {
             const SizedBox(height: BSizes.spaceBtwItems/2,), 
             const BSectionHeading(title: 'Profile Information', buttonTitle: ''), 
               const SizedBox(height: BSizes.spaceBtwItems,), 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Name', 
-                  style: Theme.of(context).textTheme.bodySmall,
-                  overflow: TextOverflow.ellipsis,), 
-                  Text('Tosin Ezekiel', 
-                  style: Theme.of(context).textTheme.bodyMedium,
-                  overflow: TextOverflow.ellipsis,),
-                  Icon(Iconsax.arrow_right_34, size: 18) , 
-                ],
-              )
+              userprofilemenu()
           ],
           ),
         )
@@ -51,32 +43,3 @@ class ProfileUserScreen extends StatelessWidget {
   }
 }
 
-class userProfilePhoto extends StatelessWidget {
-  const userProfilePhoto({
-    super.key,
-    required this.dark,
-  });
-
-  final bool dark;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: Column(
-      
-        children: [
-          CircleAvatar(
-            radius: 40, child: Container(decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/user.png'))),),
-          ),
-           const SizedBox(height: BSizes.spaceBtwItems,), 
-      GestureDetector(
-        onTap:() {
-          
-        },
-        child: Text('Change Profile Photo', style: Theme.of(context).textTheme.bodyMedium!.apply(color: dark ? Colors.white : Colors.black),)),
-        ],
-      ),
-    );
-  }
-}
