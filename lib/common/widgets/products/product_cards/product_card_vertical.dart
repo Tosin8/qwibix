@@ -25,7 +25,9 @@ final TodaySpecial TodaySpecialList;
     
     return GestureDetector( 
       onTap:() {
-        Get.to(() => PDPopularDishes()); 
+        Get.to(() => PDPopularDishes(TodaySpecialList: TodaySpecialList,
+          
+        )); 
       },
       child: Container(
         width: 180, 
