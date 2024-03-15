@@ -4,6 +4,7 @@ import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:iconsax/iconsax.dart';
 
 class ProfileUserScreen extends StatelessWidget {
   const ProfileUserScreen({super.key});
@@ -25,10 +26,23 @@ class ProfileUserScreen extends StatelessWidget {
             userProfilePhoto(dark: dark), 
            
            // Details
-           SizedBox(height: BSizes.spaceBtwItems/2,), 
-           Divider(), 
-            SizedBox(height: BSizes.spaceBtwItems/2,), 
-            BSectionHeading(title: 'Profile Information', buttonTitle: ''), 
+           const SizedBox(height: BSizes.spaceBtwItems/2,), 
+           const Divider(), 
+            const SizedBox(height: BSizes.spaceBtwItems/2,), 
+            const BSectionHeading(title: 'Profile Information', buttonTitle: ''), 
+              const SizedBox(height: BSizes.spaceBtwItems,), 
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Name', 
+                  style: Theme.of(context).textTheme.bodySmall,
+                  overflow: TextOverflow.ellipsis,), 
+                  Text('Tosin Ezekiel', 
+                  style: Theme.of(context).textTheme.bodyMedium,
+                  overflow: TextOverflow.ellipsis,),
+                  Icon(Iconsax.arrow_right_34, size: 18) , 
+                ],
+              )
           ],
           ),
         )
