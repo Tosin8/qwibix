@@ -45,15 +45,18 @@ final TodaySpecial TodaySpecialList;
             
               child: Stack(
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(image: AssetImage(TodaySpecialList.image, ), 
-                        fit: BoxFit.cover)
-                      ),
-                      // child: Image.asset(TodaySpecialList.image, fit: BoxFit.contain,), 
-                      ),
+                  Hero(
+                    tag: TodaySpecialList.image, 
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(image: AssetImage(TodaySpecialList.image, ), 
+                          fit: BoxFit.cover)
+                        ),
+                        // child: Image.asset(TodaySpecialList.image, fit: BoxFit.contain,), 
+                        ),
+                    ),
                   ), 
       
                   /// - Sales Tag
