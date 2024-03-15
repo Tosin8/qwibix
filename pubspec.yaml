@@ -51,6 +51,8 @@ flutter:
     - assets/splash_icon_black.png
     - assets/splash_icon_white.png
 
+#user image 
+    - assets/images/user.png
     #social media icon
     - assets/icons/social_media/
 

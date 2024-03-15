@@ -11,11 +11,28 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false, 
-        title: Text('Profile', style: Theme.of(context).textTheme.headlineMedium!.apply(color: dark ? Colors.white : Colors.black),)
+        title: Text('Profile', style: Theme.of(context).textTheme.headlineMedium!.apply(color: dark ? Colors.white : Colors.black),),
+        
       ),
       body: SingleChildScrollView(
-        child: Padding(padding: const EdgeInsets.all(BSizes.defaultSpace)),
-      ),
-    );
+        child: Column(
+          children: [
+            
+            // User profile card
+
+            ListTile(
+              leading: CircleAvatar(
+                radius: 40,
+                child: Container(
+                  
+                  decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/user.png'))),
+                ),
+              )
+            )
+          ],
+        ),
+      )
+      );
+    
   }
 }
