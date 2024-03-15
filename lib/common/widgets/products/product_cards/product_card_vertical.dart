@@ -1,11 +1,13 @@
 import 'package:bellymax/common/widgets/icons/favorite_icon.dart';
 import 'package:bellymax/common/widgets/texts/product_title_text.dart';
 import 'package:bellymax/features/shop/models/product_list.dart';
+import 'package:bellymax/features/shop/screens/product_details/popular_dishes.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/rounded_container.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class BProductCardVertical extends StatelessWidget {
@@ -23,7 +25,7 @@ final TodaySpecial TodaySpecialList;
     
     return GestureDetector( 
       onTap:() {
-        
+        Get.to(() => PDPopularDishes()); 
       },
       child: Container(
         width: 180, 
@@ -59,8 +61,11 @@ final TodaySpecial TodaySpecialList;
         child: BRoundedContainer(
       radius: BSizes.sm, 
       backgroundColor: BColors.secondary.withOpacity(0.8), 
-      padding: const EdgeInsets.symmetric(horizontal: BSizes.sm, vertical: BSizes.xs), 
-      child: Text(TodaySpecialList.discount, style: Theme.of(context).textTheme.labelLarge!.apply(color: dark? Colors.white: BColors.black),),
+      padding: const EdgeInsets.symmetric(horizontal: BSizes.sm, 
+      vertical: BSizes.xs), 
+      child: Text(TodaySpecialList.discount,
+       style: Theme.of(context).textTheme.labelLarge!.apply(
+        color: dark? Colors.white: BColors.black),),
         )), 
       
         /// - Favorite Icon Button

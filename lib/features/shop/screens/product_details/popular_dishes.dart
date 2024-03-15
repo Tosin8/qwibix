@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 // PD - Product Details
 class PDPopularDishes extends StatelessWidget {
@@ -6,6 +7,8 @@ class PDPopularDishes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      
+    );
   }
 }
