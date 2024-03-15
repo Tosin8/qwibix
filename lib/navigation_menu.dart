@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'features/shop/screens/profile/profile.dart';
 import 'utils/constants/colors.dart';
 
 class NavigationMenu extends StatelessWidget {
@@ -53,6 +54,6 @@ class NavigationController extends GetxController {
     const HomeScreen(),  
    const Store(), 
     const WishlistScreen(), 
-    Container(color: Colors.brown), 
+    const ProfileScreen(),  
   ]; 
 }
