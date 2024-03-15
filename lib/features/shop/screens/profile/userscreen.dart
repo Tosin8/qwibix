@@ -65,11 +65,15 @@ class ProfileUserScreen extends StatelessWidget {
                const SizedBox(height: BSizes.spaceBtwSections),
            const Divider(),
             const SizedBox(height: BSizes.spaceBtwItems/2,),
-           const BSectionHeading(title: 'Close Account', buttonTitle: ''),
+           
               const SizedBox(height: BSizes.spaceBtwItems,),
-              userprofilemenu(
-                name: 'Close Account', middleName: 'Close your account', press: () {  },
-              )
+             Center(
+              child: TextButton(
+                onPressed: () {},
+                
+                child: Text('Close Account', style: Theme.of(context).textTheme.bodyMedium!.apply(color:  Colors.red),),
+              ),
+             )
           ],
           ),
         )
