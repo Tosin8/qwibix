@@ -8,7 +8,27 @@ class PDPopularDishes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            
+
+            // Header Product Image. 
+            Stack(
+              children: [
+Container(
+  height: 300,
+  width: double.infinity, 
+  decoration: BoxDecoration(
+    image: DecorationImage(image: AssetImage('assets/images/popular1.png'), fit: BoxFit.cover)
+  ),
+)
+                
+              ],
+            )
+          ]
+        )
+      )
     );
   }
 }
