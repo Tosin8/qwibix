@@ -18,6 +18,7 @@ final TodaySpecial TodaySpecialList;
   Widget build(BuildContext context) {
     final dark = BHelperFunctions.isDarkMode(context);
     return Scaffold(
+      bottomNavigationBar: const PDLowerBar(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +55,8 @@ Padding(
   child: Row(
     children: [
       Text(TodaySpecialList.brandTitle), 
-      const SizedBox(width: BSizes.spaceBtwItems,),
+      const SizedBox(width: BSizes.spaceBtwItems,), const Text('|'), 
+      const SizedBox(width: 10,), 
       Text(TodaySpecialList.category), 
     ],
   ),
@@ -76,8 +78,30 @@ const Padding(
   padding: EdgeInsets.all(8.0),
   child: BSectionHeading(title: 'Ingredients', buttonTitle: ''),
 ), 
-const SizedBox(height: BSizes.spaceBtwItems,),
-Text('Surger, Maggi, Carrot, Milk'), 
+
+const Padding(
+  padding: EdgeInsets.all(8.0),
+  child: Text('Surger, Maggi, Carrot, Milk'),
+), 
+const SizedBox(height: BSizes.spaceBtwItems,), 
+const Divider(), 
+
+Padding(
+  padding: const EdgeInsets.all(8.0),
+  child: GestureDetector(
+    onTap: () {
+      
+    },
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text('Review', style: Theme.of(context).textTheme.titleMedium!.apply(color: dark ? Colors.white : Colors.black),),
+        const Icon(Icons.arrow_forward_ios), 
+      ],
+    ),
+  ),
+)
+
 
           ]
         )
@@ -145,9 +169,7 @@ class HeaderProductImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-    Hero(
-      tag: TodaySpecialList.image, 
-      child: Container(
+    Container(
         height: 300,
         width: double.infinity, 
         decoration:  BoxDecoration(
@@ -155,7 +177,7 @@ class HeaderProductImage extends StatelessWidget {
             image: AssetImage(TodaySpecialList.image), fit: BoxFit.cover), 
         ),
       ),
-    ), 
+    
     Positioned(
       top: 30, left: 10, 
       child: Row(
@@ -180,5 +202,55 @@ class HeaderProductImage extends StatelessWidget {
         
       ],
     );
+  }
+}
+
+class PDLowerBar extends StatelessWidget {
+  const PDLowerBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 70,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            Row(
+              children: [
+                Container(
+                  height: 30, width: 30,
+                  decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(5)),
+                  child: const Icon(Iconsax.minus, color: Colors.white, size: 20,),
+                ),
+                SizedBox(width: BSizes.spaceBtwItems,), 
+                Text('2', style: Theme.of(context).textTheme.titleLarge,), SizedBox(width: BSizes.spaceBtwItems,), 
+                Container(
+                  height: 30, width: 30,
+                  decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(5)),
+                  child: const Icon(Iconsax.add, color: Colors.white, size: 20,),
+                ),
+              ]
+            ), 
+            SizedBox(width: BSizes.spaceBtwItems * 6,),
+            Container(
+              width: 160, height: 50,
+              decoration: BoxDecoration(
+                color: Colors.black, borderRadius: BorderRadius.circular(5)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Iconsax.shopping_bag, color: Colors.white, size: 25,),
+                    SizedBox(width: BSizes.spaceBtwItems,),
+                    Text('Add to Bag', style: Theme.of(context).textTheme.titleLarge!.apply(color: Colors.white),),
+                  ],
+                ),
+              ),
+            
+          ],
+        ),
+      ),
+    );
+    
   }
 }
