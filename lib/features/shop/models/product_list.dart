@@ -25,7 +25,7 @@ class TodaySpecial {
 final List TodaySpecialList = [
   TodaySpecial(
    title: 'Chicken Soup with Cheese',
-  description: '',
+  description: 'This a chicken that is made up of several series of blaahblah',
   brandTitle: 'KFC',
    image: 'assets/products/all/1.jpg', 
    price: '\$10.00',
