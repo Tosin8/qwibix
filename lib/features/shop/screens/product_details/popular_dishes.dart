@@ -41,7 +41,7 @@ const SizedBox(height: BSizes.spaceBtwItems,),
        Text(TodaySpecialList.title,
         style: Theme.of(context).textTheme.titleMedium!.apply(color: dark ? Colors.white : Colors.black),
        ),
-       Icon(
+       const Icon(
         Icons.local_activity, 
        )
      ],
@@ -54,16 +54,30 @@ Padding(
   child: Row(
     children: [
       Text(TodaySpecialList.brandTitle), 
-      SizedBox(width: BSizes.spaceBtwItems,),
+      const SizedBox(width: BSizes.spaceBtwItems,),
       Text(TodaySpecialList.category), 
     ],
   ),
   
 ), 
-SizedBox(height: BSizes.spaceBtwItems,),
-BSectionHeading(title: 'Description', buttonTitle: ''), 
-SizedBox(height: BSizes.spaceBtwItems,),
+const SizedBox(height: BSizes.spaceBtwItems,),
+
+// description
+const Padding(
+  padding: EdgeInsets.all(8.0),
+  child: BSectionHeading(title: 'Description', buttonTitle: ''),
+), 
+const SizedBox(height: BSizes.spaceBtwItems,),
 Text(TodaySpecialList.description),
+const SizedBox(height: BSizes.spaceBtwItems,),
+
+// ingredients
+const Padding(
+  padding: EdgeInsets.all(8.0),
+  child: BSectionHeading(title: 'Ingredients', buttonTitle: ''),
+), 
+const SizedBox(height: BSizes.spaceBtwItems,),
+Text('Surger, Maggi, Carrot, Milk'), 
 
           ]
         )
