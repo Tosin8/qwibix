@@ -45,9 +45,8 @@ final TodaySpecial TodaySpecialList;
             
               child: Stack(
                 children: [
-                  Hero(
-                    tag: TodaySpecialList.image, 
-                    child: ClipRRect(
+                   
+                    ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Container(
                         decoration: BoxDecoration(
@@ -57,7 +56,7 @@ final TodaySpecial TodaySpecialList;
                         // child: Image.asset(TodaySpecialList.image, fit: BoxFit.contain,), 
                         ),
                     ),
-                  ), 
+                  
       
                   /// - Sales Tag
       Positioned(
