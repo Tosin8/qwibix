@@ -1,4 +1,4 @@
-import 'package:bellymax/features/authentication/controllers/onboarding_controller.dart';
+import 'package:bellymax/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:bellymax/features/authentication/screens/onboarding/widgets/onboarding_dot_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

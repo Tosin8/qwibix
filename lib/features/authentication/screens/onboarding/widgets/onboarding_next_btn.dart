@@ -1,4 +1,4 @@
-import 'package:bellymax/features/authentication/controllers/onboarding_controller.dart';
+import 'package:bellymax/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/device/device_utlity.dart';
