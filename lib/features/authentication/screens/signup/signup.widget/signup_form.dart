@@ -1,8 +1,5 @@
 
-
-
-
-
+import 'package:bellymax/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
@@ -22,7 +19,9 @@ class signUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SignupController());
     return Form(
+      key: controller.signupFormKey,
       child: Column(
       children: [
     Row(
@@ -30,6 +29,8 @@ class signUpForm extends StatelessWidget {
       children: [
         Expanded(
           child: TextFormField(
+            controller: controller.firstName, 
+            // validator: (value) => value!.isEmpty ? BTexts.requiredField : null,
             textInputAction: TextInputAction.next, 
             keyboardType: TextInputType.name,
             
@@ -42,6 +43,7 @@ class signUpForm extends StatelessWidget {
         const SizedBox(width: BSizes.spaceBtwInputFields,), 
           Expanded(
           child: TextFormField(
+            controller: controller.lastName, 
              textInputAction: TextInputAction.next, 
             keyboardType: TextInputType.name,
             expands: false,
@@ -56,6 +58,7 @@ class signUpForm extends StatelessWidget {
     
     ///UserName
     TextFormField(
+       controller: controller.username, 
              textInputAction: TextInputAction.next, 
             keyboardType: TextInputType.name,
           
@@ -67,6 +70,7 @@ class signUpForm extends StatelessWidget {
     
     ///Email
     TextFormField(
+       controller: controller.email, 
              textInputAction: TextInputAction.next, 
             keyboardType: TextInputType.emailAddress,
           
@@ -78,6 +82,7 @@ class signUpForm extends StatelessWidget {
     
     ///PhoneNumber
     TextFormField(
+       controller: controller.phoneNumber, 
              textInputAction: TextInputAction.next, 
             keyboardType: TextInputType.phone,
           
@@ -89,6 +94,7 @@ class signUpForm extends StatelessWidget {
     
     ///Password
     TextFormField(
+       controller: controller.password, 
              textInputAction: TextInputAction.next, 
             keyboardType: TextInputType.visiblePassword,
             obscureText: true,
