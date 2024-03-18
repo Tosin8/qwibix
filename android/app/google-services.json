@@ -12,7 +12,12 @@
           "package_name": "com.example.bellymax"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1097307852348-p64jbfvgsij9vqnf387d627scsc0afku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBQmi3jwYWA_VGA6TLhJXLzmxzf0255fbs"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097307852348-p64jbfvgsij9vqnf387d627scsc0afku.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1097307852348-b8s2io982mrk25bltevbsmr1bcrom3v8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bellymax"
+              }
+            }
+          ]
         }
       }
     }
