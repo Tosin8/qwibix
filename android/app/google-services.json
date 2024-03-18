@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1097307852348",
+    "project_id": "bellymax-def81",
+    "storage_bucket": "bellymax-def81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097307852348:android:72c12902c6af447864fd39",
+        "android_client_info": {
+          "package_name": "com.example.bellymax"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQmi3jwYWA_VGA6TLhJXLzmxzf0255fbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
