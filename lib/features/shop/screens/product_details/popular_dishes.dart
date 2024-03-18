@@ -5,7 +5,6 @@ import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -85,6 +84,20 @@ const Padding(
 ), 
 const SizedBox(height: BSizes.spaceBtwItems,), 
 const Divider(), 
+
+// Checkout Btn
+Padding( 
+  padding: const EdgeInsets.all(8.0),
+  child: Container(
+    width: double.infinity, 
+    height: 50,
+    decoration: BoxDecoration(
+      color: Colors.blue, 
+      borderRadius: BorderRadius.circular(8), 
+    ) , 
+    child: Text('Checkout', style: TextStyle(color: Colors.white, fontSize: 16),),
+  ),
+), 
 
 Padding(
   padding: const EdgeInsets.all(8.0),
