@@ -25,11 +25,12 @@ class BFullScreenLoader{
           ),
         ))); 
   }
-}
+
 
 // Stopping the currently open loading dialog. 
 /// this method returns nothing
 /// 
- stopLoading(){
+ static stopLoading(){
   Navigator.of(Get.overlayContext!).pop(); // close the dialog using the navigator
+}
 }

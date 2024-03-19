@@ -27,6 +27,12 @@ class SignupController extends GetxController{
 
 // Check Internet Connection
 final isConnected = await NetworkManager.instance.isConnected(); 
+if(!isConnected){
+  BFullScreenLoader.stopLoading();
+  return;
+}
+
+// form validation
     } catch (e) {
 
     }
