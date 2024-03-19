@@ -45,6 +45,7 @@ class signUpForm extends StatelessWidget {
           Expanded(
           child: TextFormField(
             controller: controller.lastName, 
+             validator: (value) => BValidator.validateEmptyText('Last Name', value),
              textInputAction: TextInputAction.next, 
             keyboardType: TextInputType.name,
             expands: false,
@@ -60,6 +61,7 @@ class signUpForm extends StatelessWidget {
     ///UserName
     TextFormField(
        controller: controller.username, 
+        validator: (value) => BValidator.validateEmptyText('User Name', value),
              textInputAction: TextInputAction.next, 
             keyboardType: TextInputType.name,
           
@@ -72,6 +74,7 @@ class signUpForm extends StatelessWidget {
     ///Email
     TextFormField(
        controller: controller.email, 
+        validator: (value) => BValidator.validateEmail(value),
              textInputAction: TextInputAction.next, 
             keyboardType: TextInputType.emailAddress,
           
@@ -84,6 +87,7 @@ class signUpForm extends StatelessWidget {
     ///PhoneNumber
     TextFormField(
        controller: controller.phoneNumber, 
+        validator: (value) => BValidator.validatePhoneNumber(value),
              textInputAction: TextInputAction.next, 
             keyboardType: TextInputType.phone,
           
@@ -96,6 +100,7 @@ class signUpForm extends StatelessWidget {
     ///Password
     TextFormField(
        controller: controller.password, 
+        validator: (value) => BValidator.validatePassword( value),
              textInputAction: TextInputAction.next, 
             keyboardType: TextInputType.visiblePassword,
             obscureText: true,
@@ -138,11 +143,14 @@ class signUpForm extends StatelessWidget {
             ],
           ), 
     const SizedBox(height: BSizes.spaceBtwSections,), 
+
           /// Sign Up Button 
           SizedBox(width: double.infinity, 
-          child: ElevatedButton(onPressed: (){
-            Get.to(()=> const VerifyEmailScreen());
-          },
+          child: ElevatedButton(
+          //   onPressed: (){
+          //   Get.to(()=> const VerifyEmailScreen());
+          // },
+          onPressed: () => controller.signup(),
            child: const Text(BTexts.createAccount)),)
       ],
     ));

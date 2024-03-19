@@ -28,4 +28,6 @@ class BImages {
    static const String banner4 = 'assets/images/banner/banner4.jpg';
   static const String banner5 = 'assets/images/banner/banner5.jpg';
 
+// animation
+static const String docerAnimation = 'assets/images/animations/json/animation-of-docer.json';
 }
