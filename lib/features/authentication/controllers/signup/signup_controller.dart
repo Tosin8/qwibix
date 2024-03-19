@@ -1,5 +1,7 @@
 import 'package:bellymax/common/widgets/loaders/loaders.dart';
+import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,7 +24,7 @@ class SignupController extends GetxController{
   
   ///  -- signup
    
-  Future<void> signup() async {
+  void signup() async {
     try{
 
       // Start loading
@@ -46,6 +48,20 @@ if(!privacyPolicy.value) {
 }
 
 // Register user in the firebase auth. and save user data in the firebase. 
+final UserCredential = await AuthenticationRepository.instance.registerWithEmailAndPassword(
+  email.text.trim(),
+   password.text.trim()); 
+
+// Save auth. user data in the firebase firestore 
+final newUser = UserModel(
+  id: UserCredential.user!.uid, 
+  firstName: firstName.text.trim(), 
+  lastName: lastName.text.trim(), 
+  username: username.text.trim(), 
+  email: email.text.trim(), 
+  phoneNumber = phoneNumber.text.trim(), 
+  profilePicture: '', 
+); 
 
     } catch (e) {
       // show some generic error to the user

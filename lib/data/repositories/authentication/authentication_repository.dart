@@ -40,7 +40,15 @@ Future<UserCredential> registerWithEmailAndPassword(String email, String passwor
     return await _auth.createUserWithEmailAndPassword(email: email, password: password);
   } on FirebaseAuthException catch (e) {
     throw BFirebaseAuthException(e.code).message; 
+  } on FirebaseException catch(e) {
+    throw BFirebaseException (e.code).message;
+  } on FormatException catch (_) {
+    throw const BFormatException(); 
+  } on PlatformException catch (e) {
+      throw BPlatformException(e.code).message; 
+    } catch (e) {
+      throw 'Something went wrong. Please try again'; 
+    }
   }
 }
 
-}
