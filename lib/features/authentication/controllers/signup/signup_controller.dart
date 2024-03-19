@@ -1,5 +1,7 @@
 import 'package:bellymax/common/widgets/loaders/loaders.dart';
 import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
+import 'package:bellymax/data/repositories/user/user_repository.dart';
+import 'package:bellymax/features/authentication/screens/signup/verify_email.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -64,15 +66,26 @@ final newUser = UserModel(
   profilePicture: '', 
 ); 
 
+final userRepository = Get.put(UserRepository()); 
+await userRepository.saveUserRecord(newUser); 
+
+// Show success message
+BLoaders.successSnackBar(
+  title: 'Congratulations', 
+  message: 'You have successfully created your account. Verify email to continue',
+); 
+
+// move to verify email screen 
+
+Get.to(() => const VerifyEmailScreen()); 
     } catch (e) {
+
+      // remove loader
+       BFullScreenLoader.stopLoading();
+
       // show some generic error to the user
       BLoaders.errorSnackBar(
         title: 'Oh Snap!', 
         message: e.toString()); 
     }
-  finally {
-    // remove loader
-    BFullScreenLoader.stopLoading();
-
-  }
 }}

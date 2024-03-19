@@ -2,6 +2,7 @@
 // model class representing user data. 
 
 import 'dart:core';
+// ignore: unused_import
 import 'dart:html';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -61,6 +62,7 @@ class UserModel {
     profilePicture: '',
   );
 
+
   /// Convert model to JSON structure  for starting data in firebase. 
   Map<String, dynamic> toJson()  { 
     return {
@@ -88,5 +90,8 @@ class UserModel {
             profilePicture: data['ProfilePicture'] ?? '',
             );  
     }
+   
+    return UserModel.fromSnapshot(document); 
   }
+  
 }
