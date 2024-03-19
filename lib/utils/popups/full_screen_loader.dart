@@ -19,10 +19,17 @@ class BFullScreenLoader{
            height: double.infinity, 
           child: Column(
             children: [
-              SizedBox(height: 250,), 
+              const SizedBox(height: 250,), 
               BAnimationLoaderWidget(text: text, animation: animation), 
             ],
           ),
         ))); 
   }
+}
+
+// Stopping the currently open loading dialog. 
+/// this method returns nothing
+/// 
+ stopLoading(){
+  Navigator.of(Get.overlayContext!).pop(); // close the dialog using the navigator
 }
