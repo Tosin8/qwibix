@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../verify_email.dart';
+import 'terms_condition_checkbox.dart';
 
 class signUpForm extends StatelessWidget {
   const signUpForm({
@@ -111,7 +112,7 @@ class signUpForm extends StatelessWidget {
                  prefixIcon: const Icon(Iconsax.password_check), suffixIcon: 
                  IconButton(
                   onPressed: () => controller.hidePassword.value = !controller.hidePassword.value, 
-                 icon: const Icon(Iconsax.eye_slash) 
+                 icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye) , 
               ),
             ),
       ),
@@ -119,36 +120,7 @@ class signUpForm extends StatelessWidget {
           const SizedBox(height: BSizes.spaceBtwSections,), 
     
           /// Terms and Conditions CheckBox 
-          Row(
-            children: [
-              SizedBox(
-                width: 24, height: 24, 
-                child: Checkbox(value: true, 
-                onChanged: (value){}),
-              ), 
-              const SizedBox(width: BSizes.spaceBtwItems,), 
-            Text.rich(
-    TextSpan(
-      children: 
-      [
-        TextSpan(text: '${BTexts.iAgreeTo} ', 
-        style: Theme.of(context).textTheme.bodySmall),
-        TextSpan(text: BTexts.privacyPolicy, 
-        style: Theme.of(context).textTheme.bodyMedium!.apply(color: dark ? BColors.white : BColors.primary, 
-        decoration: TextDecoration.underline)),  
-        TextSpan(text: ' ${BTexts.and} ', 
-        style: Theme.of(context).textTheme.bodySmall)
-        , 
-         TextSpan(text: BTexts.termsOfUse, 
-         style: Theme.of(context).textTheme.bodyMedium!.apply(color: dark ? BColors.white : BColors.primary, 
-        decoration: TextDecoration.underline
-        )), 
-        
-      ]
-    )
-              ), 
-            ],
-          ), 
+          BTermsAndConditionCheckbox(dark: dark), 
     const SizedBox(height: BSizes.spaceBtwSections,), 
 
           /// Sign Up Button 
@@ -163,6 +135,7 @@ class signUpForm extends StatelessWidget {
     ));
   }
 }
+
 
 
 
