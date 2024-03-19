@@ -1,3 +1,4 @@
+import 'package:bellymax/common/widgets/loaders/loaders.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -33,10 +34,19 @@ if(!isConnected){
 }
 
 // form validation
+if(!signupFormKey.currentState!.validate()){
+  BFullScreenLoader.stopLoading();
+  return; 
+}
     } catch (e) {
-
+      // show some generic error to the user
+      BLoaders.errorSnackBar(
+        title: 'Oh Snap!', 
+        message: e.toString()); 
     }
   finally {
+    // remove loader
+    BFullScreenLoader.stopLoading();
 
   }
 }}
