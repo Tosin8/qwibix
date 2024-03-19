@@ -11,6 +11,7 @@ class SignupController extends GetxController{
 
   /// variables
   final hidePassword = true.obs; // observable for hiding/showing password. 
+  final privacyPolicy = true.obs; 
   final email = TextEditingController(); 
   final lastName = TextEditingController(); 
   final username = TextEditingController(); 
@@ -34,6 +35,17 @@ if(!isConnected) return;
 // form validation
 if(!signupFormKey.currentState!.validate()) return; 
 
+// privacy policy
+if(!privacyPolicy.value) {
+  BLoaders.warningSnackBar( 
+    title: 'Accept Privay Policy', 
+    message: 'In order to create your account, you must accept the privacy policy and terms of use.', 
+    );
+    
+  return ; 
+}
+
+// Register user in the firebase auth. and save user data in the firebase. 
 
     } catch (e) {
       // show some generic error to the user
