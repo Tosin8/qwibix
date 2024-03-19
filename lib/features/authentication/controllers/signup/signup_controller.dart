@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 
 import '../../../../utils/http/network_manager.dart';
 import '../../../../utils/popups/full_screen_loader.dart';
+import '../../../personalization/models/user_model.dart';
 
 class SignupController extends GetxController{
   static SignupController get instance => Get.find(); 
@@ -59,7 +60,7 @@ final newUser = UserModel(
   lastName: lastName.text.trim(), 
   username: username.text.trim(), 
   email: email.text.trim(), 
-  phoneNumber = phoneNumber.text.trim(), 
+  phoneNumber : phoneNumber.text.trim(), 
   profilePicture: '', 
 ); 
 

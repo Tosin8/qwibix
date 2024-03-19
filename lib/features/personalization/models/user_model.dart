@@ -1,6 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 // model class representing user data. 
 
+import 'dart:core';
+
+import '../../../utils/formatters/formatter.dart';
+
 class UserModel {
   // keep those values final which don't want to be updated.
 
@@ -22,4 +26,35 @@ class UserModel {
     required this.phoneNumber,
     required this.profilePicture,
   });
+
+  // Helper function to get the full name. 
+  String get fullName => "$firstName $lastName";
+
+  /// Helper function to format phone number. 
+  String get formattedPhoneNo => BFormatter.formatPhoneNumber(phoneNumber); 
+
+  /// Static function to split full name into first and last name
+  static List<String> nameParts(fullName) => fullName.split(" ");
+
+  /// Static function to generate a username from the full name 
+  static String generatedUsername(fullName) {
+    List<String> nameParts = fullName.split(" ");
+    String firstName = nameParts[0].toLowerCase(); 
+    String lastName = nameParts.length > 1 ? nameParts[1].toLowerCase() : "";  
+
+    String camelCaseUsername = "$firstName$lastName"; // combine first and last name 
+    String usernameWithPrefix = "cwt_$camelCaseUsername";  // add 'cwt_" prefix
+    return usernameWithPrefix; 
+  }
+
+  /// static function to create an empty user model. 
+  static UserModel empty() => UserModel(
+    id: '',
+    firstName: '', 
+    lastName: '',
+    username: '',
+    email: '',
+    phoneNumber: '',
+    profilePicture: '',
+  );
 }
