@@ -3,6 +3,7 @@ import 'package:bellymax/features/authentication/controllers/signup/signup_contr
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
+import 'package:bellymax/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -30,7 +31,7 @@ class signUpForm extends StatelessWidget {
         Expanded(
           child: TextFormField(
             controller: controller.firstName, 
-            // validator: (value) => value!.isEmpty ? BTexts.requiredField : null,
+             validator: (value) => BValidator(), 
             textInputAction: TextInputAction.next, 
             keyboardType: TextInputType.name,
             
