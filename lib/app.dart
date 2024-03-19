@@ -3,7 +3,6 @@ import 'package:bellymax/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'features/authentication/screens/onboarding/onboarding.dart';
 
 import 'utils/theme/theme.dart';
 

@@ -98,17 +98,24 @@ class signUpForm extends StatelessWidget {
           const SizedBox(height: BSizes.spaceBtwInputFields,), 
     
     ///Password
-    TextFormField(
-       controller: controller.password, 
-        validator: (value) => BValidator.validatePassword( value),
-             textInputAction: TextInputAction.next, 
-            keyboardType: TextInputType.visiblePassword,
-            obscureText: true,
-          
-            decoration: const InputDecoration(
-              labelText: BTexts.password, prefixIcon: Icon(Iconsax.password_check), suffixIcon: Icon(Iconsax.eye_slash) 
+    Obx(
+      () =>  TextFormField(
+         controller: controller.password, 
+          validator: (value) => BValidator.validatePassword( value),
+               textInputAction: TextInputAction.next, 
+              keyboardType: TextInputType.visiblePassword,
+              obscureText: controller.hidePassword.value,
+            
+              decoration:  InputDecoration(
+                labelText: BTexts.password,
+                 prefixIcon: const Icon(Iconsax.password_check), suffixIcon: 
+                 IconButton(
+                  onPressed: () => controller.hidePassword.value = !controller.hidePassword.value, 
+                 icon: const Icon(Iconsax.eye_slash) 
+              ),
             ),
-          ),
+      ),
+    ), 
           const SizedBox(height: BSizes.spaceBtwSections,), 
     
           /// Terms and Conditions CheckBox 

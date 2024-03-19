@@ -67,6 +67,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1097307852348',
     projectId: 'bellymax-def81',
     storageBucket: 'bellymax-def81.appspot.com',
+    androidClientId: '1097307852348-96bjge6m6pdn315b0olm6m9svs9blru1.apps.googleusercontent.com',
     iosClientId: '1097307852348-b8s2io982mrk25bltevbsmr1bcrom3v8.apps.googleusercontent.com',
     iosBundleId: 'com.example.bellymax',
   );
@@ -77,6 +78,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1097307852348',
     projectId: 'bellymax-def81',
     storageBucket: 'bellymax-def81.appspot.com',
+    androidClientId: '1097307852348-96bjge6m6pdn315b0olm6m9svs9blru1.apps.googleusercontent.com',
     iosClientId: '1097307852348-pktki81suoho14let3ru3orbgdeik0o2.apps.googleusercontent.com',
     iosBundleId: 'com.example.bellymax.RunnerTests',
   );

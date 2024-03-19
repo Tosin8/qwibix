@@ -10,6 +10,7 @@ class SignupController extends GetxController{
   static SignupController get instance => Get.find(); 
 
   /// variables
+  final hidePassword = true.obs; // observable for hiding/showing password. 
   final email = TextEditingController(); 
   final lastName = TextEditingController(); 
   final username = TextEditingController(); 
@@ -28,16 +29,12 @@ class SignupController extends GetxController{
 
 // Check Internet Connection
 final isConnected = await NetworkManager.instance.isConnected(); 
-if(!isConnected){
-  BFullScreenLoader.stopLoading();
-  return;
-}
+if(!isConnected) return; 
 
 // form validation
-if(!signupFormKey.currentState!.validate()){
-  BFullScreenLoader.stopLoading();
-  return; 
-}
+if(!signupFormKey.currentState!.validate()) return; 
+
+
     } catch (e) {
       // show some generic error to the user
       BLoaders.errorSnackBar(

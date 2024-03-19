@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1097307852348-96bjge6m6pdn315b0olm6m9svs9blru1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bellymax",
+            "certificate_hash": "5db72accb64378058e7d19dd4dcc295ab1c7541b"
+          }
+        },
+        {
           "client_id": "1097307852348-p64jbfvgsij9vqnf387d627scsc0afku.apps.googleusercontent.com",
           "client_type": 3
         }
