@@ -31,7 +31,7 @@ class signUpForm extends StatelessWidget {
         Expanded(
           child: TextFormField(
             controller: controller.firstName, 
-             validator: (value) => BValidator(), 
+             validator: (value) => BValidator.validateEmptyText('First Name', value), 
             textInputAction: TextInputAction.next, 
             keyboardType: TextInputType.name,
             
