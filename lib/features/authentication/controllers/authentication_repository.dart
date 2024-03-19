@@ -33,5 +33,14 @@ class AuthenticationRepository extends GetxController{
 
   /* _____________ Email and Password Validation _____________ */
 
+/// [EmailAuth] - SignIn
+/// [EmailAuth] - SignUp
+Future<UserCredential> registerWithEmailAndPassword(String email, String password) async {
+  try{
+    return await _auth.createUserWithEmailAndPassword(email: email, password: password);
+  } on FirebaseAuthException catch (e) {
+    throw BFirebaseAuthException(e.code).message; 
+  }
+}
 
 }
