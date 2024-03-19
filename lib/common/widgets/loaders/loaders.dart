@@ -37,4 +37,18 @@ class BLoaders {
       icon: const Icon(Iconsax.check, color: BColors.white,)
     );
   }
+
+  static errorSnackBar({required title, message = ''}) {
+    Get.snackbar(
+      title, 
+      message, 
+      isDismissible: true, 
+      shouldIconPulse: true,
+      colorText: BColors.white, 
+      backgroundColor: Colors.red.shade600, 
+      snackPosition: SnackPosition.BOTTOM,
+      duration: const Duration(seconds: 3),
+      margin: const EdgeInsets.all(20), 
+      icon: const Icon(Iconsax.warning_2, color: BColors.white,));
+  }
 }
