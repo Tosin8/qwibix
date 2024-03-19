@@ -1,3 +1,4 @@
+import 'package:bellymax/common/widgets/loaders/animation_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +15,8 @@ class BFullScreenLoader{
         canPop: false,
         child: Container(
           color: BHelperFunctions.isDarkMode(Get.context!) ? BColors.dark : BColors.white,
-          width: double.infinity, height: double.infinity, 
+          width: double.infinity,
+           height: double.infinity, 
           child: Column(
             children: [
               SizedBox(height: 250,), 
