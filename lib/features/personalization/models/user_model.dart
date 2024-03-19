@@ -2,6 +2,9 @@
 // model class representing user data. 
 
 import 'dart:core';
+import 'dart:html';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../../utils/formatters/formatter.dart';
 
@@ -57,4 +60,33 @@ class UserModel {
     phoneNumber: '',
     profilePicture: '',
   );
+
+  /// Convert model to JSON structure  for starting data in firebase. 
+  Map<String, dynamic> toJson()  { 
+    return {
+'FirstName': firstName,
+'LastName': lastName,
+'Username': username,
+'Email': email,
+'PhoneNumber': phoneNumber,
+'ProfilePicture': profilePicture,
+    };
+    
+  }
+
+  /// Factory method to create a UserModel from a firebase document snapshot. 
+  factory UserModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document) {
+    if (document.data() != null) {
+      final data = document.data()!; 
+      return UserModel(
+        id: document.id,
+         firstName: data['FirstName'] ?? '',  
+         lastName: data['LastName'] ?? '',
+          username: data['Username'] ?? '', 
+           email: data['Email'] ?? '', 
+           phoneNumber: data['PhoneNumber'] ?? '',
+            profilePicture: data['ProfilePicture'] ?? '',
+            );  
+    }
+  }
 }
