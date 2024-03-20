@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bellymax/common/widgets/loaders/loaders.dart';
 import 'package:bellymax/common/widgets/success_screen/success_screen.dart';
 import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
+import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
@@ -45,8 +46,8 @@ if(user?.emailVerified ?? false) {
   Get.off(
     () => SuccessScreen(
       image: BImages.successfullyRegisterAnimation, 
-      title: BTexts.successfullyRegisterTitle,
-      subTitle: BTexts.successfullyRegisterSubTitle,
+      title: BTexts.yourAccountCreatedTitle,
+      subTitle: BTexts.yourAccountCreatedSubTitle,
       onPressed: () => AuthenticationRepository.instance.screenRedirect(), 
     ),
   ); 

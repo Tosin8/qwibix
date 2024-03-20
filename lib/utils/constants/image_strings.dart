@@ -28,6 +28,23 @@ class BImages {
    static const String banner4 = 'assets/images/banner/banner4.jpg';
   static const String banner5 = 'assets/images/banner/banner5.jpg';
 
-// animation
-static const String docerAnimation = 'assets/images/animations/json/animation-of-docer.json';
+// lottie animation
+static const String docerAnimation = 'assets/images/animations/json/141594-animation-of-docer.json';
+static const String cartAnimation = 'assets/images/animations/json/lady-adding-product-in-cart-animation.json';
+static String orderCompletedAnimation = 'assets/images/animations/json/order-complete-car-delivery-animation.json';
+static String packageAnimation = 'assets/images/animations/json/98783-package-in-progress.json';
+static String paperPlaneAnimation = 'assets/images/animations/json/110052-paper-plane.json';
+static String carAnimation = 'assets/images/animations/json/136491-animation-lottie-car-rides.json';
+static String pencilAnimation = 'assets/images/animations/json/140429-pencil-drawing.json';
+static String searchAnimation = 'assets/images/animations/json/72785-searching.json';
+static String emptyAnimation =  'assets/images/animations/json/72785-searching.json';
+static String securityAnimation = 'assets/images/animations/json/67263-security-icon-transparent.json';
+static String successfullyRegisterAnimation = 'assets/images/animations/json/72462-check-register.json';
+static String thankYouAnimation = 'assets/images/animations/json/104368-thank-you.json';
+static String paymentSuccessfulAnimation = 'assets/images/animations/json/120978-payment-successful.json';
+static String loadingJuggleAnimation = 'assets/images/animations/json/141397-juggle-loading.json';
+static String cloudUploadingAnimation = 'assets/images/animations/json/cloud-uploading-animation.json';
+static String loaderAnimation = 'assets/images/animations/json/loader-animation.json'; 
+
+
 }
