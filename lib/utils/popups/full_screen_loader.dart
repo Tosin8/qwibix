@@ -23,7 +23,9 @@ class BFullScreenLoader{
               BAnimationLoaderWidget(text: text, animation: animation), 
             ],
           ),
-        ))); 
+        )
+        )
+        ); 
   }
 
 

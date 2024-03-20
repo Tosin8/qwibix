@@ -2,7 +2,6 @@ import 'package:bellymax/data/repositories/authentication/authentication_reposit
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/http/network_manager.dart';
 import 'package:bellymax/utils/popups/full_screen_loader.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -17,6 +16,15 @@ final localStorage = GetStorage();
 
   final password = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+
+  @override
+  void onInit() {
+    email.text = localStorage.read('REMEMBER_ME_EMAIL');
+    password.text = localStorage.read('REMEMBER_ME_PASSWORD'); 
+    super.onInit(); 
+
+
+  }
 
   // Email and Password SignIn 
   Future<void> emailAndPasswordSignIn() async {
@@ -46,7 +54,9 @@ localStorage.write('REMEMBER_ME_PASSWORD', password.text.trim());
 
 // login user using email and password auth. 
 
-final UserCredential = await AuthenticationRepository.instance.loginWithEmailAndPassword(email.text.trim(), password.text.trim()); 
+final userCredential = await AuthenticationRepository.instance.loginWithEmailAndPassword(
+  email.text.trim(),
+  password.text.trim()); 
 
 // remove loader
 BFullScreenLoader.stopLoading();
