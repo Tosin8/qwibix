@@ -2,7 +2,6 @@ import 'package:bellymax/common/widgets/loaders/loaders.dart';
 import 'package:bellymax/data/repositories/user/user_repository.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart';
 
 import '../models/user_model.dart';
 
@@ -34,6 +33,8 @@ if (userCredentials != null) {
     profilePicture: userCredentials.user!.photoURL ?? '', 
   );
   
+  // save user data in the firebase.
+  await userRepository.saveUserRecord(user);
 }
   } catch (e) 
   {

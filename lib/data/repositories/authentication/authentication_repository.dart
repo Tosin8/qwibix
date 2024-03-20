@@ -122,6 +122,7 @@ Future<UserCredential> registerWithEmailAndPassword(String email, String passwor
   /// [LogoutUser] - valid for any auth. 
   Future<void> logout() async{
     try{
+      await GoogleSignIn().signOut(); 
       await FirebaseAuth.instance.signOut(); 
       Get.offAll(() => const LoginScreen());
     } on FirebaseAuthException catch (e) {

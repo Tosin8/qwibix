@@ -1,5 +1,6 @@
 import 'package:bellymax/common/widgets/loaders/loaders.dart';
 import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
+import 'package:bellymax/features/personalization/controllers/user_controller.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/http/network_manager.dart';
 import 'package:bellymax/utils/popups/full_screen_loader.dart';
@@ -18,6 +19,7 @@ final localStorage = GetStorage();
 
   final password = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  final userController = Get.put(UserController()); 
 
   @override
   void onInit() {
@@ -86,7 +88,10 @@ Future<void> googleSignIn() async {
       return; 
     } 
     // google auth. 
-    final UserCredentials = await AuthenticationRepository.instance.signInWithGoogle(); 
+    final userCredentials = await AuthenticationRepository.instance.signInWithGoogle(); 
+
+    // save user record
+    await userController.saveUserRecord(userCredentials); 
     
     
     // remove loader
@@ -95,6 +100,9 @@ Future<void> googleSignIn() async {
     AuthenticationRepository.instance.screenRedirect();
 
   } catch(e) {
+
+    // Remove loader
+    BFullScreenLoader.stopLoading(); 
     BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString()); 
   }
 }
