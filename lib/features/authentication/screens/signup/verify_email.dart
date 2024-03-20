@@ -1,19 +1,27 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:bellymax/common/widgets/success_screen/success_screen.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../login/login.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
-  const VerifyEmailScreen({super.key});
+  const VerifyEmailScreen({
+    Key? key,
+    this.email,
+  }) : super(key: key);
 
+final String? email; 
   @override
   Widget build(BuildContext context) {
+
+    final controller = Get.put(const VerifyEmailScreen()); 
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -40,8 +48,10 @@ class VerifyEmailScreen extends StatelessWidget {
               style: Theme.of(context).textTheme.headlineMedium,
                textAlign: TextAlign.center,), 
                const SizedBox(height: BSizes.spaceBtwItems,), 
-               Text('tosinezekiel8@gmail.com',
+
+               Text(email ?? '', 
                 style: Theme.of(context).textTheme.labelLarge,textAlign: TextAlign.center), 
+
                   const SizedBox(height: BSizes.spaceBtwItems,), 
                   Text(BTexts.confirmEmailSubTitle, 
               style: Theme.of(context).textTheme.labelMedium,

@@ -1,4 +1,5 @@
 import 'package:bellymax/common/widgets/loaders/loaders.dart';
+import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
 import 'package:get/get.dart';
 
 class VerifyEmailController extends GetxController{
@@ -14,12 +15,15 @@ class VerifyEmailController extends GetxController{
 
   /// send email verification link 
   
-  sendEmailVerification(){
+  sendEmailVerification() async{
     try{
-
+await AuthenticationRepository.instance.sendEmailVerification();
+BLoaders.successSnackBar(title: 'Email Sent', message: 'Please check your email for verification link'); 
     } 
     catch(e){
-BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString()); 
+BLoaders.errorSnackBar(
+  title: 'Oh Snap!', 
+message: e.toString()); 
     }
   }
   /// timer to auto redirect an email verification

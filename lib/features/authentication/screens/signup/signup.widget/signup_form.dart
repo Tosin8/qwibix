@@ -1,6 +1,5 @@
 
 import 'package:bellymax/features/authentication/controllers/signup/signup_controller.dart';
-import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:bellymax/utils/validators/validation.dart';
@@ -8,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../verify_email.dart';
 import 'terms_condition_checkbox.dart';
 
 class signUpForm extends StatelessWidget {

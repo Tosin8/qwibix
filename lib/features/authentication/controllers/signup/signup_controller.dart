@@ -3,7 +3,6 @@ import 'package:bellymax/data/repositories/authentication/authentication_reposit
 import 'package:bellymax/data/repositories/user/user_repository.dart';
 import 'package:bellymax/features/authentication/screens/signup/verify_email.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -80,7 +79,7 @@ BLoaders.successSnackBar(
 
 // move to verify email screen 
 
-Get.to(() => const VerifyEmailScreen()); 
+Get.to(() =>  VerifyEmailScreen(email: email.text.trim())); 
     } catch (e) {
 
       // remove loader
