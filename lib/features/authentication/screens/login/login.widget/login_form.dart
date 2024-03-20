@@ -8,6 +8,8 @@ import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:bellymax/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:iconsax/iconsax.dart';
 
 class BLoginForm extends StatelessWidget {
@@ -40,20 +42,24 @@ class BLoginForm extends StatelessWidget {
             const SizedBox(height: BSizes.spaceBtwInputFields,),
         
             /// Passwords
-             TextFormField(
-              controller: controller.password,
-              validator: (value) => BValidator.validateEmptyText('Password', value),
-                textInputAction: TextInputAction.done,
-              keyboardType: TextInputType.visiblePassword,
-              obscureText: true,
-              decoration: const InputDecoration(
+             Obx(
+               () => TextFormField(
+                controller: controller.password,
+                validator: (value) => BValidator.validatePassword(value),
+                  textInputAction: TextInputAction.done,
+                keyboardType: TextInputType.visiblePassword,
+                obscureText: controller.hidePassword.value,
+                decoration:  InputDecoration(
+                  
+                  prefixIcon: const Icon(
+                    Iconsax.password_check), 
+                    labelText: BTexts.password, suffixIcon: IconButton(
+                      onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+                      icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye)),
+                ),
                 
-                prefixIcon: Icon(
-                  Iconsax.password_check), 
-                  labelText: BTexts.password, suffixIcon: Icon(Iconsax.eye_slash)
-              ),
-              
-            ),
+                           ),
+             ),
             const SizedBox(height: BSizes.spaceBtwInputFields / 2,),
         
             /// Remember Me & Forget Password. 
@@ -64,9 +70,12 @@ class BLoginForm extends StatelessWidget {
                 // Remember Me 
                 Row(
                   children: [
-                    Checkbox(
-                      value: true, onChanged: (value) {}, 
-        
+                    Obx(
+                      () =>  Checkbox(
+                        value: controller.rememberMe.value, 
+                        onChanged: (value) {}, 
+                              
+                      ),
                     ), 
                     const Text(BTexts.rememberMe), 
                   
