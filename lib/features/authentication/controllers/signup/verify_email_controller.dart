@@ -12,7 +12,15 @@ class VerifyEmailController extends GetxController{
   }
 
   /// send email verification link 
-  /// 
+  
+  sendEmailVerification(){
+    try{
+
+    } 
+    catch(e){
+
+    }
+  }
   /// timer to auto redirect an email verification
   /// 
   /// manually check if email verification. 
