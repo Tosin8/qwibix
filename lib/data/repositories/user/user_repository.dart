@@ -1,3 +1,4 @@
+import 'package:bellymax/utils/exceptions/platform_exception.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -20,7 +21,7 @@ class UserRepository extends GetxController{
       throw BFirebaseException(e.code).message; 
     } on FormatException catch (_) {
       throw const BFormatException();
-    } on PlatformException catch (e) {
+    } on BPlatformException catch (e) {
       throw BPlatformException(e.code).message;
     } catch (e) {
       throw 'Something went wrong. Please try again';
