@@ -1,10 +1,11 @@
 import 'package:bellymax/features/authentication/screens/login/login.dart';
 import 'package:bellymax/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:bellymax/features/authentication/screens/signup/verify_email.dart';
+import 'package:bellymax/navigation_menu.dart';
 import 'package:bellymax/utils/exceptions/firebase_exception.dart';
 import 'package:bellymax/utils/exceptions/format_exception.dart';
 import 'package:bellymax/utils/exceptions/platform_exception.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -30,17 +31,31 @@ class AuthenticationRepository extends GetxController{
 
   /// Function to show relevant screen 
   screenRedirect() async{
-    // local storage
-if (kDebugMode) {
-  print('=============== GET STORAGE Auth Repo ======='); 
-  print(deviceStorage.read('IsFirstTime'));
-}
+    final user = _auth.currentUser;
 
-    deviceStorage.writeIfNull('IsFirstTime', true); 
+    if(user != null) {
+      if(user.emailVerified) {
+        Get.offAll(() => const NavigationMenu()); 
+      } else {
+        Get.offAll(() => VerifyEmailScreen(email: _auth.currentUser?.email,));
+      }
+    } else {
+       deviceStorage.writeIfNull('IsFirstTime', true); 
     
-    // check if it's the first time launching the app
-    deviceStorage.read('IsFirstTime') != true ? Get.offAll(() => const LoginScreen()) : Get.offAll(() => const OnBoardingScreen());
+    // check if it's the first time launching the app - using local storage. 
+    deviceStorage.read('IsFirstTime') != true ?
+     Get.offAll(() => const LoginScreen()) : 
+     Get.offAll(() => const OnBoardingScreen());
   }
+
+    }
+    // local storage
+// if (kDebugMode) {
+//   print('=============== GET STORAGE Auth Repo ======='); 
+//   print(deviceStorage.read('IsFirstTime'));
+// }
+
+   
 
   /* _____________ Email and Password Validation _____________ */
 
@@ -78,6 +93,25 @@ Future<UserCredential> registerWithEmailAndPassword(String email, String passwor
     } catch (e) {
       throw 'Something went wrong. Please try again';
     }
+  }
+
+
+  /// [LogoutUser] - valid for any auth. 
+  Future<void> logout() async{
+    try{
+      await FirebaseAuth.instance.signOut(); 
+      Get.offAll(() => const LoginScreen());
+    } on FirebaseAuthException catch (e) {
+      throw BFirebaseAuthException(e.code).message;
+    } on BFirebaseException catch (e) {
+      throw BFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const BFormatException();
+    } on BPlatformException catch (e) {
+      throw BPlatformException(e.code).message;
+     } catch (e) {
+       throw 'Something went wrong. Please try again';
+     }
   }
 }
 

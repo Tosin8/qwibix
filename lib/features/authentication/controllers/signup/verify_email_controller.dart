@@ -53,7 +53,24 @@ if(user?.emailVerified ?? false) {
     ),
   ); 
 }
-  }); 
+  }
+  ); 
+  }
+
   /// manually check if email verification. 
+  checkEmailVerificationStatus() async {
+    final currentUser = FirebaseAuth.instance.currentUser;
+    if(currentUser != null && currentUser.emailVerified) {
+      Get.off(
+        () => SuccessScreen(
+          image: BImages.successfullyRegisterAnimation, 
+          title: BTexts.yourAccountCreatedTitle,
+           subTitle: BTexts.yourAccountCreatedSubTitle, 
+           onPressed: () => AuthenticationRepository.instance.screenRedirect(),
+           )
+           ); 
+    }
+  }
 }
-}
+
+
