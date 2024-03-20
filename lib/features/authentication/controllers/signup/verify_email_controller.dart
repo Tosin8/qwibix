@@ -7,6 +7,7 @@ class VerifyEmailController extends GetxController{
   
   @override 
   void onInit() {
+    sendEmailVerification(); 
     super.onInit(); 
   }
 

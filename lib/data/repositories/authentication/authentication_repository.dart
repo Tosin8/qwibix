@@ -71,7 +71,7 @@ Future<UserCredential> registerWithEmailAndPassword(String email, String passwor
     } on FirebaseException catch (e) {
       throw BFirebaseException(e.code).message;
     } on FormatException catch (_) {
-      throw  BFormatException();
+      throw  const BFormatException();
     } on BPlatformException catch (e) {
       throw BPlatformException(e.code).message;
       
