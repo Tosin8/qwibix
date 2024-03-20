@@ -2,7 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../../../features/personalization/models/user_model.dart'; 
+import '../../../features/personalization/models/user_model.dart';
+import '../../../utils/exceptions/firebase_exception.dart'; 
 
 class UserRepository extends GetxController{
   static UserRepository get instance => Get.find();

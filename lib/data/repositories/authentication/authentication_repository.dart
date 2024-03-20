@@ -1,10 +1,13 @@
 import 'package:bellymax/features/authentication/screens/login/login.dart';
 import 'package:bellymax/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:bellymax/utils/exceptions/firebase_exception.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+
+import '../../../utils/exceptions/firebase_auth_exception.dart';
 
 class AuthenticationRepository extends GetxController{
   static AuthenticationRepository get instance => Get.find();
@@ -60,7 +63,18 @@ Future<UserCredential> registerWithEmailAndPassword(String email, String passwor
   /// [email verification] - mail verification
   Future<void> sendEmailVerification() async {
     try {
+      await _auth.currentUser?.sendEmailVerification();
+    } on FirebaseAuthException catch (e) {
+      throw BFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw BFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const BFormatException();
+    } on PlatformException catch (e) {
+      throw BPlatformException(e.code).message;
       
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
     }
   }
 }
