@@ -1,6 +1,8 @@
 class BPlatformException implements Exception {
   final String code;
-  BPlatformException({required this.code});
+
+
+  BPlatformException( this.code);
   
   String get message {
     switch (code) {
