@@ -1,5 +1,4 @@
 import 'package:bellymax/utils/exceptions/platform_exception.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 

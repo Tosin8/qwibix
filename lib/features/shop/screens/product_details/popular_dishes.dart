@@ -3,7 +3,6 @@ import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
 import 'package:bellymax/features/shop/models/product_list.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -95,7 +94,7 @@ Padding(
       color: Colors.blue, 
       borderRadius: BorderRadius.circular(8), 
     ) , 
-    child: Text('Checkout', style: TextStyle(color: Colors.white, fontSize: 16),),
+    child: const Text('Checkout', style: TextStyle(color: Colors.white, fontSize: 16),),
   ),
 ), 
 
@@ -223,7 +222,7 @@ class PDLowerBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 70,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -236,8 +235,8 @@ class PDLowerBar extends StatelessWidget {
                   decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(5)),
                   child: const Icon(Iconsax.minus, color: Colors.white, size: 20,),
                 ),
-                SizedBox(width: BSizes.spaceBtwItems,), 
-                Text('2', style: Theme.of(context).textTheme.titleLarge,), SizedBox(width: BSizes.spaceBtwItems,), 
+                const SizedBox(width: BSizes.spaceBtwItems,), 
+                Text('2', style: Theme.of(context).textTheme.titleLarge,), const SizedBox(width: BSizes.spaceBtwItems,), 
                 Container(
                   height: 30, width: 30,
                   decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(5)),
@@ -245,7 +244,7 @@ class PDLowerBar extends StatelessWidget {
                 ),
               ]
             ), 
-            SizedBox(width: BSizes.spaceBtwItems * 6,),
+            const SizedBox(width: BSizes.spaceBtwItems * 6,),
             Container(
               width: 160, height: 50,
               decoration: BoxDecoration(
@@ -253,8 +252,8 @@ class PDLowerBar extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Iconsax.shopping_bag, color: Colors.white, size: 25,),
-                    SizedBox(width: BSizes.spaceBtwItems,),
+                    const Icon(Iconsax.shopping_bag, color: Colors.white, size: 25,),
+                    const SizedBox(width: BSizes.spaceBtwItems,),
                     Text('Add to Bag', style: Theme.of(context).textTheme.titleLarge!.apply(color: Colors.white),),
                   ],
                 ),

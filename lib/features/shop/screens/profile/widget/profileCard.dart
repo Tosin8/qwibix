@@ -29,7 +29,7 @@ class profileCard extends StatelessWidget {
       style: Theme.of(context).textTheme.bodySmall!.apply(color: dark ? Colors.white : Colors.black),),
       trailing: GestureDetector(
     onTap: () {
-      Get.to(() => ProfileUserScreen()); 
+      Get.to(() => const ProfileUserScreen()); 
     },
     
         child: Icon(Iconsax.edit, color: dark? Colors.white: Colors.black,)),

@@ -60,6 +60,13 @@ class AuthenticationRepository extends GetxController{
   /* _____________ Email and Password Validation _____________ */
 
 /// [EmailAuth] - SignIn
+/// 
+/// 
+Future<UserCredential> loginWithWmailAndPassword(String email, String password) async {
+  try{
+    return await _auth.signInWithEmailAndPassword(email: email, password: password);
+  }
+}
 /// [EmailAuth] - SignUp
 Future<UserCredential> registerWithEmailAndPassword(String email, String password) async {
   try{
