@@ -3,6 +3,7 @@ import 'package:bellymax/data/repositories/authentication/authentication_reposit
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/http/network_manager.dart';
 import 'package:bellymax/utils/popups/full_screen_loader.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -77,7 +78,21 @@ Future<void> googleSignIn() async {
   try{
 
     // Start loading 
-    BFullScreenLoader.openLoadingDialog('Logging you in', BImages.docerAnimation);
+    BFullScreenLoader.openLoadingDialog('Logging you in...', BImages.docerAnimation);
+    // check internet connectivity
+    final isConnected = await NetworkManager.instance.isConnected(); 
+    if(!isConnected) {
+      BFullScreenLoader.stopLoading(); 
+      return; 
+    } 
+    // google auth. 
+    final UserCredentials = await AuthenticationRepository.instance.signInWithGoogle(); 
+    
+    
+    // remove loader
+    BFullScreenLoader.stopLoading();
+    // Redirect 
+    AuthenticationRepository.instance.screenRedirect();
 
   } catch(e) {
     BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString()); 
