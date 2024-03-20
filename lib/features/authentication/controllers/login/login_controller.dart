@@ -1,3 +1,4 @@
+import 'package:bellymax/common/widgets/loaders/loaders.dart';
 import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/http/network_manager.dart';
@@ -73,6 +74,13 @@ AuthenticationRepository.instance.screenRedirect();
 
 /// Google SignIn Auth.
 Future<void> googleSignIn() async {
-  
+  try{
+
+    // Start loading 
+    BFullScreenLoader.openLoadingDialog('Logging you in', BImages.docerAnimation);
+
+  } catch(e) {
+    BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString()); 
+  }
 }
 }
