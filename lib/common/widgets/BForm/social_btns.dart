@@ -1,7 +1,9 @@
+import 'package:bellymax/features/authentication/controllers/login/login_controller.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class BFormSocialMedia extends StatelessWidget {
   const BFormSocialMedia({
@@ -10,6 +12,8 @@ class BFormSocialMedia extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+final controller = Get.put(LoginController());
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -20,7 +24,7 @@ class BFormSocialMedia extends StatelessWidget {
             borderRadius: BorderRadius.circular(100), 
           ),
           child: IconButton(
-            onPressed: (){}, 
+            onPressed: () => controller.googleSignIn(), 
             icon: const Image
             
             (

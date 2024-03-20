@@ -58,6 +58,8 @@ final userCredential = await AuthenticationRepository.instance.loginWithEmailAnd
   email.text.trim(),
   password.text.trim()); 
 
+  
+
 // remove loader
 BFullScreenLoader.stopLoading();
 
@@ -67,5 +69,10 @@ AuthenticationRepository.instance.screenRedirect();
   catch (e) {
     BFullScreenLoader.stopLoading(); 
   }
+}
+
+/// Google SignIn Auth.
+Future<void> googleSignIn() async {
+  
 }
 }
