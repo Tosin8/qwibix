@@ -73,7 +73,7 @@ class BLoginForm extends StatelessWidget {
                     Obx(
                       () =>  Checkbox(
                         value: controller.rememberMe.value, 
-                        onChanged: (value) {}, 
+                        onChanged: (value) => controller.rememberMe.value = !controller.rememberMe.value, 
                               
                       ),
                     ), 
