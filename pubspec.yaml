@@ -53,6 +53,7 @@ flutter:
   assets:
     - assets/images/on_boarding/
     - assets/images/animations/
+    - assets/images/animations/json/
 
     #app_icon logo
     - assets/splash_icon_black.png
