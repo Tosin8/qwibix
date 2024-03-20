@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
 import 'package:bellymax/features/authentication/controllers/signup/verify_email_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +64,11 @@ final String? email;
                SizedBox(width: double.infinity, 
                child: ElevatedButton(
                 onPressed: (){
-                 Get.to(()=> const SuccessScreen());
+                 Get.to(()=> SuccessScreen(
+                  image: BImages.successfullyRegisterAnimation, 
+                  title: BTexts.yourAccountCreatedTitle, 
+                  subTitle: BTexts.yourAccountCreatedSubTitle, 
+                  onPressed: () => AuthenticationRepository.instance.screenRedirect(),));
                },
                 child: const Text(BTexts.tContinue), 
                 ),), 

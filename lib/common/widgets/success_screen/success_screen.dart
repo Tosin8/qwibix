@@ -1,15 +1,21 @@
 import 'package:bellymax/common/styles/spacing_styles.dart';
-import 'package:bellymax/features/authentication/screens/login/login.dart';
-import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key, required image, required title, required subTitle, required Function() onPressed});
+  const SuccessScreen({super.key, 
+  
+  required this.image, 
+  required this.title,
+   required this.subTitle,
+    required this.onPressed
+    });
 
+
+final String image, title, subTitle; 
+final VoidCallback onPressed; 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,18 +24,19 @@ class SuccessScreen extends StatelessWidget {
           padding: BSpacingStyle.paddingWithAppBarHeight * 2, 
           child: Column(
             children: [
-              Image(image: const AssetImage(BImages.staticSuccessIllustration), 
-              width: BHelperFunctions.screenWidth() * 0.6,
-              ), 
+              Lottie.asset(image,
+               width: MediaQuery.of(context).size.width * 0.6), 
+            
+               
               const SizedBox(height: BSizes.spaceBtwSections,),
 
               /// title and subtitle
-              Text(BTexts.yourAccountCreatedTitle, 
+              Text(title, 
               style: Theme.of(context).textTheme.headlineMedium,
                textAlign: TextAlign.center,), 
                const SizedBox(height: BSizes.spaceBtwItems,), 
                
-                  Text(BTexts.yourAccountCreatedSubTitle, 
+                  Text(subTitle, 
               style: Theme.of(context).textTheme.labelMedium,
                textAlign: TextAlign.center,),
                const SizedBox(height: BSizes.spaceBtwSections,), 
@@ -38,9 +45,8 @@ class SuccessScreen extends StatelessWidget {
                SizedBox(
                 width: double.infinity, 
                 child: ElevatedButton(
-                  onPressed: (){
-                    Get.to(() =>const LoginScreen());
-                  }, child: const Text(BTexts.tContinue)),
+                  onPressed: onPressed,
+                   child: const Text(BTexts.tContinue)),
                )
 
             ],

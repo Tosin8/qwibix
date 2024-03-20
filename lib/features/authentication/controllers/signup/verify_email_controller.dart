@@ -4,6 +4,7 @@ import 'package:bellymax/common/widgets/loaders/loaders.dart';
 import 'package:bellymax/common/widgets/success_screen/success_screen.dart';
 import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
+import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
