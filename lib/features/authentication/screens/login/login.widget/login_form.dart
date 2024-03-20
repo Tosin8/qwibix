@@ -2,14 +2,11 @@
 import 'package:bellymax/features/authentication/controllers/login/login_controller.dart';
 import 'package:bellymax/features/authentication/screens/password_configuration/forgot_pwd.dart';
 import 'package:bellymax/features/authentication/screens/signup/signup.dart';
-import 'package:bellymax/navigation_menu.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:bellymax/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:iconsax/iconsax.dart';
 
 class BLoginForm extends StatelessWidget {
