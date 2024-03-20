@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../../screens/login/login.dart';
 
@@ -25,6 +26,8 @@ void  dotNavigationClick(index) {
 /// Updage current Index and Jump to next page. 
 void nextPage() {
   if(currentPageIndex.value == 2){
+    final storage = GetStorage(); 
+    storage.write('IsFirstTime', false); 
     Get.to(const LoginScreen()); 
   } else {
     int page = 
