@@ -56,5 +56,12 @@ Future<UserCredential> registerWithEmailAndPassword(String email, String passwor
       throw 'Something went wrong. Please try again'; 
     }
   }
+
+  /// [email verification] - mail verification
+  Future<void> sendEmailVerification() async {
+    try {
+      
+    }
+  }
 }
 
