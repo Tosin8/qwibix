@@ -1,3 +1,4 @@
+import 'package:bellymax/common/widgets/loaders/loaders.dart';
 import 'package:get/get.dart';
 
 class VerifyEmailController extends GetxController{
@@ -18,7 +19,7 @@ class VerifyEmailController extends GetxController{
 
     } 
     catch(e){
-
+BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString()); 
     }
   }
   /// timer to auto redirect an email verification
