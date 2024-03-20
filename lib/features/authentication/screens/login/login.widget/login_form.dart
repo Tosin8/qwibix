@@ -94,10 +94,12 @@ class BLoginForm extends StatelessWidget {
             /// Sign In Button 
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(onPressed: () => Get.to(() => const NavigationMenu()), 
+              child: ElevatedButton(
+                onPressed: () => controller.emailAndPasswordSignIn(), 
               child: const Text(BTexts.signIn)),
             ), 
         const SizedBox(height: BSizes.spaceBtwItems,),
+          
             /// Create Account Button
             SizedBox(
               width: double.infinity,
