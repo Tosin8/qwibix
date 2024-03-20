@@ -1,6 +1,7 @@
 import 'package:bellymax/features/authentication/screens/login/login.dart';
 import 'package:bellymax/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:bellymax/utils/exceptions/firebase_exception.dart';
+import 'package:bellymax/utils/exceptions/format_exception.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -69,7 +70,7 @@ Future<UserCredential> registerWithEmailAndPassword(String email, String passwor
     } on FirebaseException catch (e) {
       throw BFirebaseException(e.code).message;
     } on FormatException catch (_) {
-      throw const BFormatException();
+      throw  BFormatException();
     } on PlatformException catch (e) {
       throw BPlatformException(e.code).message;
       
