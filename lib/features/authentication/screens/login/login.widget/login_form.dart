@@ -1,9 +1,11 @@
 
+import 'package:bellymax/features/authentication/controllers/login/login_controller.dart';
 import 'package:bellymax/features/authentication/screens/password_configuration/forgot_pwd.dart';
 import 'package:bellymax/features/authentication/screens/signup/signup.dart';
 import 'package:bellymax/navigation_menu.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
+import 'package:bellymax/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -15,13 +17,18 @@ class BLoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
+
     return Form(
+      key: controller.loginFormKey, 
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: BSizes.spaceBtwSections),
         child: Column(
           children: [
             /// Email
             TextFormField(
+              controller: controller.email,
+              validator: (value) => BValidator.validateEmail(value),
               textInputAction: TextInputAction.next,
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
@@ -34,6 +41,8 @@ class BLoginForm extends StatelessWidget {
         
             /// Passwords
              TextFormField(
+              controller: controller.password,
+              validator: (value) => BValidator.validateEmptyText('Password', value),
                 textInputAction: TextInputAction.done,
               keyboardType: TextInputType.visiblePassword,
               obscureText: true,
