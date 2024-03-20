@@ -51,13 +51,13 @@ if(!privacyPolicy.value) {
 }
 
 // Register user in the firebase auth. and save user data in the firebase. 
-final UserCredential = await AuthenticationRepository.instance.registerWithEmailAndPassword(
+final userCredential = await AuthenticationRepository.instance.registerWithEmailAndPassword(
   email.text.trim(),
    password.text.trim()); 
 
 // Save auth. user data in the firebase firestore 
 final newUser = UserModel(
-  id: UserCredential.user!.uid, 
+  id: userCredential.user!.uid, 
   firstName: firstName.text.trim(), 
   lastName: lastName.text.trim(), 
   username: username.text.trim(), 
@@ -68,6 +68,9 @@ final newUser = UserModel(
 
 final userRepository = Get.put(UserRepository()); 
 await userRepository.saveUserRecord(newUser); 
+
+// Remove Loader
+BFullScreenLoader.stopLoading(); 
 
 // Show success message
 BLoaders.successSnackBar(
