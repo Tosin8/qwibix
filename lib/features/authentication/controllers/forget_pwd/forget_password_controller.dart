@@ -12,7 +12,10 @@ class ForgetPasswordController extends GetxController{
   /// send reset password email 
   
   sendPasswordResetEmail() async {
-    try{} catch (e) {}
+    try{
+
+
+    } catch (e) {}
   }
   
   resendPasswordResetEmail(String email) async {
