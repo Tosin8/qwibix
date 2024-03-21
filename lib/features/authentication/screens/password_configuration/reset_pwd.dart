@@ -1,3 +1,4 @@
+import 'package:bellymax/features/authentication/controllers/forget_pwd/forget_password_controller.dart';
 import 'package:bellymax/features/authentication/screens/login/login.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
@@ -51,11 +52,12 @@ final String email;
                 child: ElevatedButton(onPressed: () => Get.offAll(() => const LoginScreen()), child: const Text(BTexts.done)),
               ), 
               const SizedBox(height: BSizes.spaceBtwItems,), 
+
               SizedBox(
                 width: double.infinity, 
-                child: TextButton(onPressed: (){
-                  Get.back(); 
-                }, child: const Text(BTexts.resendEmail)),
+                child: TextButton(
+                  onPressed: () => ForgetPasswordController.instance.resendPasswordResetEmail(email), 
+                child: const Text(BTexts.resendEmail)),
               )
             ],
           ),
