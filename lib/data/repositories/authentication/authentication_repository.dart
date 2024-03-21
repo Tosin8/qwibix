@@ -172,5 +172,24 @@ try{
       return null; 
     }
   }
+
+  /// [EmailAuth] - Password Reset
+  Future<void> logout() async{
+    try{
+      await GoogleSignIn().signOut(); 
+      await FirebaseAuth.instance.signOut(); 
+      Get.offAll(() => const LoginScreen());
+    } on FirebaseAuthException catch (e) {
+      throw BFirebaseAuthException(e.code).message;
+    } on BFirebaseException catch (e) {
+      throw BFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const BFormatException();
+    } on BPlatformException catch (e) {
+      throw BPlatformException(e.code).message;
+     } catch (e) {
+       throw 'Something went wrong. Please try again';
+     }
+  }
 }
 
