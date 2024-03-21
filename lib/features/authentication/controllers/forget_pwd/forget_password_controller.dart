@@ -19,6 +19,7 @@ class ForgetPasswordController extends GetxController{
   
   sendPasswordResetEmail() async {
     try{
+      // start loading
 BFullScreenLoader.openLoadingDialog('Processing your request...', BImages.docerAnimation); 
 
 // Check Internet Connectivity
@@ -30,7 +31,7 @@ if (!forgetPasswordFormKey.currentState!.validate()) {
   BFullScreenLoader.stopLoading();
  return; }
 
-await AuthenticationRepository.instance.sendPassworodResetEmail(email.text.trim());
+await AuthenticationRepository.instance.sendPasswordResetEmail(email.text.trim());
 
 // Remove loader
 BFullScreenLoader.stopLoading(); 
@@ -52,6 +53,36 @@ BLoaders.successSnackBar(
   }
   
   resendPasswordResetEmail(String email) async {
-    try {} catch (e) {}
+   try{
+
+    // start loading
+BFullScreenLoader.openLoadingDialog('Processing your request...', BImages.docerAnimation); 
+
+// Check Internet Connectivity
+final isConnected = await NetworkManager.instance.isConnected(); 
+if (!isConnected) {BFullScreenLoader.stopLoading(); return; }
+
+// send email to resend password
+
+await AuthenticationRepository.instance.sendPasswordResetEmail(email);
+
+// Remove loader
+BFullScreenLoader.stopLoading(); 
+
+// Show success screen 
+BLoaders.successSnackBar(
+  title: 'Email Sent', 
+  message: 'Email link has been sent to $email to reset your password'.tr,
+  );
+
+
+
+    } catch (e) {
+      // remove loader
+      BFullScreenLoader.stopLoading(); 
+      BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString()); 
+    }
   }
-}
+
+  
+  }

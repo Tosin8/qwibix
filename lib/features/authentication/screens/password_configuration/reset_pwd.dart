@@ -1,3 +1,4 @@
+import 'package:bellymax/features/authentication/screens/login/login.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
@@ -47,7 +48,7 @@ final String email;
               
               SizedBox(
                 width: double.infinity, 
-                child: ElevatedButton(onPressed: (){}, child: const Text(BTexts.done)),
+                child: ElevatedButton(onPressed: () => Get.offAll(() => const LoginScreen()), child: const Text(BTexts.done)),
               ), 
               const SizedBox(height: BSizes.spaceBtwItems,), 
               SizedBox(

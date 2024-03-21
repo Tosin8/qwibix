@@ -174,7 +174,7 @@ try{
   }
 
   /// [EmailAuth] - Password Reset
-  Future<void> sendPassworodResetEmail(String email) async{
+  Future<void> sendPasswordResetEmail(String email) async{
     try{
       await _auth.sendPasswordResetEmail(email: email); 
     } on FirebaseAuthException catch (e) {
