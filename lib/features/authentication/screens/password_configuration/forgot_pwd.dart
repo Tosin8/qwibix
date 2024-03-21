@@ -7,7 +7,9 @@ import 'package:iconsax/iconsax.dart';
 import 'reset_pwd.dart';
 
 class ForgotPassword extends StatelessWidget {
-  const ForgotPassword({super.key});
+  const ForgotPassword({super.key, required this.email});
+
+  final String email; 
 
   @override
   Widget build(BuildContext context) {
