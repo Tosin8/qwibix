@@ -33,6 +33,7 @@ if (userCredentials != null) {
     profilePicture: userCredentials.user!.photoURL ?? '', 
   );
   
+  
   // save user data in the firebase.
   await userRepository.saveUserRecord(user);
 }
