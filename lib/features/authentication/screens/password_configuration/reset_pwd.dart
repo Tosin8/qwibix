@@ -7,8 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ResetPassword extends StatelessWidget {
-  const ResetPassword({super.key, required String email});
+  const ResetPassword({super.key, required this. email});
 
+final String email; 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,9 +34,11 @@ class ResetPassword extends StatelessWidget {
               /// Image with 60% of screen width
               Image(image: const AssetImage(BImages.deliveredEmailllustration), 
               width: BHelperFunctions.screenWidth() * 0.6
-              ), 
+              ),
+
               const SizedBox(height: BSizes.spaceBtwSections,), 
               /// title and subtitle
+              Text(email, style: Theme.of(context).textTheme.bodyMedium,textAlign: TextAlign.center,), 
               Text(BTexts.changeYourPasswordTitle, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center,), 
               const SizedBox(height: BSizes.spaceBtwItems,), 
               Text(BTexts.changeYourPasswordSubTitle, style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center,), 

@@ -1,5 +1,7 @@
+import 'package:bellymax/features/authentication/controllers/forget_pwd/forget_password_controller.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
+import 'package:bellymax/utils/validators/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -7,12 +9,13 @@ import 'package:iconsax/iconsax.dart';
 import 'reset_pwd.dart';
 
 class ForgotPassword extends StatelessWidget {
-  const ForgotPassword({super.key, required this.email});
+  const ForgotPassword({super.key, });
 
-  final String email; 
+   
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ForgetPasswordController());
     return 
     Scaffold(
       appBar: AppBar(), 
@@ -30,10 +33,15 @@ class ForgotPassword extends StatelessWidget {
           
 
           /// Text Field 
-          TextFormField(
-            decoration: const InputDecoration(
-              labelText: BTexts.email, 
-              prefixIcon: Icon(Iconsax.direct_right),
+          Form(
+            key: controller.forgetPasswordFormKey, 
+            child: TextFormField(
+              controller: controller.email, 
+              validator: BValidator.validateEmail,
+              decoration: const InputDecoration(
+                labelText: BTexts.email, 
+                prefixIcon: Icon(Iconsax.direct_right),
+              ),
             ),
           ), 
           const SizedBox(height: BSizes.spaceBtwSections,), 
@@ -42,9 +50,8 @@ class ForgotPassword extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: (){
-                Get.to(() => const ResetPassword());
-              }, 
+              onPressed: ()
+            => controller.sendPasswordResetEmail(),
               child: const Text(BTexts.submit)),
           )
         ],

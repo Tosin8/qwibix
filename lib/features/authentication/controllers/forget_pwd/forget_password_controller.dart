@@ -44,7 +44,11 @@ BLoaders.successSnackBar(
   Get.to(() => ResetPassword(email: email.text.trim()));
 
 
-    } catch (e) {}
+    } catch (e) {
+      // remove loader
+      BFullScreenLoader.stopLoading(); 
+      BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString()); 
+    }
   }
   
   resendPasswordResetEmail(String email) async {
