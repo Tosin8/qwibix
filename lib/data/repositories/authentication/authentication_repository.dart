@@ -174,11 +174,9 @@ try{
   }
 
   /// [EmailAuth] - Password Reset
-  Future<void> logout() async{
+  Future<void> sendPassworodResetEmail(String email) async{
     try{
-      await GoogleSignIn().signOut(); 
-      await FirebaseAuth.instance.signOut(); 
-      Get.offAll(() => const LoginScreen());
+      await _auth.sendPasswordResetEmail(email: email); 
     } on FirebaseAuthException catch (e) {
       throw BFirebaseAuthException(e.code).message;
     } on BFirebaseException catch (e) {
