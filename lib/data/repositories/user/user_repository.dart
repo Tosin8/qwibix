@@ -28,14 +28,92 @@ class UserRepository extends GetxController{
   } 
 
   // Function to fetch user details based on User ID. 
+  Future<void> fetchUserDetails() async {
+    try {
+      await _db.collection("Users").doc(user.id).set(user.toJson()); 
+    } on FirebaseException catch (e) {
+      throw BFirebaseException(e.code).message; 
+    } on FormatException catch (_) {
+      throw const BFormatException();
+    } on BPlatformException catch (e) {
+      throw BPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  } 
 
-  // Function to save user data to Firestore. 
+  // Function to save user data to Firestore.
+  Future<void> saveUserRecord(UserModel user) async {
+    try {
+      await _db.collection("Users").doc(user.id).set(user.toJson()); 
+    } on FirebaseException catch (e) {
+      throw BFirebaseException(e.code).message; 
+    } on FormatException catch (_) {
+      throw const BFormatException();
+    } on BPlatformException catch (e) {
+      throw BPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }  
 
   // Function to update user data in Firestore. 
+  Future<void> saveUserRecord(UserModel user) async {
+    try {
+      await _db.collection("Users").doc(user.id).set(user.toJson()); 
+    } on FirebaseException catch (e) {
+      throw BFirebaseException(e.code).message; 
+    } on FormatException catch (_) {
+      throw const BFormatException();
+    } on BPlatformException catch (e) {
+      throw BPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  } 
 
   // Update any field in specific Users collection
+  Future<void> saveUserRecord(UserModel user) async {
+    try {
+      await _db.collection("Users").doc(user.id).set(user.toJson()); 
+    } on FirebaseException catch (e) {
+      throw BFirebaseException(e.code).message; 
+    } on FormatException catch (_) {
+      throw const BFormatException();
+    } on BPlatformException catch (e) {
+      throw BPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  } 
 
   // Function to remove user data from Firestore. 
+  Future<void> saveUserRecord(UserModel user) async {
+    try {
+      await _db.collection("Users").doc(user.id).set(user.toJson()); 
+    } on FirebaseException catch (e) {
+      throw BFirebaseException(e.code).message; 
+    } on FormatException catch (_) {
+      throw const BFormatException();
+    } on BPlatformException catch (e) {
+      throw BPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  } 
 
   // Upload any Image. 
+  Future<void> saveUserRecord(UserModel user) async {
+    try {
+      await _db.collection("Users").doc(user.id).set(user.toJson()); 
+    } on FirebaseException catch (e) {
+      throw BFirebaseException(e.code).message; 
+    } on FormatException catch (_) {
+      throw const BFormatException();
+    } on BPlatformException catch (e) {
+      throw BPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  } 
 }
