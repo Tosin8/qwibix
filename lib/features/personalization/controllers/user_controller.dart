@@ -1,7 +1,11 @@
 import 'package:bellymax/common/widgets/loaders/loaders.dart';
+import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
 import 'package:bellymax/data/repositories/user/user_repository.dart';
+import 'package:bellymax/features/authentication/screens/login/login.dart';
+import 'package:bellymax/features/shop/screens/profile/widget.profileuser/re_authenticate_user_login_form.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
+import 'package:bellymax/utils/http/network_manager.dart';
 import 'package:bellymax/utils/popups/full_screen_loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -103,6 +107,51 @@ void deleteUserAccount() async{
     BFullScreenLoader.openLoadingDialog('Processing', BImages.docerAnimation); 
 
     /// First re-auth. user
+  final auth = AuthenticationRepository.instance; 
+  final provider = auth.authUser!.providerData.map((e) => e.providerId).first;
+  if(provider.isNotEmpty) {
+    // re verify auth email
+    if (provider == 'google.com') {
+      await auth.signInWithGoogle(); 
+      await auth.deleteAccount(); 
+      BFullScreenLoader.stopLoading(); 
+      Get.offAll(() => const LoginScreen());
+    } else if (provider == 'password') {
+      BFullScreenLoader.stopLoading(); 
+      Get.to(() => const ReAuthLoginForm());
+    }
+  } 
+
+  } catch(e) {
+    BFullScreenLoader.stopLoading(); 
+    BLoaders.warningSnackBar(title: 'Oh Snap!', message: e.toString()); 
+  }
+}
+
+// RE -AUTH before deleting 
+Future<void> reAuthenticateEmailAndPasswordUser() async{
+  try {
+    BFullScreenLoader.openLoadingDialog('Processing', BImages.docerAnimation); 
+
+    // check internet
+    final isConnected = await NetworkManager.instance.isConnected(); 
+    if(!isConnected) {
+      BFullScreenLoader.stopLoading();
+      return;
+    }
+
+    if (!reAuthFormKey.currentState!.validate()) {
+      BFullScreenLoader.stopLoading();
+      return;
+    }
+
+    await AuthenticationRepository.instance.reAuthenticateWithEmailAndPassword(verifyEmail.text.trim(), verifyPassword.text.trim());
+    await AuthenticationRepository.instance.deleteAccount();
+    BFullScreenLoader.stopLoading(); 
+    Get.offAll(() => const LoginScreen());
+  } catch (e) {
+    BFullScreenLoader.stopLoading();
+    BLoaders.warningSnackBar(title: 'Oh Snap!', message: e.toString());
   }
 }
 }
