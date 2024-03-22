@@ -192,5 +192,27 @@ try{
        throw 'Something went wrong. Please try again';
      }
   }
+
+  // ReAuth User
+  Future<void> reAuthenticateWithEmailAndPassword(String email, String password) async{
+    try{
+
+      // Create a credential
+      AuthCredential credential = EmailAuthProvider.credential(email: email, password: password);
+      
+      // ReAuth. 
+      await _auth.currentUser!.reauthenticateWithCredential(credential);  
+    } on FirebaseAuthException catch (e) {
+      throw BFirebaseAuthException(e.code).message;
+    } on BFirebaseException catch (e) {
+      throw BFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const BFormatException();
+    } on BPlatformException catch (e) {
+      throw BPlatformException(e.code).message;
+     } catch (e) {
+       throw 'Something went wrong. Please try again';
+     }
+  }
 }
 
