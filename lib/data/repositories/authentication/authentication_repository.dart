@@ -1,3 +1,4 @@
+import 'package:bellymax/data/repositories/user/user_repository.dart';
 import 'package:bellymax/features/authentication/screens/login/login.dart';
 import 'package:bellymax/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:bellymax/features/authentication/screens/signup/verify_email.dart';
@@ -199,9 +200,27 @@ try{
 
       // Create a credential
       AuthCredential credential = EmailAuthProvider.credential(email: email, password: password);
-      
+
       // ReAuth. 
       await _auth.currentUser!.reauthenticateWithCredential(credential);  
+    } on FirebaseAuthException catch (e) {
+      throw BFirebaseAuthException(e.code).message;
+    } on BFirebaseException catch (e) {
+      throw BFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const BFormatException();
+    } on BPlatformException catch (e) {
+      throw BPlatformException(e.code).message;
+     } catch (e) {
+       throw 'Something went wrong. Please try again';
+     }
+  }
+
+  // delete user - remove user auth and firestore account. 
+  Future<void> deleteAccount() async {
+    try {
+      await UserRepository.instance.removeUserRecord(_auth.currentUser!.uid); 
+      await _auth.currentUser?.delete(); 
     } on FirebaseAuthException catch (e) {
       throw BFirebaseAuthException(e.code).message;
     } on BFirebaseException catch (e) {
