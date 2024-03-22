@@ -26,4 +26,16 @@ class UserRepository extends GetxController{
       throw 'Something went wrong. Please try again';
     }
   } 
+
+  // Function to fetch user details based on User ID. 
+
+  // Function to save user data to Firestore. 
+
+  // Function to update user data in Firestore. 
+
+  // Update any field in specific Users collection
+
+  // Function to remove user data from Firestore. 
+
+  // Upload any Image. 
 }
