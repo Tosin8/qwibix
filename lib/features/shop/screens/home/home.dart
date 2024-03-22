@@ -1,5 +1,6 @@
 import 'package:bellymax/common/widgets/carticon.dart';
 import 'package:bellymax/common/widgets/products/product_cards/product_card_vertical.dart';
+import 'package:bellymax/common/widgets/shimmer.dart';
 import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
 import 'package:bellymax/features/personalization/controllers/user_controller.dart';
 import 'package:bellymax/features/shop/models/product_list.dart';
@@ -45,10 +46,16 @@ class HomeScreen extends StatelessWidget {
             SizedBox(height: 5), 
               Padding(
                 padding: const EdgeInsets.only(left: 18.0),
-                child: Obx(() =>
-                   Text(controller.user.value.fullName, 
-                  style: Theme.of(context).textTheme.headlineSmall!.apply(color: BColors.black),),
-                ),
+                child: Obx(() {
+                  if (controller.profileLoading.value) {
+                    // Display a shimmer loader while user profile is being loaded
+                    return const TShimmerEffect( width: 80, height: 15
+                      
+                    ); 
+                  }
+                  return Text(controller.user.value.fullName, 
+                  style: Theme.of(context).textTheme.headlineSmall!.apply(color: BColors.black),);
+   } ),
               ), 
               SizedBox(height: 5,), 
                BSearchController(darkMode: darkMode, 
