@@ -1,7 +1,9 @@
 import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
 import 'package:bellymax/utils/exceptions/platform_exception.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../../features/personalization/models/user_model.dart';
 import '../../../utils/exceptions/firebase_exception.dart';
@@ -97,5 +99,19 @@ class UserRepository extends GetxController{
   } 
 
   // Upload any Image. 
+  Future<String> uploadImage(String path, XFile image){ 
+    try {
+
+final ref = FirebaseStorage.instance.ref(path).child(image.name);
+  } on FirebaseException catch (e) {
+      throw BFirebaseException(e.code).message; 
+    } on FormatException catch (_) {
+      throw const BFormatException();
+    } on BPlatformException catch (e) {
+      throw BPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
  
+}
 }
