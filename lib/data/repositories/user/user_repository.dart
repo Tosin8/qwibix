@@ -67,9 +67,9 @@ class UserRepository extends GetxController{
   } 
 
   // Update any field in specific Users collection
-  Future<void> updateSingleField(UserModel user) async {
+  Future<void> updateSingleField(Map<String, dynamic> json) async {
     try {
-      await _db.collection("Users").doc(user.id).set(user.toJson()); 
+      await _db.collection("Users").doc().update(json); 
     } on FirebaseException catch (e) {
       throw BFirebaseException(e.code).message; 
     } on FormatException catch (_) {
@@ -82,9 +82,9 @@ class UserRepository extends GetxController{
   } 
 
   // Function to remove user data from Firestore. 
-  Future<void> saveUserRecord(UserModel user) async {
+  Future<void> removeUserRecord(String userId) async {
     try {
-      await _db.collection("Users").doc(user.id).set(user.toJson()); 
+      await _db.collection("Users").doc(userId).delete(); 
     } on FirebaseException catch (e) {
       throw BFirebaseException(e.code).message; 
     } on FormatException catch (_) {
@@ -97,17 +97,5 @@ class UserRepository extends GetxController{
   } 
 
   // Upload any Image. 
-  Future<void> saveUserRecord(UserModel user) async {
-    try {
-      await _db.collection("Users").doc(user.id).set(user.toJson()); 
-    } on FirebaseException catch (e) {
-      throw BFirebaseException(e.code).message; 
-    } on FormatException catch (_) {
-      throw const BFormatException();
-    } on BPlatformException catch (e) {
-      throw BPlatformException(e.code).message;
-    } catch (e) {
-      throw 'Something went wrong. Please try again';
-    }
-  } 
+ 
 }
