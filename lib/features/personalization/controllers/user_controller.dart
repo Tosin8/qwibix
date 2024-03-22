@@ -1,6 +1,7 @@
 import 'package:bellymax/common/widgets/loaders/loaders.dart';
 import 'package:bellymax/data/repositories/user/user_repository.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../models/user_model.dart';
@@ -11,7 +12,12 @@ class UserController extends GetxController {
 final profileLoading = false.obs; 
 
 Rx<UserModel> user = UserModel.empty().obs; 
+
+final hidePassword = false.obs; 
+final verifyEmail = TextEditingController(); 
+final verifyPassword = TextEditingController();
  final userRepository = Get.put(UserRepository()); 
+ GlobalKey<FormState> reAuthFormKey = GlobalKey<FormState>();
 
  @override 
  void onInit() {

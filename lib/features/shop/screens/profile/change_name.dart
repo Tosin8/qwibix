@@ -34,6 +34,7 @@ class ChangeName extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
+                  textInputAction: TextInputAction.next,
                   controller: controller.firstName, 
                   validator: (value) => BValidator.validateEmptyText('First Name', value),
                   expands: false, 
@@ -44,7 +45,8 @@ class ChangeName extends StatelessWidget {
                 const SizedBox(height: BSizes.spaceBtwInputFields,), 
 
                 TextFormField(
-                  controller: controller.firstName, 
+                  textInputAction: TextInputAction.done,
+                  controller: controller.lastName, 
                   validator: (value) => BValidator.validateEmptyText('Last Name', value),
                   expands: false, 
                   decoration: const InputDecoration(labelText: BTexts.lastName, prefixIcon: Icon(Iconsax.user)
