@@ -164,9 +164,15 @@ Future<void> reAuthenticateEmailAndPasswordUser() async{
 }
 
 // Upload Profile Image
-uploadUserProfilePicture() async 
-{
-  final image = await ImagePicker().pickImage(source: ImageSource.gallery, imageQuality: 70, maxWidth: 150, maxHeight: 150);
+uploadUserProfilePicture() async {
+  final image = await ImagePicker().pickImage(
+    source: ImageSource.gallery, 
+    imageQuality: 70, 
+    maxWidth: 150,
+     maxHeight: 150);
+     if(image != null) {
+       final imageUrl = userRepository.uploadImage('Users/Images/Profile/', image); 
+     }
 }
 }
 
