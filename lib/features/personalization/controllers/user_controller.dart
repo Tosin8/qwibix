@@ -54,6 +54,12 @@ profileLoading.value = true;
  {
 
   try {
+// First update Rx User and then check if user date is already stored, if not store new data. 
+    await fetchUserRecord();
+
+    // if no record already stored. 
+    if(user.value.id.isEmpty) {
+
 if (userCredentials != null) {
   // Convert name to first andn last name 
   final nameParts = UserModel.nameParts(userCredentials.user!.displayName ?? '');
@@ -75,7 +81,8 @@ if (userCredentials != null) {
   // save user data in the firebase.
   await userRepository.saveUserRecord(user);
 }
-  } catch (e) 
+  }
+   } catch (e) 
   {
     BLoaders.warningSnackBar(
       title: 'Data not found',
@@ -154,4 +161,9 @@ Future<void> reAuthenticateEmailAndPasswordUser() async{
     BLoaders.warningSnackBar(title: 'Oh Snap!', message: e.toString());
   }
 }
+
+// Upload Profile Image
+uploadUserProfilePicture() async {}
 }
+
+

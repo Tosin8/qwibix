@@ -1,4 +1,5 @@
 import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
+import 'package:bellymax/features/personalization/controllers/user_controller.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -13,11 +14,13 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance; 
     final dark = BHelperFunctions.isDarkMode(context); 
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false, 
-        title: Text('Profile', style: Theme.of(context).textTheme.headlineMedium!.apply(color: dark ? Colors.white : Colors.black),),
+        title: Text('Profile', 
+        style: Theme.of(context).textTheme.headlineMedium!.apply(color: dark ? Colors.white : Colors.black),),
         
       ),
       body: SingleChildScrollView(
@@ -36,7 +39,7 @@ class ProfileScreen extends StatelessWidget {
             ), 
           const SizedBox(height: BSizes.spaceBtwItems,), 
           SettingsMenuTitle(
-            title: 'My Address', subText: 'Set shopping delievery address', onTap: () {  },
+            title: 'My Address', subText: 'Set shopping delivery address', onTap: () {  },
             icon: Iconsax.safe_home
 
           ), 
@@ -73,8 +76,8 @@ class ProfileScreen extends StatelessWidget {
           SettingsMenuTitle(
           title: 'History', 
           subText: 'Browse through your recently \nviewed products', onTap: (){},
-          icon: Iconsax.document_previous, )
-          , 
+          icon: Iconsax.document_previous, ),
+          
 
           
           const SizedBox(height: BSizes.spaceBtwSections,), 
