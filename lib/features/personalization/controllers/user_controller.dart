@@ -10,6 +10,7 @@ import 'package:bellymax/utils/popups/full_screen_loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../models/user_model.dart';
 
@@ -163,7 +164,10 @@ Future<void> reAuthenticateEmailAndPasswordUser() async{
 }
 
 // Upload Profile Image
-uploadUserProfilePicture() async {}
+uploadUserProfilePicture() async 
+{
+  final image = await ImagePicker().pickImage(source: ImageSource.gallery, imageQuality: 70, maxWidth: 150, maxHeight: 150);
+}
 }
 
 

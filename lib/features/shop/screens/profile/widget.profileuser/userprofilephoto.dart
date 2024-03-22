@@ -1,15 +1,19 @@
+import 'package:bellymax/common/widgets/shimmer.dart';
 import 'package:bellymax/features/personalization/controllers/user_controller.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class userProfilePhoto extends StatelessWidget {
   const userProfilePhoto({
     super.key,
-    required this.dark,
+    required this.dark, 
+  this.isNetworkImage = false,
   });
 
   final bool dark;
+  final bool isNetworkImage; 
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +29,21 @@ class userProfilePhoto extends StatelessWidget {
             return
              CircleAvatar(
               radius: 40, 
-              child: Container(
-                decoration:  BoxDecoration(
-                  image: DecorationImage(
-                  image: image as ImageProvider, fit: BoxFit.cover), 
-                  ),
-                  ),
+              child: isNetworkImage ? 
+              CachedNetworkImage( 
+                imageUrl: image as String,
+                progressIndicatorBuilder : (context, url, downloadProgress) => const TShimmerEffect(width: 55, height: 55), 
+                errorWidget: (context, url, error) => const Icon(Icons.error), 
+              ) : 
+                Container(
+                  decoration:  BoxDecoration(
+                    image: DecorationImage(
+                    image: image as ImageProvider,
+                     fit: BoxFit.cover, 
+                     ), 
+                    ),
+                    ),
+              
             ); 
    } ),
            const SizedBox(height: BSizes.spaceBtwItems,), 
