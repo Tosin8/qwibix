@@ -182,6 +182,8 @@ uploadUserProfilePicture() async {
        await userRepository.updateSingleField(json);
 
        user.value.profilePicture = imageUrl;
+       user.refresh(); 
+       
        BLoaders.successSnackBar(title: 'Congratulations', message: 'Your Profile Image has been updated!'); 
      }
 }
