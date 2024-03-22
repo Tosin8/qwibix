@@ -2,8 +2,10 @@ import 'package:bellymax/common/widgets/carticon.dart';
 import 'package:bellymax/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
 import 'package:bellymax/features/shop/models/product_list.dart';
+import 'package:bellymax/utils/constants/colors.dart';
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
+import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
@@ -28,9 +30,26 @@ class HomeScreen extends StatelessWidget {
           color: darkMode ? Colors.white: Colors.black
         ) ,), centerTitle: true, 
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(60), 
-          child: BSearchController(darkMode: darkMode, 
-          text: 'Search for dish or cuisine',),
+          preferredSize: const Size.fromHeight(100), 
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 5,), 
+              Padding(
+                padding: const EdgeInsets.only(left: 18.0),
+                child: Text(BTexts.homeAppbarTitle, style: Theme.of(context).textTheme.labelMedium!.apply(color: BColors.black),),
+              ),
+            SizedBox(height: 5), 
+              Padding(
+                padding: const EdgeInsets.only(left: 18.0),
+                child: Text(BTexts.homeAppbarSubTitle, 
+                style: Theme.of(context).textTheme.headlineSmall!.apply(color: BColors.black),),
+              ), 
+              SizedBox(height: 5,), 
+               BSearchController(darkMode: darkMode, 
+            text: 'Search for dish or cuisine',),
+            ], 
+          ),
           ), 
         actions: [
           BCartCounterIcon(darkMode: darkMode), 
