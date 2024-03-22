@@ -22,6 +22,7 @@ final profileLoading = false.obs;
 Rx<UserModel> user = UserModel.empty().obs; 
 
 final hidePassword = false.obs; 
+final imageUploading = false.obs; 
 final verifyEmail = TextEditingController(); 
 final verifyPassword = TextEditingController();
  final userRepository = Get.put(UserRepository()); 
@@ -165,15 +166,32 @@ Future<void> reAuthenticateEmailAndPasswordUser() async{
 
 // Upload Profile Image
 uploadUserProfilePicture() async {
+  try {
   final image = await ImagePicker().pickImage(
     source: ImageSource.gallery, 
     imageQuality: 70, 
     maxWidth: 150,
      maxHeight: 150);
      if(image != null) {
-       final imageUrl = userRepository.uploadImage('Users/Images/Profile/', image); 
+      imageUploading.value = true;
+       // Upload Image
+       final imageUrl = await userRepository.uploadImage('Users/Images/Profile/', image); 
+
+       // Update user image record
+       Map<String, dynamic> json = {'ProfilePicture': imageUrl};
+       await userRepository.updateSingleField(json);
+
+       user.value.profilePicture = imageUrl;
+       BLoaders.successSnackBar(title: 'Congratulations', message: 'Your Profile Image has been updated!'); 
      }
 }
+catch (e) {
+  BLoaders.errorSnackBar(title: 'Oh Snap!', 
+  message: 'Something went wrong: $e');
+}
+finally {
+  imageUploading.value = false;
+}
 }
 
-
+}
