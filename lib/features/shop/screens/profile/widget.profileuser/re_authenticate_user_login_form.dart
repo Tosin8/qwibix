@@ -50,7 +50,11 @@ Obx(
 const SizedBox(height: BSizes.spaceBtwSections,), 
 
 // login btn 
-SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => controller.reAuthenticateEmailAndPasswordUser(), child: const Text('Verify')),)
+SizedBox(
+  width: double.infinity, 
+  child: ElevatedButton(
+    onPressed: () => controller.reAuthenticateEmailAndPasswordUser(),
+     child: const Text('Verify')),)
               ],
             ), 
             ),

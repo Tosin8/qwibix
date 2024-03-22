@@ -1,5 +1,8 @@
 import 'package:bellymax/common/widgets/loaders/loaders.dart';
 import 'package:bellymax/data/repositories/user/user_repository.dart';
+import 'package:bellymax/utils/constants/image_strings.dart';
+import 'package:bellymax/utils/constants/sizes.dart';
+import 'package:bellymax/utils/popups/full_screen_loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -76,4 +79,30 @@ if (userCredentials != null) {
        ; 
   }
  }
+
+ // Delete Account Warning
+ void deleteAccountWarningPopup() {
+  Get.defaultDialog(
+    contentPadding: const EdgeInsets.all(BSizes.md),
+    title: 'Delete Account', 
+    middleText: 'Are you sure yu want to delete your account permanently? This action is not reversible and all of your data will be removed permanently',
+    confirm: ElevatedButton(onPressed: () async => deleteUserAccount(), 
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.red, side: const BorderSide(color: Colors.red)), 
+    child: const Padding(padding: EdgeInsets.symmetric(horizontal: BSizes.lg), 
+    child: Text('Delete'),
+    ), 
+    ) , 
+    cancel: OutlinedButton(onPressed: () => Navigator.of(Get.overlayContext!).pop(), child: const Text('Cancel'), 
+    )
+  ); 
+ }
+
+ // Dlete user account
+void deleteUserAccount() async{
+  try {
+    BFullScreenLoader.openLoadingDialog('Processing', BImages.docerAnimation); 
+
+    /// First re-auth. user
+  }
+}
 }
