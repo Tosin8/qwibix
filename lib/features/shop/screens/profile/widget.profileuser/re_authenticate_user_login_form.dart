@@ -38,10 +38,11 @@ Obx(
    TextFormField(
     obscureText: controller.hidePassword.value,
     textInputAction: TextInputAction.done,
-    controller: controller.verifyEmail, 
-    validator: BValidator.validateEmail, 
+    controller: controller.verifyPassword, 
+    validator: BValidator.validatePassword, 
     decoration:  InputDecoration(
-      suffixIcon: IconButton(onPressed: () => controller.hidePassword.value = !controller.hidePassword.value, icon: Icon(Iconsax.eye_slash)),
+      suffixIcon: IconButton(onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+       icon:  Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye)),
       prefixIcon: Icon(Iconsax.password_check), 
     labelText: BTexts.password),
     
