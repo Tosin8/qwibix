@@ -38,12 +38,12 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 5,), 
+              const SizedBox(height: 5,), 
               Padding(
                 padding: const EdgeInsets.only(left: 18.0),
                 child: Text(BTexts.homeAppbarTitle, style: Theme.of(context).textTheme.labelMedium!.apply(color: BColors.black),),
               ),
-            SizedBox(height: 5), 
+            const SizedBox(height: 5), 
               Padding(
                 padding: const EdgeInsets.only(left: 18.0),
                 child: Obx(() {
@@ -52,12 +52,15 @@ class HomeScreen extends StatelessWidget {
                     return const TShimmerEffect( width: 80, height: 15
                       
                     ); 
+                  } else {
+ return Text(controller.user.value.fullName, 
+                  style: Theme.of(context).textTheme.headlineSmall!.apply(color: BColors.black),
+                  );
                   }
-                  return Text(controller.user.value.fullName, 
-                  style: Theme.of(context).textTheme.headlineSmall!.apply(color: BColors.black),);
+                 
    } ),
               ), 
-              SizedBox(height: 5,), 
+              const SizedBox(height: 5,), 
                BSearchController(darkMode: darkMode, 
             text: 'Search for dish or cuisine',),
             ], 

@@ -1,3 +1,4 @@
+import 'package:bellymax/features/personalization/controllers/user_controller.dart';
 import 'package:bellymax/features/shop/screens/profile/userscreen.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class profileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance; 
     return ListTile(
       leading: CircleAvatar(
         radius: 40,
@@ -22,10 +24,10 @@ class profileCard extends StatelessWidget {
           decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/user.png'))),
         ),
       ), 
-      title: Text('Tosin Ezekiel', 
+      title: Text(controller.user.value.fullName, 
       style: Theme.of(context).textTheme.headlineSmall!.apply(color: dark ? Colors.white: BColors.black),
       ),
-      subtitle: Text('tosinezekiel8@gmail.com', 
+      subtitle: Text(controller.user.value.email, 
       style: Theme.of(context).textTheme.bodySmall!.apply(color: dark ? Colors.white : Colors.black),),
       trailing: GestureDetector(
     onTap: () {

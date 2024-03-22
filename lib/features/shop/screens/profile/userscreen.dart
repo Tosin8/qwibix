@@ -1,8 +1,11 @@
 import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
+import 'package:bellymax/features/personalization/controllers/user_controller.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import 'change_name.dart';
 import 'widget.profileuser/userprofilemenu.dart';
 import 'widget.profileuser/userprofilephoto.dart';
 
@@ -11,6 +14,8 @@ class ProfileUserScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance; 
+    
     final dark = BHelperFunctions.isDarkMode(context); 
     return Scaffold( 
       appBar: AppBar(
@@ -32,12 +37,15 @@ class ProfileUserScreen extends StatelessWidget {
             const BSectionHeading(title: 'Profile Information', buttonTitle: ''), 
               const SizedBox(height: BSizes.spaceBtwItems,), 
               userprofilemenu(
-                name: 'Name', middleName: 'Tosin Ezekiel', press: () {  },
+                name: 'Name', middleName: controller.user.value.fullName,
+                 press: () => Get.to(() => const ChangeName())
+
                 
               ), 
               const SizedBox(height: BSizes.spaceBtwItems), 
                userprofilemenu(
-                name: 'Username', middleName: 'Tosin8', press: () {  },
+                name: 'Username', middleName: controller.user.value.username, press: () => Get.to(() => const ChangeName()
+                ),
                 
               ),
 
@@ -48,11 +56,11 @@ class ProfileUserScreen extends StatelessWidget {
            const BSectionHeading(title: 'Personal Information', buttonTitle: ''), 
               const SizedBox(height: BSizes.spaceBtwItems,), 
               userprofilemenu(
-                name: 'Email', middleName: 'Tosinezekiel8@gmail.com', press: () {  },
+                name: 'Email', middleName: controller.user.value.email, press: () {  },
               ),  
               const SizedBox(height: BSizes.spaceBtwItems,), 
               userprofilemenu(
-                name: 'Phone No', middleName: '+234 812 345 678', press: () {  },
+                name: 'Phone No', middleName: controller.user.value.phoneNumber, press: () {  },
               ), const SizedBox(height: BSizes.spaceBtwItems,), 
               userprofilemenu(
                 name: 'Gender', middleName: 'Male', press: () {  },
