@@ -1,3 +1,4 @@
+import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
 import 'package:bellymax/utils/exceptions/platform_exception.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -28,9 +29,15 @@ class UserRepository extends GetxController{
   } 
 
   // Function to fetch user details based on User ID. 
-  Future<void> fetchUserDetails() async {
+  Future<UserModel> fetchUserDetails() async {
     try {
-      await _db.collection("Users").doc(user.id).set(user.toJson()); 
+      final documentSnapshot = 
+      await _db.collection("Users").doc(AuthenticationRepository.instance.authUser?.uid).get(); 
+      if (documentSnapshot.exists) {
+        return UserModel.fromSnapshot(documentSnapshot);
+      } else {
+        return UserModel.empty(); 
+      }
     } on FirebaseException catch (e) {
       throw BFirebaseException(e.code).message; 
     } on FormatException catch (_) {
@@ -42,25 +49,12 @@ class UserRepository extends GetxController{
     }
   } 
 
-  // Function to save user data to Firestore.
-  Future<void> saveUserRecord(UserModel user) async {
-    try {
-      await _db.collection("Users").doc(user.id).set(user.toJson()); 
-    } on FirebaseException catch (e) {
-      throw BFirebaseException(e.code).message; 
-    } on FormatException catch (_) {
-      throw const BFormatException();
-    } on BPlatformException catch (e) {
-      throw BPlatformException(e.code).message;
-    } catch (e) {
-      throw 'Something went wrong. Please try again';
-    }
-  }  
-
+  
+  
   // Function to update user data in Firestore. 
-  Future<void> saveUserRecord(UserModel user) async {
+  Future<void> updateUserDetails(UserModel updatedUser) async {
     try {
-      await _db.collection("Users").doc(user.id).set(user.toJson()); 
+      await _db.collection("Users").doc(updatedUser.id).update(updatedUser.toJson()); 
     } on FirebaseException catch (e) {
       throw BFirebaseException(e.code).message; 
     } on FormatException catch (_) {
@@ -73,7 +67,7 @@ class UserRepository extends GetxController{
   } 
 
   // Update any field in specific Users collection
-  Future<void> saveUserRecord(UserModel user) async {
+  Future<void> updateSingleField(UserModel user) async {
     try {
       await _db.collection("Users").doc(user.id).set(user.toJson()); 
     } on FirebaseException catch (e) {
