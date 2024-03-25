@@ -1,4 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:html';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class FoodMenu {
   String title; 
   String image;
@@ -65,4 +69,30 @@ class CategoryModel {
   ); 
 
   /// Convert model to JSON structure  for starting data in firebase.
+  Map<String, dynamic> toJson() {
+    return {
+'Name': name, 
+'Image': image,
+'IsFeatured': isFeatured, 
+'ParentId': parentId, 
+    };
+  }
+
+  /// Map json oriented document snapshot from firebase to Usermodel
+  factory CategoryModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document){
+    if (document.data() != null) {
+      final data = document.data()!; 
+
+      // Map JSoN record to the Model
+      return CategoryModel(
+        id: document.id,
+         name: data['Name'] ?? '',
+          image: data['Image'] ?? '',
+           isFeatured: data['IsFeatured'] ?? false
+           ); 
+    } else {
+      return CategoryModel.empty();
+    }
+  }
+  
 }
