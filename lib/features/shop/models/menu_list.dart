@@ -42,3 +42,17 @@ final List FoodMenus = [
     image: 'assets/images/menu/sandwish.jpg',
   ), 
 ]; 
+
+/// For DB Backend - Firebase. 
+class CategoryModel {
+  String id; 
+  String name; 
+  String parentId; 
+  bool isFeatured; 
+  CategoryModel({
+    required this.id,
+    required this.name,
+    required this.parentId,
+    required this.isFeatured,
+  });
+}
