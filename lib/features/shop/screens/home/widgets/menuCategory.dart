@@ -17,26 +17,44 @@ class menuCategory extends StatelessWidget {
      children:[
          const Padding(
            padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
-           child: BSectionHeading(title: 'Our Menu', buttonTitle: 'View All', ),
+           child: BSectionHeading(title: 'Categories', buttonTitle: 'View All', ),
          ),
        const SizedBox(height: BSizes.spaceBtwItems,), 
-        Padding(
+        // Padding(
+        //   padding: const EdgeInsets.only(right: BSizes.spaceBtwItems), 
+        //   child: Wrap(
+        //               alignment: WrapAlignment.start,
+        //               spacing: 20,
+        //               runSpacing: 20,
+        //               children: [
+        //             ...List.generate(
+        //               FoodMenus.length,
+        //                (index) =>  menuListCard(
+        //    FoodMenus: FoodMenus[index]
+        //   ),
+        //               ),
+        //               ]),
+        // ),
+    Padding(
           padding: const EdgeInsets.only(right: BSizes.spaceBtwItems), 
-          child: Wrap(
-                      alignment: WrapAlignment.start,
-                      spacing: 20,
-                      runSpacing: 20,
-                      children: [
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+                     
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
                     ...List.generate(
                       FoodMenus.length,
-                       (index) =>  menuListCard(
-           FoodMenus: FoodMenus[index]
-          ),
+                       (index) =>  Padding(
+                         padding: const EdgeInsets.all(6.0),
+                         child: menuListCard(
+                                    FoodMenus: FoodMenus[index]
+                                   ),
+                       ),
                       ),
                       ]),
         ),
-    
-     ],
+      )  ],
               );
   }
 }
