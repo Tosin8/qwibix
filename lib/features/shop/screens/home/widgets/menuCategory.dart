@@ -15,7 +15,7 @@ class menuCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final categoryController = Get.put(CategoryController());
+    // final categoryController = Get.put(CategoryController());
 
     return Column(
      children:[
