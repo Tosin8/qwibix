@@ -47,12 +47,16 @@ final List FoodMenus = [
 class CategoryModel {
   String id; 
   String name; 
+  String image; 
   String parentId; 
   bool isFeatured; 
   CategoryModel({
     required this.id,
     required this.name,
-    required this.parentId,
-    required this.isFeatured,
+    required this.image, 
+  this.parentId = '',
+    required this.isFeatured, 
+    
+
   });
 }
