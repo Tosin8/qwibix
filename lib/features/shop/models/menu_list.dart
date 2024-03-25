@@ -58,5 +58,11 @@ class CategoryModel {
     required this.isFeatured, 
     
 
-  });
+  });  
+  /// Empty Helper function.
+  static CategoryModel empty() => CategoryModel(
+    id: '',image: '', name: '', isFeatured: false
+  ); 
+
+  /// Convert model to JSON structure  for starting data in firebase.
 }
