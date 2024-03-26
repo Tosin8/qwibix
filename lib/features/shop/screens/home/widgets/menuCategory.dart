@@ -3,7 +3,10 @@ import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
 import 'package:bellymax/features/shop/models/menu_list.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../../controllers/category_controller.dart';
+import 'category_shimmer.dart';
 import 'menuList.dart';
 
 class menuCategory extends StatelessWidget {
@@ -13,7 +16,7 @@ class menuCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final categoryController = Get.put(CategoryController());
+     final categoryController = Get.put(CategoryController());
 
     return Column(
      children:[
@@ -52,19 +55,22 @@ class menuCategory extends StatelessWidget {
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
                      
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                    ...List.generate(
-                      FoodMenus.length,
-                       (index) =>  Padding(
-                         padding: const EdgeInsets.all(6.0),
-                         child: menuListCard(
-                                    FoodMenus: FoodMenus[index]
-                                   ),
-                       ),
-                      ),
-                      ]),
+                      child: Obx(() {
+                        if(categoryController.isLoading.value) return const BCategoryShimmer(); 
+                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                                            ...List.generate(
+                        FoodMenus.length,
+                         (index) =>  Padding(
+                           padding: const EdgeInsets.all(6.0),
+                           child: menuListCard(
+                                      FoodMenus: FoodMenus[index]
+                                     ),
+                         ),
+                        ),
+                        ]);
+    }  ),
         ),
       ) , 
        ],
