@@ -18,6 +18,7 @@ class menuCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      final categoryController = Get.put(CategoryController());
+    
 
     return Column(
      children:[
@@ -66,14 +67,19 @@ class menuCategory extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                       ...List.generate(
-                        FoodMenus.length,
-                         (index) =>  Padding(
+                        //FoodMenus.length,
+                        categoryController.featuredCategories.length,
+                   
+                         (index) {
+                         final category = categoryController.featuredCategories[index]; 
+                         return Padding(
                            padding: const EdgeInsets.all(6.0),
+                          
                            child: menuListCard(
                                       FoodMenus: FoodMenus[index]
                                      ),
-                         ),
-                        ),
+                         );
+       }),
                         ]),
           ),
                );

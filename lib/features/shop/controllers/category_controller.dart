@@ -38,7 +38,9 @@ class CategoryController extends GetxController {
     catch(e){
       BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {
-      BFullScreenLoader.stopLoading();
+
+      // Remove loader 
+      isLoading.value = false; 
     }
   }
 }
