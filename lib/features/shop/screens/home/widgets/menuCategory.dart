@@ -1,12 +1,13 @@
 
 import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
 import 'package:bellymax/features/shop/models/menu_list.dart';
+import 'package:bellymax/features/shop/screens/home/widgets/category_shimmer.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 
 import '../../../controllers/category_controller.dart';
-import 'category_shimmer.dart';
 import 'menuList.dart';
 
 class menuCategory extends StatelessWidget {
@@ -50,17 +51,21 @@ class menuCategory extends StatelessWidget {
     //     ),
     //   ) , 
 
-       Padding(
-          padding: const EdgeInsets.only(right: BSizes.spaceBtwItems), 
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-                     
-                      child: Obx(() {
-                        if(categoryController.isLoading.value) return const BCategoryShimmer(); 
-                         Row(
+       Obx(() {
+        if(categoryController.isLoading.value) return const BCategoryShimmer(); 
+
+        if(categoryController.featuredCategories.isEmpty) {
+          return Center(child: Text('No Data Found!', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white),),); 
+        }
+         return Padding(
+            padding: const EdgeInsets.only(right: BSizes.spaceBtwItems), 
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+                       
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                                            ...List.generate(
+                      ...List.generate(
                         FoodMenus.length,
                          (index) =>  Padding(
                            padding: const EdgeInsets.all(6.0),
@@ -69,10 +74,10 @@ class menuCategory extends StatelessWidget {
                                      ),
                          ),
                         ),
-                        ]);
-    }  ),
-        ),
-      ) , 
+                        ]),
+          ),
+               );
+   } ) , 
        ],
               );
   }
