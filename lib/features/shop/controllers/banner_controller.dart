@@ -1,3 +1,4 @@
+import 'package:bellymax/data/repositories/banners/banner_repository.dart';
 import 'package:bellymax/features/shop/models/banner_model.dart';
 import 'package:get/get.dart';
 
@@ -20,6 +21,10 @@ class BannerController extends GetxController{
     try {
       // show loader while loading categories. 
       isLoading.value = true; 
+
+      // fetch banners
+      final bannerRepo = Get.put(BannerRepository()); 
+      final banners = await bannerRepo.fetchBanners(); 
 
     } catch (e) {
       BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString()); 
