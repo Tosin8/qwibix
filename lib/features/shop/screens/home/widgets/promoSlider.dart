@@ -11,10 +11,11 @@ import '../../../controllers/banner_controller.dart';
 
 class BPromoSlider extends StatelessWidget {
   const BPromoSlider({
-    super.key, required this.banners,
+    super.key,
+    // required this.banners,
   });
 
-  final List<String> banners; 
+  //final List<String> banners; 
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,8 @@ class BPromoSlider extends StatelessWidget {
            viewportFraction: 1, 
            onPageChanged: (index, _)=> controller.updatePageIndicator(index), 
          ),
-         items: banners.map((url) => BCarouselImages(imageUrl: url)).toList(),  
+        //  items: banners.map((url) => BCarouselImages(imageUrl: url)).toList(), 
+        items: controller.banners.map((banner) => BCarouselImages(imageUrl: banner.imageUrl, isNetworkImage: true,)).toList(), 
         //  items: const [
         //    BCarouselImages(imageUrl: BImages.banner1,),
         //     BCarouselImages(imageUrl: BImages.banner2,),
@@ -39,7 +41,8 @@ class BPromoSlider extends StatelessWidget {
               Row(
                 mainAxisSize: MainAxisSize.min,
                children: [
-                 for(int i = 0; i < banners.length; i++)
+                //  for(int i = 0; i < banners.length; i++)
+                 for(int i = 0; i < controller.banners.length; i++)
                   BCircularContainer(
                    
                    width: 20,

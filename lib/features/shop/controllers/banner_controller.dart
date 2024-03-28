@@ -11,6 +11,12 @@ class BannerController extends GetxController{
   final isLoading = false.obs; 
   final RxList<BannerModel> banners = <BannerModel>[].obs; 
 
+  @override
+  void onInit() {
+    fetchBanners(); 
+    super.onInit(); 
+  }
+
 // update page navigational dots
   void updatePageIndicator(index) {
     carouselCurrentIndex.value =index; 
