@@ -1,3 +1,4 @@
+import 'package:bellymax/features/shop/models/banner_model.dart';
 import 'package:get/get.dart';
 
 import '../../../common/widgets/loaders/loaders.dart';
@@ -7,6 +8,7 @@ class BannerController extends GetxController{
   // variables
   final carouselCurrentIndex = 0.obs; 
   final isLoading = false.obs; 
+  final RxList<BannerModel> banners = <BannerModel>[].obs; 
 
 // update page navigational dots
   void updatePageIndicator(index) {
