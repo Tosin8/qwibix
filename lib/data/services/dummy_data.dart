@@ -1,9 +1,12 @@
 import 'package:bellymax/features/shop/models/menu_list.dart';
+import 'package:flutter/material.dart';
+
+import '../../features/shop/models/banner_model.dart';
 
 class BDummyData {
 
   /// Category
-  static final List<CategoryModel> banners = [
+  static final List<CategoryModel> categories = [
     CategoryModel(
       id: '1', 
        name: 'Burger', 
@@ -36,5 +39,21 @@ class BDummyData {
       id: '8', 
        name: 'Sour', 
        image: 'assets/images/menu/soup.jpg', isFeatured: true), 
+  ]; 
+
+  // Banners
+  static final List<BannerModel> banners = [
+    BannerModel(
+      imageUrl: 'assets/images/banner/banner1.jpg',
+       targetScreen: '', active: true), 
+       BannerModel(
+      imageUrl: 'assets/images/banner/banner2.jpg',
+       targetScreen: '', active: true), BannerModel(
+      imageUrl: 'assets/images/banner/banner3.jpg',
+       targetScreen: '', active: true), BannerModel(
+      imageUrl: 'assets/images/banner/banner4.jpg',
+       targetScreen: '', active: true), BannerModel(
+      imageUrl: 'assets/images/banner/banner5.jpg',
+       targetScreen: '', active: true), 
   ]; 
 }
