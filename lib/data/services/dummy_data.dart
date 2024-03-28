@@ -48,11 +48,14 @@ class BDummyData {
        targetScreen: '', active: true), 
        BannerModel(
       imageUrl: 'assets/images/banner/banner2.jpg',
-       targetScreen: '', active: true), BannerModel(
+       targetScreen: '', active: true), 
+       BannerModel(
       imageUrl: 'assets/images/banner/banner3.jpg',
-       targetScreen: '', active: true), BannerModel(
+       targetScreen: '', active: true), 
+       BannerModel(
       imageUrl: 'assets/images/banner/banner4.jpg',
-       targetScreen: '', active: true), BannerModel(
+       targetScreen: '', active: true), 
+       BannerModel(
       imageUrl: 'assets/images/banner/banner5.jpg',
        targetScreen: '', active: true), 
   ]; 
