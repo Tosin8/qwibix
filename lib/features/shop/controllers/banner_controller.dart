@@ -26,6 +26,9 @@ class BannerController extends GetxController{
       final bannerRepo = Get.put(BannerRepository()); 
       final banners = await bannerRepo.fetchBanners(); 
 
+      // assign banners
+      this.banners.assignAll(banners); 
+
     } catch (e) {
       BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString()); 
     } finally {

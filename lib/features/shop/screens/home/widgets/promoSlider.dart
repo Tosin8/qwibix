@@ -7,6 +7,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../controllers/banner_controller.dart';
+
 class BPromoSlider extends StatelessWidget {
   const BPromoSlider({
     super.key, required this.banners,
@@ -16,7 +18,7 @@ class BPromoSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(HomeController());
+    final controller = Get.put(BannerController());
     return Column(
       children: [
         CarouselSlider(
