@@ -1,4 +1,6 @@
 import 'package:bellymax/features/authentication/screens/login/login.dart';
+import 'package:bellymax/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:bellymax/features/authentication/screens/password_configuration/forgot_pwd.dart';
 import 'package:bellymax/features/authentication/screens/signup/signup.dart';
 import 'package:bellymax/features/authentication/screens/signup/verify_email.dart';
 import 'package:bellymax/features/shop/screens/home/home.dart';
@@ -21,5 +23,7 @@ class AppRoutes {
           GetPage(name: BRoutes.signIn, page: () => const LoginScreen()),  
           GetPage(name: BRoutes.signup, page: () => const SignUpScreen()), 
            GetPage(name: BRoutes.verifyEmail, page: () => const VerifyEmailScreen()), 
+            GetPage(name: BRoutes.onBoarding, page: () => const OnBoardingScreen()), 
+            GetPage(name: BRoutes.forgetPassword, page: () => const  ForgotPassword()), 
   ]; 
 }
