@@ -23,6 +23,11 @@ class BPromoSlider extends StatelessWidget {
     return Obx( () {
       // loader 
       if(controller.isLoading.value) return const TShimmerEffect(width: double.infinity, height: 190); 
+
+      // No data found
+      if (controller.banners.isEmpty) {
+        return const Center(child: Text('No Data Found!'),);
+      }
       return Column(
         children: [
           CarouselSlider(
