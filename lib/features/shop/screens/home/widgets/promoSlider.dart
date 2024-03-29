@@ -28,6 +28,7 @@ class BPromoSlider extends StatelessWidget {
       if (controller.banners.isEmpty) {
         return const Center(child: Text('No Data Found!'),);
       }
+      
       return Column(
         children: [
           CarouselSlider(
