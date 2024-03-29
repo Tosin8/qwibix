@@ -1,4 +1,5 @@
 import 'package:bellymax/bindings/general_bindings.dart';
+import 'package:bellymax/routes/app_routes.dart';
 import 'package:bellymax/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       theme: BAppTheme.lightTheme, 
       darkTheme: BAppTheme.darkTheme,
       initialBinding: GeneralBindings(),
+      getPages: AppRoutes.pages,
       home: const Scaffold(backgroundColor: BColors.primary, body: Center(child: CircularProgressIndicator(color: Colors.white),))
       
       //const OnBoardingScreen()
