@@ -1,7 +1,6 @@
 import 'package:bellymax/common/widgets/loaders/loaders.dart';
 import 'package:bellymax/data/repositories/category/category_repository.dart';
 import 'package:bellymax/features/shop/models/menu_list.dart';
-import 'package:bellymax/utils/popups/full_screen_loader.dart';
 import 'package:get/get.dart';
 
 class CategoryController extends GetxController {
