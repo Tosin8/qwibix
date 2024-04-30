@@ -4,7 +4,6 @@ import 'package:bellymax/features/personalization/controllers/user_controller.da
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/http/network_manager.dart';
 import 'package:bellymax/utils/popups/full_screen_loader.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
