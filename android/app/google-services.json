@@ -1,51 +1,26 @@
 {
   "project_info": {
-    "project_number": "1097307852348",
-    "project_id": "bellymax-def81",
-    "storage_bucket": "bellymax-def81.appspot.com"
+    "project_number": "919740602138",
+    "project_id": "bellymax-35a4e",
+    "storage_bucket": "bellymax-35a4e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1097307852348:android:72c12902c6af447864fd39",
+        "mobilesdk_app_id": "1:919740602138:android:1ad46a906d0bfc6eb8fea3",
         "android_client_info": {
           "package_name": "com.example.bellymax"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "1097307852348-96bjge6m6pdn315b0olm6m9svs9blru1.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.bellymax",
-            "certificate_hash": "5db72accb64378058e7d19dd4dcc295ab1c7541b"
-          }
-        },
-        {
-          "client_id": "1097307852348-p64jbfvgsij9vqnf387d627scsc0afku.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBQmi3jwYWA_VGA6TLhJXLzmxzf0255fbs"
+          "current_key": "AIzaSyC24yoMcSliE0kCSQF97_uJgrkuKqDirIQ"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1097307852348-p64jbfvgsij9vqnf387d627scsc0afku.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "1097307852348-b8s2io982mrk25bltevbsmr1bcrom3v8.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.bellymax"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
