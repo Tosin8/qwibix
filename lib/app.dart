@@ -29,7 +29,11 @@ class MyApp extends StatelessWidget {
       darkTheme: BAppTheme.darkTheme,
       initialBinding: GeneralBindings(),
       getPages: AppRoutes.pages,
-      home: const Scaffold(backgroundColor: BColors.primary, body: Center(child: CircularProgressIndicator(color: Colors.white),))
+      home: const Scaffold(
+        backgroundColor: BColors.primary, 
+        body: Center(
+          child: CircularProgressIndicator(
+            color: Colors.white),))
       
       //const OnBoardingScreen()
     ); 
