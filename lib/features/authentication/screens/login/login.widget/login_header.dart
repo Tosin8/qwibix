@@ -14,11 +14,13 @@ class BLoginHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Image(
-          height: 100,
-          image: AssetImage(dark ? BImages.darkApplogo : BImages.lightApplogo)), 
+        const SizedBox(height: 30,), 
+        // Image(
+        //   height: 100,
+        //   image: AssetImage(dark ? BImages.darkApplogo : BImages.lightApplogo)), 
           Text(BTexts.loginTitle, style: Theme.of(context).textTheme.headlineMedium,), 
           const SizedBox(height: BSizes.sm), 
           Text(BTexts.loginSubTitle, style: Theme.of(context).textTheme.titleLarge,),
