@@ -142,7 +142,7 @@ Future<UserCredential> registerWithEmailAndPassword(String email, String passwor
      }
   }
 
-  // Google Auth 
+  // Google Authentication - GOOGLE
   Future<UserCredential?> signInWithGoogle() async {
 try{
 
