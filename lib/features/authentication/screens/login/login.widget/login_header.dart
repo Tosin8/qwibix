@@ -1,4 +1,4 @@
-import 'package:bellymax/utils/constants/image_strings.dart';
+
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
