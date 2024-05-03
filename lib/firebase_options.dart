@@ -87,5 +87,4 @@ class DefaultFirebaseOptions {
     storageBucket: 'bellymax-35a4e.appspot.com',
     measurementId: 'G-QLXJ0PSC8W',
   );
-
 }
