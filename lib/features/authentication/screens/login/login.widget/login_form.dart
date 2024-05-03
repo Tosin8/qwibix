@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../../../utils/constants/colors.dart';
+
 
 class BLoginForm extends StatelessWidget {
   const BLoginForm({
@@ -24,12 +24,8 @@ class BLoginForm extends StatelessWidget {
       key: controller.loginFormKey, 
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: BSizes.spaceBtwSections),
-        child: Card(
-          
-            color: BColors.primaryColor.withOpacity(0.2),  
-            elevation: 1, 
-          child: Padding(
-            padding: const EdgeInsets.all(18.0),
+        child:  Padding(
+            padding: const EdgeInsets.all(4.0),
             child: Column(
               children: [
                 /// Email
@@ -119,7 +115,7 @@ class BLoginForm extends StatelessWidget {
             ),
           ),
         ),
-      ), 
+      
       );
   }
 }

@@ -27,14 +27,14 @@ class SignUpScreen extends StatelessWidget {
 
               /// title 
               Text(BTexts.signupTitle, 
-              style: Theme.of(context).textTheme.headlineMedium,), 
+              style: Theme.of(context).textTheme.headlineSmall,), 
               const SizedBox(height: BSizes.spaceBtwSections,), 
 
               /// Form
               signUpForm(dark: dark), 
 const SizedBox(height: BSizes.spaceBtwSections,), 
               /// Divider
-              BFormDivider(dark: dark, DividerText: BTexts.orSignInWith.capitalize!),
+              BFormDivider(dark: dark, DividerText: BTexts.orSignUpWith.capitalize!),
               const SizedBox(height: BSizes.spaceBtwSections,),
 
               //Social Media Btn  

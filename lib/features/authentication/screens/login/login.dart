@@ -23,6 +23,7 @@ class LoginScreen extends StatelessWidget{
         child: Padding(
           padding: BSpacingStyle.paddingWithAppBarHeight, 
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /// Logo , Title and SubTitle
               BLoginHeader(dark: dark), 

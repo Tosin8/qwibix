@@ -46,6 +46,7 @@ class AuthenticationRepository extends GetxController{
         Get.offAll(() => VerifyEmailScreen(email: _auth.currentUser?.email,));
       }
     } else {
+      // local storage
        deviceStorage.writeIfNull('IsFirstTime', true); 
     
     // check if it's the first time launching the app - using local storage. 
