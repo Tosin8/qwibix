@@ -17,6 +17,7 @@ import '../models/user_model.dart';
 class UserController extends GetxController {
  
  static UserController get instance => Get.find(); 
+
 final profileLoading = false.obs; 
 
 Rx<UserModel> user = UserModel.empty().obs; 

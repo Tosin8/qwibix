@@ -5,6 +5,7 @@ import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
 import 'package:bellymax/features/personalization/controllers/user_controller.dart';
 import 'package:bellymax/features/shop/models/product_list.dart';
 import 'package:bellymax/utils/constants/colors.dart';
+// ignore: unused_import
 import 'package:bellymax/utils/constants/image_strings.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:bellymax/utils/constants/text_strings.dart';
