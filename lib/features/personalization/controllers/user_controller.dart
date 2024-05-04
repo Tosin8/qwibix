@@ -99,14 +99,16 @@ if (userCredentials != null) {
   Get.defaultDialog(
     contentPadding: const EdgeInsets.all(BSizes.md),
     title: 'Delete Account', 
-    middleText: 'Are you sure yu want to delete your account permanently? This action is not reversible and all of your data will be removed permanently',
+    middleText: 'Are you sure you want to delete your account permanently? This action is not reversible and all of your data will be removed permanently',
     confirm: ElevatedButton(onPressed: () async => deleteUserAccount(), 
     style: ElevatedButton.styleFrom(backgroundColor: Colors.red, side: const BorderSide(color: Colors.red)), 
     child: const Padding(padding: EdgeInsets.symmetric(horizontal: BSizes.lg), 
     child: Text('Delete'),
     ), 
     ) , 
-    cancel: OutlinedButton(onPressed: () => Navigator.of(Get.overlayContext!).pop(), child: const Text('Cancel'), 
+    cancel: OutlinedButton(
+      onPressed: () => Navigator.of(Get.overlayContext!).pop(), 
+      child: const Text('Cancel'), 
     )
   ); 
  }
@@ -114,7 +116,9 @@ if (userCredentials != null) {
  // Dlete user account
 void deleteUserAccount() async{
   try {
-    BFullScreenLoader.openLoadingDialog('Processing', BImages.docerAnimation); 
+    BFullScreenLoader.openLoadingDialog('Processing', 
+    BImages.docerAnimation
+    ); 
 
     /// First re-auth. user
   final auth = AuthenticationRepository.instance; 
