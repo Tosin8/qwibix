@@ -38,6 +38,7 @@ BFullScreenLoader.stopLoading();
 
 // Show success screen 
 BLoaders.successSnackBar(
+  duration: 8,
   title: 'Email Sent', 
   message: 'Email link has been sent to $email to reset your password'.tr,);
 
@@ -71,6 +72,7 @@ BFullScreenLoader.stopLoading();
 
 // Show success screen 
 BLoaders.successSnackBar(
+  duration: 8,
   title: 'Email Sent', 
   message: 'Email link has been sent to $email to reset your password'.tr,
   );
