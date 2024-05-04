@@ -27,7 +27,8 @@ TextFormField(
   textInputAction: TextInputAction.next,
   controller: controller.verifyEmail, 
   validator: BValidator.validateEmail, 
-  decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right), 
+  decoration: const InputDecoration(
+    prefixIcon: Icon(Iconsax.direct_right), 
   labelText: BTexts.email),
 ), 
 const SizedBox(height: BSizes.spaceBtwInputFields,), 
@@ -43,7 +44,7 @@ Obx(
     decoration:  InputDecoration(
       suffixIcon: IconButton(onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
        icon:  Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye)),
-      prefixIcon: Icon(Iconsax.password_check), 
+      prefixIcon: const Icon(Iconsax.password_check), 
     labelText: BTexts.password),
     
   ),
