@@ -159,7 +159,8 @@ Future<void> reAuthenticateEmailAndPasswordUser() async{
       return;
     }
 
-    await AuthenticationRepository.instance.reAuthenticateWithEmailAndPassword(verifyEmail.text.trim(), verifyPassword.text.trim());
+    await AuthenticationRepository.instance.reAuthenticateWithEmailAndPassword(verifyEmail.text.trim(), 
+    verifyPassword.text.trim());
     await AuthenticationRepository.instance.deleteAccount();
     BFullScreenLoader.stopLoading(); 
     Get.offAll(() => const LoginScreen());
