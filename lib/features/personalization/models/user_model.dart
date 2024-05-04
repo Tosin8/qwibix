@@ -90,8 +90,10 @@ class UserModel {
             profilePicture: data['ProfilePicture'] ?? '',
             );  
     }
-   
-    return UserModel.fromSnapshot(document); 
+   else {
+    return UserModel.empty(); 
+   }
+    // return UserModel.fromSnapshot(document); 
   }
   
 }
