@@ -52,8 +52,8 @@ Future<void> updateUserName() async {
 
      // Update user's first and last name in the firebase firestore
      Map<String, dynamic> name = {
-      'firstName': firstName.text.trim(),
-      'lastName': lastName.text.trim(),
+      'FirstName': firstName.text.trim(),
+      'LastName': lastName.text.trim(),
 
      };
      await userRepository.updateSingleField(name); 
