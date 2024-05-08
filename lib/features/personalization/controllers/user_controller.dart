@@ -67,7 +67,7 @@ if (userCredentials != null) {
   // Convert name to first andn last name 
   final nameParts = UserModel.nameParts(userCredentials.user!.displayName ?? '');
  
-  String username = UserModel.generatedUsername(userCredentials.user!.displayName ?? '');
+  final  username = UserModel.generatedUsername(userCredentials.user!.displayName ?? '');
 
   // Map Data 
   final user = UserModel(

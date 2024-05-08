@@ -26,7 +26,7 @@ class userProfilePhoto extends StatelessWidget {
           Obx((){
             final networkImage = controller.user.value.profilePicture; 
             final  image  = networkImage.isNotEmpty ? NetworkImage(networkImage) : const AssetImage('assets/images/user.png'); 
-            return controller.imageUploading.value ? TShimmerEffect(width: 80, height: 80) :
+            return controller.imageUploading.value ? const TShimmerEffect(width: 80, height: 80) :
              CircleAvatar(
               radius: 40, 
               child: isNetworkImage ? 
