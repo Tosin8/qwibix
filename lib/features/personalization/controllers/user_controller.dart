@@ -113,6 +113,7 @@ if (userCredentials != null) {
   ); 
  }
 
+
  // Dlete user account
 void deleteUserAccount() async{
   try {
@@ -142,6 +143,7 @@ void deleteUserAccount() async{
   }
 }
 
+
 // RE -AUTH before deleting 
 Future<void> reAuthenticateEmailAndPasswordUser() async{
   try {
@@ -169,6 +171,7 @@ Future<void> reAuthenticateEmailAndPasswordUser() async{
     BLoaders.warningSnackBar(title: 'Oh Snap!', message: e.toString());
   }
 }
+
 
 // Upload Profile Image
 uploadUserProfilePicture() async {
