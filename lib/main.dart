@@ -8,7 +8,6 @@ import 'package:get_storage/get_storage.dart';
 import 'app.dart';
 import 'data/repositories/authentication/authentication_repository.dart';
 
-
 // void main() {
 //   runApp(const MyApp());
 // }
