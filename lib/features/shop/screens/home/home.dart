@@ -76,7 +76,9 @@ class HomeScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
-            children: [   
+            children: [  
+
+              // Menu Category. 
             const menuCategory(),
             const SizedBox(height: BSizes.spaceBtwItems,),
            const Padding(

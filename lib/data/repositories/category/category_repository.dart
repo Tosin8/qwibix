@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:bellymax/features/shop/models/category_model.dart';
 import 'package:bellymax/utils/exceptions/firebase_exception.dart';
 import 'package:bellymax/utils/exceptions/platform_exception.dart';
@@ -14,8 +16,8 @@ class CategoryRepository extends GetxController{
   // Get all categories
   Future<List<CategoryModel>> getAllCategories() async {
     try {
-      final snapshot = await _db.collection("Categories").get();
-      final list = snapshot.docs.map((e) => CategoryModel.fromSnapshot(e)).toList();
+      final snapshot = await _db.collection('Categories').get();
+      final list = snapshot.docs.map((document) => CategoryModel.fromSnapshot(document)).toList();
       return list; 
 
     } on FirebaseException catch (e) {
