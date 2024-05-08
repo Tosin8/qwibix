@@ -1,6 +1,6 @@
 
 import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
-import 'package:bellymax/features/shop/models/menu_list.dart';
+import 'package:bellymax/features/shop/models/category_model.dart';
 import 'package:bellymax/features/shop/screens/home/widgets/category_shimmer.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';

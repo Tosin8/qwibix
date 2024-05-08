@@ -1,4 +1,4 @@
-import 'package:bellymax/features/shop/models/menu_list.dart';
+import 'package:bellymax/features/shop/models/category_model.dart';
 
 import '../../features/shop/models/banner_model.dart';
 

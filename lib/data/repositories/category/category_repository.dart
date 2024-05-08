@@ -1,4 +1,4 @@
-import 'package:bellymax/features/shop/models/menu_list.dart';
+import 'package:bellymax/features/shop/models/category_model.dart';
 import 'package:bellymax/utils/exceptions/firebase_exception.dart';
 import 'package:bellymax/utils/exceptions/platform_exception.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
