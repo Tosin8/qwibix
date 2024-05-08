@@ -88,6 +88,7 @@ class CategoryModel {
         id: document.id,
          name: data['Name'] ?? '',
           image: data['Image'] ?? '',
+          parentId: data ['ParentId'] ?? '',
            isFeatured: data['IsFeatured'] ?? false
            ); 
     } else {
