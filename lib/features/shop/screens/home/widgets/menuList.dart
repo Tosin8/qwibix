@@ -61,8 +61,37 @@ class MenuListCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(right: BSizes.spaceBtwItems),
+    return Padding(
+      padding: const EdgeInsets.only(
+        right: BSizes.spaceBtwItems),
+      child: Column(
+        children: [
+          
+          // Circular Icon
+          Container(
+width: 56, height: 56, 
+padding: const EdgeInsets.all(BSizes.sm), 
+decoration: const BoxDecoration(
+  image: DecorationImage(
+    image: AssetImage(''), 
+    fit: BoxFit.cover, )
+)
+          ), 
+
+          // Text
+          const SizedBox(height: BSizes.spaceBtwItems/2,), 
+          SizedBox(
+            width: 55, 
+            child: Text('',
+            style: Theme.of(context).textTheme.labelMedium!.apply(color: Colors.white),
+            maxLines: 1, 
+            overflow: TextOverflow.ellipsis,),
+            
+          
+          )
+
+        ],
+      ),
     );
   }
 }

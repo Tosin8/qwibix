@@ -91,7 +91,7 @@ class menuCategory extends StatelessWidget {
           scrollDirection: Axis.horizontal, 
           itemBuilder: (_, index) {
             final category = categoryController.featuredCategories[index];
-            return MenuListCard;
+            return MenuListCard();
           },
         )
       )
