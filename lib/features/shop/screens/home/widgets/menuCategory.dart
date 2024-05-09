@@ -63,24 +63,38 @@ class menuCategory extends StatelessWidget {
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
                        
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                      ...List.generate(
-                        //FoodMenus.length,
-                        categoryController.featuredCategories.length,
+
+                       // FOR LOCALHOST MENULIST CATEGORY
+      //                   child: Row(
+      //                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //                     children: [
+      //                 ...List.generate(
+      //                   //FoodMenus.length,
+      //                   categoryController.featuredCategories.length,
                    
-                         (index) {
-                         final category = categoryController.featuredCategories[index]; 
-                         return Padding(
-                           padding: const EdgeInsets.all(6.0),
+      //                    (index) {
+      //                    final category = categoryController.featuredCategories[index]; 
+      //                    return Padding(
+      //                      padding: const EdgeInsets.all(6.0),
                           
-                           child: menuListCard(
-                                      FoodMenus: FoodMenus[index]
-                                     ),
-                         );
-       }),
-                        ]),
+      //                      child: menuListCard(
+      //                                 FoodMenus: FoodMenus[index]
+      //                                ),
+      //                    );
+      //  }),
+      //                   ]),
+      child: SizedBox(
+        height: 80,
+        child: ListView.builder(
+          shrinkWrap: true, 
+          itemCount: categoryController.featuredCategories.length, 
+          scrollDirection: Axis.horizontal, 
+          itemBuilder: (_, index) {
+            final category = categoryController.featuredCategories[index];
+            return MenuListCard;
+          },
+        )
+      )
           ),
                );
    } ) , 
