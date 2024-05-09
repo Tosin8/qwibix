@@ -53,44 +53,63 @@
 // }
 
 
-import 'package:bellymax/utils/constants/sizes.dart';
+import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
-class MenuListCard extends StatelessWidget {
-  const MenuListCard({super.key});
+import 'package:bellymax/utils/constants/sizes.dart';
 
+import '../../../../../utils/constants/colors.dart';
+
+class MenuListCard extends StatelessWidget {
+  const MenuListCard({
+    Key? key,
+    required this.title,
+     this.textColor = BColors.white,
+    this.onTap,
+     required this.image,
+  }) : super(key: key);
+
+
+final String image, title; 
+final Color textColor; 
+final void Function()? onTap; 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
-        right: BSizes.spaceBtwItems),
-      child: Column(
-        children: [
-          
-          // Circular Icon
-          Container(
-width: 56, height: 56, 
-padding: const EdgeInsets.all(BSizes.sm), 
-decoration: const BoxDecoration(
-  image: DecorationImage(
-    image: AssetImage(''), 
-    fit: BoxFit.cover, )
-)
-          ), 
 
-          // Text
-          const SizedBox(height: BSizes.spaceBtwItems/2,), 
-          SizedBox(
-            width: 55, 
-            child: Text('',
-            style: Theme.of(context).textTheme.labelMedium!.apply(color: Colors.white),
-            maxLines: 1, 
-            overflow: TextOverflow.ellipsis,),
+    final dark = BHelperFunctions.isDarkMode(context);
+    return GestureDetector( 
+      onTap: onTap, 
+      child: Padding(
+        padding: const EdgeInsets.only(
+          right: BSizes.spaceBtwItems),
+        child: Column(
+          children: [
             
-          
-          )
-
-        ],
+            // Circular Icon
+            Container(
+      width: 56, height: 56, 
+      padding: const EdgeInsets.all(BSizes.sm), 
+      decoration:  BoxDecoration(
+        image: DecorationImage(
+      image: AssetImage(image), 
+      fit: BoxFit.cover, )
+      )
+            ), 
+      
+            // Text
+            const SizedBox(height: BSizes.spaceBtwItems/2,), 
+            SizedBox(
+              width: 55, 
+              child: Text(title,
+              style: Theme.of(context).textTheme.labelMedium!.apply(color: dark? BColors.white : BColors.dark),
+              maxLines: 1, 
+              overflow: TextOverflow.ellipsis,),
+              
+            
+            )
+      
+          ],
+        ),
       ),
     );
   }
