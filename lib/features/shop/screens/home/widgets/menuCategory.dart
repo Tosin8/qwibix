@@ -91,7 +91,11 @@ class menuCategory extends StatelessWidget {
           scrollDirection: Axis.horizontal, 
           itemBuilder: (_, index) {
             final category = categoryController.featuredCategories[index];
-            return MenuListCard();
+            return MenuListCard(
+              image: category.image,
+              title: category.name, 
+              onTap: () => Get.to(() => const SubCategoriesScreen()); 
+            );
           },
         )
       )
