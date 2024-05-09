@@ -9,6 +9,7 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 
 import '../../../controllers/category_controller.dart';
 import 'menuList.dart';
+import 'subCategoryproduct.dart';
 
 class menuCategory extends StatelessWidget {
   const menuCategory({
@@ -94,7 +95,7 @@ class menuCategory extends StatelessWidget {
             return MenuListCard(
               image: category.image,
               title: category.name, 
-              onTap: () => Get.to(() => const SubCategoriesScreen()); 
+              onTap: () => Get.to(() => const SubCategoryScreen()), 
             );
           },
         )

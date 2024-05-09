@@ -53,7 +53,9 @@
 // }
 
 
+import 'package:bellymax/common/widgets/shimmer.dart';
 import 'package:bellymax/utils/helpers/helper_functions.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bellymax/utils/constants/sizes.dart';
@@ -67,12 +69,14 @@ class MenuListCard extends StatelessWidget {
      this.textColor = BColors.white,
     this.onTap,
      required this.image,
+     this.isNetworkImage = true, 
   }) : super(key: key);
 
 
 final String image, title; 
 final Color textColor; 
-final void Function()? onTap; 
+final void Function()? onTap;
+final bool isNetworkImage;  
   @override
   Widget build(BuildContext context) {
 
@@ -88,12 +92,27 @@ final void Function()? onTap;
             // Circular Icon
             Container(
       width: 56, height: 56, 
+    
       padding: const EdgeInsets.all(BSizes.sm), 
       decoration:  BoxDecoration(
-        image: DecorationImage(
-      image: AssetImage(image), 
-      fit: BoxFit.cover, )
-      )
+      
+  
+      borderRadius: BorderRadius.circular(100), 
+      ), 
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(100), 
+        child: isNetworkImage ? CachedNetworkImage(
+          fit: BoxFit.cover,
+          color: Colors.transparent,
+          progressIndicatorBuilder: (context, url, downloadProgress) => const TShimmerEffect(width: 55, height: 55, radius: 55,), 
+          errorWidget: (context, url, error) => const Icon(Icons.error),
+          imageUrl: image) : 
+          Image(
+            fit: BoxFit.cover,
+            image: AssetImage(image), 
+            color: Colors.transparent
+            )
+      ),
             ), 
       
             // Text
