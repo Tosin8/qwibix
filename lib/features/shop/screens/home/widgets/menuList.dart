@@ -3,7 +3,7 @@ import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bellymax/features/shop/models/category_model.dart';
-
+import '../../../controllers/category_controller.dart';
 // ignore: camel_case_types
 class menuListCard extends StatelessWidget {
   const menuListCard({
@@ -13,6 +13,8 @@ class menuListCard extends StatelessWidget {
   }) : super(key: key);
 
 // ignore: non_constant_identifier_names
+
+final category = categoryController.featuredCategories[index];
 final FoodMenu FoodMenus;
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,8 @@ final FoodMenu FoodMenus;
         children: [
           Container(
             height: 70, width: 70,
-          decoration: BoxDecoration(image: DecorationImage(image: AssetImage(FoodMenus.image), fit: BoxFit.cover), 
+          decoration: BoxDecoration(
+            image: DecorationImage(image: AssetImage(FoodMenus.image), fit: BoxFit.cover), 
           borderRadius: BorderRadius.circular(40)),
           ),
           const SizedBox(height: 10,), 
