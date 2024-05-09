@@ -53,6 +53,7 @@
 // }
 
 
+import 'package:bellymax/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class MenuListCard extends StatelessWidget {
@@ -60,6 +61,8 @@ class MenuListCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Padding(
+      padding: EdgeInsets.only(right: BSizes.spaceBtwItems),
+    );
   }
 }
