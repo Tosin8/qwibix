@@ -53,23 +53,23 @@
 // }
 
 
-import 'package:bellymax/common/widgets/shimmer.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+import 'package:bellymax/common/widgets/shimmer.dart';
 import 'package:bellymax/utils/constants/sizes.dart';
+import 'package:bellymax/utils/helpers/helper_functions.dart';
 
 import '../../../../../utils/constants/colors.dart';
 
 class MenuListCard extends StatelessWidget {
-  const MenuListCard({
+   MenuListCard({
     Key? key,
+    required this.image, 
     required this.title,
-     this.textColor = BColors.white,
+    this.textColor = BColors.white,
     this.onTap,
-     required this.image,
-     this.isNetworkImage = true, 
+    this.isNetworkImage = true, this.backgroundColor,
   }) : super(key: key);
 
 
@@ -77,6 +77,7 @@ final String image, title;
 final Color textColor; 
 final void Function()? onTap;
 final bool isNetworkImage;  
+final Color? backgroundColor;
   @override
   Widget build(BuildContext context) {
 
@@ -96,7 +97,7 @@ final bool isNetworkImage;
       padding: const EdgeInsets.all(BSizes.sm), 
       decoration:  BoxDecoration(
       
-  
+      color: backgroundColor ?? (dark ? BColors.black : BColors.white),
       borderRadius: BorderRadius.circular(100), 
       ), 
       child: ClipRRect(
@@ -104,7 +105,10 @@ final bool isNetworkImage;
         child: isNetworkImage ? CachedNetworkImage(
           fit: BoxFit.cover,
           color: Colors.transparent,
-          progressIndicatorBuilder: (context, url, downloadProgress) => const TShimmerEffect(width: 55, height: 55, radius: 55,), 
+          progressIndicatorBuilder: (
+            context, url, downloadProgress) => const TShimmerEffect(width: 55, 
+          height: 55,
+           radius: 55,), 
           errorWidget: (context, url, error) => const Icon(Icons.error),
           imageUrl: image) : 
           Image(

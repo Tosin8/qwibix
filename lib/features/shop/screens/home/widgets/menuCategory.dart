@@ -59,10 +59,10 @@ class menuCategory extends StatelessWidget {
         if(categoryController.featuredCategories.isEmpty) {
           return Center(child: Text('No Data Found!', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white),),); 
         }
-         return Padding(
-            padding: const EdgeInsets.only(right: BSizes.spaceBtwItems), 
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
+        //  return Padding(
+        //     padding: const EdgeInsets.only(right: BSizes.spaceBtwItems), 
+            // child: SingleChildScrollView(
+            //   scrollDirection: Axis.horizontal,
                        
 
                        // FOR LOCALHOST MENULIST CATEGORY
@@ -84,7 +84,7 @@ class menuCategory extends StatelessWidget {
       //                    );
       //  }),
       //                   ]),
-      child: SizedBox(
+      return  SizedBox(
         height: 80,
         child: ListView.builder(
           shrinkWrap: true, 
@@ -99,9 +99,9 @@ class menuCategory extends StatelessWidget {
             );
           },
         )
-      )
-          ),
-               );
+      );
+       //   );
+              // );
    } ) , 
        ],
               );
