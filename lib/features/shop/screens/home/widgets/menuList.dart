@@ -114,7 +114,7 @@ final Color? backgroundColor;
           Image(
             fit: BoxFit.cover,
             image: AssetImage(image), 
-            color: Colors.transparent
+            //color: Colors.transparent
             )
       ),
             ), 
