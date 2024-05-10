@@ -2,6 +2,7 @@
 
 import 'package:bellymax/features/shop/models/category_model.dart';
 import 'package:bellymax/utils/exceptions/firebase_exception.dart';
+import 'package:bellymax/utils/exceptions/firebase_storage_service.dart';
 import 'package:bellymax/utils/exceptions/format_exception.dart';
 import 'package:bellymax/utils/exceptions/platform_exception.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
