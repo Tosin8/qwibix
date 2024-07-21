@@ -1,9 +1,10 @@
-import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
-import 'package:bellymax/features/personalization/controllers/user_controller.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/features/personalization/controllers/user_controller.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 import 'change_name.dart';
 import 'widget.profileuser/userprofilemenu.dart';

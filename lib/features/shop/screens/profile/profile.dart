@@ -1,11 +1,12 @@
-import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
-import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
-import 'package:bellymax/features/personalization/controllers/user_controller.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/data/repositories/authentication/authentication_repository.dart';
+import 'package:qwibix/features/personalization/controllers/user_controller.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 import 'widget/appmenuTitles.dart';
 import 'widget/menuTitles.dart';

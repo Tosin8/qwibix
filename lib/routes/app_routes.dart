@@ -1,6 +1,12 @@
 
 import 'package:get/get.dart';
+import 'package:qwibix/features/authentication/screens/login/login.dart';
+import 'package:qwibix/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:qwibix/features/authentication/screens/password_configuration/forgot_pwd.dart';
+import 'package:qwibix/features/authentication/screens/signup/signup.dart';
+import 'package:qwibix/features/authentication/screens/signup/verify_email.dart';
 import 'package:qwibix/features/shop/screens/home/home.dart';
+import 'package:qwibix/features/shop/screens/profile/profile.dart';
 import 'package:qwibix/features/shop/screens/wishlist/wishlist.dart';
 
 import '../features/shop/screens/profile/userscreen.dart';

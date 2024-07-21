@@ -1,9 +1,10 @@
-import 'package:bellymax/common/widgets/shimmer.dart';
-import 'package:bellymax/features/personalization/controllers/user_controller.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:qwibix/common/widgets/shimmer.dart';
+import 'package:qwibix/features/personalization/controllers/user_controller.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
 
 class userProfilePhoto extends StatelessWidget {
   const userProfilePhoto({

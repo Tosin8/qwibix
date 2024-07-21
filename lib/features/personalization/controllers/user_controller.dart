@@ -1,16 +1,17 @@
-import 'package:bellymax/common/widgets/loaders/loaders.dart';
-import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
-import 'package:bellymax/data/repositories/user/user_repository.dart';
-import 'package:bellymax/features/authentication/screens/login/login.dart';
-import 'package:bellymax/features/shop/screens/profile/widget.profileuser/re_authenticate_user_login_form.dart';
-import 'package:bellymax/utils/constants/image_strings.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/http/network_manager.dart';
-import 'package:bellymax/utils/popups/full_screen_loader.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:qwibix/common/widgets/loaders/loaders.dart';
+import 'package:qwibix/data/repositories/authentication/authentication_repository.dart';
+import 'package:qwibix/data/repositories/user/user_repository.dart';
+import 'package:qwibix/features/authentication/screens/login/login.dart';
+import 'package:qwibix/features/shop/screens/profile/widget.profileuser/re_authenticate_user_login_form.dart';
+import 'package:qwibix/utils/constants/image_strings.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/http/network_manager.dart';
+import 'package:qwibix/utils/popups/full_screen_loader.dart';
 
 import '../models/user_model.dart';
 

@@ -1,11 +1,12 @@
-import 'package:bellymax/common/widgets/icons/favorite_icon.dart';
-import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
-import 'package:bellymax/features/shop/models/product_list.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:qwibix/common/widgets/icons/favorite_icon.dart';
+import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/features/shop/models/product_list.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 // PD - Product Details
 class PDPopularDishes extends StatelessWidget {

@@ -1,7 +1,8 @@
-import 'package:bellymax/common/widgets/loaders/loaders.dart';
-import 'package:bellymax/data/repositories/category/category_repository.dart';
-import 'package:bellymax/features/shop/models/category_model.dart';
+
 import 'package:get/get.dart';
+import 'package:qwibix/common/widgets/loaders/loaders.dart';
+import 'package:qwibix/data/repositories/category/category_repository.dart';
+import 'package:qwibix/features/shop/models/category_model.dart';
 
 class CategoryController extends GetxController {
   static CategoryController get instance => Get.find();

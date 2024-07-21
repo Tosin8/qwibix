@@ -1,12 +1,13 @@
-import 'package:bellymax/common/styles/spacing_styles.dart';
-import 'package:bellymax/common/widgets/BForm/form_divider.dart';
-import 'package:bellymax/common/widgets/BForm/social_btns.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/constants/text_strings.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
+
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:qwibix/common/styles/spacing_styles.dart';
+import 'package:qwibix/common/widgets/BForm/form_divider.dart';
+import 'package:qwibix/common/widgets/BForm/social_btns.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/constants/text_strings.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 import 'login.widget/login_form.dart';
 import 'login.widget/login_header.dart';

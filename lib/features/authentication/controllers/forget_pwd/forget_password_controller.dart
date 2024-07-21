@@ -1,11 +1,12 @@
-import 'package:bellymax/common/widgets/loaders/loaders.dart';
-import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
-import 'package:bellymax/features/authentication/screens/password_configuration/reset_pwd.dart';
-import 'package:bellymax/utils/constants/image_strings.dart';
-import 'package:bellymax/utils/http/network_manager.dart';
-import 'package:bellymax/utils/popups/full_screen_loader.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:qwibix/common/widgets/loaders/loaders.dart';
+import 'package:qwibix/data/repositories/authentication/authentication_repository.dart';
+import 'package:qwibix/features/authentication/screens/password_configuration/reset_pwd.dart';
+import 'package:qwibix/utils/constants/image_strings.dart';
+import 'package:qwibix/utils/http/network_manager.dart';
+import 'package:qwibix/utils/popups/full_screen_loader.dart';
 
 class ForgetPasswordController extends GetxController{
   static ForgetPasswordController get instance => Get.find();

@@ -1,20 +1,21 @@
-import 'package:bellymax/common/widgets/carticon.dart';
-import 'package:bellymax/common/widgets/grid_layout/grid_layout.dart';
-import 'package:bellymax/common/widgets/products/product_cards/brandpartners.dart';
-import 'package:bellymax/common/widgets/tabbar.dart';
-import 'package:bellymax/common/widgets/tabbarView/burger.dart';
-import 'package:bellymax/common/widgets/tabbarView/chicken.dart';
-import 'package:bellymax/common/widgets/tabbarView/drinks.dart';
-import 'package:bellymax/common/widgets/tabbarView/salad.dart';
-import 'package:bellymax/common/widgets/tabbarView/sand_wish.dart';
-import 'package:bellymax/common/widgets/tabbarView/sea_food.dart';
-import 'package:bellymax/common/widgets/tabbarView/soup.dart';
-import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
-import 'package:bellymax/features/shop/models/brand_feature.dart';
-import 'package:bellymax/utils/constants/colors.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
+
 import 'package:flutter/material.dart';
+import 'package:qwibix/common/widgets/carticon.dart';
+import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
+import 'package:qwibix/common/widgets/products/product_cards/brandpartners.dart';
+import 'package:qwibix/common/widgets/tabbar.dart';
+import 'package:qwibix/common/widgets/tabbarView/burger.dart';
+import 'package:qwibix/common/widgets/tabbarView/chicken.dart';
+import 'package:qwibix/common/widgets/tabbarView/drinks.dart';
+import 'package:qwibix/common/widgets/tabbarView/salad.dart';
+import 'package:qwibix/common/widgets/tabbarView/sand_wish.dart';
+import 'package:qwibix/common/widgets/tabbarView/sea_food.dart';
+import 'package:qwibix/common/widgets/tabbarView/soup.dart';
+import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/features/shop/models/brand_feature.dart';
+import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 import '../../../../common/widgets/tabbarView/desserts.dart';
 

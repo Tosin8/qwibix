@@ -1,9 +1,10 @@
-import 'package:bellymax/features/authentication/controllers/onboarding/onboarding_controller.dart';
-import 'package:bellymax/utils/constants/colors.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/device/device_utlity.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
+
 import 'package:flutter/material.dart';
+import 'package:qwibix/features/authentication/controllers/onboarding/onboarding_controller.dart';
+import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/device/device_utlity.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingDotNavigation extends StatelessWidget {

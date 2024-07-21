@@ -1,19 +1,18 @@
-import 'package:bellymax/common/widgets/carticon.dart';
-import 'package:bellymax/common/widgets/products/product_cards/product_card_vertical.dart';
-import 'package:bellymax/common/widgets/shimmer.dart';
-import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
-import 'package:bellymax/features/personalization/controllers/user_controller.dart';
-import 'package:bellymax/features/shop/models/product_list.dart';
-import 'package:bellymax/utils/constants/colors.dart';
-// ignore: unused_import
-import 'package:bellymax/utils/constants/image_strings.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/constants/text_strings.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:iconsax/iconsax.dart';
+import 'package:qwibix/common/widgets/carticon.dart';
+import 'package:qwibix/common/widgets/products/product_cards/product_card_vertical.dart';
+import 'package:qwibix/common/widgets/shimmer.dart';
+import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/features/personalization/controllers/user_controller.dart';
+import 'package:qwibix/features/shop/models/product_list.dart';
+import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/constants/text_strings.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 import 'widgets/menuCategory.dart';
 import 'widgets/promoSlider.dart';

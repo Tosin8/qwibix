@@ -1,10 +1,11 @@
-import 'package:bellymax/features/personalization/controllers/user_controller.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/constants/text_strings.dart';
-import 'package:bellymax/utils/validators/validation.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:qwibix/features/personalization/controllers/user_controller.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/constants/text_strings.dart';
+import 'package:qwibix/utils/validators/validation.dart';
 
 class ReAuthLoginForm extends StatelessWidget {
   const ReAuthLoginForm({super.key});

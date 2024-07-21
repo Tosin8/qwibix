@@ -1,6 +1,7 @@
-import 'package:bellymax/data/repositories/banners/banner_repository.dart';
-import 'package:bellymax/features/shop/models/banner_model.dart';
+
 import 'package:get/get.dart';
+import 'package:qwibix/data/repositories/banners/banner_repository.dart';
+import 'package:qwibix/features/shop/models/banner_model.dart';
 
 import '../../../common/widgets/loaders/loaders.dart';
 

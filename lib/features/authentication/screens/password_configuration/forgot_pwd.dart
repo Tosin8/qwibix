@@ -1,10 +1,11 @@
-import 'package:bellymax/features/authentication/controllers/forget_pwd/forget_password_controller.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/constants/text_strings.dart';
-import 'package:bellymax/utils/validators/validation.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:qwibix/features/authentication/controllers/forget_pwd/forget_password_controller.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/constants/text_strings.dart';
+import 'package:qwibix/utils/validators/validation.dart';
 
 import 'reset_pwd.dart';
 

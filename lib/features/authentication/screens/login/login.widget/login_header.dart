@@ -1,7 +1,7 @@
 
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/constants/text_strings.dart';
 
 import '../../../../../utils/constants/image_strings.dart';
 
