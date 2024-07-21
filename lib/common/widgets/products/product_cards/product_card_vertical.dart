@@ -1,14 +1,15 @@
-import 'package:bellymax/common/widgets/icons/favorite_icon.dart';
-import 'package:bellymax/common/widgets/texts/product_title_text.dart';
-import 'package:bellymax/features/shop/models/product_list.dart';
-import 'package:bellymax/features/shop/screens/product_details/popular_dishes.dart';
-import 'package:bellymax/utils/constants/colors.dart';
-import 'package:bellymax/utils/constants/rounded_container.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:qwibix/common/widgets/icons/favorite_icon.dart';
+import 'package:qwibix/common/widgets/texts/product_title_text.dart';
+import 'package:qwibix/features/shop/models/product_list.dart';
+import 'package:qwibix/features/shop/screens/product_details/popular_dishes.dart';
+import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/constants/rounded_container.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 class BProductCardVertical extends StatelessWidget {
   const BProductCardVertical({super.key, required this.TodaySpecialList, 

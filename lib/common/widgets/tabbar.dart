@@ -1,7 +1,9 @@
-import 'package:bellymax/utils/constants/colors.dart';
-import 'package:bellymax/utils/device/device_utlity.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
+
+
 import 'package:flutter/material.dart';
+import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/device/device_utlity.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 class BTabBar extends StatelessWidget implements PreferredSizeWidget{
   const BTabBar({

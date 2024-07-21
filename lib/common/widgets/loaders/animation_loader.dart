@@ -1,6 +1,7 @@
-import 'package:bellymax/utils/constants/sizes.dart';
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
 
 import '../../../utils/constants/colors.dart';
 

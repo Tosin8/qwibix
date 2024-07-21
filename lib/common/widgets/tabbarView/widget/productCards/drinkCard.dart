@@ -1,7 +1,8 @@
-import 'package:bellymax/features/shop/models/tabView/drinks_model.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
+
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:qwibix/features/shop/models/tabView/drinks_model.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
 
 import '../addtocardbtn.dart';
 

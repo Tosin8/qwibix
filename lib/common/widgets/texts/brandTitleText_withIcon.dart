@@ -1,9 +1,10 @@
-import 'package:bellymax/common/widgets/texts/brandTitleText.dart';
-import 'package:bellymax/utils/constants/colors.dart';
-import 'package:bellymax/utils/constants/enums.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
+
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:qwibix/common/widgets/texts/brandTitleText.dart';
+import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/constants/enums.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
 
 class BrandTitleVerifyIcon extends StatelessWidget {
   const BrandTitleVerifyIcon({super.key, 

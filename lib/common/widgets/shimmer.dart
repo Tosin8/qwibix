@@ -1,6 +1,8 @@
-import 'package:bellymax/utils/constants/colors.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
+
+
 import 'package:flutter/material.dart';
+import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 import 'package:shimmer/shimmer.dart';
 
 class TShimmerEffect extends StatelessWidget {

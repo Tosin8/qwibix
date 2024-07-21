@@ -1,11 +1,12 @@
 import 'dart:io';
 
-import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
-import 'package:bellymax/utils/exceptions/platform_exception.dart';
+
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get/get.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:qwibix/data/repositories/authentication/authentication_repository.dart';
+import 'package:qwibix/utils/exceptions/platform_exception.dart';
 
 import '../../../features/personalization/models/user_model.dart';
 import '../../../utils/exceptions/firebase_exception.dart';

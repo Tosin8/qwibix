@@ -1,12 +1,13 @@
 
 
-import 'package:bellymax/features/shop/models/banner_model.dart';
-import 'package:bellymax/utils/exceptions/firebase_exception.dart';
-import 'package:bellymax/utils/exceptions/format_exception.dart';
-import 'package:bellymax/utils/exceptions/platform_exception.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:qwibix/features/shop/models/banner_model.dart';
+import 'package:qwibix/utils/exceptions/firebase_exception.dart';
+import 'package:qwibix/utils/exceptions/format_exception.dart';
+import 'package:qwibix/utils/exceptions/platform_exception.dart';
 
 class BannerRepository extends GetxController {
   static BannerRepository get instance => Get.find(); 

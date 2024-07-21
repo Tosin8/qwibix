@@ -1,5 +1,6 @@
-import 'package:bellymax/utils/constants/enums.dart';
+
 import 'package:flutter/material.dart';
+import 'package:qwibix/utils/constants/enums.dart';
 
 class BrandTitleText extends StatelessWidget {
   const BrandTitleText({super.key, 

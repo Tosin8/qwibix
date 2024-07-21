@@ -1,6 +1,7 @@
-import 'package:bellymax/utils/constants/colors.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
+
 import 'package:flutter/material.dart';
+import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
 
 class BCarouselImages extends StatelessWidget {
   const BCarouselImages({

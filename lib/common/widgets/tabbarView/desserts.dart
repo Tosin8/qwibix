@@ -1,7 +1,8 @@
-import 'package:bellymax/features/shop/models/tabView/desset_model.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:qwibix/features/shop/models/tabView/desset_model.dart';
 
 import 'widget/productCards/dessertCard.dart';
 

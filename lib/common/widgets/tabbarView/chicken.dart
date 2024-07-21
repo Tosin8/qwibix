@@ -1,8 +1,10 @@
-import 'package:bellymax/features/shop/models/tabView/burger_model.dart';
-import 'package:bellymax/features/shop/models/tabView/chicken_model.dart';
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:qwibix/features/shop/models/tabView/burger_model.dart';
+import 'package:qwibix/features/shop/models/tabView/chicken_model.dart';
 
 import 'widget/productCards/chickenCard.dart';
 
