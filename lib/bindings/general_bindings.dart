@@ -1,5 +1,6 @@
-import 'package:bellymax/utils/http/network_manager.dart';
+
 import 'package:get/get.dart';
+import 'package:qwibix/utils/http/network_manager.dart';
 
 class GeneralBindings extends Bindings {
   @override

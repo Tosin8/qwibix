@@ -1,14 +1,16 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
-import 'package:bellymax/features/authentication/controllers/signup/verify_email_controller.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:qwibix/data/repositories/authentication/authentication_repository.dart';
+import 'package:qwibix/features/authentication/controllers/signup/verify_email_controller.dart';
+import 'package:qwibix/utils/constants/image_strings.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/constants/text_strings.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
-import 'package:bellymax/utils/constants/image_strings.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/constants/text_strings.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
+
 
 
 class VerifyEmailScreen extends StatelessWidget {

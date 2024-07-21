@@ -1,5 +1,6 @@
-import 'package:bellymax/utils/constants/sizes.dart';
+
 import 'package:flutter/material.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
 
 class BSpacingStyle{
   static const EdgeInsetsGeometry paddingWithAppBarHeight = EdgeInsets.only(

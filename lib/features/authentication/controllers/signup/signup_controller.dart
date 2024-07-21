@@ -1,10 +1,11 @@
-import 'package:bellymax/common/widgets/loaders/loaders.dart';
-import 'package:bellymax/data/repositories/authentication/authentication_repository.dart';
-import 'package:bellymax/data/repositories/user/user_repository.dart';
-import 'package:bellymax/features/authentication/screens/signup/verify_email.dart';
-import 'package:bellymax/utils/constants/image_strings.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:qwibix/common/widgets/loaders/loaders.dart';
+import 'package:qwibix/data/repositories/authentication/authentication_repository.dart';
+import 'package:qwibix/data/repositories/user/user_repository.dart';
+import 'package:qwibix/features/authentication/screens/signup/verify_email.dart';
+import 'package:qwibix/utils/constants/image_strings.dart';
 
 import '../../../../utils/http/network_manager.dart';
 import '../../../../utils/popups/full_screen_loader.dart';
