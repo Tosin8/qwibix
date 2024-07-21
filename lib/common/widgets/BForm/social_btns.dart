@@ -1,9 +1,10 @@
-import 'package:bellymax/features/authentication/controllers/login/login_controller.dart';
-import 'package:bellymax/utils/constants/colors.dart';
-import 'package:bellymax/utils/constants/image_strings.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:qwibix/features/authentication/controllers/login/login_controller.dart';
+import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/constants/image_strings.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
 
 class BFormSocialMedia extends StatelessWidget {
   const BFormSocialMedia({
