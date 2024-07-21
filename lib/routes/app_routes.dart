@@ -1,13 +1,7 @@
-import 'package:bellymax/features/authentication/screens/login/login.dart';
-import 'package:bellymax/features/authentication/screens/onboarding/onboarding.dart';
-import 'package:bellymax/features/authentication/screens/password_configuration/forgot_pwd.dart';
-import 'package:bellymax/features/authentication/screens/signup/signup.dart';
-import 'package:bellymax/features/authentication/screens/signup/verify_email.dart';
-import 'package:bellymax/features/shop/screens/home/home.dart';
-import 'package:bellymax/features/shop/screens/profile/profile.dart';
-import 'package:bellymax/features/shop/screens/wishlist/wishlist.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:get/get.dart';
+import 'package:qwibix/features/shop/screens/home/home.dart';
+import 'package:qwibix/features/shop/screens/wishlist/wishlist.dart';
 
 import '../features/shop/screens/profile/userscreen.dart';
 import '../features/shop/screens/store/store.dart';

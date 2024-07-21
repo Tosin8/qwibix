@@ -1,10 +1,11 @@
-import 'package:bellymax/features/shop/screens/home/home.dart';
-import 'package:bellymax/features/shop/screens/store/store.dart';
-import 'package:bellymax/features/shop/screens/wishlist/wishlist.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:qwibix/features/shop/screens/home/home.dart';
+import 'package:qwibix/features/shop/screens/store/store.dart';
+import 'package:qwibix/features/shop/screens/wishlist/wishlist.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 import 'features/shop/screens/profile/profile.dart';
 import 'utils/constants/colors.dart';

@@ -1,6 +1,6 @@
-import 'package:bellymax/common/widgets/loaders/animation_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:qwibix/common/widgets/loaders/animation_loader.dart';
 
 import '../constants/colors.dart';
 import '../helpers/helper_functions.dart';
