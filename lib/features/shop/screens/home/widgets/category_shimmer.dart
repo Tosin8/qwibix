@@ -1,6 +1,7 @@
-import 'package:bellymax/common/widgets/shimmer.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
+
 import 'package:flutter/material.dart';
+import 'package:qwibix/common/widgets/shimmer.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
 
 class BCategoryShimmer extends StatelessWidget {
   const BCategoryShimmer({super.key,

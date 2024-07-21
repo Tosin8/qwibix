@@ -1,7 +1,8 @@
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/device/device_utlity.dart';
+
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/device/device_utlity.dart';
 
 class BSearchController extends StatelessWidget {
   const BSearchController({

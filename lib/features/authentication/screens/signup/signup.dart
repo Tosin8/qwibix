@@ -1,12 +1,12 @@
-import 'package:bellymax/common/widgets/BForm/form_divider.dart';
-import 'package:bellymax/common/widgets/BForm/social_btns.dart';
-import 'package:bellymax/features/authentication/screens/signup/signup.widget/signup_form.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/constants/text_strings.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:qwibix/common/widgets/BForm/form_divider.dart';
+import 'package:qwibix/features/authentication/screens/signup/signup.widget/signup_form.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/constants/text_strings.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 class SignUpScreen extends StatelessWidget {
   

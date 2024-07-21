@@ -55,15 +55,16 @@
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:qwibix/common/widgets/shimmer.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
-import 'package:bellymax/common/widgets/shimmer.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
-import 'package:bellymax/utils/helpers/helper_functions.dart';
+
 
 import '../../../../../utils/constants/colors.dart';
 
 class MenuListCard extends StatelessWidget {
-   MenuListCard({
+   const MenuListCard({
     Key? key,
     required this.image, 
     required this.title,

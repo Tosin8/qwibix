@@ -1,10 +1,11 @@
 
-import 'package:bellymax/common/widgets/texts/sectionHeading.dart';
-import 'package:bellymax/features/shop/screens/home/widgets/category_shimmer.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/features/shop/screens/home/widgets/category_shimmer.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
 
 import '../../../controllers/category_controller.dart';
 import 'menuList.dart';

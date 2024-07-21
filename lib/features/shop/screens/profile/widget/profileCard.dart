@@ -1,9 +1,10 @@
-import 'package:bellymax/features/personalization/controllers/user_controller.dart';
-import 'package:bellymax/features/shop/screens/profile/userscreen.dart';
-import 'package:bellymax/utils/constants/colors.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:qwibix/features/personalization/controllers/user_controller.dart';
+import 'package:qwibix/features/shop/screens/profile/userscreen.dart';
+import 'package:qwibix/utils/constants/colors.dart';
 
 class profileCard extends StatelessWidget {
   const profileCard({

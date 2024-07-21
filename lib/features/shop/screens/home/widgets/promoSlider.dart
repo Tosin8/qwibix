@@ -1,11 +1,12 @@
-import 'package:bellymax/common/widgets/images/b_carousel_images.dart';
-import 'package:bellymax/common/widgets/shimmer.dart';
-import 'package:bellymax/utils/constants/circular_container.dart';
-import 'package:bellymax/utils/constants/colors.dart';
-import 'package:bellymax/utils/constants/sizes.dart';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:qwibix/common/widgets/images/b_carousel_images.dart';
+import 'package:qwibix/common/widgets/shimmer.dart';
+import 'package:qwibix/utils/constants/circular_container.dart';
+import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/constants/sizes.dart';
 
 import '../../../controllers/banner_controller.dart';
 
