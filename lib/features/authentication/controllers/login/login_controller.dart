@@ -58,9 +58,9 @@ localStorage.write('REMEMBER_ME_PASSWORD', password.text.trim());
 
 // login user using email and password auth. 
 
-final userCredential = await AuthenticationRepository.instance.loginWithEmailAndPassword(
-  email.text.trim(),
-  password.text.trim()); 
+// final userCredential = await AuthenticationRepository.instance.loginWithEmailAndPassword(
+//   email.text.trim(),
+//   password.text.trim()); 
 
   
 
