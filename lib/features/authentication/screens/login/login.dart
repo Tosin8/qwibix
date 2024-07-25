@@ -30,14 +30,14 @@ class LoginScreen extends StatelessWidget{
               BLoginHeader(dark: dark), 
  const SizedBox(height: BSizes.spaceBtwInputFields,),
               /// Form
-            const BLoginForm(), 
+          //  const BLoginForm(), 
 
-                /// Divider 
+               //Divider 
                 BFormDivider(dark: dark, 
                 DividerText: BTexts.orSignInWith.capitalize!, style: Theme.of(context).textTheme.labelMedium,),
 const SizedBox(height: BSizes.spaceBtwSections,), 
                 /// Footer 
-                const BFormSocialMedia()
+              //  const BFormSocialMedia()
             ],
           
           )
