@@ -37,7 +37,7 @@ class LoginScreen extends StatelessWidget{
                 DividerText: BTexts.orSignInWith.capitalize!, style: Theme.of(context).textTheme.labelMedium,),
 const SizedBox(height: BSizes.spaceBtwSections,), 
                 /// Footer 
-              //  const BFormSocialMedia()
+             const BFormSocialMedia()
             ],
           
           )
