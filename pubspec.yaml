@@ -73,12 +73,12 @@ flutter:
     - assets/images/menu/
 
     #banner_list
-    - assets/images/banner/
+    #- assets/images/banner/
     #products
     - assets/products/all/
 
     #brand_image
-    - assets/images/brands/
+    #- assets/images/brands/
 
     #products list
     - assets/products/burger/
