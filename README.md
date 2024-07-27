@@ -15,3 +15,6 @@ Backend: Firebase
 
 APIs: 
 * Payment: Stripe / Paystack 
+
+# Author: 
+Tosin Ezekiel , mobile app developer. 
