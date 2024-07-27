@@ -7,7 +7,7 @@ import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/constants/text_strings.dart';
 import 'package:qwibix/utils/validators/validation.dart';
 
-import 'reset_pwd.dart';
+//import 'reset_pwd.dart';
 
 class ForgotPassword extends StatelessWidget {
   const ForgotPassword({super.key, });
