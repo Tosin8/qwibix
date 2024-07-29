@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget{
               BLoginHeader(dark: dark), 
  const SizedBox(height: BSizes.spaceBtwInputFields,),
               /// Form
-          //  const BLoginForm(), 
+            const BLoginForm(), 
 
                //Divider 
                 BFormDivider(dark: dark, 
