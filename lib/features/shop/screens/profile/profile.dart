@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/data/repositories/authentication/authentication_repository.dart';
-import 'package:qwibix/features/personalization/controllers/user_controller.dart';
+// import 'package:qwibix/features/personalization/controllers/user_controller.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
@@ -17,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = UserController.instance; 
+   // final controller = UserController.instance; 
     final logout = Get.put(AuthenticationRepository());
     final dark = BHelperFunctions.isDarkMode(context); 
     return Scaffold(
