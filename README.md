@@ -4,6 +4,7 @@ BellyMax will be changed to Qwibix app.
 
 # About 
 
+Qwibix is a ecommerce mobile app for delight shoppers. 
 
 
 # Screenshot 
