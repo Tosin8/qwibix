@@ -9,9 +9,7 @@ import 'package:qwibix/firebase_options.dart';
 import 'app.dart';
 import 'data/repositories/authentication/authentication_repository.dart';
 
-// void main() {
-//   runApp(const MyApp());
-// }
+
 
 Future<void> main() async {
   /// widgets binding 
