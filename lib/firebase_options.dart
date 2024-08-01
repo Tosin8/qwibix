@@ -41,50 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyA1AlOd6SS8OlzSCI7iSsFDNxoFSkzKVDs',
-    appId: '1:919740602138:web:338d621645d322f9b8fea3',
-    messagingSenderId: '919740602138',
-    projectId: 'bellymax-35a4e',
-    authDomain: 'bellymax-35a4e.firebaseapp.com',
-    storageBucket: 'bellymax-35a4e.appspot.com',
-    measurementId: 'G-X3TPKQ85MK',
+    apiKey: 'AIzaSyBAwCvNP5lQppE2Y6GaqtDT28RC-IQbJJc',
+    appId: '1:194562622028:web:b9fa35738e1f2852852ae9',
+    messagingSenderId: '194562622028',
+    projectId: 'qwibix-67080',
+    authDomain: 'qwibix-67080.firebaseapp.com',
+    storageBucket: 'qwibix-67080.appspot.com',
+    measurementId: 'G-ZL9WD6832M',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC24yoMcSliE0kCSQF97_uJgrkuKqDirIQ',
-    appId: '1:919740602138:android:1ad46a906d0bfc6eb8fea3',
-    messagingSenderId: '919740602138',
-    projectId: 'bellymax-35a4e',
-    storageBucket: 'bellymax-35a4e.appspot.com',
+    apiKey: 'AIzaSyA4jlTv8VdDFMp6PrITXuzLR1wq-ZxOcwE',
+    appId: '1:194562622028:android:a9e69a2cabe62508852ae9',
+    messagingSenderId: '194562622028',
+    projectId: 'qwibix-67080',
+    storageBucket: 'qwibix-67080.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDyYXXFjbc31y5FOoRvzkZTCnfrYBSXFhA',
-    appId: '1:919740602138:ios:7ec07b6ea8161d94b8fea3',
-    messagingSenderId: '919740602138',
-    projectId: 'bellymax-35a4e',
-    storageBucket: 'bellymax-35a4e.appspot.com',
-    iosClientId: '919740602138-mdhs253kvhdcmueqnhcvo2jjd6q10uof.apps.googleusercontent.com',
+    apiKey: 'AIzaSyAN7EcKM_RFHfH4v1nYirU4IoSdyHaQqqk',
+    appId: '1:194562622028:ios:b008da3d311d3b77852ae9',
+    messagingSenderId: '194562622028',
+    projectId: 'qwibix-67080',
+    storageBucket: 'qwibix-67080.appspot.com',
     iosBundleId: 'com.example.bellymax',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDyYXXFjbc31y5FOoRvzkZTCnfrYBSXFhA',
-    appId: '1:919740602138:ios:7ec07b6ea8161d94b8fea3',
-    messagingSenderId: '919740602138',
-    projectId: 'bellymax-35a4e',
-    storageBucket: 'bellymax-35a4e.appspot.com',
-    iosClientId: '919740602138-mdhs253kvhdcmueqnhcvo2jjd6q10uof.apps.googleusercontent.com',
+    apiKey: 'AIzaSyAN7EcKM_RFHfH4v1nYirU4IoSdyHaQqqk',
+    appId: '1:194562622028:ios:b008da3d311d3b77852ae9',
+    messagingSenderId: '194562622028',
+    projectId: 'qwibix-67080',
+    storageBucket: 'qwibix-67080.appspot.com',
     iosBundleId: 'com.example.bellymax',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyA1AlOd6SS8OlzSCI7iSsFDNxoFSkzKVDs',
-    appId: '1:919740602138:web:45d701c35580bca4b8fea3',
-    messagingSenderId: '919740602138',
-    projectId: 'bellymax-35a4e',
-    authDomain: 'bellymax-35a4e.firebaseapp.com',
-    storageBucket: 'bellymax-35a4e.appspot.com',
-    measurementId: 'G-QLXJ0PSC8W',
+    apiKey: 'AIzaSyBAwCvNP5lQppE2Y6GaqtDT28RC-IQbJJc',
+    appId: '1:194562622028:web:e1c754369c85e799852ae9',
+    messagingSenderId: '194562622028',
+    projectId: 'qwibix-67080',
+    authDomain: 'qwibix-67080.firebaseapp.com',
+    storageBucket: 'qwibix-67080.appspot.com',
+    measurementId: 'G-15J0B0WPY7',
   );
+
 }

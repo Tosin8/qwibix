@@ -1,43 +1,26 @@
 {
   "project_info": {
-    "project_number": "919740602138",
-    "project_id": "bellymax-35a4e",
-    "storage_bucket": "bellymax-35a4e.appspot.com"
+    "project_number": "194562622028",
+    "project_id": "qwibix-67080",
+    "storage_bucket": "qwibix-67080.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:919740602138:android:1ad46a906d0bfc6eb8fea3",
+        "mobilesdk_app_id": "1:194562622028:android:a9e69a2cabe62508852ae9",
         "android_client_info": {
           "package_name": "com.example.bellymax"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "919740602138-bmsrfs1bvjafrmrac3qd5m1momgqemee.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC24yoMcSliE0kCSQF97_uJgrkuKqDirIQ"
+          "current_key": "AIzaSyA4jlTv8VdDFMp6PrITXuzLR1wq-ZxOcwE"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "919740602138-bmsrfs1bvjafrmrac3qd5m1momgqemee.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "919740602138-mdhs253kvhdcmueqnhcvo2jjd6q10uof.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.bellymax"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
