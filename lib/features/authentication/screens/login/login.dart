@@ -21,19 +21,19 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
 
-  late LoginController controller;
+  // late LoginController controller;
 
-  @override
-  void initState() {
-    super.initState();
-    controller = Get.put(LoginController());
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   controller = Get.put(LoginController());
+  // }
 
-  @override
-  void dispose() {
-    Get.delete<LoginController>();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   Get.delete<LoginController>();
+  //   super.dispose();
+  // }
   @override
   Widget build(BuildContext context) {
     final dark = BHelperFunctions.isDarkMode(context);
