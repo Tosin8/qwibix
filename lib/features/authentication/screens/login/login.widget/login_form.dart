@@ -14,8 +14,11 @@ class BLoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   final controller = Get.put(LoginController());
-   Get.delete<LoginController>(); // just included. 
+       return GetBuilder<LoginController>(
+      init: LoginController(),
+      builder: (controller) {
+   //final controller = Get.put(LoginController());
+  // Get.delete<LoginController>(); // just included. 
  // final controller = Get.find<LoginController>();
 
     return Form(
@@ -27,8 +30,7 @@ class BLoginForm extends StatelessWidget {
           child: Column(
             children: [
               // Email
-             GetBuilder<LoginController>(
-  builder: (controller) => TextFormField(
+            TextFormField(
                 controller: controller.email,
                 validator: (value) => BValidator.validateEmail(value),
                 textInputAction: TextInputAction.next,
@@ -38,13 +40,13 @@ class BLoginForm extends StatelessWidget {
                   labelText: BTexts.email,
                 ),
               ),
-             ), 
+              
               const SizedBox(height: BSizes.spaceBtwInputFields),
 
               // Password, OBx was used. 
               // Obx(
               //   () => 
-              GetBuilder<LoginController>(builder: (controller) => 
+           
                 TextFormField(
                   controller: controller.password,
                   validator: (value) => BValidator.validatePassword(value),
@@ -63,7 +65,7 @@ class BLoginForm extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
+              
               const SizedBox(height: BSizes.spaceBtwInputFields / 2),
 
               // Remember Me & Forget Password.
@@ -119,5 +121,8 @@ class BLoginForm extends StatelessWidget {
         ),
       ),
     );
-  }
+       }
+       );
+        
+}
 }

@@ -15,9 +15,11 @@ class LoginController extends GetxController{
 final rememberMe = false.obs; 
 final hidePassword = true.obs; 
 final localStorage = GetStorage(); 
-  final email = TextEditingController();
+ late TextEditingController email;
+  late TextEditingController password;
+  // final email = TextEditingController();
 
-  final password = TextEditingController();
+  // final password = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   final userController = Get.put(UserController()); 
 
@@ -33,6 +35,8 @@ final localStorage = GetStorage();
  @override
   void onInit() {
     super.onInit();
+    email = TextEditingController();
+    password = TextEditingController();
     _loadSavedCredentials();
   }
 
@@ -89,6 +93,8 @@ localStorage.write('REMEMBER_ME_PASSWORD', password.text.trim());
 
 // remove loader
 BFullScreenLoader.stopLoading();
+ email.clear();
+    password.clear();
 
 // Redirect 
 AuthenticationRepository.instance.screenRedirect(); 
