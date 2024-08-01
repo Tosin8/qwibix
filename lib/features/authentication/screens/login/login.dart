@@ -48,6 +48,11 @@ class LoginScreen extends StatelessWidget {
               ),
               /// Footer
                const BFormSocialMedia(),
+               // biometrics.
+              //  const SizedBox(
+              //   height: BSizes.spaceBtwSections,
+              // ),
+              //  const Icon(Icons.fingerprint)
             ],
           ),
         ),
