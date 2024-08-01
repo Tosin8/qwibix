@@ -7,10 +7,14 @@ import 'package:qwibix/utils/helpers/helper_functions.dart';
 class BFormDivider extends StatelessWidget {
    const BFormDivider({
     Key? key,
-    required this.dark, required this.DividerText, TextStyle? style, 
+    required this.dark, 
+    // ignore: non_constant_identifier_names
+    required this.DividerText,
+     TextStyle? style, 
   }) : super(key: key);
 
   final bool dark;
+  // ignore: non_constant_identifier_names
   final String DividerText; 
 
   @override

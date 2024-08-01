@@ -6,7 +6,7 @@ import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
 class BFormSocialMedia extends StatelessWidget {
-  const BFormSocialMedia({
+    const BFormSocialMedia({
     super.key,
   });
 

@@ -32,16 +32,21 @@ class LoginScreen extends StatelessWidget {
               // const BLoginForm(),
 
               // Divider
+              // BFormDivider(
+              //   dark: dark,
+              //   DividerText: BTexts.orSignInWith.capitalize ?? 'Sign In With',
+              //   style: Theme.of(context).textTheme.labelMedium,
+              // ),
               BFormDivider(
-                dark: dark,
-                DividerText: BTexts.orSignInWith.capitalize ?? 'Sign In With',
-                style: Theme.of(context).textTheme.labelMedium,
-              ),
+  dark: dark,
+  DividerText: (BTexts.orSignInWith.capitalize ?? 'Sign In With').toString(),
+  style: Theme.of(context).textTheme.labelMedium,
+),
               const SizedBox(
                 height: BSizes.spaceBtwSections,
               ),
               /// Footer
-              const BFormSocialMedia(),
+               const BFormSocialMedia(),
             ],
           ),
         ),
