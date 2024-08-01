@@ -28,7 +28,7 @@ class BLoginForm extends StatelessWidget {
           child: Column(
             children: [
               // Email
-        Obx(() =>    TextFormField(
+        TextFormField(
                 controller: controller.email,
                 validator: (value) => BValidator.validateEmail(value),
                 textInputAction: TextInputAction.next,
@@ -38,7 +38,7 @@ class BLoginForm extends StatelessWidget {
                   labelText: BTexts.email,
                 ),
               ),
-        ), 
+        
               const SizedBox(height: BSizes.spaceBtwInputFields),
 
               // Password, OBx was used. 
