@@ -21,14 +21,37 @@ final localStorage = GetStorage();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   final userController = Get.put(UserController()); 
 
-  @override
+  // @override
+  // void onInit() {
+  //   email.text = localStorage.read('REMEMBER_ME_EMAIL');
+  //   password.text = localStorage.read('REMEMBER_ME_PASSWORD'); 
+  //   super.onInit(); 
+
+
+  // }
+
+ @override
   void onInit() {
-    email.text = localStorage.read('REMEMBER_ME_EMAIL');
-    password.text = localStorage.read('REMEMBER_ME_PASSWORD'); 
-    super.onInit(); 
-
-
+    super.onInit();
+    _loadSavedCredentials();
   }
+
+  void _loadSavedCredentials() {
+    final savedEmail = localStorage.read<String>('REMEMBER_ME_EMAIL');
+    final savedPassword = localStorage.read<String>('REMEMBER_ME_PASSWORD');
+    
+    email.text = savedEmail ?? '';
+    password.text = savedPassword ?? '';
+  }
+
+  @override
+  void onClose() {
+    email.dispose();
+    password.dispose();
+    super.onClose();
+  }
+
+
 
   // Email and Password SignIn 
   Future<void> emailAndPasswordSignIn() async {

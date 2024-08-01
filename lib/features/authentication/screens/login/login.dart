@@ -8,6 +8,7 @@ import 'package:qwibix/utils/constants/text_strings.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 
+import 'login.widget/login_form.dart';
 import 'login.widget/login_header.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -29,7 +30,7 @@ class LoginScreen extends StatelessWidget {
                 height: BSizes.spaceBtwInputFields,
               ),
               /// Form
-              // const BLoginForm(),
+               const BLoginForm(),
 
               // Divider
               // BFormDivider(
