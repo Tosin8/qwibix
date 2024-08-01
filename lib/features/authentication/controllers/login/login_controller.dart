@@ -95,6 +95,7 @@ AuthenticationRepository.instance.screenRedirect();
   }
   catch (e) {
     BFullScreenLoader.stopLoading(); 
+    BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString()); // just added. 
   }
 }
 
