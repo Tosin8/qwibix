@@ -93,11 +93,13 @@ localStorage.write('REMEMBER_ME_PASSWORD', password.text.trim());
 
 // remove loader
 BFullScreenLoader.stopLoading();
+ 
  email.clear();
     password.clear();
 
 // Redirect 
 AuthenticationRepository.instance.screenRedirect(); 
+ Get.delete<LoginController>();
   }
   catch (e) {
     BFullScreenLoader.stopLoading(); 

@@ -8,12 +8,32 @@ import 'package:qwibix/utils/constants/text_strings.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 
+import '../../controllers/login/login_controller.dart';
 import 'login.widget/login_form.dart';
 import 'login.widget/login_header.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+
+  late LoginController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = Get.put(LoginController());
+  }
+
+  @override
+  void dispose() {
+    Get.delete<LoginController>();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     final dark = BHelperFunctions.isDarkMode(context);
