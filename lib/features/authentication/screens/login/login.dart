@@ -32,12 +32,6 @@ class LoginScreen extends StatelessWidget {
               /// Form
                const BLoginForm(),
 
-              // Divider
-              // BFormDivider(
-              //   dark: dark,
-              //   DividerText: BTexts.orSignInWith.capitalize ?? 'Sign In With',
-              //   style: Theme.of(context).textTheme.labelMedium,
-              // ),
               BFormDivider(
   dark: dark,
   DividerText: (BTexts.orSignInWith.capitalize ?? 'Sign In With').toString(),
@@ -48,11 +42,7 @@ class LoginScreen extends StatelessWidget {
               ),
               /// Footer
                const BFormSocialMedia(),
-               // biometrics.
-              //  const SizedBox(
-              //   height: BSizes.spaceBtwSections,
-              // ),
-              //  const Icon(Icons.fingerprint)
+               
             ],
           ),
         ),
@@ -60,3 +50,18 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
+
+
+
+              // Divider
+              // BFormDivider(
+              //   dark: dark,
+              //   DividerText: BTexts.orSignInWith.capitalize ?? 'Sign In With',
+              //   style: Theme.of(context).textTheme.labelMedium,
+              // ),
+
+              // biometrics.
+              //  const SizedBox(
+              //   height: BSizes.spaceBtwSections,
+              // ),
+              //  const Icon(Icons.fingerprint)
