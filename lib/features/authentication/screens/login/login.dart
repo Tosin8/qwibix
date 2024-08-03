@@ -8,7 +8,6 @@ import 'package:qwibix/utils/constants/text_strings.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 
-import '../../controllers/login/login_controller.dart';
 import 'login.widget/login_form.dart';
 import 'login.widget/login_header.dart';
 
