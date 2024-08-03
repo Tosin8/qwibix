@@ -7,6 +7,7 @@ import 'package:qwibix/features/shop/screens/store/store.dart';
 import 'package:qwibix/features/shop/screens/wishlist/wishlist.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
+import 'features/shop/screens/home/home1.dart';
 import 'features/shop/screens/profile/profile.dart';
 import 'utils/constants/colors.dart';
 
