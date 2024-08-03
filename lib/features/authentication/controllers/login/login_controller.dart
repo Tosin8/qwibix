@@ -40,6 +40,9 @@ final localStorage = GetStorage();
     _loadSavedCredentials();
   }
 
+  void togglePasswordVisibility() => hidePassword.toggle();
+  void toggleRememberMe() => rememberMe.toggle();
+
   void _loadSavedCredentials() {
     final savedEmail = localStorage.read<String>('REMEMBER_ME_EMAIL');
     final savedPassword = localStorage.read<String>('REMEMBER_ME_PASSWORD');
