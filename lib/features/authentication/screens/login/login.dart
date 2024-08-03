@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qwibix/common/styles/spacing_styles.dart';
-import 'package:qwibix/common/widgets/BForm/form_divider.dart';
-import 'package:qwibix/common/widgets/BForm/social_btns.dart';
-import 'package:qwibix/features/authentication/controllers/login/login_controller.dart';
-import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/constants/text_strings.dart';
-import 'package:qwibix/utils/helpers/helper_functions.dart';
 
+import '../../../../common/widgets/BForm/form_divider.dart';
+import '../../../../common/widgets/BForm/social_btns.dart';
+import '../../../../utils/constants/sizes.dart';
+import '../../../../utils/helpers/helper_functions.dart';
+import '../../controllers/login/login_controller.dart';
 import 'login.widget/login_form.dart';
 import 'login.widget/login_header.dart';
 
