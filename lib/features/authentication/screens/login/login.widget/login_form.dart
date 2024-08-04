@@ -73,7 +73,7 @@ class BLoginForm extends GetView<LoginController> {
                 ),
               ],
             ),
-
+const SizedBox(height: BSizes.spaceBtwSections,), 
             // Sign In Button
             SizedBox(
               width: double.infinity,
