@@ -48,7 +48,7 @@ class BTexts {
 
  // -- Authentication Headings
   static const String loginTitle = "Welcome Back";
-  static const String loginSubTitle = "Sign In to your account";
+  static const String loginSubTitle = "Kindly Sign In to your Account";
   static const String signupTitle = "Let’s create your account";
   static const String forgetPasswordTitle = "Forget password";
   static const String forgetPasswordSubTitle = "Don’t worry sometimes people can forget too, enter your email and we will send you a password reset link.";
