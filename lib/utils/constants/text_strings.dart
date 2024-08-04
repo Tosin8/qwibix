@@ -47,7 +47,7 @@ class BTexts {
   static const String resendEmailIn = "Resend email in";
 
  // -- Authentication Headings
-  static const String loginTitle = "Qwibix";
+  static const String loginTitle = "Welcome Back";
   static const String loginSubTitle = "Sign In to your account";
   static const String signupTitle = "Let’s create your account";
   static const String forgetPasswordTitle = "Forget password";
