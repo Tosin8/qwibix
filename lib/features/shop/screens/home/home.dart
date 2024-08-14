@@ -14,9 +14,7 @@ import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/constants/text_strings.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
-import 'widgets/menuCategory.dart';
-import 'widgets/promoSlider.dart';
-import 'widgets/searchController.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -62,8 +60,8 @@ class HomeScreen extends StatelessWidget {
    } ),
               ), 
               const SizedBox(height: 5,), 
-               BSearchController(darkMode: darkMode, 
-            text: 'Search for dish or cuisine',),
+            //    BSearchController(darkMode: darkMode, 
+            // text: 'Search for dish or cuisine',),
             ], 
           ),
           ), 
@@ -79,18 +77,18 @@ class HomeScreen extends StatelessWidget {
             children: [  
 
               // Menu Category. 
-            const menuCategory(),
+          //  const menuCategory(),
             const SizedBox(height: BSizes.spaceBtwItems,),
-           const Padding(
-             padding: EdgeInsets.all(8.0),
-             child: BPromoSlider(
-            //   banners: [
-            //    BImages.banner1, BImages.banner2, BImages.banner3, BImages.banner4
-            //  ],
-             ), 
+          //  const Padding(
+          //    padding: EdgeInsets.all(8.0),
+          //    child: BPromoSlider(
+          //   //   banners: [
+          //   //    BImages.banner1, BImages.banner2, BImages.banner3, BImages.banner4
+          //   //  ],
+          //    ), 
            
     
-           ), 
+          // ), 
            const SizedBox(height: BSizes.spaceBtwItems,), 
              const Padding(
            padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
