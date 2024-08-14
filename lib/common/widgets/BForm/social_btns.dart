@@ -88,7 +88,7 @@ class BFormSocialMedia extends StatelessWidget {
               width: BSizes.iconMd,
               height: BSizes.iconMd,
               errorBuilder: (context, error, stackTrace) {
-                print('Error loading Google image: $error');
+                // print('Error loading Google image: $error');
                 return const Icon(Icons.error);
               },
             ),
@@ -107,7 +107,7 @@ class BFormSocialMedia extends StatelessWidget {
               width: BSizes.iconMd,
               height: BSizes.iconMd,
               errorBuilder: (context, error, stackTrace) {
-                print('Error loading Facebook image: $error');
+                // print('Error loading Facebook image: $error');
                 return const Icon(Icons.error);
               },
             ),
