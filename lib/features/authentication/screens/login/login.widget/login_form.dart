@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/features/authentication/controllers/login/login_controller.dart';
+import 'package:qwibix/navigation_menu.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/constants/text_strings.dart';
 
@@ -38,13 +39,14 @@ class BLoginForm extends StatelessWidget {
       () =>  TextFormField(
          controller: controller.password, 
           validator: (value) => BValidator.validatePassword( value),
-               textInputAction: TextInputAction.next, 
+               textInputAction: TextInputAction.done, 
               keyboardType: TextInputType.visiblePassword,
               obscureText: controller.hidePassword.value,
             
               decoration:  InputDecoration(
                 labelText: BTexts.password,
-                 prefixIcon: const Icon(Iconsax.password_check), suffixIcon: 
+                 prefixIcon: const Icon(Iconsax.password_check),
+                  suffixIcon: 
                  IconButton(
                   onPressed: () => controller.hidePassword.value = !controller.hidePassword.value, 
                  icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye) , 
@@ -64,8 +66,11 @@ class BLoginForm extends StatelessWidget {
 Row(
   mainAxisAlignment: MainAxisAlignment.spaceBetween,
   children: [
-    Checkbox(value: controller.rememberMe.value,
-     onChanged: (value){}), 
+  Obx(() =>   Checkbox(
+    value: controller.rememberMe.value,
+     onChanged: (value) => controller.rememberMe.value = !controller.rememberMe.value, 
+     )
+     ), 
      const Text(BTexts.rememberMe), 
   ],
 ), 
@@ -87,7 +92,9 @@ TextButton(
           SizedBox(
             width: double.infinity, 
             child: ElevatedButton(
-              onPressed: (){},
+              onPressed: (){
+                Get.to(()=> const NavigationMenu());
+              },
 
            child: const Text(BTexts.signIn)),), 
 const SizedBox(height: BSizes.spaceBtwItems,), 

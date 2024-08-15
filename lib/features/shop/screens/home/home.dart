@@ -70,152 +70,19 @@ class HomeScreen extends StatelessWidget {
            const SizedBox(width: 10,),       
         ],
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(10.0),
           child: Column(
             children: [  
 
-              // Menu Category. 
-          //  const menuCategory(),
-            const SizedBox(height: BSizes.spaceBtwItems,),
-          //  const Padding(
-          //    padding: EdgeInsets.all(8.0),
-          //    child: BPromoSlider(
-          //   //   banners: [
-          //   //    BImages.banner1, BImages.banner2, BImages.banner3, BImages.banner4
-          //   //  ],
-          //    ), 
-           
-    
-          // ), 
-           const SizedBox(height: BSizes.spaceBtwItems,), 
-             const Padding(
-           padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
-           child: BSectionHeading(title: 'Popular Dishes', buttonTitle: 'View All', ),
-         ),
-         const SizedBox(height: BSizes.spaceBtwItems,), 
-           SizedBox(
-            height: 600, width: 800,
-             child: Expanded(
-              
-               child: GridView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                padding:  EdgeInsets.zero, 
-                itemCount: TodaySpecialList.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, 
-                
-
-                mainAxisSpacing: BSizes.gridViewSpacing,
-                crossAxisSpacing: BSizes.gridViewSpacing, 
-                mainAxisExtent: 288
-                ), 
-                
-                
-                 itemBuilder: (_, index) => BProductCardVertical(
-                  TodaySpecialList: TodaySpecialList[index],)),
-             ),
-           ), 
-            const SizedBox(height: BSizes.spaceBtwItems,), 
-
-            const Padding(
-           padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
-           child: BSectionHeading(title: 'Recommended', buttonTitle: 'View All', ),
-         ),
-         const SizedBox(height: BSizes.spaceBtwItems,), 
-          SizedBox(
-            height: 600, width: 800,
-             child: Expanded(
-              
-               child: GridView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                padding:  EdgeInsets.zero, 
-                itemCount: TodaySpecialList.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, 
-                
-
-                mainAxisSpacing: BSizes.gridViewSpacing,
-                crossAxisSpacing: BSizes.gridViewSpacing, 
-                mainAxisExtent: 288
-                ), 
-                
-                
-                 itemBuilder: (_, index) => BProductCardVertical(
-                  TodaySpecialList: TodaySpecialList[index],)),
-             ),
-           ), 
-           const SizedBox(height: BSizes.spaceBtwItems,), 
-
-            const Padding(
-           padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
-           child: BSectionHeading(title: 'Breakfast', buttonTitle: 'View All', ),
-         ), 
-         const SizedBox(height: BSizes.spaceBtwItems,),  
-          SizedBox(
-            height: 600, width: 800,
-             child: Expanded(
-              
-               child: GridView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                padding:  EdgeInsets.zero, 
-                itemCount: TodaySpecialList.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, 
-                
-
-                mainAxisSpacing: BSizes.gridViewSpacing,
-                crossAxisSpacing: BSizes.gridViewSpacing, 
-                mainAxisExtent: 288
-                ), 
-                
-                
-                 itemBuilder: (_, index) => BProductCardVertical(
-                  TodaySpecialList: TodaySpecialList[index],)),
-             ),
-           ), 
-         const SizedBox(height: BSizes.spaceBtwItems,), 
-
-            const Padding(
-           padding: EdgeInsets.only(right: BSizes.spaceBtwItems), 
-           child: BSectionHeading(title: 'Free Delivery', buttonTitle: 'View All', ),
-         ),
-         const SizedBox(height: BSizes.spaceBtwItems,), 
-          SizedBox(
-            height: 600, width: 800,
-             child: Expanded(
-              
-               child: GridView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                padding:  EdgeInsets.zero, 
-                itemCount: TodaySpecialList.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, 
-                
-
-                mainAxisSpacing: BSizes.gridViewSpacing,
-                crossAxisSpacing: BSizes.gridViewSpacing, 
-                mainAxisExtent: 288
-                ), 
-                
-                
-                 itemBuilder: (_, index) => BProductCardVertical(
-                  TodaySpecialList: TodaySpecialList[index],)),
-             ),
-           ), 
           
-        
-            ],
-          ),
-        ),
-     ),
+              SizedBox(height: 20,),
+              Text('Hello Home'), 
   
-    ); 
+  ], 
+          )), 
+      )  ); 
   }
 }
 
