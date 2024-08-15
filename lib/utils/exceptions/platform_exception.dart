@@ -14,6 +14,10 @@ class BPlatformException implements Exception {
         return 'The email address is already registered. Please use a different email.'; 
          case 'invalid-email':
         return 'The email address provided is invalid. Please enter a valid email. '; 
+         case 'user-disabled':
+        return 'This user account has been disabled. Please contact support.';
+         case 'user-not-found':
+        return 'User not found, please double check your information';  
         case 'invalid-argument': 
         return 'Invalid argument, please double check your information';
         case 'invalid-password': 
