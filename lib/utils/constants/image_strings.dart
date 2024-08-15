@@ -1,10 +1,10 @@
 class BImages {
-  static const String darkApplogo = 'assets/splash_icon_black.png';
-  static const String lightApplogo = 'assets/splash_icon_white.png';
+  static const String darkApplogo = 'assets/logos/splash_icon_black.png';
+  static const String lightApplogo = 'assets/logos/splash_icon_white.png';
 
   // social media
-  static const String facebook = 'assets/icons/social_media/facebook.png';
-  static const String google = 'assets/icons/social_media/google.png';
+  static const String facebook = 'assets/logos/facebook-icon.png';
+  static const String google = 'assets/logos/google-icon.png';
   
 
 
