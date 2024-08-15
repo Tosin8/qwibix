@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Belly Max',
+      title: 'Qwibix',
       themeMode: ThemeMode.system,
       // theme: ThemeData(
         
