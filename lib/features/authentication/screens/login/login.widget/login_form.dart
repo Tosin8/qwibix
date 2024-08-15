@@ -4,18 +4,19 @@ import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/features/authentication/controllers/login/login_controller.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/constants/text_strings.dart';
-import 'package:qwibix/utils/validators/validation.dart';
 
 import '../../password_configuration/forgot_pwd.dart';
 import '../../signup/signup.dart';
 
-class BLoginForm extends GetView<LoginController> {
+class BLoginForm extends StatelessWidget {
   const BLoginForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
+    final controller = Get.put(LoginController());
     return Form(
-      key: controller.loginFormKey,
+     // key: controller.loginFormKey,
       child:  Padding(
         padding: const EdgeInsets.symmetric(
           vertical: BSizes.spaceBtwSections),
