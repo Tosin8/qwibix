@@ -75,7 +75,9 @@ TextButton(
            child: const Text(BTexts.signIn)),), 
 const SizedBox(height: BSizes.spaceBtwItems,), 
            // Create Account
-           SizedBox(width: double.infinity, child: OutlinedButton(onPressed: (){}, child: const Text(BTexts.createAccount))), 
+           SizedBox(width: double.infinity, child: OutlinedButton(onPressed: (){
+            Get.to(() => const SignUpScreen());
+           }, child: const Text(BTexts.createAccount))), 
            const SizedBox(height: BSizes.spaceBtwSections)
           ],
           ),
