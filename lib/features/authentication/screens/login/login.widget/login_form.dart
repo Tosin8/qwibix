@@ -57,7 +57,9 @@ Row(
 
 // Forget Password. 
 TextButton(
-  onPressed: (){}, 
+  onPressed: (){
+    Get.to(() => const ForgotPassword()); 
+  }, 
   child: const Text(BTexts.forgetPassword
   ), 
   ), 
