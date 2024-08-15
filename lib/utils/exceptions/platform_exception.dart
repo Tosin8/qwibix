@@ -10,6 +10,10 @@ class BPlatformException implements Exception {
         return 'Invalid login credentials, please double check your information'; 
         case 'too-many-requests': 
         return 'Too many requests, please try again later';
+        case 'email-already-in-use':
+        return 'The email address is already registered. Please use a different email.'; 
+         case 'invalid-email':
+        return 'The email address provided is invalid. Please enter a valid email. '; 
         case 'invalid-argument': 
         return 'Invalid argument, please double check your information';
         case 'invalid-password': 
