@@ -5,6 +5,7 @@ import 'package:qwibix/features/authentication/controllers/login/login_controlle
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/constants/text_strings.dart';
 
+import '../../../../../utils/validators/validation.dart';
 import '../../password_configuration/forgot_pwd.dart';
 import '../../signup/signup.dart';
 
@@ -16,7 +17,7 @@ class BLoginForm extends StatelessWidget {
 
     final controller = Get.put(LoginController());
     return Form(
-     // key: controller.loginFormKey,
+      key: controller.loginFormKey,
       child:  Padding(
         padding: const EdgeInsets.symmetric(
           vertical: BSizes.spaceBtwSections),
@@ -25,19 +26,32 @@ class BLoginForm extends StatelessWidget {
         
         // Email
         TextFormField(
+          controller: controller.email, 
+          validator: (value) => BValidator.validateEmail(value),
           decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right), 
           labelText: BTexts.email),
           ), 
           const SizedBox(height: BSizes.spaceBtwInputFields,), 
 
           // Password
-        TextFormField(
-          decoration: const InputDecoration(prefixIcon: Icon(Iconsax.password_check), 
-          labelText: BTexts.password, 
-          suffixIcon: Icon(Iconsax.eye_slash
-          ), 
-          ),
-          ), 
+        Obx(
+      () =>  TextFormField(
+         controller: controller.password, 
+          validator: (value) => BValidator.validatePassword( value),
+               textInputAction: TextInputAction.next, 
+              keyboardType: TextInputType.visiblePassword,
+              obscureText: controller.hidePassword.value,
+            
+              decoration:  InputDecoration(
+                labelText: BTexts.password,
+                 prefixIcon: const Icon(Iconsax.password_check), suffixIcon: 
+                 IconButton(
+                  onPressed: () => controller.hidePassword.value = !controller.hidePassword.value, 
+                 icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye) , 
+              ),
+            ),
+      ),
+    ), 
           const SizedBox(height: BSizes.spaceBtwInputFields / 2,), 
 
           // Remember Me and Forgot Password
@@ -50,7 +64,7 @@ class BLoginForm extends StatelessWidget {
 Row(
   mainAxisAlignment: MainAxisAlignment.spaceBetween,
   children: [
-    Checkbox(value: true,
+    Checkbox(value: controller.rememberMe.value,
      onChanged: (value){}), 
      const Text(BTexts.rememberMe), 
   ],
