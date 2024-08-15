@@ -22,7 +22,7 @@ class profileCard extends StatelessWidget {
         radius: 40,
         child: Container(
           
-          decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/user.png'))),
+          decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/content/user.png'))),
         ),
       ), 
       title: Text(controller.user.value.fullName, 

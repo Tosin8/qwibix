@@ -92,9 +92,9 @@ TextButton(
           SizedBox(
             width: double.infinity, 
             child: ElevatedButton(
-              onPressed: (){
-                Get.to(()=> const NavigationMenu());
-              },
+              onPressed: () =>
+                 controller.emailAndPasswordSignIn(), 
+              
 
            child: const Text(BTexts.signIn)),), 
 const SizedBox(height: BSizes.spaceBtwItems,), 
