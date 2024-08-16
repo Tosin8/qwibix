@@ -64,7 +64,9 @@ class HomeScreen extends StatelessWidget {
               // Carousel
               Padding(
                 padding: EdgeInsets.all(BSizes.defaultSpace),
-                child: BPromoSlider(),
+                child: BPromoSlider(
+                  banners: [BImages.banner2, BImages.banner4, BImages.banner3],
+                ),
                  
               )
             ],
