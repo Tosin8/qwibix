@@ -5,7 +5,7 @@ class BProductTitleText extends StatelessWidget {
     super.key, 
     required this.title, 
    this.smallSize = false, 
-this.maxLines = 1, 
+this.maxLines = 2, 
      this.textAlign = TextAlign.left,
   });
 
