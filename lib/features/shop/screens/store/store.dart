@@ -5,20 +5,14 @@ import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
 import 'package:qwibix/common/widgets/products/cart/cart_menu_icons.dart';
 import 'package:qwibix/common/widgets/products/product_cards/brandpartners.dart';
 import 'package:qwibix/common/widgets/tabbar.dart';
-import 'package:qwibix/common/widgets/tabbarView/burger.dart';
-import 'package:qwibix/common/widgets/tabbarView/chicken.dart';
-import 'package:qwibix/common/widgets/tabbarView/drinks.dart';
-import 'package:qwibix/common/widgets/tabbarView/salad.dart';
-import 'package:qwibix/common/widgets/tabbarView/sand_wish.dart';
-import 'package:qwibix/common/widgets/tabbarView/sea_food.dart';
-import 'package:qwibix/common/widgets/tabbarView/soup.dart';
+
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/features/shop/models/brand_feature.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
-import '../../../../common/widgets/tabbarView/desserts.dart';
+
 
 class Store extends StatelessWidget {
   const Store({super.key});
@@ -94,14 +88,7 @@ class Store extends StatelessWidget {
            
           body: const TabBarView(
             children: [
-              SaladPage(), 
-              BurgerPage(), 
-              SoupPage(), 
-              ChickenPage(), 
-              SeaFoodPage(), 
-               DrinksPage(), 
-             DessertsPage(), 
-              SandWishPage(), 
+            
 
               
             ],))
