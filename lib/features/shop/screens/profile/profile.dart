@@ -37,9 +37,7 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height:BSizes.spaceBtwSections), 
             const Padding(
               padding: EdgeInsets.only(left: 18.0),
-              child: BSectionHeading(
-                title: 'Account Settings', 
-              buttonTitle: ''),
+              child: BSectionHeading(title: 'Account Settings', buttonTitle: ''),
             ), 
           const SizedBox(height: BSizes.spaceBtwItems,), 
           SettingsMenuTitle(

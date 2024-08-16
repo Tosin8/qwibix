@@ -1,37 +1,30 @@
+
 import 'package:flutter/material.dart';
 
 class BSectionHeading extends StatelessWidget {
   const BSectionHeading({
-    super.key, 
-    required this.title, 
+    Key? key,
     this.textColor,
-     this.onTap, 
-      this.showActionButton = true,
-       required this.buttonTitle,
-  });
+  this.showActionButton = true,
+  this.buttonTitle = 'View All',
+    this.onPressed, required this.title,
+  }) : super(key: key);
 
-  final String title, buttonTitle; 
-  final Color? textColor; 
-  final void Function()? onTap;
-  final bool showActionButton;
+final Color? textColor; 
+final bool showActionButton; 
+final String title, buttonTitle; 
+final void Function()? onPressed; 
+
 
   @override
   Widget build(BuildContext context) {
     return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      Text(title, 
-      style: Theme.of(context).textTheme.headlineSmall!.apply(color: textColor), 
-       maxLines: 1, overflow: TextOverflow.ellipsis,),
-     
-      
-      if(showActionButton) GestureDetector(
-        onTap: onTap, 
-        child: Text(buttonTitle))
-          
-    ],
-    
-                  );
+      children: [
+        Text(title, style: Theme.of(context).textTheme.headlineSmall!.apply(color: textColor),
+        maxLines: 1, overflow: TextOverflow.ellipsis,),
+     if (showActionButton)    TextButton(onPressed: onPressed, 
+     child: Text(buttonTitle, style: Theme.of(context).textTheme.bodySmall,)) ,  
+      ],
+    );
   }
 }
-
