@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:qwibix/common/widgets/carticon.dart';
+
 import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
+import 'package:qwibix/common/widgets/products/cart/cart_menu_icons.dart';
 import 'package:qwibix/common/widgets/products/product_cards/brandpartners.dart';
 import 'package:qwibix/common/widgets/tabbar.dart';
 import 'package:qwibix/common/widgets/tabbarView/burger.dart';
@@ -31,8 +32,13 @@ class Store extends StatelessWidget {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: Text('Menu', style: Theme.of(context).textTheme.headlineMedium,), 
-          actions: [
-            BCartCounterIcon(darkMode: darkMode), 
+          actions:  [
+            BCartCounterIcon(
+          onPressed: () {
+            
+          },
+          iconColor: BColors.white,
+        ), 
             const SizedBox(width: 10,)
           ],
         ),
