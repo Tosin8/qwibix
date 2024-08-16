@@ -47,4 +47,6 @@ static String cloudUploadingAnimation = 'assets/images/animations/json/cloud-upl
 static String loaderAnimation = 'assets/images/animations/json/loader-animation.json'; 
 
 
+// category icons
+
 }

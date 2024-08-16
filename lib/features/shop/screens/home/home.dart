@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   const SafeArea(
+    return  SafeArea(
       child: Scaffold( 
         body: SingleChildScrollView(
           child: Column(
@@ -24,23 +24,41 @@ class HomeScreen extends StatelessWidget {
                   children: [
 
                     // appbar
-                    BHomeAppBar(), 
+                    const BHomeAppBar(), 
 
-                    SizedBox(height: BSizes.spaceBtwSections,),
+                    const SizedBox(height: BSizes.spaceBtwSections,),
 
                     // search bar
-                    BSearchContainer(text: 'Search products',), 
- SizedBox(height: BSizes.spaceBtwSections,),
+                    const BSearchContainer(text: 'Search products',), 
+ const SizedBox(height: BSizes.spaceBtwSections,),
                     // categories
 
                     Padding(
-                      padding: EdgeInsets.only(left: BSizes.defaultSpace), 
+                      padding: const EdgeInsets.only(left: BSizes.defaultSpace), 
                     child: Column(
                      // crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        BSectionHeading(title: 'Popular Categories',
+                        const BSectionHeading(title: 'Popular Categories',
                         showActionButton: false,
                         textColor: BColors.white,),
+                        const SizedBox(height: BSizes.spaceBtwItems,),
+
+                        // category items
+                        SizedBox(
+                          height: 80, 
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: 6,
+                            scrollDirection: Axis.horizontal,
+                          
+                          itemBuilder: (_, index) {
+                            return const BVerticalImageText(); 
+                            
+                          },
+                          
+                            ),
+                        )
+
                         
                       ],
                     ),)
@@ -50,6 +68,51 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         )
+      ),
+    );
+  }
+}
+
+class BVerticalImageText extends StatelessWidget {
+  const BVerticalImageText({
+    Key? key,
+    required this.title,
+    required this.textColor,
+    this.backgroundColor,
+    this.onTap, required this.image,
+  }) : super(key: key);
+
+final String image, title; 
+final Color textColor; 
+final Color? backgroundColor; 
+final void Function()? onTap; 
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(right: BSizes.spaceBtwItems),
+      child: Column(
+        children: [
+                                Container(
+      width: 56, 
+      height: 56, 
+      padding: const EdgeInsets.all(BSizes.sm), 
+      decoration: BoxDecoration(color: backgroundColor, borderRadius: BorderRadius.circular(100), 
+      ),
+      child:  Center(
+        child: Image(image: AssetImage(image), fit: BoxFit.cover, color: Colors.black)
+      ),
+                                ), 
+      
+                                // Text 
+                                const SizedBox(height: BSizes.spaceBtwItems / 2,), 
+                                SizedBox(
+      width: 55,
+      child: Text(title, style: Theme.of(context).textTheme.labelMedium!.apply(color: BColors.white),
+      maxLines: 1, overflow: TextOverflow.ellipsis,))
+                                
+        ]
+      
       ),
     );
   }
