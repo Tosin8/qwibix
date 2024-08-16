@@ -22,11 +22,11 @@ class BImages {
   static const String verifyIllustration = 'assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif';
 
   // Banners
-  static const String banner1 = 'assets/images/banner/banner1.jpg';
-  static const String banner2 = 'assets/images/banner/banner2.jpg';
-  static const String banner3 = 'assets/images/banner/banner3.jpg';
-   static const String banner4 = 'assets/images/banner/banner4.jpg';
-  static const String banner5 = 'assets/images/banner/banner5.jpg';
+  static const String banner1 = 'assets/images/banners/banner_1.jpg';
+  static const String banner2 = 'assets/images/banners/banner_2.jpg';
+  static const String banner3 = 'assets/images/banners/banner_3.jpg';
+   static const String banner4 = 'assets/images/banners/banner_4.jpg';
+  static const String banner5 = 'assets/images/banners/banner_5.jpg';
 
 // lottie animation
 static const String docerAnimation = 'assets/images/animations/json/141594-animation-of-docer.json';
