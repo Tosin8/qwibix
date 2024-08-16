@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:qwibix/common/widgets/custom_shapes/containers/circular_container.dart';
 
 import 'package:qwibix/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
@@ -12,18 +13,19 @@ import '../../../../common/widgets/custom_shapes/containers/primary_header_conta
 import '../../../../common/widgets/images/b_rounded_image.dart';
 import 'widgets/home_appbar.dart';
 import 'widgets/home_categories.dart';
+import 'widgets/promo_slider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return   SafeArea(
+    return   const SafeArea(
       child: Scaffold( 
         body: SingleChildScrollView(
           child: Column(
             children: [
-              const BPrimaryHeaderContainer(
+              BPrimaryHeaderContainer(
                 child: Column(
                   children: [
 
@@ -61,19 +63,9 @@ class HomeScreen extends StatelessWidget {
 
               // Carousel
               Padding(
-                padding: const EdgeInsets.all(BSizes.defaultSpace),
-                child: CarouselSlider
-                
-                (
-                  options: CarouselOptions(viewportFraction: 1)
-                  ,
-                  items: const [
-                        BRoundedImage(imageUrl: BImages.banner4,), 
-                            BRoundedImage(imageUrl: BImages.banner4,), 
-                                BRoundedImage(imageUrl: BImages.banner4,), 
-                  ], 
-              
-                  ),
+                padding: EdgeInsets.all(BSizes.defaultSpace),
+                child: BPromoSlider(),
+                 
               )
             ],
           ),
