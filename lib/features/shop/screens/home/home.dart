@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:qwibix/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
 import 'package:qwibix/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/utils/constants/colors.dart';
@@ -67,16 +68,13 @@ class HomeScreen extends StatelessWidget {
                     const BPromoSlider(
                       banners: [BImages.banner2, BImages.banner4, BImages.banner3]
                     ),
-const SizedBox(height: BSizes.spaceBtwItems,), 
+const SizedBox(height: BSizes.spaceBtwSections,), 
                        // Popular Products. 
-                       GridView.builder(
-                         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: BSizes.gridViewSpacing, crossAxisSpacing: BSizes.gridViewSpacing, ), 
-                           itemBuilder: (BuildContext context, int index) {
-                             return null;
-                             },
+                       GridLayout(itemCount: 4, 
+                             itemBuilder: (_, index) => const BProductCardVertical(),
+                         
                        ), 
-                       const BProductCardVertical(), 
-                  ],
+                  ]     
                 ),
 
              
