@@ -18,12 +18,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const SafeArea(
+    return  SafeArea(
       child: Scaffold( 
         body: SingleChildScrollView(
           child: Column(
             children: [
-              BPrimaryHeaderContainer(
+              const BPrimaryHeaderContainer(
                 child: Column(
                   children: [
 
@@ -61,15 +61,21 @@ class HomeScreen extends StatelessWidget {
 
               // Carousel
               Padding(
-                padding: EdgeInsets.all(BSizes.defaultSpace),
+                padding: const EdgeInsets.all(BSizes.defaultSpace),
                 child: Column(
                   children: [
-                    BPromoSlider(
+                    const BPromoSlider(
                       banners: [BImages.banner2, BImages.banner4, BImages.banner3]
                     ),
-SizedBox(height: BSizes.spaceBtwItems,), 
+const SizedBox(height: BSizes.spaceBtwItems,), 
                        // Popular Products. 
-                       BProductCardVertical(), 
+                       GridView.builder(
+                         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: BSizes.gridViewSpacing, crossAxisSpacing: BSizes.gridViewSpacing, ), 
+                           itemBuilder: (BuildContext context, int index) {
+                             return null;
+                             },
+                       ), 
+                       const BProductCardVertical(), 
                   ],
                 ),
 
