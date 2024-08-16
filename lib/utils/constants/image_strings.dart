@@ -48,5 +48,5 @@ static String loaderAnimation = 'assets/images/animations/json/loader-animation.
 
 
 // category icons
-
+static const  String shoeIcon = 'assets/icons/categories/icons8-bowling-64.png';
 }
