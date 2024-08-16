@@ -35,9 +35,11 @@ final Widget child;
           backgroundColor: BColors.textWhite.withOpacity(0.1),
                            ),
        ),  
+       child, 
     ],
               ),
             ),
+            
           ),
     );
   }
