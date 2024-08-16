@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:qwibix/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:qwibix/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/image_strings.dart';
@@ -17,7 +18,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   const SafeArea(
+    return  const SafeArea(
       child: Scaffold( 
         body: SingleChildScrollView(
           child: Column(
@@ -61,9 +62,18 @@ class HomeScreen extends StatelessWidget {
               // Carousel
               Padding(
                 padding: EdgeInsets.all(BSizes.defaultSpace),
-                child: BPromoSlider(
-                  banners: [BImages.banner2, BImages.banner4, BImages.banner3],
+                child: Column(
+                  children: [
+                    BPromoSlider(
+                      banners: [BImages.banner2, BImages.banner4, BImages.banner3]
+                    ),
+SizedBox(height: BSizes.spaceBtwItems,), 
+                       // Popular Products. 
+                       BProductCardVertical(), 
+                  ],
                 ),
+
+             
                  
               )
             ],
