@@ -8,6 +8,8 @@ import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/http/network_manager.dart';
 import 'package:qwibix/utils/popups/full_screen_loader.dart';
 
+import '../../../personalization/controllers/user_controller.dart';
+
 class LoginController extends GetxController {
   // Variables
   final rememberMe = false.obs;
@@ -80,7 +82,7 @@ final userCredentials = await AuthenticationRepository.instance.loginWithEmailAn
       final userCredentials = await AuthenticationRepository.instance.signInWithGoogle();
 
       // Save user record
-     // await userController.saveUserRecord(userCredentials);
+     await UserController.instance.saveUserRecord(userCredentials);
 
       // Remove loader
       BFullScreenLoader.stopLoading();
