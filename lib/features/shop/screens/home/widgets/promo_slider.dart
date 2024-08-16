@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 import 'package:qwibix/common/widgets/images/b_rounded_image.dart';
 import 'package:qwibix/features/shop/controllers/home_controller.dart';
 import 'package:qwibix/utils/constants/colors.dart';
-import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
 import '../../../../../common/widgets/custom_shapes/containers/circular_container.dart';

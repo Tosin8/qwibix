@@ -1,7 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:qwibix/common/widgets/custom_shapes/containers/circular_container.dart';
 
 import 'package:qwibix/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
@@ -10,7 +8,6 @@ import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
-import '../../../../common/widgets/images/b_rounded_image.dart';
 import 'widgets/home_appbar.dart';
 import 'widgets/home_categories.dart';
 import 'widgets/promo_slider.dart';
