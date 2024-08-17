@@ -85,12 +85,14 @@ class BProductCardVertical extends StatelessWidget {
             
               ],
             ),), 
-            Spacer(), 
+            const Spacer(), 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   // price
-                  const BProductPriceText(price: '25.00',), 
+                  const Padding(
+                    padding: EdgeInsets.only(left: BSizes.sm),
+                    child: BProductPriceText(price: '25.00',)), 
 
                   // Add to Cart Button. 
                   Container(
