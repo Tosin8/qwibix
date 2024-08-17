@@ -82,6 +82,9 @@ class BProductCardVertical extends StatelessWidget {
                   const Icon(Iconsax.verify5, color: BColors.primary, size: BSizes.iconXs,),
                 ],
                ), 
+            
+              ],
+            ),), 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -97,8 +100,6 @@ class BProductCardVertical extends StatelessWidget {
                   )
                 ],
               ) 
-              ],
-            ),)
           ],
         ),
       ),
