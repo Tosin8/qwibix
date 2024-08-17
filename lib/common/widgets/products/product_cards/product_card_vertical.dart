@@ -85,6 +85,7 @@ class BProductCardVertical extends StatelessWidget {
             
               ],
             ),), 
+            Spacer(), 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
