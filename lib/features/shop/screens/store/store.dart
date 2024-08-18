@@ -3,6 +3,7 @@ import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:qwibix/common/widgets/images/b_brand_image.dart';
 import 'package:qwibix/common/widgets/products/cart/cart_menu_icons.dart';
+import 'package:qwibix/common/widgets/texts/brandTitleText_withIcon.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/image_strings.dart';
@@ -72,7 +73,9 @@ class Store extends StatelessWidget {
 
                         // Text
                         const Column(
-                          children: [],
+                          children: [
+                            BrandTitleVerifyIcon(title: 'Nike'), 
+                          ],
                         ), 
                       ],
                     ),

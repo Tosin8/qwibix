@@ -5,6 +5,8 @@ import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/styles/shadows.dart';
 import 'package:qwibix/common/widgets/images/b_rounded_image.dart';
 import 'package:qwibix/common/widgets/texts/b_productPriceText.dart';
+import 'package:qwibix/common/widgets/texts/brandTitleText.dart';
+import 'package:qwibix/common/widgets/texts/brandTitleText_withIcon.dart';
 import 'package:qwibix/common/widgets/texts/product_title_text.dart';
 import 'package:qwibix/utils/constants/circular_icon.dart';
 import 'package:qwibix/utils/constants/colors.dart';
@@ -68,20 +70,13 @@ class BProductCardVertical extends StatelessWidget {
             ), 
       const SizedBox(height: BSizes.spaceBtwItems / 2,),
             // details
-             Padding(padding: const EdgeInsets.only(left: BSizes.sm), 
+             const Padding(padding: EdgeInsets.only(left: BSizes.sm), 
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-               const BProductTitleText(title: 'Green Nike Air Shoe', smallSize: true,), 
-               const SizedBox(height: BSizes.spaceBtwItems / 2,), 
-               Row(
-                children: [
-                  Text('Nike', style: Theme.of(context).textTheme.labelMedium, overflow: TextOverflow.ellipsis,
-                  maxLines: 1,),
-                  const SizedBox(width: BSizes.xs,), 
-                  const Icon(Iconsax.verify5, color: BColors.primary, size: BSizes.iconXs,),
-                ],
-               ), 
+               BProductTitleText(title: 'Green Nike Air Shoe', smallSize: true,), 
+               SizedBox(height: BSizes.spaceBtwItems / 2,), 
+               BrandTitleVerifyIcon(title: 'Nike',), 
             
               ],
             ),), 
@@ -109,3 +104,4 @@ class BProductCardVertical extends StatelessWidget {
     );
   }
 }
+
