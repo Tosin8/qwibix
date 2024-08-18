@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
 class BRoundedImage extends StatelessWidget {
