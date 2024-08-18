@@ -4,8 +4,8 @@ import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
-class BrandImageCard extends StatelessWidget {
-  const BrandImageCard({
+class BCircularImage extends StatelessWidget {
+  const BCircularImage({
     super.key, 
     this.fit = BoxFit.cover, 
     required this.image,

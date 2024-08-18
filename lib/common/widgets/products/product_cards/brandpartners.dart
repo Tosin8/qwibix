@@ -26,7 +26,7 @@ final BrandFeature BrandList;
       
            /// Icon 
            Flexible(
-             child: BrandImageCard(
+             child: BCircularImage(
                image: BrandList.image,
                isNetWorkImage: false, 
                backgroundColor: Colors.transparent, 
