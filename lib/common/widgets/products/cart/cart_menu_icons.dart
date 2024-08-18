@@ -20,7 +20,7 @@ final VoidCallback onPressed;
         IconButton(
           onPressed: (){}, 
         icon: const Icon(Iconsax.shopping_bag),
-         color: BColors.white, ),
+         color: BColors.black, ),
          Positioned(
           right: 0, 
           child: Container(
