@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
 import 'package:qwibix/common/widgets/images/b_brand_image.dart';
 import 'package:qwibix/common/widgets/products/cart/cart_menu_icons.dart';
 import 'package:qwibix/common/widgets/texts/brandTitleText_withIcon.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/constants/enums.dart';
 import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
@@ -54,32 +56,45 @@ class Store extends StatelessWidget {
                   },), 
                   const SizedBox(height: BSizes.spaceBtwItems / 1.5,), 
 
-                   BRoundedContainer(
-                    padding: const EdgeInsets.all(BSizes.sm), 
-                    showBorder: true, 
-                    backgroundColor: Colors.transparent, 
-                    child: Row(
-                      children: [
-
-                        // brand icons
-                        BCircularImage( 
-                          isNetWorkImage: false, 
-                          image: BImages.clothIcon, 
-                          backgroundColor: Colors.transparent, 
-                          overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,
-                        ), 
-                        const SizedBox(width: BSizes.spaceBtwItems / 2,), 
-
-
-                        // Text
-                        const Column(
-                          children: [
-                            BrandTitleVerifyIcon(title: 'Nike'), 
-                          ],
-                        ), 
-                      ],
-                    ),
-                  )
+                  GridLayout(itemCount: 4,
+                  mainAxisExtent: 80,
+                   itemBuilder: (_, index) {
+                     return  GestureDetector( 
+                    onTap: (){}, 
+                     child: BRoundedContainer(
+                      padding: const EdgeInsets.all(BSizes.sm), 
+                      showBorder: true, 
+                      backgroundColor: Colors.transparent, 
+                      child: Row(
+                        children: [
+                     
+                          // brand icons
+                          BCircularImage( 
+                            isNetWorkImage: false, 
+                            image: BImages.clothIcon, 
+                            backgroundColor: Colors.transparent, 
+                            overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,
+                          ), 
+                          const SizedBox(width: BSizes.spaceBtwItems / 2,), 
+                     
+                     
+                          // Text
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const BrandTitleVerifyIcon(
+                                title: 'Nike', 
+                                brandTextSize: TextSizes.large,), 
+                                Text('256 Products,', 
+                                overflow: TextOverflow.ellipsis, 
+                                style: Theme.of(context).textTheme.labelMedium,)
+                            ],
+                          ), 
+                        ],
+                      ),
+                                       ),
+                   );
+                   })
                 ],
               ),
               ),
