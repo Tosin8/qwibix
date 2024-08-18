@@ -69,26 +69,31 @@ class Store extends StatelessWidget {
                         children: [
                      
                           // brand icons
-                          BCircularImage( 
-                            isNetWorkImage: false, 
-                            image: BImages.clothIcon, 
-                            backgroundColor: Colors.transparent, 
-                            overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,
+                          Flexible(
+                            child: BCircularImage( 
+                              isNetWorkImage: false, 
+                              image: BImages.clothIcon, 
+                              backgroundColor: Colors.transparent, 
+                              overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,
+                            ),
                           ), 
                           const SizedBox(width: BSizes.spaceBtwItems / 2,), 
                      
                      
                           // Text
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const BrandTitleVerifyIcon(
-                                title: 'Nike', 
-                                brandTextSize: TextSizes.large,), 
-                                Text('256 Products,', 
-                                overflow: TextOverflow.ellipsis, 
-                                style: Theme.of(context).textTheme.labelMedium,)
-                            ],
+                          Expanded(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const BrandTitleVerifyIcon(
+                                  title: 'Nike', 
+                                  brandTextSize: TextSizes.large,), 
+                                  Text('256 Products,', 
+                                  overflow: TextOverflow.ellipsis, 
+                                  style: Theme.of(context).textTheme.labelMedium,)
+                              ],
+                            ),
                           ), 
                         ],
                       ),
