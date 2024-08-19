@@ -8,7 +8,7 @@ import 'package:qwibix/common/widgets/images/b_rounded_image.dart';
 import 'package:qwibix/common/widgets/texts/b_productPriceText.dart';
 import 'package:qwibix/common/widgets/texts/brandTitleText_withIcon.dart';
 import 'package:qwibix/common/widgets/texts/product_title_text.dart';
-import 'package:qwibix/features/shop/screens/home/product_details/widget/product_detail.dart';
+import 'package:qwibix/features/shop/screens/home/product_detail.dart';
 import 'package:qwibix/utils/constants/circular_icon.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/image_strings.dart';

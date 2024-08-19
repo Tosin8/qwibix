@@ -2,8 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:qwibix/utils/constants/colors.dart';
 
 import 'package:qwibix/utils/device/device_utlity.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 import '../../../utils/constants/sizes.dart';
 
@@ -27,15 +29,15 @@ final VoidCallback? leadingOnPressed;
 
   @override
   Widget build(BuildContext context) {
-  
+  final dark = BHelperFunctions.isDarkMode(context); 
   return Padding( 
-    padding: const EdgeInsets.symmetric(horizontal: BSizes.md), 
+    padding:  const EdgeInsets.symmetric(horizontal: BSizes.md), 
     child: AppBar( 
       automaticallyImplyLeading: false,
      leading: showBackArrow 
      ? IconButton(
       onPressed: () => Get.back(), 
-      icon: const Icon(Iconsax.arrow_left)
+      icon:  Icon(Iconsax.arrow_left, color: dark ? BColors.white : BColors.dark,)
      )
       : leadingIcon != null ? IconButton(onPressed: leadingOnPressed, icon: Icon(leadingIcon)) : null,
       title: title, 
