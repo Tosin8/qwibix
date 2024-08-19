@@ -29,15 +29,15 @@ class HomeScreen extends StatelessWidget {
                   children: [
 
 
-                    SizedBox(height: BSizes.spaceBtwSections ,),
+                    SizedBox(height: BSizes.spaceBtwItems,),
                     // appbar
                     BHomeAppBar(), 
 
-                    SizedBox(height: BSizes.spaceBtwSections,),
+                    SizedBox(height: BSizes.spaceBtwItems,),
 
                     // search bar
                     BSearchContainer(text: 'Search products',), 
- SizedBox(height: BSizes.spaceBtwSections,),
+ SizedBox(height: BSizes.spaceBtwItems,),
                     // categories
 
                     Padding(
@@ -55,7 +55,8 @@ class HomeScreen extends StatelessWidget {
 
                         
                       ],
-                    ),)
+                    ),), 
+                    SizedBox(height: BSizes.spaceBtwSections,), 
                   ],
                 ),
               ), 

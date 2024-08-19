@@ -1,9 +1,12 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/utils/constants/circular_icon.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
+
+import '../home/home.dart';
 
 class WishlistScreen extends StatelessWidget {
   const WishlistScreen({super.key});
@@ -19,7 +22,7 @@ class WishlistScreen extends StatelessWidget {
         actions: [
           BCircularIcon(
           icon: Iconsax.add,
-          //onPressed: () => Get.to(HomeScreen()),
+          onPressed: () => Get.to(const HomeScreen()),
           ), 
         ],
       ),
