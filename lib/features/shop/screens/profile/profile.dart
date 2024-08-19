@@ -3,9 +3,11 @@ import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/features/shop/screens/profile/widget.profileuser/profile_user_screen.dart';
 import 'package:qwibix/features/shop/screens/profile/widget/menuTitles.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
+
 
 import 'widget/userprofiletile.dart';
 
@@ -24,11 +26,11 @@ class ProfileScreen extends StatelessWidget {
               BPrimaryHeaderContainer(child: Column(
                 children: [
                   //AppBar
-                  BAppBar(title: Text('Profile', style: Theme.of(context).textTheme.headlineMedium!.apply(color: BColors.white),)), 
+                  BAppBar(title: Text('Account', style: Theme.of(context).textTheme.headlineMedium!.apply(color: BColors.white),)), 
                   const SizedBox(height: BSizes.spaceBtwItems,), 
 
                   // Profile Card
-                   const UserProfileTile(), 
+                   UserProfileTile(onPressed: () => const ProfileUserScreen(),), 
                   const SizedBox(height: BSizes.spaceBtwSections,), 
                 ],
               )), 

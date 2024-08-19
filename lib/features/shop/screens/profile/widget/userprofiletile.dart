@@ -9,9 +9,10 @@ import '../../../../../utils/constants/image_strings.dart';
 
 class UserProfileTile extends StatelessWidget {
   const UserProfileTile({
-    super.key,
+    super.key, required this.onPressed, 
   });
 
+final VoidCallback onPressed; 
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -24,7 +25,7 @@ class UserProfileTile extends StatelessWidget {
      
      
      ),
-     trailing: IconButton(onPressed: (){},
+     trailing: IconButton(onPressed: onPressed,
       icon: const Icon(Iconsax.edit, color: BColors.white)),
                       );
   }
