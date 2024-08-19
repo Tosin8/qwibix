@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/custom_shapes/containers/primary_header_container.dart';
@@ -30,7 +31,7 @@ class ProfileScreen extends StatelessWidget {
                   const SizedBox(height: BSizes.spaceBtwItems,), 
 
                   // Profile Card
-                   UserProfileTile(onPressed: () => const ProfileUserScreen(),), 
+                   UserProfileTile(onPressed: () => Get.to ( const ProfileUserScreen(),)), 
                   const SizedBox(height: BSizes.spaceBtwSections,), 
                 ],
               )), 

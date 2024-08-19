@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-class userprofilemenu extends StatelessWidget {
-  const userprofilemenu({
+class Userprofilemenu extends StatelessWidget {
+  const Userprofilemenu({
     super.key, required this.name, required this.middleName, required this.press,
   });
 
