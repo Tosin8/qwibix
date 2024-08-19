@@ -19,96 +19,112 @@ class Store extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-      appBar: BAppBar(
-        title: Text('Store', style: Theme.of(context).textTheme.headlineMedium,),
-        actions: [
-          BCartCounterIcon(
-            onPressed: () {},
-           iconColor: BColors.black,
-          )
-        ],
-      ),
-      body: NestedScrollView(
-        headerSliverBuilder: (_, innerBoxIsScrolled) {
-          return [
-             SliverAppBar(
-              pinned: true, 
-              floating: true, 
-              backgroundColor: BHelperFunctions.isDarkMode(context) ? BColors.black : BColors.white,
-              expandedHeight: 440, 
-
-              flexibleSpace: Padding(padding: const EdgeInsets.all(BSizes.defaultSpace), 
-              child: ListView(
-                shrinkWrap: true, 
-                physics: const NeverScrollableScrollPhysics(), 
-                children:  [
-
-                  // Search Bar. 
-                 // SizedBox(height: BSizes.spaceBtwItems), 
-                  const BSearchContainer(text: 'Search here', showBorder: true, showBackground: false, padding: EdgeInsets.zero,), 
-                  const SizedBox(height: BSizes.spaceBtwSections,), 
-
-
-                  /// Featured Brands. 
-                  BSectionHeading(title: 'Featured Brands', onPressed: () {
-                    
-                  },), 
-                  const SizedBox(height: BSizes.spaceBtwItems / 1.5,), 
-
-                  GridLayout(itemCount: 4,
-                  mainAxisExtent: 80,
-                   itemBuilder: (_, index) {
-                     return  GestureDetector( 
-                    onTap: (){}, 
-                     child: BRoundedContainer(
-                      padding: const EdgeInsets.all(BSizes.sm), 
-                      showBorder: true, 
-                      backgroundColor: Colors.transparent, 
-                      child: Row(
-                        children: [
-                     
-                          // brand icons
-                          Flexible(
-                            child: BCircularImage( 
-                              isNetWorkImage: false, 
-                              image: BImages.clothIcon, 
-                              backgroundColor: Colors.transparent, 
-                              overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,
-                            ),
-                          ), 
-                          const SizedBox(width: BSizes.spaceBtwItems / 2,), 
-                     
-                     
-                          // Text
-                          Expanded(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const BrandTitleVerifyIcon(
-                                  title: 'Nike', 
-                                  brandTextSize: TextSizes.large,), 
-                                  Text('256 Products,', 
-                                  overflow: TextOverflow.ellipsis, 
-                                  style: Theme.of(context).textTheme.labelMedium,)
-                              ],
-                            ),
-                          ), 
-                        ],
-                      ),
-                                       ),
-                   );
-                   })
-                ],
-              ),
-              ),
-              bottom: ,
-              
+      child: DefaultTabController(
+        length: 5,
+        child: Scaffold(
+        appBar: BAppBar(
+          title: Text('Store', style: Theme.of(context).textTheme.headlineMedium,),
+          actions: [
+            BCartCounterIcon(
+              onPressed: () {},
+             iconColor: BColors.black,
             )
-          ]; 
-        }, body: Container(),)
-      
+          ],
+        ),
+        body: NestedScrollView(
+          headerSliverBuilder: (_, innerBoxIsScrolled) {
+            return [
+               SliverAppBar(
+                pinned: true, 
+                floating: true, 
+                backgroundColor: BHelperFunctions.isDarkMode(context) ? BColors.black : BColors.white,
+                expandedHeight: 440, 
+        
+                flexibleSpace: Padding(padding: const EdgeInsets.all(BSizes.defaultSpace), 
+                child: ListView(
+                  shrinkWrap: true, 
+                  physics: const NeverScrollableScrollPhysics(), 
+                  children:  [
+        
+                    // Search Bar. 
+                   // SizedBox(height: BSizes.spaceBtwItems), 
+                    const BSearchContainer(text: 'Search here', showBorder: true, showBackground: false, padding: EdgeInsets.zero,), 
+                    const SizedBox(height: BSizes.spaceBtwSections,), 
+        
+        
+                    /// Featured Brands. 
+                    BSectionHeading(title: 'Featured Brands', onPressed: () {
+                      
+                    },), 
+                    const SizedBox(height: BSizes.spaceBtwItems / 1.5,), 
+        
+                    GridLayout(itemCount: 4,
+                    mainAxisExtent: 80,
+                     itemBuilder: (_, index) {
+                       return  GestureDetector( 
+                      onTap: (){}, 
+                       child: BRoundedContainer(
+                        padding: const EdgeInsets.all(BSizes.sm), 
+                        showBorder: true, 
+                        backgroundColor: Colors.transparent, 
+                        child: Row(
+                          children: [
+                       
+                            // brand icons
+                            Flexible(
+                              child: BCircularImage( 
+                                isNetWorkImage: false, 
+                                image: BImages.clothIcon, 
+                                backgroundColor: Colors.transparent, 
+                                overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,
+                              ),
+                            ), 
+                            const SizedBox(width: BSizes.spaceBtwItems / 2,), 
+                       
+                       
+                            // Text
+                            Expanded(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const BrandTitleVerifyIcon(
+                                    title: 'Nike', 
+                                    brandTextSize: TextSizes.large,), 
+                                    Text('256 Products,', 
+                                    overflow: TextOverflow.ellipsis, 
+                                    style: Theme.of(context).textTheme.labelMedium,)
+                                ],
+                              ),
+                            ), 
+                          ],
+                        ),
+                                         ),
+                     );
+                     })
+                  ],
+                ),
+                ),
+                bottom: TabBar( 
+              tabAlignment: TabAlignment.start, 
+                  isScrollable: true, 
+                  indicatorColor: BColors.primary, 
+                  unselectedLabelColor: BColors.darkGrey,
+                  labelColor: BHelperFunctions.isDarkMode(context) ? BColors.white : BColors.primary,
+                  tabs: const [
+                    Tab(child: Text('Sports')), 
+                     Tab(child: Text('Furnitures')), 
+                      Tab(child: Text('Electronics')), 
+                       Tab(child: Text('Clothes')),  
+                       Tab(child: Text('Cosmetics')), 
+                  ]
+                ),
+                
+              )
+            ]; 
+          }, body: Container(),)
+        
+        ),
       ),
     );
   }
