@@ -3,6 +3,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:qwibix/common/widgets/images/b_brand_image.dart';
+import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
@@ -28,10 +29,20 @@ class ProfileScreen extends StatelessWidget {
                   const SizedBox(height: BSizes.spaceBtwItems,), 
 
                   // Profile Card
-                   UserProfileTile(), 
+                   const UserProfileTile(), 
                   const SizedBox(height: BSizes.spaceBtwSections,), 
                 ],
-              ))
+              )), 
+
+              const Padding(padding: EdgeInsets.all(BSizes.defaultSpace), 
+              child: Column(
+                children: [
+
+                  // Account Setting. 
+                  BSectionHeading(title: 'Account Setting' , showActionButton: false,),
+                  SizedBox(height: BSizes.spaceBtwItems,), 
+                ],
+              ),)
             ],
           ),
         ),
