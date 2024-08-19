@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:qwibix/common/widgets/images/b_brand_image.dart';
 import 'package:qwibix/common/widgets/texts/b_productPriceText.dart';
 import 'package:qwibix/common/widgets/texts/brandTitleText_withIcon.dart';
 import 'package:qwibix/common/widgets/texts/product_title_text.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/enums.dart';
+import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
@@ -56,7 +58,13 @@ class ProductMetaData extends StatelessWidget {
         const SizedBox(height: BSizes.spaceBtwItems  / 1.5,), 
 
         // Brand. 
-        const BrandTitleVerifyIcon(title: 'Nike', brandTextSize: TextSizes.medium,), 
+        Row(
+          children: [
+            BCircularImage(image: BImages.shoeIcon, 
+            width: 32, height: 32, overlayColor: dark ? BColors.white : BColors.black,), 
+            const BrandTitleVerifyIcon(title: 'Nike', brandTextSize: TextSizes.medium,),
+          ],
+        ), 
       ],
     );
   }
