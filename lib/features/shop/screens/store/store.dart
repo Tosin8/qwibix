@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
+import 'package:qwibix/common/widgets/appbar/tabbar.dart';
 import 'package:qwibix/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
 import 'package:qwibix/common/widgets/images/b_brand_image.dart';
@@ -105,24 +106,31 @@ class Store extends StatelessWidget {
                   ],
                 ),
                 ),
-                bottom: TabBar( 
-              tabAlignment: TabAlignment.start, 
-                  isScrollable: true, 
-                  indicatorColor: BColors.primary, 
-                  unselectedLabelColor: BColors.darkGrey,
-                  labelColor: BHelperFunctions.isDarkMode(context) ? BColors.white : BColors.primary,
-                  tabs: const [
+                bottom: const BTappBar(
+                  tabs: [
                     Tab(child: Text('Sports')), 
-                     Tab(child: Text('Furnitures')), 
-                      Tab(child: Text('Electronics')), 
-                       Tab(child: Text('Clothes')),  
-                       Tab(child: Text('Cosmetics')), 
-                  ]
-                ),
+                       Tab(child: Text('Furniture')),   
+                        Tab(child: Text('Electronics')),   
+                         Tab(child: Text('Clothes')),  
+                           Tab(child: Text('Cosmetics')), 
+                  ]), 
+                
+                
                 
               )
             ]; 
-          }, body: Container(),)
+          }, body: const TabBarView(
+            children: [
+              Padding(padding: EdgeInsets.all(BSizes.defaultSpace), 
+              child: Column(
+                children: [
+
+                  /// Brands
+                  BRoundedContainer(), 
+                ],
+              ),)
+            ],
+          ),)
         
         ),
       ),
