@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:qwibix/utils/constants/colors.dart';
-import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
@@ -30,7 +29,7 @@ final List<String> images;
     Column(
       children: [
         const BrandCard(showBorder: false), 
-        const SizedBox(height: 10,), 
+        const SizedBox(height: BSizes.spaceBtwItems,), 
 
         /// Brand Top 2 product images
         Row(
@@ -50,6 +49,6 @@ final List<String> images;
     return Expanded(
       child: BRoundedContainer(height: 100, padding: const EdgeInsets.all(BSizes.md), margin: const EdgeInsets.only(right: BSizes.sm), 
     backgroundColor: BHelperFunctions.isDarkMode(context) ? BColors.darkGrey : BColors.light,
-     child: const Image(image: AssetImage(BImages.productImage3), fit: BoxFit.contain,),)); 
+     child:  Image(image: AssetImage(image), fit: BoxFit.contain,),)); 
   }
 }

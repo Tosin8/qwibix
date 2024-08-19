@@ -6,13 +6,13 @@ import 'package:qwibix/common/widgets/appbar/tabbar.dart';
 import 'package:qwibix/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
 import 'package:qwibix/common/widgets/products/cart/cart_menu_icons.dart';
-import 'package:qwibix/common/widgets/products/product_cards/brand_showcase.dart';
 import 'package:qwibix/common/widgets/products/product_cards/brandpartners.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/utils/constants/colors.dart';
-import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
+
+import 'widgets/category_tab.dart';
 
 class Store extends StatelessWidget {
   const Store({super.key});
@@ -84,21 +84,8 @@ class Store extends StatelessWidget {
             ]; 
           }, body: const TabBarView(
             children: [
-              Padding(padding: EdgeInsets.all(BSizes.defaultSpace), 
-              child: Column(
-                children: [
-
-                  /// Brands
-               BrandShowCase( images: [
-    BImages.productImage1, BImages.productImage2, BImages.productImage3
-  ]),
-
-
-
-                          ],
-                        )
-                      
-                    ),
+              CategoryTab(),
+                CategoryTab(),  CategoryTab(),  CategoryTab(),  CategoryTab(),
                   
                 ],
               ),)
