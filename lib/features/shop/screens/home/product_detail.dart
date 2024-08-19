@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/features/shop/screens/home/product_details/widget/add2cartlayer.dart';
 import 'package:qwibix/features/shop/screens/home/product_details/widget/product_attribute.dart';
 import 'package:qwibix/features/shop/screens/home/product_details/widget/product_meta_data.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
@@ -17,6 +18,7 @@ class ProductDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = BHelperFunctions.isDarkMode(context);
     return Scaffold( 
+      bottomNavigationBar: const BottomAddToCart() ,
       body: SingleChildScrollView(
         child: Column(
           children: [
