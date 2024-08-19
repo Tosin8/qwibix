@@ -7,19 +7,21 @@ import 'package:qwibix/utils/constants/circular_icon.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 import '../../../../../../common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 
 class ProductImageSlider extends StatelessWidget {
   const ProductImageSlider({
     super.key,
-    required this.dark,
+ 
   });
 
-  final bool dark;
+  
 
   @override
   Widget build(BuildContext context) {
+    final dark = BHelperFunctions.isDarkMode(context); 
     return BCurvedEdgeWidget(
       child: Container( color: dark ? BColors.darkerGrey : BColors.light,
       child: Stack(
