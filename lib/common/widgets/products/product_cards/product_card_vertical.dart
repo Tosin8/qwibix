@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import 'package:qwibix/common/styles/shadows.dart';
@@ -7,6 +8,7 @@ import 'package:qwibix/common/widgets/images/b_rounded_image.dart';
 import 'package:qwibix/common/widgets/texts/b_productPriceText.dart';
 import 'package:qwibix/common/widgets/texts/brandTitleText_withIcon.dart';
 import 'package:qwibix/common/widgets/texts/product_title_text.dart';
+import 'package:qwibix/features/shop/screens/home/product_details/widget/product_detail.dart';
 import 'package:qwibix/utils/constants/circular_icon.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/image_strings.dart';
@@ -22,9 +24,7 @@ class BProductCardVertical extends StatelessWidget {
 
     final dark = BHelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () {
-        
-      },
+      onTap: () => Get.to(() => const ProductDetail() ), 
       child: Container(
         width: 180, 
         padding: const EdgeInsets.all(1), 
