@@ -103,6 +103,7 @@ class Store extends StatelessWidget {
                 ],
               ),
               ),
+              bottom: ,
               
             )
           ]; 
