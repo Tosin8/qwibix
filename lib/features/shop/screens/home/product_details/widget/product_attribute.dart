@@ -74,10 +74,15 @@ BRoundedContainer(
 
      // attributes. 
        Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const BSectionHeading(title: 'Colors', showActionButton: false,), 
         const SizedBox(height: BSizes.spaceBtwItems / 2,), 
-        BChoiceChip(text: 'Green', selected: true, onSelected: (value) {
+       Wrap(
+        spacing: 4,
+          children: [
+
+             BChoiceChip(text: 'Green', selected: true, onSelected: (value) {
           
         },),
           BChoiceChip(text: 'Blue', selected: false,onSelected: (value) {
@@ -85,14 +90,21 @@ BRoundedContainer(
         },),  BChoiceChip(text: 'Yellow', selected: false, onSelected: (value) {
           
         },),
+          ]
+        ), 
+       
       ],
      ), 
 
        Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const BSectionHeading(title: 'Sizes', showActionButton: false,), 
         const SizedBox(height: BSizes.spaceBtwItems / 2,), 
-        BChoiceChip(text: 'EU 34', selected: true, onSelected: (value) {
+        Wrap(
+          spacing: 4,
+          children: [
+               BChoiceChip(text: 'EU 34', selected: true, onSelected: (value) {
           
         },),
           BChoiceChip(text: 'EU 35', selected: false,onSelected: (value) {
@@ -100,6 +112,9 @@ BRoundedContainer(
         },),  BChoiceChip(text: 'EU 36', selected: false, onSelected: (value) {
           
         },),
+          ],
+        ), 
+     
       ],
      ), 
       ],
