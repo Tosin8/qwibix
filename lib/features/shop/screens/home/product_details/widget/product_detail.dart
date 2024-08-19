@@ -27,16 +27,37 @@ class ProductDetail extends StatelessWidget {
                   const SizedBox(
                     height: 400, 
                     child: Padding(
-                      padding: EdgeInsets.all(BSizes.productImageRadius), 
+                      padding: EdgeInsets.all(BSizes.productImageRadius * 2
+                      ), 
                       child: Center(child: Image(image: AssetImage(BImages.productImage1))),
                     ),
                   ), 
 
                   // Image Slider. 
-                  BRoundedImage(
-                    width: 80, 
-                    backgroundColor: dark ? BColors.dark : BColors.white,
-                    imageUrl: BImages.productImage3), 
+
+                  Positioned( 
+                    right: 0, 
+                    bottom: 30, 
+                    left: BSizes.defaultSpace, 
+                    child: SizedBox(
+                      height: 80 , 
+                      child: ListView.separated(
+                        itemCount: 4, 
+                        shrinkWrap: true, 
+                        scrollDirection: Axis.horizontal,
+                        physics: const AlwaysScrollableScrollPhysics(),
+                        separatorBuilder: (_, __) => const SizedBox(width: BSizes.spaceBtwItems,),
+                        itemBuilder: (_, index) => BRoundedImage(
+                        width: 80, 
+                        backgroundColor: dark ? BColors.dark : BColors.white,
+                        imageUrl: BImages.productImage1, 
+                        border: Border.all(color: BColors.primary),
+                        padding: const EdgeInsets.all(BSizes.sm), 
+                        ), 
+                      ),
+                    ),
+                  ), 
+                  
                 ],
               )
               ),
