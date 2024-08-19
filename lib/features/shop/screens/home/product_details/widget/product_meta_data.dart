@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:qwibix/common/widgets/texts/b_productPriceText.dart';
+import 'package:qwibix/common/widgets/texts/brandTitleText_withIcon.dart';
+import 'package:qwibix/common/widgets/texts/product_title_text.dart';
 import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/constants/enums.dart';
 import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
@@ -34,13 +37,26 @@ class ProductMetaData extends StatelessWidget {
             const SizedBox(width: BSizes.spaceBtwItems,), 
             const BProductPriceText(price: '175', isLarge: true,), 
           ],
-        )
+        ), 
+        const SizedBox(height: BSizes.spaceBtwItems / 1.5,), 
 
         // Title 
+        const BProductTitleText(title: 'Green Nike Sports Shirt'), 
+        const SizedBox(height: BSizes.spaceBtwItems / 1.5,), 
 
         // Stock Status
+        Row(
+          children: [
+            const BProductTitleText(title: 'Status'),
+            const SizedBox(width: BSizes.spaceBtwItems,), 
+             Text('In Stock', style: Theme.of(context).textTheme.titleMedium,), 
+          ],
+        ), 
+       
+        const SizedBox(height: BSizes.spaceBtwItems  / 1.5,), 
 
         // Brand. 
+        const BrandTitleVerifyIcon(title: 'Nike', brandTextSize: TextSizes.medium,), 
       ],
     );
   }
