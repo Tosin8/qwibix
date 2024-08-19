@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qwibix/features/shop/screens/home/product_details/widget/product_attribute.dart';
 import 'package:qwibix/features/shop/screens/home/product_details/widget/product_meta_data.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
@@ -35,6 +36,7 @@ class ProductDetail extends StatelessWidget {
                   ProductMetaData(), 
 
                   // ATTRIBUTES
+                  ProductAttribute(), 
 
                   // CHECKOUT BUTTON
 
