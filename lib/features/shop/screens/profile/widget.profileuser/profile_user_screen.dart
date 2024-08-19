@@ -35,10 +35,29 @@ class ProfileUserScreen extends StatelessWidget {
             const SizedBox(height: BSizes.spaceBtwItems/ 2,), 
             const Divider(), 
             const SizedBox(height: BSizes.spaceBtwItems,), 
+
+            // heading profile info
             const BSectionHeading(title: 'Profile Information', showActionButton: false,), 
             const SizedBox(height: BSizes.spaceBtwItems,), 
 
-           Userprofilemenu(name: 'Name', middleName: 'John Doe', press: (){})
+           Userprofilemenu(  title: 'Name', value: 'John Doe', onPressed: () {  },), 
+           Userprofilemenu(  title: 'User ID', value: 'johndoe@gmail.com', onPressed: () {  }, icon: Iconsax.copy,), 
+            const SizedBox(height: BSizes.spaceBtwItems,), 
+              const Divider(), 
+              const SizedBox(height: BSizes.spaceBtwItems,), 
+                 const BSectionHeading(title: 'Personal Information', showActionButton: false,),
+                  const SizedBox(height: BSizes.spaceBtwItems,), 
+           Userprofilemenu(  title: 'E-mail', value: 'johndoe@gmail.com', onPressed: () {  },), 
+           Userprofilemenu(  title: 'Phone Number', value: '+234 123 456 789', onPressed: () {  },), 
+
+           const SizedBox(height: BSizes.spaceBtwItems,), 
+            const Divider(), 
+              const SizedBox(height: BSizes.spaceBtwItems,), 
+           Center(
+            child: TextButton(onPressed: (){}, child: const Text('Close Account', style: TextStyle(color: Colors.red),)),
+           )
+           
+           
           ],
         ),),
       )

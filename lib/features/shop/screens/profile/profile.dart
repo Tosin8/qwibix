@@ -31,7 +31,7 @@ class ProfileScreen extends StatelessWidget {
                   const SizedBox(height: BSizes.spaceBtwItems,), 
 
                   // Profile Card
-                   UserProfileTile(onPressed: () => Get.to ( const ProfileUserScreen(),)), 
+                   UserProfileTile(onPressed: () => Get.to ( () => const ProfileUserScreen(),)), 
                   const SizedBox(height: BSizes.spaceBtwSections,), 
                 ],
               )), 
