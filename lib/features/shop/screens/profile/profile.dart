@@ -4,6 +4,7 @@ import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:qwibix/common/widgets/images/b_brand_image.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/features/shop/screens/profile/widget/menuTitles.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
@@ -34,13 +35,40 @@ class ProfileScreen extends StatelessWidget {
                 ],
               )), 
 
-              const Padding(padding: EdgeInsets.all(BSizes.defaultSpace), 
+              Padding(padding: const EdgeInsets.all(BSizes.defaultSpace), 
               child: Column(
                 children: [
 
                   // Account Setting. 
-                  BSectionHeading(title: 'Account Setting' , showActionButton: false,),
-                  SizedBox(height: BSizes.spaceBtwItems,), 
+                  const BSectionHeading(title: 'Account Settings' , showActionButton: false,),
+                  const SizedBox(height: BSizes.spaceBtwItems,),
+
+                  SettingsMenuTitle(title: 'My Addresses', subText: 'Set Shopping Delivery Address', 
+                  icon: Iconsax.safe_home, onTap: () {  },) , 
+                   SettingsMenuTitle(title: 'My Cart', subText: 'Add, remove products and move to checkout', 
+                  icon: Iconsax.shopping_cart, onTap: () {  },) , 
+                  SettingsMenuTitle(title: 'My Orders', subText: 'In Progress and Completed Orders', 
+                  icon: Iconsax.discount_shape, onTap: () {  },) , SettingsMenuTitle(title: 'My Coupons', subText: 'List of all the discounted coupons', 
+                  icon: Iconsax.safe_home, onTap: () {  },) , 
+                  SettingsMenuTitle(title: 'Notifications', subText: 'Set any kind of notification messge', 
+                  icon: Iconsax.notification,
+                   onTap: () {  },) ,
+
+                   // App Settings. 
+
+                   const SizedBox(height: BSizes.spaceBtwSections,), 
+                   const BSectionHeading(title: 'App Settings' , showActionButton: false,), 
+                   const SizedBox(height: BSizes.spaceBtwItems), 
+                   SettingsMenuTitle(title: 'Geolocation', subText: 'Set recommendation based on your location',
+                    icon: Iconsax.location,
+                    onTap: (){}, 
+                    trailing: Switch(value: true, onChanged: (value){}),), 
+
+                    // logout button.
+                    const SizedBox(height: BSizes.spaceBtwSections,), 
+                    SizedBox(width: double.infinity,
+                    child: OutlinedButton(onPressed: (){}, child: const Text('Logout'),), 
+                    ), 
                 ],
               ),)
             ],
