@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/custom_shapes/containers/primary_header_container.dart';
-import 'package:qwibix/common/widgets/images/b_brand_image.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/features/shop/screens/profile/widget/menuTitles.dart';
 import 'package:qwibix/utils/constants/colors.dart';
-import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
 import 'widget/userprofiletile.dart';
