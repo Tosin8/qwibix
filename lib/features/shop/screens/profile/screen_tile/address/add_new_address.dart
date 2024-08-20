@@ -21,7 +21,7 @@ class AddNewAddressScreen extends StatelessWidget {
             child: Column(
             children: [
 TextFormField(
-  decoration: const InputDecoration( prefixIcon: Icon(Iconsax.user), labelText: BTexts.firstName),), 
+  decoration: const InputDecoration( prefixIcon: Icon(Iconsax.user), labelText: 'Name'),), 
   const SizedBox(height: BSizes.spaceBtwInputFields,), 
   TextFormField(
   decoration: const InputDecoration( prefixIcon: Icon(Iconsax.mobile), labelText: 'Phone Number'),),  const SizedBox(height: BSizes.spaceBtwInputFields,), 
@@ -36,11 +36,32 @@ TextFormField(
              Expanded(
         child: TextFormField(
           decoration: const InputDecoration( 
-            prefixIcon: Icon(Iconsax.code),
-            labelText: 'Postal Code'),)), 
+            prefixIcon: Icon(Iconsax.activity),
+            labelText: 'Land Mark'),)), 
     ],
   ), 
   const SizedBox(height: BSizes.spaceBtwInputFields,), 
+  Row(
+    children: [
+      Expanded(
+        child: TextFormField(
+          decoration: const InputDecoration( 
+            prefixIcon: Icon(Iconsax.building),
+            labelText: 'City'),)),
+            const SizedBox(width: BSizes.spaceBtwInputFields,),  
+             Expanded(
+        child: TextFormField(
+          decoration: const InputDecoration( 
+            prefixIcon: Icon(Iconsax.activity),
+            labelText: 'State'),)), 
+    ],
+  ), 
+  const SizedBox(height: BSizes.spaceBtwInputFields,),
+  TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.global), labelText: 'Country')),
+  const SizedBox(height: BSizes.defaultSpace,), 
+  SizedBox(width: double.infinity,
+  child: ElevatedButton(onPressed: (){},
+   child: const Text('Save')),), 
             ],
           )),
           ),
