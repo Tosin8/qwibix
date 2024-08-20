@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
+import 'widget/add_remove_quantity.dart';
 import 'widget/cart_item.dart';
 
 class CartScreen extends StatelessWidget {
@@ -22,9 +23,18 @@ class CartScreen extends StatelessWidget {
           child: ListView.separated(
             itemCount: 4, shrinkWrap: true, physics: const NeverScrollableScrollPhysics(),
             separatorBuilder: (context, index) => const SizedBox(height: BSizes.spaceBtwSections,),
-            itemBuilder: (_,index) => const Column(
+            itemBuilder: (_,index) =>  const Column(
               children: [
-                CartItem()
+                CartItem(), 
+                SizedBox(height: BSizes.spaceBtwItems,), 
+
+                Row(
+                  children: [
+SizedBox(width: 70,), 
+                  
+                    QuantityAddRemoveButton(), 
+                  ],
+                )
               ],
             ),
             
