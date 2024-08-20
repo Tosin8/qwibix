@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
+import 'package:qwibix/common/widgets/texts/b_productPriceText.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
 import 'widget/add_remove_quantity.dart';
@@ -21,7 +22,7 @@ class CartScreen extends StatelessWidget {
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(BSizes.defaultSpace), 
           child: ListView.separated(
-            itemCount: 4, shrinkWrap: true, physics: const NeverScrollableScrollPhysics(),
+            itemCount: 8, shrinkWrap: true, physics: const NeverScrollableScrollPhysics(),
             separatorBuilder: (context, index) => const SizedBox(height: BSizes.spaceBtwSections,),
             itemBuilder: (_,index) =>  const Column(
               children: [
@@ -29,10 +30,18 @@ class CartScreen extends StatelessWidget {
                 SizedBox(height: BSizes.spaceBtwItems,), 
 
                 Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-SizedBox(width: 70,), 
-                  
-                    QuantityAddRemoveButton(), 
+Row(
+ 
+  children: [
+    SizedBox(width: 70,), 
+                      
+                        QuantityAddRemoveButton(),
+  ],
+), 
+// Product Price. 
+                    BProductPriceText(price: '256'), 
                   ],
                 )
               ],
@@ -41,7 +50,15 @@ SizedBox(width: 70,),
             
              
              ),
-        )
+        ), 
+   
+   bottomNavigationBar: Padding(
+     padding: const EdgeInsets.all(BSizes.defaultSpace),
+     child: ElevatedButton(
+      
+      onPressed: (){},
+       child: const Text('Checkout  \$256.00')),
+   ),
     );
   }
 }
