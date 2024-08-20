@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class UserAddressScreen extends StatelessWidget {
-  const UserAddressScreen({super.key});
+class AddNewAddressScreen extends StatelessWidget {
+  const AddNewAddressScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

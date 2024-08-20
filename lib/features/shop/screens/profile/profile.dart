@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/features/shop/screens/profile/screen_tile/address/my_address.dart';
 import 'package:qwibix/features/shop/screens/profile/widget.profileuser/profile_user_screen.dart';
 import 'package:qwibix/features/shop/screens/profile/widget/menuTitles.dart';
 import 'package:qwibix/utils/constants/colors.dart';
@@ -45,7 +46,10 @@ class ProfileScreen extends StatelessWidget {
                   const SizedBox(height: BSizes.spaceBtwItems,),
 
                   SettingsMenuTitle(title: 'My Addresses', subText: 'Set Shopping Delivery Address', 
-                  icon: Iconsax.safe_home, onTap: () {  },) , 
+                  icon: Iconsax.safe_home,
+                   onTap: () => Get.to(() => const UserAddressScreen()),
+                  
+                  ) , 
                    SettingsMenuTitle(title: 'My Cart', subText: 'Add, remove products and move to checkout', 
                   icon: Iconsax.shopping_cart, onTap: () {  },) , 
                   SettingsMenuTitle(title: 'My Orders', subText: 'In Progress and Completed Orders', 
