@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
@@ -21,7 +22,10 @@ class BillingAddressSection extends StatelessWidget {
           children: [
             BRoundedContainer(
               width: 60, height: 35, backgroundColor: dark ? BColors.light: BColors.white,
-            )
+              padding: const EdgeInsets.all(BSizes.sm),
+              child: const Image(image: AssetImage(BImages.paypal,), fit: BoxFit.contain,),
+            ), 
+            const SizedBox(width: BSizes.spaceBtwItems / 2,), 
           ],
         )
       ],
