@@ -11,6 +11,7 @@ import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
 
+import 'screen_tile/orders/orders.dart';
 import 'widget/userprofiletile.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -53,7 +54,7 @@ class ProfileScreen extends StatelessWidget {
                    SettingsMenuTitle(title: 'My Cart', subText: 'Add, remove products and move to checkout', 
                   icon: Iconsax.shopping_cart, onTap: () {  },) , 
                   SettingsMenuTitle(title: 'My Orders', subText: 'In Progress and Completed Orders', 
-                  icon: Iconsax.discount_shape, onTap: () {  },) , SettingsMenuTitle(title: 'My Coupons', subText: 'List of all the discounted coupons', 
+                  icon: Iconsax.discount_shape, onTap: () => Get.to(() => const OrderScreen()),) , SettingsMenuTitle(title: 'My Coupons', subText: 'List of all the discounted coupons', 
                   icon: Iconsax.safe_home, onTap: () {  },) , 
                   SettingsMenuTitle(title: 'Notifications', subText: 'Set any kind of notification messge', 
                   icon: Iconsax.notification,
