@@ -1,8 +1,10 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
-import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
-import 'package:qwibix/utils/device/device_utlity.dart';
+
+import 'widgets/rating_indicator.dart';
 
 class ProductReviewsScreen extends StatelessWidget {
   const ProductReviewsScreen({super.key});
@@ -30,30 +32,12 @@ Row(
     Expanded(
       flex: 3, 
       child: Text('4.8', style: Theme.of(context).textTheme.displayLarge,)),
-    Expanded(
+    const Expanded(
       flex: 7,
       child: Column(
         children: [
-          Row(
-            children: [
-              Expanded(
-                flex: 1,
-                 child: Text('5', style: Theme.of(context).textTheme.bodyMedium,)), 
-               Expanded( 
-                flex: 11,
-                 child: SizedBox(
-                  width: BDeviceUtils.getScreenWidth(context) * 0.5,
-                   child: LinearProgressIndicator(
-                    value: 0.5, 
-                    minHeight: 11, 
-                    backgroundColor: BColors.grey, 
-                    borderRadius: BorderRadius.circular(7), 
-                    valueColor: const AlwaysStoppedAnimation(BColors.primary),
-                               ),
-                 ),
-               )
-            ],
-          )
+          RatingProgressIndicator(text: '5', value: 1.0,), 
+          RatingProgressIndicator(text: '4', value: 0.8,), RatingProgressIndicator(text: '3', value: 0.6,), RatingProgressIndicator(text: '2', value: 0.4,), RatingProgressIndicator(text: '1', value: 0.2,), 
         ],
       ),
     )
