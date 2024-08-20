@@ -19,7 +19,7 @@ this.showAddRemoveButtons = true,
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      itemCount: 8, shrinkWrap: true, physics: const NeverScrollableScrollPhysics(),
+      itemCount: 2, shrinkWrap: true, physics: const NeverScrollableScrollPhysics(),
       separatorBuilder: (context, index) => const SizedBox(height: BSizes.spaceBtwSections,),
       itemBuilder: (_,index) =>  Column(
         children: [
