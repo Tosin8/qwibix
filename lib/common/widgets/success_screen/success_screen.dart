@@ -4,6 +4,7 @@ import 'package:lottie/lottie.dart';
 import 'package:qwibix/common/styles/spacing_styles.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/constants/text_strings.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen({super.key, 
@@ -25,10 +26,10 @@ final VoidCallback onPressed;
           padding: BSpacingStyle.paddingWithAppBarHeight * 2, 
           child: Column(
             children: [
-              Lottie.asset(image,
-               width: MediaQuery.of(context).size.width * 0.6), 
+              // Lottie.asset(image,
+              //  width: MediaQuery.of(context).size.width * 0.6), 
             
-               
+               Image(image: AssetImage(image), width: BHelperFunctions.screenWidth() * 0.6,), 
               const SizedBox(height: BSizes.spaceBtwSections,),
 
               /// title and subtitle

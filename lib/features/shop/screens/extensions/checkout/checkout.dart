@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
+import 'package:qwibix/common/widgets/success_screen/success_screen.dart';
 import 'package:qwibix/features/shop/screens/extensions/cart/widget/cart_items.dart';
+import 'package:qwibix/navigation_menu.dart';
 import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
@@ -57,7 +61,7 @@ BRoundedContainer(
 
       // Payment Mehtod
       BillingPaymentSection(), 
-
+ SizedBox(height: BSizes.spaceBtwItems,), 
       // Address. 
       BillingAddressSection(), 
     ],
@@ -67,7 +71,22 @@ BRoundedContainer(
             // Total.
           ],
         ),),
-      )
+      ), 
+    bottomNavigationBar: Padding(
+     padding: const EdgeInsets.all(BSizes.defaultSpace),
+     child: ElevatedButton(
+      
+      onPressed: () => Get.to(() =>  SuccessScreen(
+
+image: BImages.successfulPaymentIcon, 
+title: 'Payment Successful',
+subTitle: 'Your order will be shipped soon', 
+onPressed: () => Get.offAll(() => const NavigationMenu()), 
+
+
+      )),
+       child: const Text('Pay  \$256.00')),
+   ),
     );
   }
 }
