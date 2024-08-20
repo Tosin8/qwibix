@@ -6,6 +6,7 @@ import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
+import 'widgets/billing_payment_section.dart';
 import 'widgets/coupon_field.dart';
 
 class CheckoutScreen extends StatelessWidget {
@@ -36,12 +37,21 @@ const SizedBox(height: BSizes.spaceBtwSections,),
 BRoundedContainer(
   showBorder: true, 
   backgroundColor: dark ? BColors.black : BColors.white,
+   padding: const EdgeInsets.only(
+        top: BSizes.sm,
+         bottom: BSizes.sm, 
+         right: BSizes.sm, 
+         left: BSizes.md),
   child: const Column(
     children: [
 
       // Pricing
+      BillingPaymentSection(), 
+      SizedBox(height: BSizes.spaceBtwItems,), 
 
       // divider 
+      Divider(), 
+      SizedBox(height: BSizes.spaceBtwItems,), 
 
       // Payment Mehtod
 
