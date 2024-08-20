@@ -6,6 +6,8 @@ import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
+import 'widgets/coupon_field.dart';
+
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({super.key});
 
@@ -16,7 +18,7 @@ class CheckoutScreen extends StatelessWidget {
       appBar: BAppBar(
         showBackArrow: true, title: Text('Order Review', style: Theme.of(context).textTheme.headlineSmall,)
       ),
-      body: SingleChildScrollView(
+      body:  SingleChildScrollView(
         child: Padding(padding: 
         const EdgeInsets.all(BSizes.defaultSpace),
         child: Column(
@@ -27,37 +29,27 @@ const CartItems(showAddRemoveButtons: false),
 const SizedBox(height: BSizes.spaceBtwSections,), 
 
 // Coupon Textfield. 
+const CouponField(), 
+const SizedBox(height: BSizes.spaceBtwSections,), 
+
+// Billing Section. 
 BRoundedContainer(
   showBorder: true, 
-  backgroundColor: dark ? BColors.dark : BColors.white,
-  padding: const EdgeInsets.only(
-    top: BSizes.sm,
-     bottom: BSizes.sm, 
-     right: BSizes.sm, 
-     left: BSizes.md),
-     child: Row(
-      children: [
+  backgroundColor: dark ? BColors.black : BColors.white,
+  child: const Column(
+    children: [
 
-        // TextField 
-        Flexible(child: TextFormField(
-          decoration: const InputDecoration(
-            hintText: 'Enter coupon code', 
-            border: InputBorder.none,
-            focusedBorder: InputBorder.none, 
-            enabledBorder: InputBorder.none, 
-            errorBorder: InputBorder.none,
-            disabledBorder: InputBorder.none, 
-          ),
-        )), 
+      // Pricing
 
-        // Apply Button.
-        SizedBox(
-          width: 80,
-          child: ElevatedButton(onPressed: (){}, child: const Text('Apply')))
-      ],
-     ),
-), 
-const SizedBox(height: BSizes.spaceBtwSections,), 
+      // divider 
+
+      // Payment Mehtod
+
+      // Address. 
+    ],
+  ),
+)
+
             // Total.
           ],
         ),),
