@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:qwibix/common/widgets/products/cart/cart_menu_icons.dart';
+import 'package:qwibix/features/shop/cart/cart.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/text_strings.dart';
 
@@ -25,12 +27,10 @@ class BHomeAppBar extends StatelessWidget {
            
         ],
       ), 
-      actions:  [
+      actions:  const [
         BCartCounterIcon(
-          onPressed: () {
-            
-          },
-          iconColor: BColors.white,
+        
+         
         )
       ],
     );
