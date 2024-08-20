@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/features/shop/screens/home/product_details/widget/add2cartlayer.dart';
 import 'package:qwibix/features/shop/screens/home/product_details/widget/product_attribute.dart';
 import 'package:qwibix/features/shop/screens/home/product_details/widget/product_meta_data.dart';
+import 'package:qwibix/features/shop/screens/home/product_reviews/product_reviews.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 import 'package:readmore/readmore.dart';
@@ -70,7 +73,10 @@ trimLines: 2, trimMode: TrimMode.Line,  trimCollapsedText: ' Show more ', trimEx
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                        const BSectionHeading(title: 'Reviews(199)' , showActionButton: false,), 
-                       IconButton(onPressed: (){}, icon: const Icon(Iconsax.arrow_right_3, size: 18)),
+                       IconButton(
+                        onPressed: () => Get.to(() => const ProductReviewsScreen()),
+                        
+                         icon: const Icon(Iconsax.arrow_right_3, size: 18)),
                     ],
                   ), 
                  
