@@ -31,7 +31,31 @@ BRoundedContainer(
   showBorder: true, 
   backgroundColor: dark ? BColors.dark : BColors.white,
   padding: const EdgeInsets.only(
-    top: BSizes.sm, bottom: BSizes.sm, right: BSizes.sm, left: BSizes.sm),
+    top: BSizes.sm,
+     bottom: BSizes.sm, 
+     right: BSizes.sm, 
+     left: BSizes.md),
+     child: Row(
+      children: [
+
+        // TextField 
+        Flexible(child: TextFormField(
+          decoration: const InputDecoration(
+            hintText: 'Enter coupon code', 
+            border: InputBorder.none,
+            focusedBorder: InputBorder.none, 
+            enabledBorder: InputBorder.none, 
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none, 
+          ),
+        )), 
+
+        // Apply Button.
+        SizedBox(
+          width: 80,
+          child: ElevatedButton(onPressed: (){}, child: const Text('Apply')))
+      ],
+     ),
 ), 
 const SizedBox(height: BSizes.spaceBtwSections,), 
             // Total.
