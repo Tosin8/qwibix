@@ -14,6 +14,7 @@ final bool selectedAddress;
 
     final dark = BHelperFunctions.isDarkMode(context);
     return BRoundedContainer(
+      padding: const EdgeInsets.all(BSizes.md), 
   width: double.infinity, 
   showBorder: true, 
   borderColor: selectedAddress ?
@@ -34,11 +35,21 @@ final bool selectedAddress;
         ),
       ) , 
        Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-Text('2312 Timmy Cavas, South Lians, Maine, 87222, USA', 
-maxLines: 2, 
-overflow: TextOverflow.ellipsis, 
-style: Theme.of(context).textTheme.titleLarge,), 
+           Text('John Doe', 
+          maxLines: 1, 
+          overflow: TextOverflow.ellipsis, 
+          style: Theme.of(context).textTheme.titleLarge,
+          ), 
+          const SizedBox(height: BSizes.sm /2), 
+          const Text('(+1) 123 456 7890', maxLines: 1, overflow: TextOverflow.ellipsis,), 
+          const SizedBox(height: BSizes.sm /2), 
+
+const Text('2312 Timmy Cavas, South Lians, Maine, 87222, USA', 
+
+softWrap: true,
+), 
 const SizedBox(height: BSizes.sm /2,), 
 
         ],
