@@ -28,15 +28,19 @@ class ProductReviewsScreen extends StatelessWidget {
 Row(
   children: [
     Expanded(
+      flex: 3, 
       child: Text('4.8', style: Theme.of(context).textTheme.displayLarge,)),
     Expanded(
+      flex: 7,
       child: Column(
         children: [
           Row(
             children: [
-              Text('5', style: Theme.of(context).textTheme.bodyMedium,), 
+              Expanded(
+                flex: 1,
+                 child: Text('5', style: Theme.of(context).textTheme.bodyMedium,)), 
                Expanded( 
-                
+                flex: 11,
                  child: SizedBox(
                   width: BDeviceUtils.getScreenWidth(context) * 0.5,
                    child: LinearProgressIndicator(
