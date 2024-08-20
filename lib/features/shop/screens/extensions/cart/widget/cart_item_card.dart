@@ -7,10 +7,10 @@ import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
-import '../../../../utils/constants/colors.dart';
+import '../../../../../../utils/constants/colors.dart';
 
-class CartItem extends StatelessWidget {
-  const CartItem({
+class CartItemCard extends StatelessWidget {
+  const CartItemCard({
     super.key,
   });
 

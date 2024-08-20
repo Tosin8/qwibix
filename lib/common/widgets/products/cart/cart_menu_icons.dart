@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import 'package:qwibix/features/shop/cart/cart.dart';
+import 'package:qwibix/features/shop/screens/extensions/cart/cart.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 import '../../../../utils/constants/colors.dart';
