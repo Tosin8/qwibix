@@ -56,7 +56,7 @@ class BillingPaymentSection extends StatelessWidget {
             Text('Order Total', style: Theme.of(context).textTheme.bodyMedium
             
             ),
-            Text('\$ 6.0', style: Theme.of(context).textTheme.bodyMedium
+            Text('\$ 6.0', style: Theme.of(context).textTheme.titleLarge
             
             ),
             ],
