@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
+import 'package:qwibix/features/shop/screens/home/product_reviews/widgets/user_review_card.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
 import 'widgets/overall_product_rating.dart';
@@ -34,6 +35,9 @@ Text('12,611', style: Theme.of(context).textTheme.bodySmall,),
 const SizedBox(height: BSizes.spaceBtwSections,), 
 
 // User Reviews List. 
+const UserReviewCard(), 
+const UserReviewCard(), 
+const UserReviewCard(), const UserReviewCard(), 
 
           ],
         ),
