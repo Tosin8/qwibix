@@ -7,6 +7,7 @@ import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 import 'widgets/billing_address_section.dart';
+import 'widgets/billing_amount_section.dart';
 import 'widgets/billing_payment_section.dart';
 import 'widgets/coupon_field.dart';
 
@@ -47,7 +48,7 @@ BRoundedContainer(
     children: [
 
       // Pricing
-      BillingPaymentSection(), 
+      BillingAmountSection(), 
       SizedBox(height: BSizes.spaceBtwItems,), 
 
       // divider 
@@ -55,9 +56,10 @@ BRoundedContainer(
       SizedBox(height: BSizes.spaceBtwItems,), 
 
       // Payment Mehtod
-      BillingAddressSection(), 
+      BillingPaymentSection(), 
 
       // Address. 
+      BillingAddressSection(), 
     ],
   ),
 )

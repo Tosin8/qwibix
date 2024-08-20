@@ -1,66 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/constants/image_strings.dart';
+import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 class BillingPaymentSection extends StatelessWidget {
   const BillingPaymentSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    final dark = BHelperFunctions.isDarkMode(context);
+    return Column(
       children: [
-
-        // SubTotal. 
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('Subtotal', style: Theme.of(context).textTheme.bodyMedium
-            
-            ),
-            Text('\$ 269.0', style: Theme.of(context).textTheme.bodyMedium
-            
-            ),
-            ],
-        ), 
+        BSectionHeading(title: 'Payment Method', buttonTitle: 'Change', onPressed: () {
+          
+        },), 
         const SizedBox(height: BSizes.spaceBtwItems / 2,), 
-
-        // Shipping fee. 
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Shipping Fee', style: Theme.of(context).textTheme.bodyMedium
-            
-            ),
-            Text('\$ 6.0', style: Theme.of(context).textTheme.bodyMedium
-            
-            ),
-            ],
-        ), 
-        const SizedBox(height: BSizes.spaceBtwItems / 2,), 
-         // Tax
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('Tax Fee', style: Theme.of(context).textTheme.bodyMedium
-            
-            ),
-            Text('\$ 6.0', style: Theme.of(context).textTheme.bodyMedium
-            
-            ),
-            ],
-        ),
-        const SizedBox(height: BSizes.spaceBtwItems / 2,), 
-         // Order Total.  
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('Order Total', style: Theme.of(context).textTheme.bodyMedium
-            
-            ),
-            Text('\$ 6.0', style: Theme.of(context).textTheme.titleLarge
-            
-            ),
-            ],
-        ),
+            BRoundedContainer(
+              width: 60, height: 35, backgroundColor: dark ? BColors.light: BColors.white,
+              padding: const EdgeInsets.all(BSizes.sm),
+              child: const Image(image: AssetImage(BImages.paypal,), fit: BoxFit.contain,),
+            ), 
+            const SizedBox(width: BSizes.spaceBtwItems / 2,), 
+            Text('Paypal', style: Theme.of(context).textTheme.bodyLarge), 
+          ],
+        )
       ],
     );
   }
