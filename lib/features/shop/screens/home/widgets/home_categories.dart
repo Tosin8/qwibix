@@ -6,11 +6,8 @@ import 'package:get/get.dart';
 
 import 'package:qwibix/common/widgets/image_text_widgets/vertical_image_text.dart';
 import 'package:qwibix/common/widgets/shimmers/category_shimmer.dart';
-import 'package:qwibix/common/widgets/shimmers/shimmer.dart';
 import 'package:qwibix/features/shop/controllers/category_controller.dart';
 import 'package:qwibix/features/shop/screens/extensions/sub_category/sub_category.dart';
-import 'package:qwibix/utils/constants/image_strings.dart';
-import 'package:qwibix/utils/constants/sizes.dart';
 
 class BHomeCategories extends StatelessWidget {
   const BHomeCategories({
