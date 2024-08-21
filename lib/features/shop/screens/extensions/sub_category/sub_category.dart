@@ -23,7 +23,7 @@ class SubCategoriesScreen extends StatelessWidget {
                 // banner. 
                 const BRoundedImage(
 width: double.infinity, 
-imageUrl: BImages.banner5,
+imageUrl: BImages.banner3, 
 applyImageRadius: true,
                 ), 
                 const SizedBox(height: BSizes.spaceBtwSections,), 
