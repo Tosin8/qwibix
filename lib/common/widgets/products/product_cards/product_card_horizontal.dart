@@ -23,9 +23,9 @@ class BProductCardHorizontal extends StatelessWidget {
         width: 310, 
         padding: const EdgeInsets.all(1), 
         decoration: BoxDecoration(
-          boxShadow: [BShadowStyle.verticalProductShadow], 
+    
           borderRadius: BorderRadius.circular(BSizes.productImageRadius),
-          color: dark ? BColors.darkerGrey : BColors.white, 
+          color: dark ? BColors.darkerGrey : BColors.lightContainer, 
         ),
         child:  Row(
           children: [
@@ -67,13 +67,13 @@ class BProductCardHorizontal extends StatelessWidget {
             ), 
 
             // Details. 
-            const SizedBox(
+            SizedBox(
               width: 172,
               child: Padding(
-                padding: EdgeInsets.only(top: BSizes.sm, left: BSizes.sm),
+                padding: const EdgeInsets.only(top: BSizes.sm, left: BSizes.sm),
                 child: Column(
                   children: [
-                    Column(
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         BProductTitleText(title: 'Green Nike Half Sleeves Shirt', 
@@ -84,8 +84,27 @@ class BProductCardHorizontal extends StatelessWidget {
                     ), 
                 
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        BProductPriceText(price: '175'),
+
+                        // pricing. 
+                        const BProductPriceText(price: '175'),
+
+                        // add to cart
+                        Container (
+                          decoration: const BoxDecoration(
+                            color: BColors.dark, 
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(BSizes.cardRadiusMd), 
+                              bottomRight: Radius.circular(BSizes.productImageRadius), 
+                            )
+                          ),
+                          child: const SizedBox(
+                            width: BSizes.iconLg * 1.2, 
+                            height: BSizes.iconLg * 1.2, 
+                            child: Center(child: Icon(Iconsax.add, color: BColors.white,),)
+                          )
+                        )
                       ],
                     )
                   ],

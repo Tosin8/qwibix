@@ -39,7 +39,16 @@ applyImageRadius: true,
                       
                     },), 
                     const SizedBox(height: BSizes.spaceBtwItems/2,), 
-                    const BProductCardHorizontal(), 
+                    SizedBox(
+                      height: 120,
+                      child: ListView.separated( 
+                        separatorBuilder: (context, index) => const SizedBox(width: BSizes.spaceBtwItems,),
+                        itemCount: 4, 
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) => 
+                        
+                        const BProductCardHorizontal()),
+                    ), 
                   ],
                 )
               ],
