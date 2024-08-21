@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/images/b_rounded_image.dart';
+import 'package:qwibix/common/widgets/products/product_cards/product_card_horizontal.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
@@ -38,6 +39,7 @@ applyImageRadius: true,
                       
                     },), 
                     const SizedBox(height: BSizes.spaceBtwItems/2,), 
+                    const BProductCardHorizontal(), 
                   ],
                 )
               ],

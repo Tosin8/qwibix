@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:qwibix/common/styles/shadows.dart';
+import 'package:qwibix/common/widgets/images/b_rounded_image.dart';
 import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
@@ -28,6 +30,16 @@ class BProductCardHorizontal extends StatelessWidget {
               height: 120, 
               padding: const EdgeInsets.all(BSizes.sm), 
               backgroundColor: dark ? BColors.dark : BColors.light,
+              child: const Stack(
+                children: [
+
+                  // thumbnail image
+                  SizedBox(
+                    height: 120,
+                    width: 120,
+                    child: BRoundedImage(imageUrl: BImages.productImage1, applyImageRadius: true,)), 
+                ],
+              ),
             )
           ],
         ),
