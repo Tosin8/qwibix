@@ -7,6 +7,7 @@ import 'package:qwibix/common/widgets/appbar/tabbar.dart';
 import 'package:qwibix/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
 import 'package:qwibix/common/widgets/products/cart/cart_menu_icons.dart';
+import 'package:qwibix/common/widgets/products/product_cards/brand_card.dart';
 import 'package:qwibix/common/widgets/products/product_cards/brandpartners.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/features/shop/screens/extensions/brands/all_brand.dart';

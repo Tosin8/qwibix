@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
+import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
+import 'package:qwibix/common/widgets/products/product_cards/brand_card.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
@@ -8,18 +10,23 @@ class AllBrandsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold( 
-      appBar: BAppBar(title: Text('All Brands'), 
+    return Scaffold( 
+      appBar: const BAppBar(title: Text('All Brands'), 
       showBackArrow: true,
       ),
       body: SingleChildScrollView(
-        child: Padding(padding: EdgeInsets.all(BSizes.defaultSpace), 
+        child: Padding(padding: const EdgeInsets.all(BSizes.defaultSpace), 
         child: Column(
           children: [
 
             // Heading
-            BSectionHeading(title: 'Brands', showActionButton: false,),
-            SizedBox(height: BSizes.spaceBtwItems), 
+            const BSectionHeading(title: 'Brands', showActionButton: false,),
+            const SizedBox(height: BSizes.spaceBtwItems), 
+
+            // Bramds
+            GridLayout(itemCount: 6, mainAxisExtent: 80,
+            
+             itemBuilder: (_, index) => const BrandCard(showBorder: true,),)
           ],
         ),
         ), 

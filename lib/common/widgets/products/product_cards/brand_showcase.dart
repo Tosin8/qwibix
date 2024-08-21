@@ -6,6 +6,7 @@ import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
+import 'brand_card.dart';
 import 'brandpartners.dart';
 
 class BrandShowCase extends StatelessWidget {
