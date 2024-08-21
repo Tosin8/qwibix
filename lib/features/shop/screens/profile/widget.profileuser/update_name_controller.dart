@@ -9,6 +9,8 @@ import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/http/network_manager.dart';
 import 'package:qwibix/utils/popups/full_screen_loader.dart';
 
+import 'profile_user_screen.dart';
+
 class UpdateNameController extends GetxController{
 static UpdateNameController get instance => Get.find();
 
@@ -70,7 +72,7 @@ Future<void> updateUserName() async {
      BLoaders.successSnackBar(title: 'Congratulations', message: 'Your Name has been updated'); 
 
      // move to previous screen
-     Get.off(() => const ProfileScreen());
+     Get.offAll(() => const ProfileUserScreen());
   } catch (e) {
     BFullScreenLoader.stopLoading();
     BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
