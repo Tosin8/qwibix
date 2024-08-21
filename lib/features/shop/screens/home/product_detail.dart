@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/features/shop/screens/extensions/checkout/checkout.dart';
 import 'package:qwibix/features/shop/screens/home/product_details/widget/add2cartlayer.dart';
 import 'package:qwibix/features/shop/screens/home/product_details/widget/product_attribute.dart';
 import 'package:qwibix/features/shop/screens/home/product_details/widget/product_meta_data.dart';
@@ -50,7 +51,7 @@ class ProductDetail extends StatelessWidget {
                   // CHECKOUT BUTTON
                   SizedBox(
                     width: double.infinity,
-                    child: ElevatedButton(onPressed: (){},
+                    child: ElevatedButton(onPressed: () => Get.to(() => const CheckoutScreen()),
                      child: 
                      const Text('Checkout',)),
                   ),
