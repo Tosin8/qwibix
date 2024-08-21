@@ -18,7 +18,12 @@ final VoidCallback onPressed;
   Widget build(BuildContext context) {
     final controller = UserController.instance; 
     return ListTile(
-     leading: const BCircularImage(image: BImages.user, width: 50, height: 50,padding: 0,), 
+     leading:  BCircularImage(
+      
+      //image: BImages.user,
+      image: controller.user.value.profilePicture,
+     
+      width: 50, height: 50,padding: 0,), 
      title: Text(controller.user.value.fullName,
       style: Theme.of(context).textTheme.headlineSmall!.apply(color: BColors.white),
       ),

@@ -74,7 +74,7 @@ class ProfileScreen extends StatelessWidget {
                     // logout button.
                     const SizedBox(height: BSizes.spaceBtwSections,), 
                     SizedBox(width: double.infinity,
-                    child: OutlinedButton(onPressed: () => Get.to(()=> AuthenticationRepository.instance.logout), child: const Text('Logout'),), 
+                    child: OutlinedButton(onPressed: () => AuthenticationRepository.instance.logout(), child: const Text('Logout'),), 
                     ), 
                 ],
               ),)

@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:qwibix/common/widgets/loaders/loaders.dart';
 import 'package:qwibix/data/repositories/user/user_repository.dart';
 import 'package:qwibix/features/personalization/controllers/user_controller.dart';
-import 'package:qwibix/features/shop/screens/profile/profile.dart';
 import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/http/network_manager.dart';
 import 'package:qwibix/utils/popups/full_screen_loader.dart';
@@ -72,7 +71,7 @@ Future<void> updateUserName() async {
      BLoaders.successSnackBar(title: 'Congratulations', message: 'Your Name has been updated'); 
 
      // move to previous screen
-     Get.offAll(() => const ProfileUserScreen());
+     Get.off(() => const ProfileUserScreen());
   } catch (e) {
     BFullScreenLoader.stopLoading();
     BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());

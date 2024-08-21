@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/images/b_brand_image.dart';
+import 'package:qwibix/common/widgets/shimmer.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/features/personalization/controllers/user_controller.dart';
 import 'package:qwibix/features/shop/screens/profile/change_name.dart';
@@ -15,57 +16,119 @@ class ProfileUserScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = UserController.instance; 
-    return  Scaffold( 
-      appBar: const BAppBar(showBackArrow: true, title: Text('Profile'),),
+    final controller = UserController.instance;
+    return Scaffold(
+        appBar: const BAppBar(
+          showBackArrow: true,
+          title: Text('Profile'),
+        ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(BSizes.defaultSpace),
+            child: Column(
+              children: [
+                // Profile Picture.
+                SizedBox(
+                  width: double.infinity,
+                  child: Column(
+                    children: [
+                       Obx(() {
+                        final networkImage = controller.user.value.profilePicture;
+                        final image = networkImage.isNotEmpty ? networkImage : BImages.user;  
+                      
+                         return controller.imageUploading.value ? const TShimmerEffect(width: 80, height: 80) :
+                         
+                         BCircularImage(
+                            image: image, 
+                            width: 80,
+                            height: 80, isNetWorkImage: networkImage.isNotEmpty,
+                          ); 
+                          }),
+                      TextButton(
+                          onPressed: () =>
+                              controller.uploadUserProfilePicture(),
+                          child: const Text('Change Profile Picture'))
+                    ],
+                  ),
+                ),
 
-      body: SingleChildScrollView(
-        child: Padding(padding: const EdgeInsets.all(BSizes.defaultSpace), 
-        child: Column(
-          children: [
+                // Details
+                const SizedBox(
+                  height: BSizes.spaceBtwItems / 2,
+                ),
+                const Divider(),
+                const SizedBox(
+                  height: BSizes.spaceBtwItems,
+                ),
 
-            // Profile Picture. 
-            SizedBox(
-              width: double.infinity,
-              child: Column(
-                children: [
-                  const BCircularImage(image: BImages.user, width: 80, height: 80,),
-                  TextButton(onPressed: (){}, child: const Text('Change Profile Picture'))
-                ],
-              ),
-            ), 
+                // heading profile info
+                const BSectionHeading(
+                  title: 'Profile Information',
+                  showActionButton: false,
+                ),
+                const SizedBox(
+                  height: BSizes.spaceBtwItems,
+                ),
 
-            // Details 
-            const SizedBox(height: BSizes.spaceBtwItems/ 2,), 
-            const Divider(), 
-            const SizedBox(height: BSizes.spaceBtwItems,), 
+                Userprofilemenu(
+                  title: 'Name',
+                  value: controller.user.value.fullName,
+                  onPressed: () => Get.to(() => const ChangeName()),
+                ),
+                Userprofilemenu(
+                  title: 'Username',
+                  value: controller.user.value.username,
+                  onPressed: () {},
+                ),
+                const SizedBox(
+                  height: BSizes.spaceBtwItems,
+                ),
+                const Divider(),
+                const SizedBox(
+                  height: BSizes.spaceBtwItems,
+                ),
+                const BSectionHeading(
+                  title: 'Personal Information',
+                  showActionButton: false,
+                ),
+                const SizedBox(
+                  height: BSizes.spaceBtwItems,
+                ),
+                Userprofilemenu(
+                  title: 'User ID',
+                  value: controller.user.value.id,
+                  onPressed: () {},
+                  icon: Iconsax.copy,
+                ),
+                Userprofilemenu(
+                  title: 'E-mail',
+                  value: controller.user.value.email,
+                  onPressed: () {},
+                ),
+                Userprofilemenu(
+                  title: 'Phone Number',
+                  value: controller.user.value.phoneNumber,
+                  onPressed: () {},
+                ),
 
-            // heading profile info
-            const BSectionHeading(title: 'Profile Information', showActionButton: false,), 
-            const SizedBox(height: BSizes.spaceBtwItems,), 
-
-           Userprofilemenu(  title: 'Name', value: controller.user.value.fullName, onPressed: () => Get.to(()=> const ChangeName()),), 
-           Userprofilemenu(  title: 'Username', value: controller.user.value.username, onPressed: () {  }, ), 
-            const SizedBox(height: BSizes.spaceBtwItems,), 
-              const Divider(), 
-              const SizedBox(height: BSizes.spaceBtwItems,), 
-                 const BSectionHeading(title: 'Personal Information', showActionButton: false,),
-                  const SizedBox(height: BSizes.spaceBtwItems,), 
-                   Userprofilemenu(  title: 'User ID', value: controller.user.value.id, onPressed: () {  }, icon: Iconsax.copy,), 
-           Userprofilemenu(  title: 'E-mail', value: controller.user.value.email, onPressed: () {  },), 
-           Userprofilemenu(  title: 'Phone Number', value: controller.user.value.phoneNumber, onPressed: () {  },), 
-
-           const SizedBox(height: BSizes.spaceBtwItems,), 
-            const Divider(), 
-              const SizedBox(height: BSizes.spaceBtwItems,), 
-           Center(
-            child: TextButton(onPressed: (){}, child: const Text('Close Account', style: TextStyle(color: Colors.red),)),
-           )
-           
-           
-          ],
-        ),),
-      )
-    );
+                const SizedBox(
+                  height: BSizes.spaceBtwItems,
+                ),
+                const Divider(),
+                const SizedBox(
+                  height: BSizes.spaceBtwItems,
+                ),
+                Center(
+                  child: TextButton(
+                      onPressed: () => controller.deleteAccountWarningPopup(),
+                      child: const Text(
+                        'Close Account',
+                        style: TextStyle(color: Colors.red),
+                      )),
+                )
+              ],
+            ),
+          ),
+        ));
   }
 }
