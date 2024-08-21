@@ -46,13 +46,23 @@ class BHomeCategories extends StatelessWidget {
     // ONLINE CODE. = TO BACKEND FIRESTORE. 
     return Obx(() {
       if(categoryController.isLoading.value) return const CategoryShimmer(); 
+      if(categoryController.featuredCategories.isEmpty){
+        return Center(
+          child: Text('No Data Found', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white),),
+        );
+      }
        return  SizedBox(
         height: 80, 
         child: ListView.builder(shrinkWrap: true, 
-        itemCount: 6, 
+        itemCount: categoryController.featuredCategories.length, 
         scrollDirection: Axis.horizontal, 
-        itemBuilder: (context, index) {
-          return null;
+        itemBuilder: (_, index) {
+          final category = categoryController.featuredCategories[index];
+          return  BVerticalImageText(
+            title: category.name, 
+            image: category.image,
+            onTap: () => Get.to(() => const SubCategoriesScreen()),
+            ); 
         
           
         },),
