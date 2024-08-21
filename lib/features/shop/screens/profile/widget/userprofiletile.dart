@@ -19,10 +19,10 @@ final VoidCallback onPressed;
     final controller = UserController.instance; 
     return ListTile(
      leading: const BCircularImage(image: BImages.user, width: 50, height: 50,padding: 0,), 
-     title: Text('John Doe',
+     title: Text(controller.user.value.fullName,
       style: Theme.of(context).textTheme.headlineSmall!.apply(color: BColors.white),
       ),
-     subtitle:  Text('johndoe@gmail.com', 
+     subtitle:  Text(controller.user.value.email, 
      style: Theme.of(context).textTheme.bodyMedium!.apply(color: BColors.white), 
      
      
