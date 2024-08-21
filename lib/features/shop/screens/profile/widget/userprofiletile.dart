@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/widgets/images/b_brand_image.dart';
+import 'package:qwibix/features/personalization/controllers/user_controller.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 
 import '../../../../../utils/constants/image_strings.dart';
@@ -15,6 +16,7 @@ class UserProfileTile extends StatelessWidget {
 final VoidCallback onPressed; 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance; 
     return ListTile(
      leading: const BCircularImage(image: BImages.user, width: 50, height: 50,padding: 0,), 
      title: Text('John Doe',
