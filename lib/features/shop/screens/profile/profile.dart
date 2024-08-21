@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/data/repositories/authentication/authentication_repository.dart';
 import 'package:qwibix/features/shop/screens/profile/screen_tile/address/my_address.dart';
 import 'package:qwibix/features/shop/screens/profile/widget.profileuser/profile_user_screen.dart';
 import 'package:qwibix/features/shop/screens/profile/widget/menuTitles.dart';
@@ -73,7 +74,7 @@ class ProfileScreen extends StatelessWidget {
                     // logout button.
                     const SizedBox(height: BSizes.spaceBtwSections,), 
                     SizedBox(width: double.infinity,
-                    child: OutlinedButton(onPressed: (){}, child: const Text('Logout'),), 
+                    child: OutlinedButton(onPressed: () => Get.to(()=> AuthenticationRepository.instance.logout), child: const Text('Logout'),), 
                     ), 
                 ],
               ),)
