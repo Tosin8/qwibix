@@ -1,7 +1,10 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:qwibix/common/widgets/image_text_widgets/vertical_image_text.dart';
+import 'package:qwibix/features/shop/screens/extensions/sub_category/sub_category.dart';
+import 'package:qwibix/utils/constants/image_strings.dart';
 
 class BHomeCategories extends StatelessWidget {
   const BHomeCategories({
@@ -18,10 +21,8 @@ class BHomeCategories extends StatelessWidget {
         scrollDirection: Axis.horizontal,
       
       itemBuilder: (_, index) {
-        return  BVerticalImageText(title: 'Shoes', image: '',
-        onTap: () {
-          
-        },
+        return  BVerticalImageText(title: 'Shoes', image: BImages.shoeIcon, 
+        onTap: ()  => Get.to ( () => const SubCategoriesScreen(),),
                 ); 
         
       },
