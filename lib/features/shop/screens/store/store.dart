@@ -65,8 +65,11 @@ class Store extends StatelessWidget {
                     GridLayout(itemCount: 4,
                     mainAxisExtent: 80,
                      itemBuilder: (_, index) {
-                       return  const BrandCard(
+                       return   BrandCard(
                         showBorder: true,
+                        onTap: () {
+                          
+                        },
                        );
                      })
                   ],
