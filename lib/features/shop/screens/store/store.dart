@@ -9,6 +9,7 @@ import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
 import 'package:qwibix/common/widgets/products/cart/cart_menu_icons.dart';
 import 'package:qwibix/common/widgets/products/product_cards/brand_card.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/features/shop/controllers/category_controller.dart';
 import 'package:qwibix/features/shop/screens/extensions/brands/all_brand.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
@@ -21,9 +22,12 @@ class Store extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categories = CategoryController.instance.featuredCategories; 
+
     return SafeArea(
       child: DefaultTabController(
-        length: 5,
+        //length: 5,
+        length: categories.length, 
         child: Scaffold(
         appBar: BAppBar(
           title: Text('Store', style: Theme.of(context).textTheme.headlineMedium,),
@@ -74,25 +78,30 @@ class Store extends StatelessWidget {
                   ],
                 ),
                 ),
-                bottom: const BTappBar(
-                  tabs: [
-                    Tab(child: Text('Sports')), 
-                       Tab(child: Text('Furniture')),   
-                        Tab(child: Text('Electronics')),   
-                         Tab(child: Text('Clothes')),  
-                           Tab(child: Text('Cosmetics')), 
-                  ]), 
+                bottom:  BTappBar(
+                  tabs:
+                  //  [
+                  //   Tab(child: Text('Sports')), 
+                  //      Tab(child: Text('Furniture')),   
+                  //       Tab(child: Text('Electronics')),   
+                  //        Tab(child: Text('Clothes')),  
+                  //          Tab(child: Text('Cosmetics')), 
+                  // ]
+                  categories.map((category) => Tab(child: Text(category.name))).toList()
+                  ), 
                 
                 
                 
               )
             ]; 
-          }, body: const TabBarView(
-            children: [
-              CategoryTab(),
-                CategoryTab(),  CategoryTab(),  CategoryTab(),  CategoryTab(),
+          }, body: TabBarView(
+            children:// [
+              // CategoryTab(),
+              //   CategoryTab(),  CategoryTab(),  CategoryTab(),  CategoryTab(),
                   
-                ],
+
+               // ],
+               categories.map((category) => CategoryTab(category: category)).toList()
               ),)
             
           ),)

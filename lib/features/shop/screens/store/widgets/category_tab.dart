@@ -1,6 +1,8 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 
 
 import 'package:flutter/material.dart';
+
 import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
 import 'package:qwibix/common/widgets/products/product_cards/brand_showcase.dart';
 import 'package:qwibix/common/widgets/products/product_cards/product_card_vertical.dart';
@@ -8,11 +10,15 @@ import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
+import '../../../models/category_model.dart';
+
 class CategoryTab extends StatelessWidget {
   const CategoryTab({
-    super.key,
-  });
+    Key? key,
+    required this.category,
+  }) : super(key: key);
 
+final CategoryModel category; 
   @override
   Widget build(BuildContext context) {
     return  ListView( 
