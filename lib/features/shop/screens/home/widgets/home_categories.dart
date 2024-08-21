@@ -46,9 +46,16 @@ class BHomeCategories extends StatelessWidget {
     // ONLINE CODE. = TO BACKEND FIRESTORE. 
     return Obx(() {
       if(categoryController.isLoading.value) return const CategoryShimmer(); 
-       return const SizedBox(
+       return  SizedBox(
         height: 80, 
-        child: ,
+        child: ListView.builder(shrinkWrap: true, 
+        itemCount: 6, 
+        scrollDirection: Axis.horizontal, 
+        itemBuilder: (context, index) {
+          return null;
+        
+          
+        },),
       ); 
     });
   }
