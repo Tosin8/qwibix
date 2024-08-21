@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
@@ -19,6 +20,9 @@ class AllProducts extends StatelessWidget {
 
             // drop down
             DropdownButtonFormField(
+              decoration: const InputDecoration(
+                prefixIcon: Icon(Iconsax.sort), 
+              ),
               items: const [], 
               onChanged: (value) {},
             )
