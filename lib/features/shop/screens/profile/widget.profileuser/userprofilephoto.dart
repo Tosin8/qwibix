@@ -2,7 +2,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qwibix/common/widgets/shimmer.dart';
+import 'package:qwibix/common/widgets/shimmers/shimmer.dart';
 import 'package:qwibix/features/personalization/controllers/user_controller.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 

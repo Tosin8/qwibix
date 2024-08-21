@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/images/b_brand_image.dart';
-import 'package:qwibix/common/widgets/shimmer.dart';
+import 'package:qwibix/common/widgets/shimmers/shimmer.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/features/personalization/controllers/user_controller.dart';
 import 'package:qwibix/features/shop/screens/profile/change_name.dart';

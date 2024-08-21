@@ -5,7 +5,7 @@ import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
-import '../shimmer.dart';
+import '../shimmers/shimmer.dart';
 
 class BCircularImage extends StatelessWidget {
   const BCircularImage({
