@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/appbar/tabbar.dart';
@@ -8,6 +9,7 @@ import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
 import 'package:qwibix/common/widgets/products/cart/cart_menu_icons.dart';
 import 'package:qwibix/common/widgets/products/product_cards/brandpartners.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/features/shop/screens/extensions/brands/all_brand.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
@@ -54,9 +56,9 @@ class Store extends StatelessWidget {
         
         
                     /// Featured Brands. 
-                    BSectionHeading(title: 'Featured Brands', onPressed: () {
+                    BSectionHeading(title: 'Featured Brands', onPressed: () => Get.to(() => const AllBrandsScreen())
                       
-                    },), 
+                    ,), 
                     const SizedBox(height: BSizes.spaceBtwItems / 1.5,), 
         
                     GridLayout(itemCount: 4,
