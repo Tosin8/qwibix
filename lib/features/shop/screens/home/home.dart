@@ -7,7 +7,6 @@ import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
 import 'package:qwibix/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/utils/constants/colors.dart';
-import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';

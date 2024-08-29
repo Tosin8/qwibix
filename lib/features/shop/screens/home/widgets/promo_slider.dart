@@ -6,10 +6,8 @@ import 'package:carousel_slider_plus/carousel_slider_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:qwibix/common/widgets/images/b_rounded_image.dart';
 import 'package:qwibix/common/widgets/shimmers/shimmer.dart';
 import 'package:qwibix/features/shop/controllers/banner_controller.dart';
-import 'package:qwibix/features/shop/controllers/home_controller.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
