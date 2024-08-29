@@ -68,9 +68,10 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(BSizes.defaultSpace),
                 child: Column(
                   children: [
-                    const BPromoSlider(
-                      banners: [BImages.banner2, BImages.banner4, BImages.banner3]
-                    ),
+                    // const BPromoSlider(
+                    //   banners: [BImages.banner2, BImages.banner4, BImages.banner3]
+                    // ),
+                    const BPromoSlider(), 
 const SizedBox(height: BSizes.spaceBtwSections,), 
 
 // Heading
