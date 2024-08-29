@@ -5,18 +5,18 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class BannerModel {
   String imageUrl;
-  final String targetScreen; 
+  //final String targetScreen; 
   final bool active; 
   BannerModel({
     required this.imageUrl,
-    required this.targetScreen,
+ //   required this.targetScreen,
     required this.active,
   });
 
   Map<String, dynamic> toJson() {
     return {
       'ImageUrl' : imageUrl, 
-      'TargetScreen' : targetScreen, 
+      //'TargetScreen' : targetScreen, 
       'Active': active, 
     }; 
   }
@@ -25,7 +25,7 @@ class BannerModel {
     final data = snapshot.data() as Map<String, dynamic>; 
     return BannerModel(
       imageUrl: data['ImageUrl'] ?? '',
-     targetScreen: data['TargetScreen'] ?? '', 
+   // targetScreen: data['TargetScreen'] ?? '', 
      active: data['Active'] ?? false, 
      ); 
   }
