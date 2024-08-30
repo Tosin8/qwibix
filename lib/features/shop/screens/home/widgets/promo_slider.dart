@@ -45,7 +45,7 @@ class BPromoSlider extends StatelessWidget {
             ,
             //items: controller.banners.map((url) => BRoundedImage(imageUrl: url)).toList(), 
             items: controller.banners.map((banner) => 
-            //BRoundedImage(imageUrl: banner.imageUrl, isNetworkImage: true,)).toList(),
+           // BRoundedImage(imageUrl: banner.imageUrl, isNetworkImage: true,)).toList(),
               CachedNetworkImage(
                 imageUrl: banner.imageUrl,
                 placeholder: (context, url) => const CircularProgressIndicator(),
