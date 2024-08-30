@@ -33,7 +33,7 @@ class BannerRepository extends GetxController {
   
   Future<List<BannerModel>> fetchBanners() async {
   try {
-    final result = await _db.collection('Banners').where('active', isEqualTo: true).get();
+    final result = await _db.collection('Banners').where('Active', isEqualTo: true).get();
     print("Fetched ${result.docs.length} banners"); // Add this line for debugging
     return result.docs.map((documentSnapshot) => BannerModel.fromSnapshot(documentSnapshot)).toList(); 
   } catch (e) {
