@@ -30,6 +30,7 @@ final ProductModel product;
   @override
   Widget build(BuildContext context) {
 final controller = ProductController.instance; 
+final salePercentage = controller.calculateSalePercentage(product.price, product.salePrice);
     final dark = BHelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: () => Get.to(() =>  ProductDetail(product: product,) ), 
@@ -62,7 +63,7 @@ final controller = ProductController.instance;
                       radius: BSizes.sm, 
                       backgroundColor: BColors.secondary.withOpacity(0.8),
                       padding: const EdgeInsets.symmetric(horizontal: BSizes.sm, vertical: BSizes.xs),
-                      child: Text('25%', style: Theme.of(context).textTheme.labelLarge!.apply(color: BColors.black),),
+                      child: Text('$salePercentage%', style: Theme.of(context).textTheme.labelLarge!.apply(color: BColors.black),),
                     ),
                   ), 
       
