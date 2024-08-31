@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:qwibix/common/widgets/loaders/loaders.dart';
 import 'package:qwibix/data/repositories/product/product_repository.dart';
+import 'package:qwibix/utils/constants/enums.dart';
 
 import '../models/product_model.dart';
 
@@ -65,9 +66,20 @@ featuredProducts.assignAll(products);
       return '$smallestPrice - \$$largestPrice';
     }
   }
-}
 
 // calculate discount percentage
-String? calculateSalePercentage(double originalPrice, double? salePrice){
-  return null;
+  String? calculateSalePercentage(double originalPrice, double? salePrice){
+  if(salePrice == null || salePrice <= 0.0)return null;
+  if(originalPrice <= 0) return null;
+
+  double percentage = ((originalPrice - salePrice) / originalPrice) * 100;
+  return percentage.toStringAsFixed(0);
 }
+
+// check product stock status
+String getProductStockStatus(int stock){
+  return stock > 0 ? 'In Stock': 'Out of Stock'; 
+}
+}
+
+
