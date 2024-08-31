@@ -8,6 +8,7 @@ import 'package:qwibix/common/widgets/images/b_rounded_image.dart';
 import 'package:qwibix/common/widgets/texts/b_productPriceText.dart';
 import 'package:qwibix/common/widgets/texts/brandTitleText_withIcon.dart';
 import 'package:qwibix/common/widgets/texts/product_title_text.dart';
+import 'package:qwibix/features/shop/controllers/product_controller.dart';
 import 'package:qwibix/features/shop/models/product_model.dart';
 import 'package:qwibix/features/shop/screens/home/product_detail.dart';
 import 'package:qwibix/utils/constants/circular_icon.dart';
@@ -28,7 +29,7 @@ class BProductCardVertical extends StatelessWidget {
 final ProductModel product; 
   @override
   Widget build(BuildContext context) {
-
+final controller = ProductController.instance; 
     final dark = BHelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: () => Get.to(() =>  ProductDetail(product: product,) ), 
