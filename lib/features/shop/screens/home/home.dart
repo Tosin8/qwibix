@@ -82,10 +82,17 @@ BSectionHeading(
   const SizedBox(height: BSizes.spaceBtwItems,),  
 
                        // Popular Products. 
-                       GridLayout(itemCount: 4, 
+                      //  GridLayout(itemCount: 4, 
+                      //        itemBuilder: (_, index) => const BProductCardVertical(),
+                         
+                      //  ), 
+                      Obx(() {
+                        if(controller.isLoading.valu)
+                        return GridLayout(itemCount: 4, 
                              itemBuilder: (_, index) => const BProductCardVertical(),
                          
-                       ), 
+                       ); 
+                      })
                   ]     
                 ),
 
