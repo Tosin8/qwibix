@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:qwibix/common/widgets/loaders/loaders.dart';
+import 'package:qwibix/data/repositories/product/product_repository.dart';
 
 import '../models/product_model.dart';
 
@@ -24,6 +25,9 @@ isLoading.value = true;
 
 // fetch products 
 final products = await productRepository.getFeaturedProducts(); 
+
+// Assign products
+featuredProducts.assignAll(products); 
     }
     catch(e){
       BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString()); 
