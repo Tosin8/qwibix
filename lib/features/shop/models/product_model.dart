@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'brand_model.dart';
 import 'product_attribute_model.dart';
 import 'product_variation_model.dart';
@@ -42,5 +44,33 @@ class ProductModel {
     this.productVariations,
   });
 
+/// Create empty func for clean code. 
+static ProductModel empty() => ProductModel(id: '',
+ stock: 0, price: 0, title: '', thumbnail: '', productType: '');
 
+ // Json Format
+ toJson() {
+  return {
+'SKU': sku, 
+'Title': title, 
+'Stock': stock, 
+'Price': price, 
+'Images' : images ?? [], 
+'Thumbnail' : thumbnail, 
+'SalePrice': salePrice, 
+'IsFeatured': isFeatured, 
+'CategoryId': categoryId, 
+'Brand': brand!.toJson(), 
+'Description': description, 
+'ProductType': productType, 
+'ProductAttributes': productAttributes != null ? productAttributes!.map((e) => toJson()).toList() : [], 
+'ProductVariations': productVariations != null ? productVariations!.map((e) => toJson()).toList() : [], 
+  };
+ }
+
+ // Map json oriented document snapshot from firebase to Model.
+ factory ProductModel.fromQuerySnapshot(QueryDocumentSnapshot<Object?> document){
+  final data = document.data() as Map<String, dynamic>; 
+  return ProductModel(id: id, stock: stock, price: price, title: title, thumbnail: thumbnail, productType: productType); 
+ }
 }
