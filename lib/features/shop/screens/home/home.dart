@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:qwibix/common/widgets/custom_shapes/containers/search_container.dart';
 import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
 import 'package:qwibix/common/widgets/products/product_cards/product_card_vertical.dart';
+import 'package:qwibix/common/widgets/shimmers/vertical_product_shimmer.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
@@ -87,9 +88,12 @@ BSectionHeading(
                          
                       //  ), 
                       Obx(() {
-                        if(controller.isLoading.valu)
-                        return GridLayout(itemCount: 4, 
-                             itemBuilder: (_, index) => const BProductCardVertical(),
+                        if(controller.isLoading.value) return const VerticalProductShimmer(); 
+                        if(controller.featuredProducts.isEmpty){
+                          return Center(child: Text('No Data Found!', style: Theme.of(context).textTheme.bodyMedium,),);
+                        }
+                        return GridLayout(itemCount: controller.featuredProducts.length, 
+                             itemBuilder: (_, index) => BProductCardVertical(product: controller.featuredProducts[index],),
                          
                        ); 
                       })

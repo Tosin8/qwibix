@@ -1,6 +1,10 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:qwibix/features/shop/models/product_model.dart';
+import 'package:readmore/readmore.dart';
+
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/features/shop/screens/extensions/checkout/checkout.dart';
 import 'package:qwibix/features/shop/screens/home/product_details/widget/add2cartlayer.dart';
@@ -9,14 +13,17 @@ import 'package:qwibix/features/shop/screens/home/product_details/widget/product
 import 'package:qwibix/features/shop/screens/home/product_reviews/product_reviews.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
-import 'package:readmore/readmore.dart';
 
 import 'product_details/widget/product_detail_image_slider.dart';
 import 'product_details/widget/rating_share.dart';
 
 class ProductDetail extends StatelessWidget {
-  const ProductDetail({super.key});
+  const ProductDetail({
+    Key? key,
+    required this.product,
+  }) : super(key: key);
 
+final ProductModel product; 
   @override
   Widget build(BuildContext context) {
     final dark = BHelperFunctions.isDarkMode(context);

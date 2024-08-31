@@ -8,23 +8,30 @@ import 'package:qwibix/common/widgets/images/b_rounded_image.dart';
 import 'package:qwibix/common/widgets/texts/b_productPriceText.dart';
 import 'package:qwibix/common/widgets/texts/brandTitleText_withIcon.dart';
 import 'package:qwibix/common/widgets/texts/product_title_text.dart';
+import 'package:qwibix/features/shop/models/product_model.dart';
 import 'package:qwibix/features/shop/screens/home/product_detail.dart';
 import 'package:qwibix/utils/constants/circular_icon.dart';
 import 'package:qwibix/utils/constants/colors.dart';
+// ignore: unused_import
 import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 class BProductCardVertical extends StatelessWidget {
-  const BProductCardVertical({super.key});
+  const BProductCardVertical({
+    Key? key,
+    required this.product,
+  }) : super(key: key);
 
+// For ONLINE PULL. 
+final ProductModel product; 
   @override
   Widget build(BuildContext context) {
 
     final dark = BHelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () => Get.to(() => const ProductDetail() ), 
+      onTap: () => Get.to(() =>  ProductDetail(product: product,) ), 
       child: Container(
         width: 180, 
         padding: const EdgeInsets.all(1), 
@@ -44,7 +51,8 @@ class BProductCardVertical extends StatelessWidget {
                 children: [
       
                   // thumbnail image
-                  const BRoundedImage(imageUrl: BImages.productImage1, applyImageRadius: true,), 
+                   BRoundedImage(
+                    imageUrl: product.thumbnail, applyImageRadius: true,), 
       
                   // sale tag
                   Positioned( 
@@ -69,13 +77,13 @@ class BProductCardVertical extends StatelessWidget {
             ), 
       const SizedBox(height: BSizes.spaceBtwItems / 2,),
             // details
-             const Padding(padding: EdgeInsets.only(left: BSizes.sm), 
+            Padding(padding: const EdgeInsets.only(left: BSizes.sm), 
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-               BProductTitleText(title: 'Green Nike Air Shoe', smallSize: true,), 
-               SizedBox(height: BSizes.spaceBtwItems / 2,), 
-               BrandTitleVerifyIcon(title: 'Nike',), 
+               BProductTitleText(title: product.title, smallSize: true,), 
+               const SizedBox(height: BSizes.spaceBtwItems / 2,), 
+                BrandTitleVerifyIcon(title: product.brand!.name,), 
             
               ],
             ),), 
