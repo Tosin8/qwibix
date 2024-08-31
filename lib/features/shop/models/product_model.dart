@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:qwibix/features/shop/screens/home/product_details/widget/product_attribute.dart';
 
 import 'brand_model.dart';
 import 'product_attribute_model.dart';
+import 'product_variation_model.dart';
 
 class ProductModel {
   String id; 
