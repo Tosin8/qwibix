@@ -94,9 +94,9 @@ final salePercentage = controller.calculateSalePercentage(product.price, product
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   // price
-                  const Padding(
-                    padding: EdgeInsets.only(left: BSizes.sm),
-                    child: BProductPriceText(price: '25.00',)), 
+                Padding(
+                    padding: const EdgeInsets.only(left: BSizes.sm),
+                    child: BProductPriceText(price: controller.getProductPrice(product),)), 
 
                   // Add to Cart Button. 
                   Container(
