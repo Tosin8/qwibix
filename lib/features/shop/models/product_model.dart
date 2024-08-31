@@ -1,6 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:qwibix/features/shop/screens/home/product_details/widget/product_attribute.dart';
 
+import 'brand_model.dart';
+
 class ProductModel {
   String id; 
   int stock; 
@@ -18,8 +20,8 @@ class ProductModel {
   String productType; 
   List<ProductAttributeModel>? productAttributes; 
   List<ProductVariationModel>? productVariations;
-  
-   
+
+
   ProductModel({
     required this.id,
     required this.stock,
@@ -27,7 +29,7 @@ class ProductModel {
     required this.price,
     required this.title,
     this.date,
-    required this.salePrice,
+    this.salePrice = 0.0,
     required this.thumbnail,
     this.isFeatured,
     this.brand,
