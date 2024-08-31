@@ -1,6 +1,11 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:qwibix/utils/exceptions/firebase_exception.dart';
 import 'package:qwibix/utils/exceptions/firebase_storage_service.dart';
+import 'package:qwibix/utils/exceptions/platform_exception.dart';
 
 import '../../../features/shop/models/product_model.dart';
 
@@ -11,6 +16,20 @@ class ProductRepository  extends GetxController{
   final _db = FirebaseFirestore.instance; 
 
   // get limited featured products
+  Future<List<ProductModel>> getFeaturedProducts() async {
+    try {
+      final snapshot = await _db.collection('Products').where('IsFeatured', isEqualTo: true).limit(4).get();
+
+      return snapshot.docs.map((e) => ProductModel.fromSnapshot(e)).toList();
+    
+  } on FirebaseException catch (e) {
+    throw BFirebaseException(e.code).message;
+  } on PlatformException catch (e) {
+    throw BPlatformException(e.code).message;
+  } catch (e) {
+    throw 'Something went wrong, please try again'; 
+  }
+  }
 
   // upload dummy data to the cloud firebase. 
   Future<void> uploadDummyData(List<ProductModel>products) async {
@@ -43,8 +62,19 @@ try {
         imagesUrl.add(url); 
       }
     }
+
+    // store products in firestore. 
+    await _db.collection('Products').doc(product.id).set(product.toJson()); 
   }
-}
+} on FirebaseException catch (e) {
+  throw e.message!; 
     
+  } on SocketException catch (e) {
+    throw e.message;
+} on PlatformException catch (e) {
+  throw e.message!; 
+} catch (e) {
+  throw e.toString(); 
+}
   }
 }
