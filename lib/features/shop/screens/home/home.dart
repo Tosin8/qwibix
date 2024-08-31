@@ -10,6 +10,7 @@ import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
+import '../../controllers/product_controller.dart';
 import '../extensions/all_products/all_products.dart';
 import 'widgets/home_appbar.dart';
 import 'widgets/home_categories.dart';
@@ -20,6 +21,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ProductController());
     return  SafeArea(
       child: Scaffold( 
         body: SingleChildScrollView(
@@ -78,6 +80,7 @@ BSectionHeading(
   title: 'Popular Products', 
   onPressed: () => Get.to(() => const AllProducts())),
   const SizedBox(height: BSizes.spaceBtwItems,),  
+
                        // Popular Products. 
                        GridLayout(itemCount: 4, 
                              itemBuilder: (_, index) => const BProductCardVertical(),
