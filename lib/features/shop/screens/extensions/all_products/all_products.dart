@@ -16,7 +16,7 @@ class AllProducts extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(padding: 
         EdgeInsets.all(BSizes.defaultSpace),
-        child: SortableProducts(),
+      //  child: SortableProducts(),
         ),
       )
     );

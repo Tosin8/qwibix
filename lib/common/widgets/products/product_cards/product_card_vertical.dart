@@ -13,6 +13,7 @@ import 'package:qwibix/features/shop/models/product_model.dart';
 import 'package:qwibix/features/shop/screens/home/product_detail.dart';
 import 'package:qwibix/utils/constants/circular_icon.dart';
 import 'package:qwibix/utils/constants/colors.dart';
+import 'package:qwibix/utils/constants/enums.dart';
 // ignore: unused_import
 import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/rounded_container.dart';
@@ -46,7 +47,7 @@ final salePercentage = controller.calculateSalePercentage(product.price, product
           children: [
             // Thumbnail , Wishlist and discount tag. 
             BRoundedContainer(
-              height: 180, 
+              height: 180, width: 180,
               padding: const EdgeInsets.all(BSizes.sm),
               backgroundColor: dark ? BColors.dark : BColors.light,
               child:  Stack(
@@ -54,7 +55,7 @@ final salePercentage = controller.calculateSalePercentage(product.price, product
       
                   // thumbnail image
                    BRoundedImage(
-                    imageUrl: product.thumbnail, applyImageRadius: true,), 
+                    imageUrl: product.thumbnail, applyImageRadius: true,isNetworkImage: true,), 
       
                   // sale tag
                   Positioned( 
@@ -94,9 +95,23 @@ final salePercentage = controller.calculateSalePercentage(product.price, product
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   // price
-                Padding(
-                    padding: const EdgeInsets.only(left: BSizes.sm),
-                    child: BProductPriceText(price: controller.getProductPrice(product),)), 
+                Flexible(
+                  child: Column(
+                    children: [
+                      if(product.productType == ProductType.single.toString() && product.salePrice > 0)
+
+                       Padding(
+                          padding: const EdgeInsets.only(left: BSizes.sm),
+                          child: Text(product.price.toString(), style: Theme.of(context).textTheme.labelMedium!.apply(decoration: TextDecoration.lineThrough),),
+                          ),
+
+                      // price, show sale price as main price if sale exist. 
+                      Padding(
+                          padding: const EdgeInsets.only(left: BSizes.sm),
+                          child: BProductPriceText(price: controller.getProductPrice(product),)),
+                    ],
+                  ),
+                ), 
 
                   // Add to Cart Button. 
                   Container(
