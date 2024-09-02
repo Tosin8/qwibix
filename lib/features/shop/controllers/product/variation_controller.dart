@@ -61,7 +61,16 @@ class VariationController  extends GetxController{
     // check empty / out of stock attributes
     variation.attributeValues[attributeName] != null && variation.attributeValues[attributeName]!.isNotEmpty && variation.stock > 0
      
-     ).toSet(); 
+     )
+     // fetch all non empty attributes of variations
+     .map((variation) => variation.attributeValues[attributeName])
+     .toSet(); 
+
+     return availableVariationAttributeValues; 
+  }
+
+  String getVariationPrice(){
+    return (selectedVariation.value.salePrice > 0 ? selectedVariation.value.salePrice: selectedVariation.value.price).toString();  
   }
 
   /// Check product variation stock status
