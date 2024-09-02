@@ -68,13 +68,18 @@ class ProductImageSlider extends StatelessWidget {
                     separatorBuilder: (_, __) => const SizedBox(
                       width: BSizes.spaceBtwItems,
                     ),
-                    itemBuilder: (_, index) => BRoundedImage(
+                    itemBuilder: (_, index) => Obx(
+                      (){
+                        final imageSelected = controller.selectedProductImage.value == images[index];
+                        return BRoundedImage(
                       width: 80,
                       backgroundColor: dark ? BColors.dark : BColors.white,
                       imageUrl: images[index], 
                       border: Border.all(color: BColors.primary),
                       padding: const EdgeInsets.all(BSizes.sm),
-                    ),
+                    ); 
+                      }
+                    )
                   ),
                 ),
               ),
