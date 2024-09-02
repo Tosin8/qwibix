@@ -3,7 +3,7 @@ import 'package:qwibix/common/widgets/loaders/loaders.dart';
 import 'package:qwibix/data/repositories/product/product_repository.dart';
 import 'package:qwibix/utils/constants/enums.dart';
 
-import '../models/product_model.dart';
+import '../../models/product_model.dart';
 
 class ProductController  extends GetxController{
   static ProductController get instance => Get.find(); 
