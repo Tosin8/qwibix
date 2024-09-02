@@ -4,6 +4,6 @@ enum OrderStatus { processing, shipped, deliverd}
 enum PaymentMehods {paypal, googlePay, visa, mastercard, creditcard}
 enum ProductType {
   single,
-  variation,
+  variation, variable,
   // add more types as needed
 }

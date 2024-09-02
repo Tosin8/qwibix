@@ -1,4 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:qwibix/common/widgets/chips/choice_chips.dart';
 import 'package:qwibix/common/widgets/texts/b_productPriceText.dart';
 import 'package:qwibix/common/widgets/texts/product_title_text.dart';
@@ -8,9 +10,15 @@ import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
-class ProductAttribute extends StatelessWidget {
-  const ProductAttribute({super.key});
+import '../../../../models/product_model.dart';
 
+class ProductAttribute extends StatelessWidget {
+  const ProductAttribute({
+    Key? key,
+    required this.product,
+  }) : super(key: key);
+
+final ProductModel product; 
   @override
   Widget build(BuildContext context) {
     final dark = BHelperFunctions.isDarkMode(context); 
@@ -96,27 +104,7 @@ BRoundedContainer(
       ],
      ), 
 
-       Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const BSectionHeading(title: 'Sizes', showActionButton: false,), 
-        const SizedBox(height: BSizes.spaceBtwItems / 2,), 
-        Wrap(
-          spacing: 4,
-          children: [
-               BChoiceChip(text: 'EU 34', selected: true, onSelected: (value) {
-          
-        },),
-          BChoiceChip(text: 'EU 35', selected: false,onSelected: (value) {
-          
-        },),  BChoiceChip(text: 'EU 36', selected: false, onSelected: (value) {
-          
-        },),
-          ],
-        ), 
      
-      ],
-     ), 
       ],
     );
   }

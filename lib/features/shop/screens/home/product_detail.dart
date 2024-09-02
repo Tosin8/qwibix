@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/features/shop/models/product_model.dart';
+import 'package:qwibix/utils/constants/enums.dart';
 import 'package:readmore/readmore.dart';
 
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
@@ -48,11 +49,12 @@ final ProductModel product;
                   
 
                   // PRICE,TITLE, STOCK AND BRAND
-                  const ProductMetaData(), 
+                   ProductMetaData(product: product,), 
 
                   // ATTRIBUTES
-                  const ProductAttribute(), 
-                  const SizedBox(height: BSizes.spaceBtwSections,), 
+                  if(product.productType == ProductType.variable.toString())
+                   ProductAttribute(product: product,), 
+                  if(product.productType == ProductType.variable.toString())  const SizedBox(height: BSizes.spaceBtwSections,), 
 
                   // CHECKOUT BUTTON
                   SizedBox(
@@ -66,9 +68,9 @@ final ProductModel product;
                   // DESCRIPTION
                   const BSectionHeading(title: 'Description', showActionButton: false,), 
                   const SizedBox(height: BSizes.spaceBtwItems,), 
-                  const ReadMoreText(
-'This is a product description for blue nike sleeve . There are many more of it that will be added later. This is one of the best product, created and made sorely', 
-trimLines: 2, trimMode: TrimMode.Line,  trimCollapsedText: ' Show more ', trimExpandedText:  ' Less ', moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800), lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                  ReadMoreText(
+product.description ?? '',  
+trimLines: 2, trimMode: TrimMode.Line,  trimCollapsedText: ' Show more ', trimExpandedText:  ' Less ', moreStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800), lessStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
 
                   ), 
 
