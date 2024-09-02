@@ -43,8 +43,11 @@ class ProductImageSlider extends StatelessWidget {
                       child: Obx(() {
                         final image = controller.selectedProductImage.value; 
                         return
-                          CachedNetworkImage(imageUrl: image, 
-                          progressIndicatorBuilder: (_, __, downloadProgress) => CircularProgressIndicator(value: downloadProgress.progress, color: BColors.primary),
+                          GestureDetector( 
+                            onTap: () => controller.showEnlargedImage(image), 
+                            child: CachedNetworkImage(imageUrl: image, 
+                            progressIndicatorBuilder: (_, __, downloadProgress) => CircularProgressIndicator(value: downloadProgress.progress, color: BColors.primary),
+                            ),
                           ); 
                       }
                           )
@@ -73,9 +76,11 @@ class ProductImageSlider extends StatelessWidget {
                         final imageSelected = controller.selectedProductImage.value == images[index];
                         return BRoundedImage(
                       width: 80,
+                      isNetworkImage: true,
                       backgroundColor: dark ? BColors.dark : BColors.white,
                       imageUrl: images[index], 
-                      border: Border.all(color: BColors.primary),
+                      border: Border.all(color:imageSelected ?  BColors.primary: Colors.transparent),
+                      onPressed: () => controller.selectedProductImage.value = images[index],
                       padding: const EdgeInsets.all(BSizes.sm),
                     ); 
                       }
