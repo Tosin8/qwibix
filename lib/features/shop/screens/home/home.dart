@@ -79,7 +79,7 @@ const SizedBox(height: BSizes.spaceBtwSections,),
 // Heading
 BSectionHeading(
   title: 'Popular Products', 
-  onPressed: () => Get.to(() => const AllProducts())),
+  onPressed: () => Get.to(() =>  AllProducts())),
   const SizedBox(height: BSizes.spaceBtwItems,),  
 
                        // Popular Products. 
