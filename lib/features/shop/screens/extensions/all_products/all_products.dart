@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
+import '../../../../../common/widgets/products/sortable.dart';
+
 
 class AllProducts extends StatelessWidget {
   const AllProducts({super.key});
@@ -15,7 +17,7 @@ class AllProducts extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(padding: 
         EdgeInsets.all(BSizes.defaultSpace),
-      //  child: SortableProducts(),
+      child: SortableProducts(),
         ),
       )
     );
