@@ -81,27 +81,22 @@ BRoundedContainer(
      const SizedBox(height: BSizes.spaceBtwItems,), 
 
      // attributes. 
+     Column(
+      crossAxisAlignment: CrossAxisAlignment.start, 
+      children: product.productAttributes!.map((attribute) => 
        Column(
         crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const BSectionHeading(title: 'Colors', showActionButton: false,), 
+        BSectionHeading(title: attribute.name ?? '', showActionButton: false,), 
         const SizedBox(height: BSizes.spaceBtwItems / 2,), 
        Wrap(
-        spacing: 4,
-          children: [
-
-             BChoiceChip(text: 'Green', selected: true, onSelected: (value) {
+        spacing: 8,
+          children: attribute.values!.map((value) => BChoiceChip(text: value, selected: false, onSelected: (value){})).toList(),
           
-        },),
-          BChoiceChip(text: 'Blue', selected: false,onSelected: (value) {
-          
-        },),  BChoiceChip(text: 'Yellow', selected: false, onSelected: (value) {
-          
-        },),
-          ]
         ), 
        
       ],
+     )).toList(), 
      ), 
 
      
