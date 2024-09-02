@@ -35,7 +35,7 @@ class AllProducts extends StatelessWidget {
         child: Padding(padding: 
         const EdgeInsets.all(BSizes.defaultSpace),
       child: FutureBuilder(
-      future: futureMethod ??,
+      future: futureMethod ?? controller.fetchProductsByQuery(query),
         builder: (context, snapshot) {
           return const SortableProducts();
         }

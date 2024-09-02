@@ -31,6 +31,22 @@ class ProductRepository  extends GetxController{
   }
   }
 
+  // Get products based on teh brand. 
+
+   Future<List<ProductModel>> fetchProductsByQuery(Query query) async {
+    try {
+      final querySnapshot = await query.get(); 
+      final List<ProductModel> productList = querySnapshot.docs.map((doc) => ProductModel.fromQuerySnapshot(doc)).toList(); 
+      return productList; 
+  } on FirebaseException catch (e) {
+    throw BFirebaseException(e.code).message;
+  } on PlatformException catch (e) {
+    throw BPlatformException(e.code).message;
+  } catch (e) {
+    throw 'Something went wrong, please try again'; 
+  }
+  }
+
   // upload dummy data to the cloud firebase. 
   Future<void> uploadDummyData(List<ProductModel>products) async {
 try {
