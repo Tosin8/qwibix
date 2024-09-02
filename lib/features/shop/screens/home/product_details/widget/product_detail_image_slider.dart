@@ -1,6 +1,8 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/images/b_rounded_image.dart';
 import 'package:qwibix/utils/constants/circular_icon.dart';
@@ -10,14 +12,15 @@ import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
 import '../../../../../../common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
+import '../../../../models/product_model.dart';
 
 class ProductImageSlider extends StatelessWidget {
   const ProductImageSlider({
-    super.key,
- 
-  });
+    Key? key,
+    required this.product,
+  }) : super(key: key);
 
-  
+  final ProductModel product; 
 
   @override
   Widget build(BuildContext context) {

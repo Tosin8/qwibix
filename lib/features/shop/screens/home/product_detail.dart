@@ -34,7 +34,7 @@ final ProductModel product;
           children: [
 
             /// Image Product Slider
-            const ProductImageSlider(),
+            ProductImageSlider(product:product),
 
 
             /// Product Details
