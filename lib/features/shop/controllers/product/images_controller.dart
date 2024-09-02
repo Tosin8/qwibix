@@ -8,7 +8,9 @@ class ImagesController  extends GetxController{
   static ImagesController get to => Get.find();
 
   // variables
-  RxString selectedProductImage = ''.obs; 
+  RxString selectedProductImage = ''.obs;
+
+  static var instance; 
 
   // get all images from product and variations
   List<String> getAllProductImages(ProductModel product){
@@ -28,7 +30,7 @@ class ImagesController  extends GetxController{
    
    // get all images from the product variations if not null. 
    if(product.productVariations != null || product.productVariations!.isNotEmpty) {
-    images.addAll(product.productVariations!.map((variation) =>variation.image));
+    images.addAll(product.productVariations!.map((variation) => variation.image));
    }
    return images.toList(); 
   }
