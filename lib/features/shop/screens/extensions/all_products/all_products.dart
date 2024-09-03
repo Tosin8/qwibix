@@ -7,6 +7,7 @@ import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/shimmers/vertical_product_shimmer.dart';
 import 'package:qwibix/features/shop/models/product_model.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
+import 'package:qwibix/utils/http/cloud_helper_function.dart';
 
 import '../../../../../common/widgets/products/sortable.dart';
 import '../../../controllers/all_products_controller.dart';
@@ -41,15 +42,7 @@ class AllProducts extends StatelessWidget {
 
           // check the state of the futurebuilder snapshot. 
           const loader = VerticalProductShimmer(); 
-          if(snapshot.connectionState == ConnectionState.waiting) {
-            return loader;
-          }
-           if(!snapshot.hasData || snapshot.data == null || snapshot.data!.isEmpty) {
-            return const Center(child: Text('No Data Found!'));
-          }
-          if(snapshot.hasError) {
-            return const Center(child: Text('Something went wrong.'));
-          }
+        final widget = BCloudHelperFunctions.checkMultiRecordState(snapshot: snapshot, loader: loader);   
 
           // products found!
           final products = snapshot.data!; 
