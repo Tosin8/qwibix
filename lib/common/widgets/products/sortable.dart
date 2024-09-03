@@ -54,7 +54,7 @@ controller.sortProducts(value!);
 
         // Products.
         Obx(() => GridLayout(
-              itemCount: 8,
+              itemCount: controller.products.length,
               itemBuilder: (_, index) => BProductCardVertical(
                 product: controller.products[index],
               ),
