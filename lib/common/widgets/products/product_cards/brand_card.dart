@@ -1,5 +1,7 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
+
 import 'package:qwibix/common/widgets/images/b_brand_image.dart';
 import 'package:qwibix/common/widgets/texts/brandTitleText_withIcon.dart';
 import 'package:qwibix/utils/constants/colors.dart';
@@ -9,13 +11,17 @@ import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
+import '../../../../features/shop/models/brand_model.dart';
+
 class BrandCard extends StatelessWidget {
   const BrandCard({
     Key? key,
+    required this.brand,
     required this.showBorder,
     this.onTap,
   }) : super(key: key);
 
+final BrandModel brand; 
   final bool showBorder; 
   final void Function()? onTap; 
 
@@ -33,8 +39,8 @@ class BrandCard extends StatelessWidget {
          // brand icons
          Flexible(
            child: BCircularImage( 
-             isNetWorkImage: false, 
-             image: BImages.clothIcon, 
+             isNetWorkImage: true, 
+             image: brand.image, 
              backgroundColor: Colors.transparent, 
              overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,
            ),
@@ -48,10 +54,12 @@ class BrandCard extends StatelessWidget {
              mainAxisSize: MainAxisSize.min,
              crossAxisAlignment: CrossAxisAlignment.start,
              children: [
-               const BrandTitleVerifyIcon(
-                 title: 'Nike', 
+               BrandTitleVerifyIcon(
+                 title: brand.name, 
                  brandTextSize: TextSizes.large,), 
-                 Text('256 Products,', 
+                 Text(
+                  
+                  '${brand.productsCount ?? 0} products', 
                  overflow: TextOverflow.ellipsis, 
                  style: Theme.of(context).textTheme.labelMedium,)
              ],

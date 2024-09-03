@@ -40,8 +40,8 @@ final CategoryModel category;
         
       },),
       const SizedBox(height: BSizes.spaceBtwItems,), 
-      GridLayout(itemCount: 4, itemBuilder: (_, index) =>
-BProductCardVertical(product: ProductModel.empty())), 
+//       GridLayout(itemCount: 4, itemBuilder: (_, index) =>
+// BProductCardVertical(product: ProductModel.empty())), 
     
       
                   ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/products/product_cards/brand_card.dart';
 import 'package:qwibix/common/widgets/products/sortable.dart';
+import 'package:qwibix/features/shop/models/brand_model.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
 class BrandProducts extends StatelessWidget {
@@ -9,21 +10,21 @@ class BrandProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold( 
-      appBar: BAppBar(
+    return Scaffold( 
+      appBar: const BAppBar(
         title: Text('Nike'), showBackArrow: true,
       ),
       body: SingleChildScrollView(
         child: Padding(padding: 
-        EdgeInsets.all(BSizes.defaultSpace),
+        const EdgeInsets.all(BSizes.defaultSpace),
         child: Column(
           children: [
 
             // Brand Detail 
-            BrandCard(showBorder: true), 
-            SizedBox(height: BSizes.spaceBtwSections,), 
+            BrandCard(showBorder: true, brand: BrandModel.empty(),), 
+            const SizedBox(height: BSizes.spaceBtwSections,), 
 
-           SortableProducts(products: [],), 
+           const SortableProducts(products: [],), 
           ],
         ),
         ),

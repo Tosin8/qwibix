@@ -5,6 +5,7 @@ import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
 import 'package:qwibix/common/widgets/products/product_cards/brand_card.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
 import 'package:qwibix/features/shop/controllers/category_controller.dart';
+import 'package:qwibix/features/shop/models/brand_model.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
 import 'brand_products.dart';
@@ -31,7 +32,7 @@ class AllBrandsScreen extends StatelessWidget {
             // Bramds
             GridLayout(itemCount: 6, mainAxisExtent: 80,
             
-             itemBuilder: (_, index) => BrandCard(showBorder: true, onTap: () => Get.to(() => const BrandProducts()),),)
+             itemBuilder: (_, index) => BrandCard(showBorder: true, onTap: () => Get.to(() => const BrandProducts()), brand: BrandModel.empty(),),)
           ],
         ),
         ), 

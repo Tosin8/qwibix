@@ -83,16 +83,22 @@ class Store extends StatelessWidget {
                         ),
 
                         Obx(() { 
-                          if(brandController.isLoading.value) return BrandsShimmer(); 
-                          GridLayout(
-                            itemCount: 4,
+                          if(brandController.isLoading.value) return const BrandsShimmer(); 
+                          if(brandController.featuredBrands.isEmpty) {
+                            return Center(
+                              child: Text('No Data Found!', style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white),),
+                            ); 
+                          }
+                         return GridLayout(
+                            itemCount: brandController.featuredBrands.length,
                             mainAxisExtent: 80,
                             itemBuilder: (_, index) {
+                              final brand = brandController.featuredBrands[index]; 
                               return BrandCard(
                                 showBorder: true,
-                                onTap: () {},
+                                onTap: () {}, brand: brand,
                               );
-                            }))
+                            });}), 
                       ],
                     ),
                   ),
