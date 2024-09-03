@@ -14,7 +14,7 @@ class AllBrandsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final categories = CategoryController.instance.featuredCategories; 
+    
     return Scaffold( 
       appBar: const BAppBar(title: Text('All Brands'), 
       showBackArrow: true,
