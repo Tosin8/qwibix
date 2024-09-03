@@ -8,7 +8,9 @@ import 'package:qwibix/common/widgets/custom_shapes/containers/search_container.
 import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
 import 'package:qwibix/common/widgets/products/cart/cart_menu_icons.dart';
 import 'package:qwibix/common/widgets/products/product_cards/brand_card.dart';
+import 'package:qwibix/common/widgets/shimmers/brand_shimmer.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/features/shop/controllers/brand_controller.dart';
 import 'package:qwibix/features/shop/controllers/category_controller.dart';
 import 'package:qwibix/features/shop/screens/extensions/brands/all_brand.dart';
 import 'package:qwibix/utils/constants/colors.dart';
@@ -22,92 +24,104 @@ class Store extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final categories = CategoryController.instance.featuredCategories; 
+    final categories = CategoryController.instance.featuredCategories;
+    final brandController = Get.put(BrandController());
 
     return SafeArea(
-      child: DefaultTabController(
-        //length: 5,
-        length: categories.length, 
-        child: Scaffold(
-        appBar: BAppBar(
-          title: Text('Store', style: Theme.of(context).textTheme.headlineMedium,),
-          actions: [
-            BCartCounterIcon(
-              onPressed: () {},
-             iconColor: BColors.black,
-            )
-          ],
-        ),
-        body: NestedScrollView(
-          headerSliverBuilder: (_, innerBoxIsScrolled) {
-            return [
-               SliverAppBar(
-                pinned: true, 
-                floating: true, 
-                backgroundColor: BHelperFunctions.isDarkMode(context) ? BColors.black : BColors.white,
-                expandedHeight: 440, 
-        
-                flexibleSpace: Padding(padding: const EdgeInsets.all(BSizes.defaultSpace), 
-                child: ListView(
-                  shrinkWrap: true, 
-                  physics: const NeverScrollableScrollPhysics(), 
-                  children:  [
-        
-                    // Search Bar. 
-                   // SizedBox(height: BSizes.spaceBtwItems), 
-                    const BSearchContainer(text: 'Search here', showBorder: true, showBackground: false, padding: EdgeInsets.zero,), 
-                    const SizedBox(height: BSizes.spaceBtwSections,), 
-        
-        
-                    /// Featured Brands. 
-                    BSectionHeading(title: 'Featured Brands', onPressed: () => Get.to(() => const AllBrandsScreen())
-                      
-                    ,), 
-                    const SizedBox(height: BSizes.spaceBtwItems / 1.5,), 
-        
-                    GridLayout(itemCount: 4,
-                    mainAxisExtent: 80,
-                     itemBuilder: (_, index) {
-                       return   BrandCard(
-                        showBorder: true,
-                        onTap: () {
-                          
-                        },
-                       );
-                     })
-                  ],
-                ),
-                ),
-                bottom:  BTappBar(
-                  tabs:
-                  //  [
-                  //   Tab(child: Text('Sports')), 
-                  //      Tab(child: Text('Furniture')),   
-                  //       Tab(child: Text('Electronics')),   
-                  //        Tab(child: Text('Clothes')),  
-                  //          Tab(child: Text('Cosmetics')), 
-                  // ]
-                  categories.map((category) => Tab(child: Text(category.name))).toList()
-                  ), 
-                
-                
-                
+        child: DefaultTabController(
+      //length: 5,
+      length: categories.length,
+      child: Scaffold(
+          appBar: BAppBar(
+            title: Text(
+              'Store',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            actions: [
+              BCartCounterIcon(
+                onPressed: () {},
+                iconColor: BColors.black,
               )
-            ]; 
-          }, body: TabBarView(
-            children:// [
-              // CategoryTab(),
-              //   CategoryTab(),  CategoryTab(),  CategoryTab(),  CategoryTab(),
-                  
+            ],
+          ),
+          body: NestedScrollView(
+            headerSliverBuilder: (_, innerBoxIsScrolled) {
+              return [
+                SliverAppBar(
+                  pinned: true,
+                  floating: true,
+                  backgroundColor: BHelperFunctions.isDarkMode(context)
+                      ? BColors.black
+                      : BColors.white,
+                  expandedHeight: 440,
+                  flexibleSpace: Padding(
+                    padding: const EdgeInsets.all(BSizes.defaultSpace),
+                    child: ListView(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: [
+                        // Search Bar.
+                        // SizedBox(height: BSizes.spaceBtwItems),
+                        const BSearchContainer(
+                          text: 'Search here',
+                          showBorder: true,
+                          showBackground: false,
+                          padding: EdgeInsets.zero,
+                        ),
+                        const SizedBox(
+                          height: BSizes.spaceBtwSections,
+                        ),
 
-               // ],
-               categories.map((category) => CategoryTab(category: category)).toList()
-              ),)
-            
-          ),)
-        
-        
-      );
-    
+                        /// Featured Brands.
+                        BSectionHeading(
+                          title: 'Featured Brands',
+                          onPressed: () =>
+                              Get.to(() => const AllBrandsScreen()),
+                        ),
+                        const SizedBox(
+                          height: BSizes.spaceBtwItems / 1.5,
+                        ),
+
+                        Obx(() { 
+                          if(brandController.isLoading.value) return BrandsShimmer(); 
+                          GridLayout(
+                            itemCount: 4,
+                            mainAxisExtent: 80,
+                            itemBuilder: (_, index) {
+                              return BrandCard(
+                                showBorder: true,
+                                onTap: () {},
+                              );
+                            }))
+                      ],
+                    ),
+                  ),
+                  bottom: BTappBar(
+                      tabs:
+                          //  [
+                          //   Tab(child: Text('Sports')),
+                          //      Tab(child: Text('Furniture')),
+                          //       Tab(child: Text('Electronics')),
+                          //        Tab(child: Text('Clothes')),
+                          //          Tab(child: Text('Cosmetics')),
+                          // ]
+                          categories
+                              .map(
+                                  (category) => Tab(child: Text(category.name)))
+                              .toList()),
+                )
+              ];
+            },
+            body: TabBarView(
+                children: // [
+                    // CategoryTab(),
+                    //   CategoryTab(),  CategoryTab(),  CategoryTab(),  CategoryTab(),
+
+                    // ],
+                    categories
+                        .map((category) => CategoryTab(category: category))
+                        .toList()),
+          )),
+    ));
   }
 }

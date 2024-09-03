@@ -26,7 +26,7 @@ final brandRepository = Get.put(BrandRepository());
 
       final brands = await brandRepository.getAllBrands();
 allBrands.assignAll(brands); 
-featuredBrands.assignAll(allBrands.where((brands) => brand.isFeatured ?? false).take(4)); 
+featuredBrands.assignAll(allBrands.where((brand) => brand.isFeatured ?? false).take(4)); 
 
     } catch (e) {
       BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString()); 

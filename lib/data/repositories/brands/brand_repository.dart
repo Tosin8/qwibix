@@ -19,7 +19,7 @@ class BrandRepository extends GetxController{
     return result; 
     } on FirebaseException catch (e) {
       throw BFirebaseException(e.code).message;
-    }  on FormatException catch (e) {
+    }  on FormatException catch (_) {
       throw const FormatException();
     
   } on PlatformException catch (e) {
