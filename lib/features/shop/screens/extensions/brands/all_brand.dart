@@ -4,6 +4,7 @@ import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
 import 'package:qwibix/common/widgets/products/product_cards/brand_card.dart';
 import 'package:qwibix/common/widgets/texts/sectionHeading.dart';
+import 'package:qwibix/features/shop/controllers/category_controller.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
 import 'brand_products.dart';
@@ -13,6 +14,7 @@ class AllBrandsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categories = CategoryController.instance.featuredCategories; 
     return Scaffold( 
       appBar: const BAppBar(title: Text('All Brands'), 
       showBackArrow: true,
