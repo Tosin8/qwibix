@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
+import 'package:qwibix/common/widgets/shimmers/vertical_product_shimmer.dart';
 import 'package:qwibix/features/shop/models/product_model.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 
@@ -37,7 +38,22 @@ class AllProducts extends StatelessWidget {
       child: FutureBuilder(
       future: futureMethod ?? controller.fetchProductsByQuery(query),
         builder: (context, snapshot) {
-          return const SortableProducts();
+
+          // check the state of the futurebuilder snapshot. 
+          const loader = VerticalProductShimmer(); 
+          if(snapshot.connectionState == ConnectionState.waiting) {
+            return loader;
+          }
+           if(!snapshot.hasData || snapshot.data == null || snapshot.data!.isEmpty) {
+            return const Center(child: Text('No Data Found!'));
+          }
+          if(snapshot.hasError) {
+            return const Center(child: Text('Something went wrong.'));
+          }
+
+          // products found!
+          final products = snapshot.data!; 
+          return  SortableProducts(products: products,);
         }
       ),
         ),
