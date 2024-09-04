@@ -1,13 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:qwibix/common/widgets/images/b_brand_image.dart';
 import 'package:qwibix/common/widgets/texts/brandTitleText_withIcon.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/enums.dart';
-import 'package:qwibix/utils/constants/image_strings.dart';
 import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
