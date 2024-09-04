@@ -38,22 +38,16 @@ final BrandModel brand;
        children: [
     
          // brand icons
-        //  Flexible(
-        //    child: BCircularImage( 
-        //      isNetWorkImage: true, 
-        //      image: brand.image, 
-        //      backgroundColor: Colors.transparent, 
-        //      overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,
-        //    ),
-        //  ), 
+         Flexible(
+           child: BCircularImage( 
+             isNetWorkImage: true, 
+             image: brand.image, 
+             backgroundColor: Colors.transparent, 
+             overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,
+           ),
+         ), 
 
-        Flexible(
-          child: CachedNetworkImage(
-            imageUrl: brand.image, 
-            placeholder: (context, url) => const CircularProgressIndicator(),
-            fit: BoxFit.cover, 
-            errorWidget: (context, url, error) => const Icon(Icons.error),
-            )), 
+        
          const SizedBox(width: BSizes.spaceBtwItems / 2,), 
     
     
