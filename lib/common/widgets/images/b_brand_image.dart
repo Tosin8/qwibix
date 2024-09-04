@@ -12,7 +12,7 @@ class BCircularImage extends StatelessWidget {
     super.key, 
     this.fit = BoxFit.cover, 
     required this.image,
-      this.isNetWorkImage = false, 
+      this.isNetWorkImage = true, 
      this.overlayColor,
       this.backgroundColor, 
       this.width = 56, 
