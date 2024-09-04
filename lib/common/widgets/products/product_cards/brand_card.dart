@@ -39,7 +39,7 @@ final BrandModel brand;
          Flexible(
            child: BCircularImage( 
              isNetWorkImage: true, 
-             image: brand.image, 
+             image: brand.imageUrl ?? '', 
              backgroundColor: Colors.transparent, 
              overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,
            ),
@@ -56,7 +56,7 @@ final BrandModel brand;
              crossAxisAlignment: CrossAxisAlignment.start,
              children: [
                BrandTitleVerifyIcon(
-                 title: brand.name, 
+                 title: brand.name ?? '', 
                  brandTextSize: TextSizes.large,), 
                  Text(
                   

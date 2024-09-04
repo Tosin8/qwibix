@@ -71,9 +71,9 @@ if(product.productType == ProductType.single.toString() && product.salePrice > 0
         // Brand. 
         Row(
           children: [
-            BCircularImage(image: product.brand != null ? product.brand!.image: '', 
+            BCircularImage(image: product.brand != null ? product.brand!.imageUrl ?? '': '', 
             width: 32, height: 32, overlayColor: dark ? BColors.white : BColors.black,), 
-             BrandTitleVerifyIcon(title: product.brand != null ? product.brand!.name : '', brandTextSize: TextSizes.medium,),
+             BrandTitleVerifyIcon(title: product.brand != null ? product.brand!.name! : '', brandTextSize: TextSizes.medium,),
           ],
         ), 
       ],

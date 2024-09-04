@@ -145,9 +145,9 @@ class BrandController extends GetxController {
       );
 
       // Check the image URLs for each brand (Optional debug check)
-      featuredBrands.forEach((brand) {
+      for (var brand in featuredBrands) {
         print("Brand: ${brand.name}, Image URL: ${brand.imageUrl}");
-      });
+      }
 
     } catch (e) {
       // Display an error message in case of failure

@@ -86,7 +86,7 @@ final salePercentage = controller.calculateSalePercentage(product.price, product
               children: [
                BProductTitleText(title: product.title, smallSize: true,), 
                const SizedBox(height: BSizes.spaceBtwItems / 2,), 
-                BrandTitleVerifyIcon(title: product.brand!.name,), 
+                BrandTitleVerifyIcon(title: product.brand!.name ?? '',), 
             
               ],
             ),), 

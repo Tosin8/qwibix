@@ -30,7 +30,10 @@ final List<String> images;
     child: 
     Column(
       children: [
-         BrandCard(showBorder: false, brand: BrandModel.empty(),), 
+        //  BrandCard(showBorder: false,
+        //   //brand: BrandModel.empty(),
+        //   brand: brand, 
+        //   ), 
         const SizedBox(height: BSizes.spaceBtwItems,), 
 
         /// Brand Top 2 product images

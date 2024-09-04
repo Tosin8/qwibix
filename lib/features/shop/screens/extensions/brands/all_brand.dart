@@ -35,15 +35,29 @@ class AllBrandsScreen extends StatelessWidget {
                 const SizedBox(height: BSizes.spaceBtwItems),
 
                 // Brands
+                // Obx(() => GridLayout(
+                //       itemCount: brandController.allBrands.length,
+                //       mainAxisExtent: 80,
+                //       itemBuilder: (_, index) => BrandCard(
+                //         showBorder: true,
+                //         onTap: () => Get.to(() => const BrandProducts()),
+                //         brand: BrandModel.empty(),
+                //       ),
+                //     ))
+
                 Obx(() => GridLayout(
-                      itemCount: brandController.allBrands.length,
-                      mainAxisExtent: 80,
-                      itemBuilder: (_, index) => BrandCard(
-                        showBorder: true,
-                        onTap: () => Get.to(() => const BrandProducts()),
-                        brand: BrandModel.empty(),
-                      ),
-                    ))
+  itemCount: brandController.allBrands.length,
+  mainAxisExtent: 80,
+  itemBuilder: (_, index) {
+    final brand = brandController.allBrands[index];
+    return BrandCard(
+      showBorder: true,
+      onTap: () => Get.to(() => BrandProducts(brand: brand)),
+      brand: brand,  // Pass the actual brand data here
+    );
+  },
+))
+
               ],
             ),
           ),
