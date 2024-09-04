@@ -51,6 +51,8 @@ final BrandModel brand;
           child: CachedNetworkImage(
             imageUrl: brand.image, 
             placeholder: (context, url) => const CircularProgressIndicator(),
+            fit: BoxFit.cover, 
+            errorWidget: (context, url, error) => const Icon(Icons.error),
             )), 
          const SizedBox(width: BSizes.spaceBtwItems / 2,), 
     
