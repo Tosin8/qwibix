@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:qwibix/common/widgets/images/b_brand_image.dart';
@@ -37,14 +38,20 @@ final BrandModel brand;
        children: [
     
          // brand icons
-         Flexible(
-           child: BCircularImage( 
-             isNetWorkImage: true, 
-             image: brand.image, 
-             backgroundColor: Colors.transparent, 
-             overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,
-           ),
-         ), 
+        //  Flexible(
+        //    child: BCircularImage( 
+        //      isNetWorkImage: true, 
+        //      image: brand.image, 
+        //      backgroundColor: Colors.transparent, 
+        //      overlayColor: BHelperFunctions.isDarkMode(context) ? BColors.white: BColors.black,
+        //    ),
+        //  ), 
+
+        Flexible(
+          child: CachedNetworkImage(
+            imageUrl: brand.image, 
+            placeholder: (context, url) => const CircularProgressIndicator(),
+            )), 
          const SizedBox(width: BSizes.spaceBtwItems / 2,), 
     
     

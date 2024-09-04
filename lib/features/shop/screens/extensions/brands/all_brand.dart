@@ -34,7 +34,7 @@ class AllBrandsScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: BSizes.spaceBtwItems),
 
-                // Bramds
+                // Brands
                 Obx(() => GridLayout(
                       itemCount: brandController.allBrands.length,
                       mainAxisExtent: 80,
