@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "194562622028",
+    "firebase_url": "https://qwibix-67080-default-rtdb.firebaseio.com",
     "project_id": "qwibix-67080",
     "storage_bucket": "qwibix-67080.appspot.com"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.example.bellymax"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "194562622028-unccetrlgkfkgj5dauvlsketqgv3ss5r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bellymax",
+            "certificate_hash": "5db72accb64378058e7d19dd4dcc295ab1c7541b"
+          }
+        },
+        {
+          "client_id": "194562622028-p1eu6r8qfjubf4telqob57jr6mt8lcho.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyA4jlTv8VdDFMp6PrITXuzLR1wq-ZxOcwE"
@@ -20,7 +34,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194562622028-p1eu6r8qfjubf4telqob57jr6mt8lcho.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "194562622028-p648cqds6f4fhpbn722d81a5ibht244c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bellymax"
+              }
+            }
+          ]
         }
       }
     }

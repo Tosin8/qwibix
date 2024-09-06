@@ -46,6 +46,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '194562622028',
     projectId: 'qwibix-67080',
     authDomain: 'qwibix-67080.firebaseapp.com',
+    databaseURL: 'https://qwibix-67080-default-rtdb.firebaseio.com',
     storageBucket: 'qwibix-67080.appspot.com',
     measurementId: 'G-ZL9WD6832M',
   );
@@ -55,6 +56,7 @@ class DefaultFirebaseOptions {
     appId: '1:194562622028:android:a9e69a2cabe62508852ae9',
     messagingSenderId: '194562622028',
     projectId: 'qwibix-67080',
+    databaseURL: 'https://qwibix-67080-default-rtdb.firebaseio.com',
     storageBucket: 'qwibix-67080.appspot.com',
   );
 
@@ -63,7 +65,10 @@ class DefaultFirebaseOptions {
     appId: '1:194562622028:ios:b008da3d311d3b77852ae9',
     messagingSenderId: '194562622028',
     projectId: 'qwibix-67080',
+    databaseURL: 'https://qwibix-67080-default-rtdb.firebaseio.com',
     storageBucket: 'qwibix-67080.appspot.com',
+    androidClientId: '194562622028-unccetrlgkfkgj5dauvlsketqgv3ss5r.apps.googleusercontent.com',
+    iosClientId: '194562622028-p648cqds6f4fhpbn722d81a5ibht244c.apps.googleusercontent.com',
     iosBundleId: 'com.example.bellymax',
   );
 
@@ -72,7 +77,10 @@ class DefaultFirebaseOptions {
     appId: '1:194562622028:ios:b008da3d311d3b77852ae9',
     messagingSenderId: '194562622028',
     projectId: 'qwibix-67080',
+    databaseURL: 'https://qwibix-67080-default-rtdb.firebaseio.com',
     storageBucket: 'qwibix-67080.appspot.com',
+    androidClientId: '194562622028-unccetrlgkfkgj5dauvlsketqgv3ss5r.apps.googleusercontent.com',
+    iosClientId: '194562622028-p648cqds6f4fhpbn722d81a5ibht244c.apps.googleusercontent.com',
     iosBundleId: 'com.example.bellymax',
   );
 
@@ -82,6 +90,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '194562622028',
     projectId: 'qwibix-67080',
     authDomain: 'qwibix-67080.firebaseapp.com',
+    databaseURL: 'https://qwibix-67080-default-rtdb.firebaseio.com',
     storageBucket: 'qwibix-67080.appspot.com',
     measurementId: 'G-15J0B0WPY7',
   );
