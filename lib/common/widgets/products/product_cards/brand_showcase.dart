@@ -1,14 +1,11 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:qwibix/features/shop/models/brand_model.dart';
 import 'package:qwibix/utils/constants/colors.dart';
 import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
-import 'brand_card.dart';
-import 'brandpartners.dart';
 
 class BrandShowCase extends StatelessWidget {
   const BrandShowCase({
