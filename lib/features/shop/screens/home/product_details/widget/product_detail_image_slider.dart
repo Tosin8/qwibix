@@ -7,6 +7,7 @@ import 'package:iconsax/iconsax.dart';
 
 import 'package:qwibix/common/widgets/appbar/appbar.dart';
 import 'package:qwibix/common/widgets/images/b_rounded_image.dart';
+import 'package:qwibix/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:qwibix/features/shop/controllers/product/images_controller.dart';
 import 'package:qwibix/utils/constants/circular_icon.dart';
 import 'package:qwibix/utils/constants/colors.dart';
@@ -93,7 +94,7 @@ class ProductImageSlider extends StatelessWidget {
               const BAppBar(
                 showBackArrow: true,
                 actions: [
-                  BCircularIcon(icon: Iconsax.heart5, color: Colors.red)
+                FavouriteIcon(), 
                 ],
               )
             ],

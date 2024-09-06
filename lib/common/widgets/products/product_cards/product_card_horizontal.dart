@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/common/styles/shadows.dart';
 import 'package:qwibix/common/widgets/images/b_rounded_image.dart';
+import 'package:qwibix/common/widgets/products/favourite_icon/favourite_icon.dart';
 import 'package:qwibix/common/widgets/texts/b_productPriceText.dart';
 import 'package:qwibix/common/widgets/texts/brandTitleText_withIcon.dart';
 import 'package:qwibix/common/widgets/texts/product_title_text.dart';
@@ -59,7 +60,7 @@ class BProductCardHorizontal extends StatelessWidget {
                   /// Favorite icon Button
                   const Positioned( 
                     top: 0, right: 0,
-                     child: BCircularIcon(icon: Iconsax.heart5, color: Colors.red,),
+                     child: FavouriteIcon(),
       
                     ),
                 ],
