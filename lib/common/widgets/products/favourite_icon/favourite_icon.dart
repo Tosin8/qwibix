@@ -7,6 +7,8 @@ class FavouriteIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final controllerl = Get.put(FavouriteController());
     return BCircularIcon( icon: Iconsax.heart5, onPressed: (){},color: Colors.red, );
   }
 }
