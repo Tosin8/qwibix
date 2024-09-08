@@ -11,6 +11,13 @@ class BLocalStorage {
 
   final _storage = GetStorage();
 
+static Future<void> init(String bucketName) async {
+  await GetStorage.init(bucketName);
+  _instance = BLocalStorage._internal(); 
+  _instance._storage = GetStorage(bucketName); 
+}
+
+
   // Generic method to save data
   Future<void> saveData<T>(String key, T value) async {
     await _storage.write(key, value);

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:qwibix/utils/constants/circular_icon.dart';
+
+import '../../../../features/shop/controllers/product/favourite_controller.dart';
 
 class FavouriteIcon extends StatelessWidget {
   const FavouriteIcon({super.key});
@@ -8,7 +12,7 @@ class FavouriteIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-   // final controllerl = Get.put(FavouriteController());
+   final controller = Get.put(FavouriteController());
     return BCircularIcon( icon: Iconsax.heart5, onPressed: (){},color: Colors.red, );
   }
 }
