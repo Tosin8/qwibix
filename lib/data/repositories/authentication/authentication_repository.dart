@@ -14,6 +14,7 @@ import 'package:qwibix/navigation_menu.dart';
 import 'package:qwibix/utils/exceptions/firebase_exception.dart';
 import 'package:qwibix/utils/exceptions/format_exception.dart';
 import 'package:qwibix/utils/exceptions/platform_exception.dart';
+import 'package:qwibix/utils/local_storage/storage_utility.dart';
 
 import '../../../utils/exceptions/firebase_auth_exception.dart';
 
@@ -42,9 +43,20 @@ class AuthenticationRepository extends GetxController{
     final user = _auth.currentUser;
 
     if(user != null) {
+
+      // if the user is logged in. 
       if(user.emailVerified) {
+
+        // initialize user specific storage. 
+
+        await BLocalStorage.init(user.uid);
+// if the user email is verified, nav. to the main nav. mene
+
         Get.offAll(() => const NavigationMenu()); 
       } else {
+
+        // if the user's email  is verified, nav. to the nav.menu. 
+        
         Get.offAll(() => VerifyEmailScreen(email: _auth.currentUser?.email,));
       }
     } else {
