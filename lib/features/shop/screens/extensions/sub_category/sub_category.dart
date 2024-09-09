@@ -47,7 +47,7 @@ applyImageRadius: true,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) => 
                         
-                        const BProductCardHorizontal()),
+                       BProductCardHorizontal(product: product.id,)),
                     ), 
                   ],
                 )

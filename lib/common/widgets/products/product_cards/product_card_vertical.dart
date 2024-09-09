@@ -70,9 +70,9 @@ final salePercentage = controller.calculateSalePercentage(product.price, product
                   ), 
       
                   /// Favorite icon Button
-                  const Positioned( 
+                  Positioned( 
                     top: 0, right: 0,
-                     child: FavouriteIcon(), 
+                     child: FavouriteIcon(productId: product.id,), 
       
                     ),
                   

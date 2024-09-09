@@ -1,5 +1,7 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+
 import 'package:qwibix/common/styles/shadows.dart';
 import 'package:qwibix/common/widgets/images/b_rounded_image.dart';
 import 'package:qwibix/common/widgets/products/favourite_icon/favourite_icon.dart';
@@ -13,9 +15,15 @@ import 'package:qwibix/utils/constants/rounded_container.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
 
-class BProductCardHorizontal extends StatelessWidget {
-  const BProductCardHorizontal({super.key});
+import '../../../../features/shop/models/product_model.dart';
 
+class BProductCardHorizontal extends StatelessWidget {
+  const BProductCardHorizontal({
+    Key? key,
+    required this.product,
+  }) : super(key: key);
+
+final ProductModel product; 
   @override
   Widget build(BuildContext context) {
 
@@ -58,9 +66,9 @@ class BProductCardHorizontal extends StatelessWidget {
                   ), 
       
                   /// Favorite icon Button
-                  const Positioned( 
+                  Positioned( 
                     top: 0, right: 0,
-                     child: FavouriteIcon(),
+                     child: FavouriteIcon(productId: product.id,),
       
                     ),
                 ],
