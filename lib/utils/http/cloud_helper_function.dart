@@ -1,6 +1,7 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:qwibix/common/widgets/loaders/animation_loader.dart';
 
 class BCloudHelperFunctions{
 
@@ -34,7 +35,7 @@ class BCloudHelperFunctions{
 /// if an error occurs, it returns a generic 'Something went wrong' text.
 /// otherwise , it returns null. 
 
-static Widget? checkMultiRecordState<T>({required AsyncSnapshot<List<T>> snapshot, Widget? loader, Widget? noData, Widget? error}) {
+static Widget? checkMultiRecordState<T>({required AsyncSnapshot<List<T>> snapshot, Widget? loader, Widget? noData, Widget? error, required BAnimationLoaderWidget nothingFound}) {
   if(snapshot.connectionState == ConnectionState.waiting) {
     return loader;
   }

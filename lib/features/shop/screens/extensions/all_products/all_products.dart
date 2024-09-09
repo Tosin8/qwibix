@@ -42,7 +42,7 @@ class AllProducts extends StatelessWidget {
 
           // check the state of the futurebuilder snapshot. 
           const loader = VerticalProductShimmer(); 
-        final widget = BCloudHelperFunctions.checkMultiRecordState(snapshot: snapshot, loader: loader);   
+        final widget = BCloudHelperFunctions.checkMultiRecordState(snapshot: snapshot, loader: loader, nothingFound: emptyWidget);   
 
         // return appropriate widget based on snapshot state
         if(widget != null) return widget; 
