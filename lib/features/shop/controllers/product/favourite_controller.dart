@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:get/get.dart';
 
 import '../../../../utils/local_storage/storage_utility.dart';
@@ -11,12 +13,21 @@ final favourites = <String, bool>{}.obs;
   void onInit() {
     
     super.onInit(); 
-    initFavorites(); 
+    initFavourites(); 
   }
 
   // initialize fav. by reading from storage. 
-  Future<void> initFavorites() async {
+  Future<void> initFavourites() async {
    final json = BLocalStorage.instance().readData('favourites');
+if(json != null) {
+  final storedFavourites = jsonDecode(json) as Map<String, dynamic>; 
+  favourites.assignAll(storedFavourites.map((key, value) => MapEntry(key, value as bool))); 
+}
+}
 
+bool isFavourite(String productId){
+  return favourites[productId] ?? false; 
 }
-}
+
+void toggleFavouriteProduct(String productId){
+}}
