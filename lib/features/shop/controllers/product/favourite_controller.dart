@@ -8,7 +8,7 @@ import 'package:qwibix/features/shop/models/product_model.dart';
 import '../../../../utils/local_storage/storage_utility.dart';
 
 class FavouriteController extends GetxController{
-FavouriteController get instance => Get.find();
+static FavouriteController get instance => Get.find();
 
 // Variables
 final favourites = <String, bool>{}.obs; 
@@ -20,7 +20,7 @@ final favourites = <String, bool>{}.obs;
   }
 
   // initialize fav. by reading from storage. 
-  Future<void> initFavourites() async {
+  void initFavourites() async {
    final json = BLocalStorage.instance().readData('favourites');
 if(json != null) {
   final storedFavourites = jsonDecode(json) as Map<String, dynamic>; 

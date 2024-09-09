@@ -2,7 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
+import 'package:qwibix/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:qwibix/features/shop/controllers/product/favourite_controller.dart';
+import 'package:qwibix/features/shop/models/product_model.dart';
 import 'package:qwibix/utils/constants/circular_icon.dart';
 import 'package:qwibix/utils/constants/sizes.dart';
 import 'package:qwibix/utils/helpers/helper_functions.dart';
@@ -15,7 +18,7 @@ class WishlistScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = FavouriteController(); 
+    final controller = FavouriteController.instance; 
     final dark = BHelperFunctions.isDarkMode(context); 
     return Scaffold(
       appBar: AppBar(
@@ -28,8 +31,21 @@ class WishlistScreen extends StatelessWidget {
           ), 
         ],
       ),
-      body: const SingleChildScrollView(
-        child: Padding(padding: EdgeInsets.all(BSizes.defaultSpace)),
+      body: SingleChildScrollView(
+        child: Padding(padding: const EdgeInsets.all(BSizes.defaultSpace), 
+        
+        
+        /// Products Grid. 
+        child: FutureBuilder(
+          future: controller.favouriteProducts(), 
+        builder: (context, snapshot) {
+          return GridLayout(itemCount: 6,
+           itemBuilder: (_, index) => BProductCardVertical(product: ProductModel.empty())
+           ); 
+        }
+        
+        )
+        ),
       ),
     );
   }
