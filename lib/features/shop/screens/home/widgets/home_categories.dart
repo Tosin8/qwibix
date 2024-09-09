@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 import 'package:qwibix/common/widgets/image_text_widgets/vertical_image_text.dart';
 import 'package:qwibix/common/widgets/shimmers/category_shimmer.dart';
 import 'package:qwibix/features/shop/controllers/category_controller.dart';
-import 'package:qwibix/features/shop/screens/extensions/sub_category/sub_category.dart';
 
 class BHomeCategories extends StatelessWidget {
   const BHomeCategories({
@@ -58,7 +57,7 @@ class BHomeCategories extends StatelessWidget {
           return  BVerticalImageText(
             title: category.name, 
             image: category.image,
-            onTap: () => Get.to(() => const SubCategoriesScreen()),
+          //  onTap: () => Get.to(() => const SubCategoriesScreen()),
             ); 
         
           

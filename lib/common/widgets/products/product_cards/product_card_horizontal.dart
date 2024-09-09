@@ -20,7 +20,7 @@ import '../../../../features/shop/models/product_model.dart';
 class BProductCardHorizontal extends StatelessWidget {
   const BProductCardHorizontal({
     Key? key,
-    required this.product,
+    required this.product, required String productId,
   }) : super(key: key);
 
 final ProductModel product; 
