@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:qwibix/common/widgets/loaders/loaders.dart';
+import 'package:qwibix/data/repositories/product/product_repository.dart';
+import 'package:qwibix/features/shop/models/product_model.dart';
 
 import '../../../../utils/local_storage/storage_utility.dart';
 
@@ -45,6 +47,11 @@ if(!favourites.containsKey(productId)){
 
 }
 void saveFavouritesToStorage(){
-  
+  final encodedFavourites = json.encode(favourites); 
+  BLocalStorage.instance().saveData('favourites', encodedFavourites);
+}
+
+Future<List<ProductModel>> favouriteProducts() async {
+  return await ProductRepository.instance.getFavouriteProducts(favourites.keys.toList()); 
 }
 }
