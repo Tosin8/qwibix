@@ -10,8 +10,11 @@ class FavouriteIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-   final controller = Get.put(FavouriteController());
-    return BCircularIcon( icon: Iconsax.heart5, onPressed: (){},color: Colors.red, );
+    final controller = Get.put(FavouriteController());
+    return Obx(() => BCircularIcon(
+          icon: Iconsax.heart5,
+          onPressed: () {},
+          color: Colors.red,
+        ));
   }
 }
