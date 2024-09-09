@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
+import 'package:qwibix/common/widgets/loaders/loaders.dart';
 
 import '../../../../utils/local_storage/storage_utility.dart';
 
@@ -30,4 +31,13 @@ bool isFavourite(String productId){
 }
 
 void toggleFavouriteProduct(String productId){
+if(!favourites.containsKey(productId)){
+  favourites[productId] = true; 
+  saveFavouritesToStorage(); 
+  BLoaders.customToast(message: 'Product has been added to the WishList'); 
+} else {
+  BLocalStorage.instance().removeData(productId);
+  favourites.
+}
+
 }}
