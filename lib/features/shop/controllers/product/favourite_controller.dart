@@ -37,7 +37,14 @@ if(!favourites.containsKey(productId)){
   BLoaders.customToast(message: 'Product has been added to the WishList'); 
 } else {
   BLocalStorage.instance().removeData(productId);
-  favourites.
+  favourites.remove(productId); 
+  saveFavouritesToStorage(); 
+  favourites.refresh(); 
+  BLoaders.customToast(message: 'Product has been removed form the WishList'); 
 }
 
-}}
+}
+void saveFavouritesToStorage(){
+  
+}
+}
