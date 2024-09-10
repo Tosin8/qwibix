@@ -57,7 +57,7 @@ class BHomeCategories extends StatelessWidget {
           return  BVerticalImageText(
             title: category.name, 
             image: category.image,
-          //  onTap: () => Get.to(() => const SubCategoriesScreen()),
+            onTap: () => Get.to(() => const SubCategoriesScreen()),
             ); 
         
           

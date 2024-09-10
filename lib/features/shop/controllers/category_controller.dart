@@ -2,7 +2,9 @@
 import 'package:get/get.dart';
 import 'package:qwibix/common/widgets/loaders/loaders.dart';
 import 'package:qwibix/data/repositories/category/category_repository.dart';
+import 'package:qwibix/data/repositories/product/product_repository.dart';
 import 'package:qwibix/features/shop/models/category_model.dart';
+import 'package:qwibix/features/shop/models/product_model.dart';
 
 class CategoryController extends GetxController {
   static CategoryController get instance => Get.find();
@@ -42,5 +44,20 @@ class CategoryController extends GetxController {
       // Remove loader 
       isLoading.value = false; 
     }
+  }
+
+  // Load selected category data
+  
+
+  // Get category or sub category products. 
+  Future<List<ProductModel>> getCategoryProducts({required String categoryId, int limit = 4}) async {
+    try{
+    // fetch limited 4 products against each subcategory. 
+    final products = await ProductRepository.instance.getProductsForCategory(categoryId: categoryId, limit: limit); 
+    return products; 
+  } catch (e) {
+    BLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString()); 
+    return []; 
+  }
   }
 }

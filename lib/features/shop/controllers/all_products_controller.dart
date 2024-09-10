@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:qwibix/common/widgets/loaders/loaders.dart';
-import 'package:qwibix/data/repositories/authentication/authentication_repository.dart';
 import 'package:qwibix/data/repositories/product/product_repository.dart';
 import 'package:qwibix/features/shop/models/product_model.dart';
 
