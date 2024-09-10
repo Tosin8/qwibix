@@ -5,7 +5,6 @@ import 'package:qwibix/common/widgets/grid_layout/grid_layout.dart';
 import 'package:qwibix/common/widgets/loaders/animation_loader.dart';
 import 'package:qwibix/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:qwibix/features/shop/controllers/product/favourite_controller.dart';
-import 'package:qwibix/features/shop/models/product_model.dart';
 import 'package:qwibix/navigation_menu.dart';
 import 'package:qwibix/utils/constants/circular_icon.dart';
 import 'package:qwibix/utils/constants/image_strings.dart';
